@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AICHEMIST</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            main: "#054AFC",
+                            sub01: "#2972FF",
+                            sub02: "#8DBFFF",
+                            sub03: "#60AACA",
+                        },
+                    },
+                },
+            };
+        </script>
+        <link type="text/css" rel="stylesheet" href="main.css" />
+        <style>
+            /* 글씨 이펙트 */
+
+            .wave {
+                word-spacing: 2px;
+                overflow: hidden;
+            }
+
+            .title {
+                margin: 0;
+                font-size: 2.5rem;
+            }
+
+            .letter {
+                display: inline-block;
+                transform: translateY(100%);
+                animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            }
+
+            @keyframes reveal {
+                0% {
+                    transform: translateY(100%);
+                }
+
+                100% {
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="pdContainer">
+            <div class="gradient"></div>
+            <div class="main-button-box">
+                <button id="toMainPJ" onclick="moveToScroll('mainPJPosition')">Main project</button>
+                <button id="toYoutube" onclick="moveToScroll('youtubePosition')">Our video clip</button>
+            </div>
+        </div>
+
+        <!-- 무한 슬라이드 1 -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
+                </div>
+                <div class="swiper-slide">
+                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
+                </div>
+                <div class="swiper-slide">
+                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
+                </div>
+                <div class="swiper-slide">
+                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
+                </div>
+                <div class="swiper-slide">
+                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
+                </div>
+                <div class="swiper-slide">
+                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
+                </div>
+                <div class="swiper-slide">
+                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
+                </div>
+                <div class="swiper-slide">
+                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
+                </div>
+                <div class="swiper-slide">
+                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
+                </div>
+            </div>
+        </div>
+
+        <div id="cardSlide3d"></div>
+
+        <div id="youtubeContainer"></div>
+
+        <div id="dofContainer" style="display: none"></div>
+
+        <div id="pwContainer"></div>
+
+        <div
+            class="text-[40px] font-semibold text-center leading-[48.76px] bg-gradient-to-r from-white to-[#8DBFFF] text-transparent bg-clip-text mb-4"
+        >
+            LAI,METAVERSE,XR and Chemistry
+        </div>
+        <div
+            class="text-[20px] font-normal text-center leading-[24.38px] bg-gradient-to-r from-white to-[#8DBFFF] text-transparent bg-clip-text"
+        >
+            Using AI technology, make imagination real and beyond reality, Metaverse in a new world<br />
+            XR to add a new sense of reality and immersion, alchemist to create chemistry between them
+        </div>
+        <div class="sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-6 md:max-w-6xl md:mx-auto xl:grid-cols-3">
+            <div class="rounded-lg shadow-sm bg-white bg-opacity-10">
+                <div class="p-6">
+                    <svg width="33" height="36" viewBox="0 0 33 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.5136 1.96918L17.7232 0.385547C16.8198 -0.128516 15.699 -0.128516 14.7956 0.385547L1.46382 7.9509C0.560439 8.46496 0 9.4198 0 10.4444V25.5776C0 26.6068 0.557354 27.557 1.46382 28.0711L4.25419 29.6547V11.197L4.31435 11.1627L16.2589 4.3833L20.5131 1.96918H20.5136Z"
+                            fill="#00A3FF"
+                        />
+                        <path
+                            d="M16.2594 29.3224L32.5183 20.0946V15.2648L16.2594 24.4927L10.5491 21.2526V14.771L16.2594 11.5294L20.5136 9.11527L22.5553 7.95724L26.8095 5.54161L22.653 3.18359L18.3737 5.58356L16.3206 6.73401L6.29492 12.3553V30.8125L14.2871 35.3486C15.5077 36.0426 17.0111 36.0426 18.2317 35.3486L30.8925 28.1629C31.8987 27.5917 32.5183 26.5363 32.5183 25.3944V22.4106L16.2594 31.6385L10.5491 28.3984V26.0824L16.2594 29.3224Z"
+                            fill="#00A3FF"
+                        />
+                        <path
+                            d="M0 25.5771C0 26.6062 0.557353 27.5565 1.46382 28.0705L4.25419 29.6542V11.1965L4.29327 11.1742L0.426242 8.95117C0.152707 9.39447 0 9.90954 0 10.4433V25.5771Z"
+                            fill="#007EC5"
+                        />
+                        <path
+                            d="M10.5491 26.0815L16.2594 29.3216V24.4918L10.5491 21.2518V14.7701L6.32114 12.3398L6.29492 12.3545V30.8117L14.2871 35.3478C14.8974 35.6945 15.5787 35.8684 16.2594 35.8684V31.6376L10.5491 28.3976V26.0815Z"
+                            fill="#007EC5"
+                        />
+                    </svg>
+
+                    <h2 class="text-[40px] leading-[60px] font-bold text-white">CEN Free</h2>
+                    <p class="mt-2 text-[13px] text-white leading-[19.5px]">
+                        Utilize all the features necessary for beginners, students, and those taking their first steps.
+                    </p>
+
+                    <p class="mt-6">
+                        <span class="text-4xl font-bold text-white tracking-tighter">Free</span>
+
+                        <span class="text-base font-medium text-white opacity-50 pl-3">/yr per seat</span>
+                    </p>
+                    <button
+                        type="button"
+                        class="mt-3 block w-full bg-[#DDDDDD] rounded-md py-2 text-sm font-500 text-[#999999] text-center"
+                    >
+                        Annual plan, prepaid payment each year.
+                    </button>
+
+                    <ul role="list" class="mt-4 space-y-3">
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#00A3FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]">
+                                All the benefits of CEN Enterprise
+                            </span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#00A3FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]">Pixyz plugin</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#00A3FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]">Industry Success</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rounded-lg shadow-sm bg-white bg-opacity-10">
+                <div class="p-6">
+                    <svg width="33" height="36" viewBox="0 0 33 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.5136 1.96918L17.7232 0.385547C16.8198 -0.128516 15.699 -0.128516 14.7956 0.385547L1.46382 7.9509C0.560439 8.46496 0 9.4198 0 10.4444V25.5776C0 26.6068 0.557354 27.557 1.46382 28.0711L4.25419 29.6547V11.197L4.31435 11.1627L16.2589 4.3833L20.5131 1.96918H20.5136Z"
+                            fill="#0057FF"
+                        />
+                        <path
+                            d="M16.2594 29.3224L32.5183 20.0946V15.2648L16.2594 24.4927L10.5491 21.2526V14.771L16.2594 11.5294L20.5136 9.11527L22.5553 7.95724L26.8095 5.54161L22.653 3.18359L18.3737 5.58356L16.3206 6.73401L6.29492 12.3553V30.8125L14.2871 35.3486C15.5077 36.0426 17.0111 36.0426 18.2317 35.3486L30.8925 28.1629C31.8987 27.5917 32.5183 26.5363 32.5183 25.3944V22.4106L16.2594 31.6385L10.5491 28.3984V26.0824L16.2594 29.3224Z"
+                            fill="#0057FF"
+                        />
+                        <path
+                            d="M0 25.5771C0 26.6062 0.557353 27.5565 1.46382 28.0705L4.25419 29.6542V11.1965L4.29327 11.1742L0.426242 8.95117C0.152707 9.39447 0 9.90954 0 10.4433V25.5771Z"
+                            fill="#083B9C"
+                        />
+                        <path
+                            d="M10.5491 26.0815L16.2594 29.3216V24.4918L10.5491 21.2518V14.7701L6.32114 12.3398L6.29492 12.3545V30.8117L14.2871 35.3478C14.8974 35.6945 15.5787 35.8684 16.2594 35.8684V31.6376L10.5491 28.3976V26.0815Z"
+                            fill="#083B9C"
+                        />
+                    </svg>
+
+                    <h2 class="text-[40px] leading-[60px] font-bold text-white">CEN Basic</h2>
+                    <p class="mt-2 text-[13px] text-white leading-[19.5px]">
+                        For professional developers aiming to increase revenue through advanced customization and
+                        perfect flexibility.
+                    </p>
+                    <p class="mt-6">
+                        <span class="text-4xl font-bold text-white tracking-tighter">＄1,058.23</span>
+
+                        <span class="text-base font-medium text-white opacity-50 pl-3">/yr per seat</span>
+                    </p>
+                    <button
+                        type="button"
+                        class="mt-3 block w-full bg-[#DDDDDD] rounded-md py-2 text-sm font-500 text-[#999999] text-center"
+                    >
+                        Annual plan, prepaid payment each year.
+                    </button>
+
+                    <ul role="list" class="mt-4 space-y-3">
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#0057FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]"
+                                >All the benefits of CEN Enterprise.</span
+                            >
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#0057FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]">Pixyz plugin</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#0057FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]">Industry Success</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#0057FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]"
+                                >Swift and responsive technical support</span
+                            >
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#0057FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]"
+                                >Ongoing education (300 hours or more) with Intented</span
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rounded-lg shadow-sm bg-white bg-opacity-10">
+                <div class="p-6">
+                    <svg width="33" height="36" viewBox="0 0 33 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.5136 1.96918L17.7232 0.385547C16.8198 -0.128516 15.699 -0.128516 14.7956 0.385547L1.46382 7.9509C0.560439 8.46496 0 9.4198 0 10.4444V25.5776C0 26.6068 0.557354 27.557 1.46382 28.0711L4.25419 29.6547V11.197L4.31435 11.1627L16.2589 4.3833L20.5131 1.96918H20.5136Z"
+                            fill="#5200FF"
+                        />
+                        <path
+                            d="M16.2594 29.3224L32.5183 20.0946V15.2648L16.2594 24.4927L10.5491 21.2526V14.771L16.2594 11.5294L20.5136 9.11527L22.5553 7.95724L26.8095 5.54161L22.653 3.18359L18.3737 5.58356L16.3206 6.73401L6.29492 12.3553V30.8125L14.2871 35.3486C15.5077 36.0426 17.0111 36.0426 18.2317 35.3486L30.8925 28.1629C31.8987 27.5917 32.5183 26.5363 32.5183 25.3944V22.4106L16.2594 31.6385L10.5491 28.3984V26.0824L16.2594 29.3224Z"
+                            fill="#5200FF"
+                        />
+                        <path
+                            d="M0 25.5771C0 26.6062 0.557353 27.5565 1.46382 28.0705L4.25419 29.6542V11.1965L4.29327 11.1742L0.426242 8.95117C0.152707 9.39447 0 9.90954 0 10.4433V25.5771Z"
+                            fill="#27007A"
+                        />
+                        <path
+                            d="M10.5491 26.0815L16.2594 29.3216V24.4918L10.5491 21.2518V14.7701L6.32114 12.3398L6.29492 12.3545V30.8117L14.2871 35.3478C14.8974 35.6945 15.5787 35.8684 16.2594 35.8684V31.6376L10.5491 28.3976V26.0815Z"
+                            fill="#27007A"
+                        />
+                    </svg>
+
+                    <h2 class="text-[40px] leading-[60px] font-bold text-white">CEN Enterprise</h2>
+                    <p class="mt-2 text-[13px] text-white leading-[19.5px]">
+                        Build, deploy, and scale customized real-time 3D experiences across all industries and
+                        platforms.
+                    </p>
+
+                    <p class="mt-6">
+                        <span class="text-4xl font-bold text-white tracking-tighter">＄3,144.83</span>
+
+                        <span class="text-base font-medium text-white opacity-50 pl-3"> /yr per seat</span>
+                    </p>
+                    <button
+                        type="button"
+                        class="mt-3 block w-full bg-[#DDDDDD] rounded-md py-2 text-sm font-500 text-[#999999] text-center"
+                    >
+                        Annual plan, prepaid payment each year.
+                    </button>
+
+                    <ul role="list" class="mt-4 space-y-3">
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#5200FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]"
+                                >All the benefits of CEN Enterprise.</span
+                            >
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#5200FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]">Pixyz plugin</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#5200FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]">Industry Success</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#5200FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]"
+                                >Swift and responsive technical support</span
+                            >
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#5200FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]"
+                                >Ongoing education (300 hours or more) with Intented</span
+                            >
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#5200FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]">Dedicated CEN Advisors.</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#5200FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]"
+                                >Product activation participation (1 month)</span
+                            >
+                        </li>
+                        <li class="flex space-x-3">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="flex-shrink-0 h-5 w-5 text-green-400"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="#5200FF"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                            <span class="text-[10px] text-white leading-[25px]">
+                                Customer onboarding participation (3 months)
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="title wave">About AIchemist</div>
+
+        <script type="x-shader/x-vertex" id="vertexshader">
+
+            attribute float scale;
+
+            void main() {
+
+            	vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+            	gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+
+            	gl_Position = projectionMatrix * mvPosition;
+
+            }
+        </script>
+
+        <script type="x-shader/x-fragment" id="fragmentshader">
+
+            uniform vec3 color;
+
+            void main() {
+
+            	if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+
+            	gl_FragColor = vec4( color, 1.0 );
+
+            }
+        </script>
+
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "../build/three.module.js",
+                    "three/addons/": "./jsm/"
+                }
+            }
+        </script>
+
+        <script type="module">
+            import * as THREE from "three";
+
+            // css3d youtube
+            import { TrackballControls } from "three/addons/controls/TrackballControls.js";
+            import { CSS3DRenderer, CSS3DObject } from "three/addons/renderers/CSS3DRenderer.js";
+
+            // postprocessing depth-of-field
+            import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+            import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+            import { BokehPass } from "three/addons/postprocessing/BokehPass.js";
+            import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+
+            // points dynamic
+            import Stats from "three/addons/libs/stats.module.js";
+            import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
+            import { BloomPass } from "three/addons/postprocessing/BloomPass.js";
+            import { FilmPass } from "three/addons/postprocessing/FilmPass.js";
+            import { FocusShader } from "three/addons/shaders/FocusShader.js";
+            import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
+            import { FontLoader } from "three/addons/loaders/FontLoader.js";
+            import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
+
+            import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+            // loader texture dds
+            import { DDSLoader } from "three/addons/loaders/DDSLoader.js";
+
+            /* ▽▽▽▽▽▽▽▽▽▽ points dynamic ▽▽▽▽▽▽▽▽▽▽ */
+
+            let pdCamera, pdScene, pdRenderer, pdMesh;
+
+            let pdParent;
+
+            const meshes = [],
+                clonemeshes = [];
+
+            let pdComposer, pdEffectFocus;
+
+            const clock = new THREE.Clock();
+
+            let pdStats;
+
+            pdInit();
+
+            function pdInit() {
+                const pdContainer = document.querySelector("#pdContainer");
+
+                // 화면 크기 기본값 설정
+                const WIDTH = 1920,
+                    HEIGHT = 981;
+                pdCamera = new THREE.PerspectiveCamera(20, WIDTH / HEIGHT, 1, 50000);
+                pdCamera.position.set(0, 700, 8000);
+
+                pdScene = new THREE.Scene();
+
+                // TODO : 변경점 배경이미지 삽입
+                const backgroundImagePath = "textures/background/first.png";
+
+                // 텍스처 로더를 사용하여 배경 이미지 로드
+                const textureLoader = new THREE.TextureLoader();
+                textureLoader.load(backgroundImagePath, function (texture) {
+                    pdScene.background = texture;
+                });
+
+                // 폰트 로더를 사용하여 폰트를 로드
+                const fontLoader = new FontLoader();
+
+                const CompanyName = "CEN";
+                const CompanyLabel = "Make the world you're imagining a reality";
+                const companyDescription = `Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum`;
+                // 텍스트 줄 배열
+                const paragraphLines = [
+                    "First line of the paragraph.",
+                    "Second line of the paragraph.",
+                    "Third line of the paragraph.",
+                ];
+
+                fontLoader.load("fonts/Montserrat_Regular.typeface.json", function (font) {
+                    // 회사명 텍스트 설정
+                    const companyNameGeometry = new TextGeometry(CompanyName, {
+                        font: font,
+                        size: 300, // 회사명 텍스트 크기
+                        height: 10,
+                        curveSegments: 100,
+                        bevelEnabled: true, // 베벨 활성화
+                        bevelThickness: 10, // 베벨 두께
+                        bevelSize: 10, // 베벨 크기
+                        bevelOffset: 0, // 베벨 오프셋
+                        bevelSegments: 5, // 베벨의 세밀도
+                    });
+
+                    const companyNameMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+                    const companyNameMesh = new THREE.Mesh(companyNameGeometry, companyNameMaterial);
+
+                    companyNameMesh.position.set(-500, 300, 0); // 텍스트 위치 설정
+
+                    pdScene.add(companyNameMesh);
+
+                    // 회사명 라벨 설정
+                    const companyLabelGeometry = new TextGeometry(CompanyLabel, {
+                        font: font,
+                        size: 50, // 회사명 텍스트 크기
+                        height: 10,
+                        curveSegments: 100,
+                        bevelEnabled: false, // 베벨 활성화
+                    });
+
+                    const companyLabelMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+                    const companyLabelMesh = new THREE.Mesh(companyLabelGeometry, companyLabelMaterial);
+
+                    companyLabelMesh.position.set(-700, 150, 0); // 중앙 위치 설정
+                    pdScene.add(companyLabelMesh);
+
+                    // 오른쪽 정렬할 위치 (화면의 가로폭의 끝부분)
+                    const rightEdge = 1500; // 조정 가능한 값, 오른쪽 끝의 x 좌표
+
+                    // 각 줄에 대해 TextGeometry 및 Mesh 생성
+                    paragraphLines.forEach((line, index) => {
+                        const lineGeometry = new TextGeometry(line, {
+                            font: font,
+                            size: 40, // 텍스트 크기
+                            height: 10, // 텍스트 두께
+                            curveSegments: 12,
+                            bevelEnabled: false,
+                        });
+
+                        const lineMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+                        const lineMesh = new THREE.Mesh(lineGeometry, lineMaterial);
+
+                        // 각 줄의 위치를 조정 (줄 사이에 간격 추가)
+                        lineGeometry.computeBoundingBox();
+                        const textWidth = lineGeometry.boundingBox.max.x - lineGeometry.boundingBox.min.x;
+
+                        // 줄 사이 간격 조정
+                        const lineHeight = 60;
+                        // x 위치를 오른쪽 정렬에 맞게 조정
+                        const xPosition = rightEdge - textWidth;
+                        // y 위치를 index에 따라 조정
+                        const yPosition = -index * lineHeight;
+
+                        lineMesh.position.set(xPosition, yPosition, 0);
+                        // 장면에 추가
+                        pdScene.add(lineMesh);
+                    });
+                });
+
+                ////
+
+                pdScene.fog = new THREE.FogExp2(0x000104, 0.0000675);
+
+                pdCamera.lookAt(pdScene.position);
+
+                const loader = new OBJLoader();
+
+                loader.load("models/obj/male02/male02.obj", function (object) {
+                    const positions = combineBuffer(object, "position");
+
+                    // TODO : 변경점 사람 색상, 마지막 값
+                    createMesh(positions, pdScene, 4.05, -500, -800, 600, 0xffffff);
+                    createMesh(positions, pdScene, 4.05, 500, -800, 0, 0xffffff);
+                    createMesh(positions, pdScene, 4.05, -250, -800, 1500, 0xffffff);
+                    createMesh(positions, pdScene, 4.05, -250, -800, -1500, 0xffffff);
+                });
+
+                loader.load("models/obj/female02/female02.obj", function (object) {
+                    const positions = combineBuffer(object, "position");
+
+                    // TODO : 변경점 사람 색상, 마지막 값
+                    createMesh(positions, pdScene, 4.05, -1000, -800, 0, 0xffffff);
+                    createMesh(positions, pdScene, 4.05, 0, -800, 0, 0xffffff);
+                    createMesh(positions, pdScene, 4.05, 1000, -800, 400, 0xffffff);
+                    createMesh(positions, pdScene, 4.05, 250, -800, 1500, 0xffffff);
+                    createMesh(positions, pdScene, 4.05, 250, -800, 2500, 0xffffff);
+                });
+
+                pdRenderer = new THREE.WebGLRenderer();
+                // 기기의 픽셀 비율에 따라 렌더러의 픽셀 비율을 설정(통일되어야하므로 주석처리)
+                // pdRenderer.setPixelRatio(window.devicePixelRatio);
+                pdRenderer.setSize(WIDTH, HEIGHT);
+                // pdRenderer.setSize(window.innerWidth, window.innerHeight);
+                pdRenderer.setAnimationLoop(pdAnimate);
+                pdRenderer.autoClear = false;
+                pdContainer.appendChild(pdRenderer.domElement);
+
+                pdParent = new THREE.Object3D();
+                pdScene.add(pdParent);
+
+                // postprocessing
+
+                const renderModel = new RenderPass(pdScene, pdCamera);
+                // const effectBloom = new BloomPass(0.75);
+                // const effectFilm = new FilmPass();
+
+                pdEffectFocus = new ShaderPass(FocusShader);
+
+                pdEffectFocus.uniforms["screenWidth"].value = window.innerWidth * window.devicePixelRatio;
+                pdEffectFocus.uniforms["screenHeight"].value = window.innerHeight * window.devicePixelRatio;
+
+                const outputPass = new OutputPass();
+
+                pdComposer = new EffectComposer(pdRenderer);
+
+                pdComposer.addPass(renderModel);
+                // pdComposer.addPass(effectBloom);
+                // pdComposer.addPass(effectFilm);
+                pdComposer.addPass(pdEffectFocus);
+                // pdComposer.addPass(outputPass);
+
+                pdStats = new Stats();
+                // pdContainer.appendChild(pdStats.dom);
+
+                // 창크기에 따라 조정되지 않도록 주석 처리
+                // window.addEventListener("resize", pdOnWindowResize);
+            }
+
+            function pdOnWindowResize() {
+                pdCamera.aspect = window.innerWidth / window.innerHeight;
+                pdCamera.updateProjectionMatrix();
+
+                pdCamera.lookAt(pdScene.position);
+
+                pdRenderer.setSize(window.innerWidth, window.innerHeight);
+                pdComposer.setSize(window.innerWidth, window.innerHeight);
+
+                pdEffectFocus.uniforms["screenWidth"].value = window.innerWidth * window.devicePixelRatio;
+                pdEffectFocus.uniforms["screenHeight"].value = window.innerHeight * window.devicePixelRatio;
+            }
+
+            function combineBuffer(model, bufferName) {
+                let count = 0;
+
+                model.traverse(function (child) {
+                    if (child.isMesh) {
+                        const buffer = child.geometry.attributes[bufferName];
+
+                        count += buffer.array.length;
+                    }
+                });
+
+                const combined = new Float32Array(count);
+
+                let offset = 0;
+
+                model.traverse(function (child) {
+                    if (child.isMesh) {
+                        const buffer = child.geometry.attributes[bufferName];
+
+                        combined.set(buffer.array, offset);
+                        offset += buffer.array.length;
+                    }
+                });
+
+                return new THREE.BufferAttribute(combined, 3);
+            }
+
+            function createMesh(positions, pdScene, scale, x, y, z, color) {
+                const geometry = new THREE.BufferGeometry();
+                geometry.setAttribute("position", positions.clone());
+                geometry.setAttribute("initialPosition", positions.clone());
+
+                geometry.attributes.position.setUsage(THREE.DynamicDrawUsage);
+
+                const clones = [
+                    [6000, 0, -4000],
+                    [5000, 0, 0],
+                    [1000, 0, 5000],
+                    [1000, 0, -5000],
+                    [4000, 0, 2000],
+                    [-4000, 0, 1000],
+                    [-5000, 0, -5000],
+
+                    [0, 0, 0],
+                ];
+
+                for (let i = 0; i < clones.length; i++) {
+                    const c = i < clones.length - 1 ? 0x252525 : color;
+
+                    pdMesh = new THREE.Points(geometry, new THREE.PointsMaterial({ size: 30, color: c }));
+                    pdMesh.scale.x = pdMesh.scale.y = pdMesh.scale.z = scale;
+
+                    pdMesh.position.x = x + clones[i][0];
+                    pdMesh.position.y = y + clones[i][1];
+                    pdMesh.position.z = z + clones[i][2];
+
+                    pdParent.add(pdMesh);
+
+                    clonemeshes.push({ pdMesh: pdMesh, speed: 0.5 + Math.random() });
+                }
+
+                meshes.push({
+                    pdMesh: pdMesh,
+                    verticesDown: 0,
+                    verticesUp: 0,
+                    direction: 0,
+                    speed: 15,
+                    delay: Math.floor(200 + 200 * Math.random()),
+                    start: Math.floor(100 + 200 * Math.random()),
+                });
+            }
+
+            function pdAnimate() {
+                render();
+                pdStats.update();
+            }
+
+            function render() {
+                let delta = 10 * clock.getDelta();
+
+                delta = delta < 2 ? delta : 2;
+
+                pdParent.rotation.y += -0.02 * delta;
+
+                for (let j = 0; j < clonemeshes.length; j++) {
+                    const cm = clonemeshes[j];
+                    cm.pdMesh.rotation.y += -0.1 * delta * cm.speed;
+                }
+
+                for (let j = 0; j < meshes.length; j++) {
+                    const data = meshes[j];
+                    const positions = data.pdMesh.geometry.attributes.position;
+                    const initialPositions = data.pdMesh.geometry.attributes.initialPosition;
+
+                    const count = positions.count;
+
+                    if (data.start > 0) {
+                        data.start -= 1;
+                    } else {
+                        if (data.direction === 0) {
+                            data.direction = -1;
+                        }
+                    }
+
+                    for (let i = 0; i < count; i++) {
+                        const px = positions.getX(i);
+                        const py = positions.getY(i);
+                        const pz = positions.getZ(i);
+
+                        // falling down
+                        if (data.direction < 0) {
+                            if (py > 0) {
+                                positions.setXYZ(
+                                    i,
+                                    px + 1.5 * (0.5 - Math.random()) * data.speed * delta,
+                                    py + 3.0 * (0.25 - Math.random()) * data.speed * delta,
+                                    pz + 1.5 * (0.5 - Math.random()) * data.speed * delta
+                                );
+                            } else {
+                                data.verticesDown += 1;
+                            }
+                        }
+
+                        // rising up
+                        if (data.direction > 0) {
+                            const ix = initialPositions.getX(i);
+                            const iy = initialPositions.getY(i);
+                            const iz = initialPositions.getZ(i);
+
+                            const dx = Math.abs(px - ix);
+                            const dy = Math.abs(py - iy);
+                            const dz = Math.abs(pz - iz);
+
+                            const d = dx + dy + dx;
+
+                            if (d > 1) {
+                                positions.setXYZ(
+                                    i,
+                                    px - ((px - ix) / dx) * data.speed * delta * (0.85 - Math.random()),
+                                    py - ((py - iy) / dy) * data.speed * delta * (1 + Math.random()),
+                                    pz - ((pz - iz) / dz) * data.speed * delta * (0.85 - Math.random())
+                                );
+                            } else {
+                                data.verticesUp += 1;
+                            }
+                        }
+                    }
+
+                    // all vertices down
+                    if (data.verticesDown >= count) {
+                        if (data.delay <= 0) {
+                            data.direction = 1;
+                            data.speed = 5;
+                            data.verticesDown = 0;
+                            data.delay = 320;
+                        } else {
+                            data.delay -= 1;
+                        }
+                    }
+
+                    // all vertices up
+                    if (data.verticesUp >= count) {
+                        if (data.delay <= 0) {
+                            data.direction = -1;
+                            data.speed = 15;
+                            data.verticesUp = 0;
+                            data.delay = 120;
+                        } else {
+                            data.delay -= 1;
+                        }
+                    }
+
+                    positions.needsUpdate = true;
+                }
+
+                pdComposer.render(0.01);
+            }
+
+            const swiperSlides = document.querySelectorAll(".swiper");
+
+            swiperSlides.forEach(function (element, index) {
+                element.classList.add("swiper-" + index);
+                let swiper = new Swiper(".swiper-" + index, {
+                    autoplay: {
+                        delay: 1,
+                        desableOnInteraction: false,
+                    },
+                    speed: 3000,
+                    loop: true,
+                    slidesPerView: 7.3,
+                    // height: 40,
+                });
+            });
+            /* △△△△△△△△△△ points dynamic △△△△△△△△△△ */
+
+            /* ▽▽▽▽▽▽▽▽▽▽ youtube ▽▽▽▽▽▽▽▽▽▽ */
+
+            let youtubeCamera, youtubeScene, youtubeRenderer;
+            let youtubeControls;
+            let youtubeGroup;
+            // youtubeGroup보다 항상 500,350 만큼 위에서 내려다 보도록 카메라 위치값 차이
+            const YOUTUBE_GROUP_CAMERA_DIFF = {
+                x: 500,
+                y: 350,
+            };
+
+            function Element(id, x, y, z, ry) {
+                const div = document.createElement("div");
+                div.style.width = "480px";
+                div.style.height = "360px";
+                div.style.backgroundColor = "#000";
+
+                const iframe = document.createElement("iframe");
+                iframe.style.width = "480px";
+                iframe.style.height = "360px";
+                iframe.style.border = "0px";
+                iframe.src = `https://www.youtube.com/embed/${id}?rel=0loop=1&autoplay=0&mute=1&controls=0&modestbranding=1iv_load_policy=3&fs=0&disablekb=1`;
+                // iframe.src = `https://www.youtube.com/embed/${id}?rel=0loop=1&autoplay=1&mute=1&controls=0&modestbranding=1iv_load_policy=3&fs=0&disablekb=1`;
+                div.appendChild(iframe);
+
+                const object = new CSS3DObject(div);
+                object.position.set(x, y, z);
+                object.rotation.y = ry;
+
+                return object;
+            }
+
+            youtubeInit();
+            youtubeAnimate();
+
+            function youtubeInit() {
+                const youtubeContainer = document.getElementById("youtubeContainer");
+
+                youtubeCamera = new THREE.PerspectiveCamera(
+                    70, // 카메라의 가로 시야각
+                    youtubeContainer.offsetWidth / youtubeContainer.offsetHeight,
+                    1,
+                    5000
+                );
+                // youtubeCamera.position.set(0, 0, 3000);
+                youtubeCamera.position.set(YOUTUBE_GROUP_CAMERA_DIFF.x, YOUTUBE_GROUP_CAMERA_DIFF.y, 3000);
+
+                youtubeScene = new THREE.Scene();
+
+                youtubeRenderer = new CSS3DRenderer();
+
+                // 컨테이너의 너비, 높이 만큼 렌더러도 동일한 크기로 설정
+                youtubeRenderer.setSize(youtubeContainer.offsetWidth, youtubeContainer.offsetHeight);
+                youtubeContainer.appendChild(youtubeRenderer.domElement);
+
+                youtubeGroup = new THREE.Group();
+                // 유튜브 개체가 컨테이너의 가로 중앙에 위치하도록 조정
+                youtubeGroup.position.x = youtubeContainer.offsetWidth / 2 - 300;
+
+                // TODO : 변경점 https://www.youtube.com/watch?v=mFbILexYSQg&t=1s => mFbILexYSQg 부분으로 대체
+                youtubeGroup.add(new Element("mFbILexYSQg", 0, 0, 240, 0));
+                youtubeGroup.add(new Element("5l6-HlgyP-o", 240, 0, 0, Math.PI / 2));
+                youtubeGroup.add(new Element("U-3py11X2IM", 0, 0, -240, Math.PI));
+                youtubeGroup.add(new Element("AatKcBA9p-g", -240, 0, 0, -Math.PI / 2));
+                youtubeScene.add(youtubeGroup);
+
+                // 스크롤 이벤트를 감지하여 유튜브 개체의 위치를 업데이트
+                // window.addEventListener("scroll", onScroll);
+            }
+
+            function onScroll() {
+                console.log(window.scrollY, youtubeContainer.offsetTop);
+                // 스크롤 위치가 youtubeContainer의 위치보다 크면 유튜브 개체의 y 위치를 0.5로 제한
+                if (window.scrollY < youtubeContainer.offsetTop) {
+                    youtubeGroup.position.y = 0;
+                } else {
+                    youtubeGroup.position.y = Math.min(0, (youtubeContainer.offsetTop - window.scrollY) * 0.5);
+                }
+                youtubeCamera.position.y = youtubeGroup.position.y + YOUTUBE_GROUP_CAMERA_DIFF.y;
+                // const scrollY = window.scrollY;
+                // youtubeGroup.position.y = -scrollY * 0.2; // 스크롤 위치에 따라 유튜브 개체의 y 위치를 업데이트
+            }
+
+            function youtubeAnimate() {
+                requestAnimationFrame(youtubeAnimate);
+                youtubeGroup.rotation.y += 0.005;
+
+                youtubeRenderer.render(youtubeScene, youtubeCamera);
+            }
+            /* △△△△△△△△△△ youtube △△△△△△△△△△ */
+
+            /* ▽▽▽▽▽▽▽▽▽▽ postprocessing depth-of-field ▽▽▽▽▽▽▽▽▽▽ */
+            let dofCamera,
+                dofScene,
+                dofRenderer,
+                dofStats,
+                singleMaterial,
+                zmaterial,
+                parameters,
+                nobjects,
+                cubeMaterial;
+
+            let dofMouseX = 0,
+                dofMouseY = 0;
+
+            let windowHalfX = window.innerWidth / 2;
+            let windowHalfY = window.innerHeight / 2;
+
+            let dofWidth = window.innerWidth;
+            let dofHeight = window.innerHeight;
+
+            const materials = [],
+                dofObjects = [];
+
+            const postprocessing = {};
+
+            dofInit();
+
+            function dofInit() {
+                const dofContainer = document.getElementById("dofContainer");
+                document.body.appendChild(dofContainer);
+
+                dofCamera = new THREE.PerspectiveCamera(70, dofWidth / dofHeight, 1, 3000);
+                dofCamera.position.z = 200;
+
+                dofScene = new THREE.Scene();
+
+                dofRenderer = new THREE.WebGLRenderer();
+                dofRenderer.setPixelRatio(window.devicePixelRatio);
+                dofRenderer.setSize(dofWidth, dofHeight);
+                dofRenderer.setAnimationLoop(dofAnimate);
+                dofContainer.appendChild(dofRenderer.domElement);
+
+                const path = "textures/cube/SwedishRoyalCastle/";
+                const format = ".jpg";
+                const urls = [
+                    path + "px" + format,
+                    path + "nx" + format,
+                    path + "py" + format,
+                    path + "ny" + format,
+                    path + "pz" + format,
+                    path + "nz" + format,
+                ];
+
+                const textureCube = new THREE.CubeTextureLoader().load(urls);
+
+                parameters = { color: 0xff4900, envMap: textureCube };
+                cubeMaterial = new THREE.MeshBasicMaterial(parameters);
+
+                singleMaterial = false;
+
+                if (singleMaterial) zmaterial = [cubeMaterial];
+
+                // TODO : 변경점, 구 => 정육면체
+                // const geo = new THREE.SphereGeometry(1, 20, 10);
+                const geo = new THREE.BoxGeometry(1, 1, 1);
+
+                const xgrid = 14,
+                    ygrid = 9,
+                    zgrid = 14;
+
+                nobjects = xgrid * ygrid * zgrid;
+
+                const s = 60;
+                let count = 0;
+
+                for (let i = 0; i < xgrid; i++) {
+                    for (let j = 0; j < ygrid; j++) {
+                        for (let k = 0; k < zgrid; k++) {
+                            let mesh;
+
+                            if (singleMaterial) {
+                                mesh = new THREE.Mesh(geo, zmaterial);
+                            } else {
+                                mesh = new THREE.Mesh(geo, new THREE.MeshBasicMaterial(parameters));
+                                materials[count] = mesh.material;
+                            }
+
+                            const x = 200 * (i - xgrid / 2);
+                            const y = 200 * (j - ygrid / 2);
+                            const z = 200 * (k - zgrid / 2);
+
+                            mesh.position.set(x, y, z);
+                            mesh.scale.set(s, s, s);
+
+                            mesh.matrixAutoUpdate = false;
+                            mesh.updateMatrix();
+
+                            dofScene.add(mesh);
+                            dofObjects.push(mesh);
+
+                            count++;
+                        }
+                    }
+                }
+
+                dofInitPostprocessing();
+
+                dofRenderer.autoClear = false;
+
+                dofStats = new Stats();
+                // dofContainer.appendChild(dofStats.dom);
+
+                dofContainer.style.touchAction = "none";
+                dofContainer.addEventListener("pointermove", dofOnPointerMove);
+
+                window.addEventListener("resize", dofOnWindowResize);
+            }
+
+            function dofOnPointerMove(event) {
+                if (event.isPrimary === false) return;
+
+                dofMouseX = event.clientX - windowHalfX;
+                dofMouseY = event.clientY - windowHalfY;
+            }
+
+            function dofOnWindowResize() {
+                windowHalfX = window.innerWidth / 2;
+                windowHalfY = window.innerHeight / 2;
+
+                dofWidth = window.innerWidth;
+                dofHeight = window.innerHeight;
+
+                dofCamera.aspect = dofWidth / dofHeight;
+                dofCamera.updateProjectionMatrix();
+
+                dofRenderer.setSize(dofWidth, dofHeight);
+                postprocessing.composer.setSize(dofWidth, dofHeight);
+            }
+
+            function dofInitPostprocessing() {
+                const renderPass = new RenderPass(dofScene, dofCamera);
+
+                const bokehPass = new BokehPass(dofScene, dofCamera, {
+                    focus: 1.0,
+                    aperture: 0.025,
+                    maxblur: 0.01,
+                });
+
+                const outputPass = new OutputPass();
+
+                const composer = new EffectComposer(dofRenderer);
+
+                composer.addPass(renderPass);
+                composer.addPass(bokehPass);
+                composer.addPass(outputPass);
+
+                postprocessing.composer = composer;
+                postprocessing.bokeh = bokehPass;
+            }
+
+            function dofAnimate() {
+                dofStats.begin();
+                dofRender();
+                dofStats.end();
+            }
+
+            function dofRender() {
+                const time = Date.now() * 0.0008;
+
+                dofCamera.position.x += (dofMouseX - dofCamera.position.x) * 0.036;
+                dofCamera.position.y += (-dofMouseY - dofCamera.position.y) * 0.036;
+
+                dofCamera.lookAt(dofScene.position);
+
+                if (!singleMaterial) {
+                    for (let i = 0; i < nobjects; i++) {
+                        // TODO : 변경점 색상
+                        const s = ((360 * (i / nobjects + time)) % 360) / 300;
+                        const l = ((360 * (i / nobjects + time)) % 360) / 300;
+                        materials[i].color.setHSL(0.66, s, l);
+                    }
+                }
+
+                postprocessing.composer.render(0.1);
+            }
+            /* △△△△△△△△△△ postprocessing depth-of-field △△△△△△△△△△ */
+
+            /* ▽▽▽▽▽▽▽▽▽▽ points waves ▽▽▽▽▽▽▽▽▽▽ */
+            const SEPARATION = 100,
+                AMOUNTX = 50,
+                AMOUNTY = 50;
+
+            let pwStats;
+            let pwCamera, pwScene, pwRenderer;
+
+            let pwParticles,
+                pwCount = 0;
+
+            let pwMouseX = 0,
+                pwMouseY = 0;
+
+            let pwWindowHalfX = window.innerWidth / 2;
+            let pwWindowHalfY = window.innerHeight / 2;
+
+            const ddsMeshes = [];
+
+            pwInit();
+
+            function pwInit() {
+                const container = document.getElementById("pwContainer");
+                document.body.appendChild(container);
+
+                pwCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+                pwCamera.position.set(1700, 800, 1000); // 카메라 위치 조정
+
+                pwScene = new THREE.Scene();
+
+                // 파티클 초기화
+                const numParticles = AMOUNTX * AMOUNTY;
+
+                const positions = new Float32Array(numParticles * 3);
+                const scales = new Float32Array(numParticles);
+
+                let i = 0,
+                    j = 0;
+
+                for (let ix = 0; ix < AMOUNTX; ix++) {
+                    for (let iy = 0; iy < AMOUNTY; iy++) {
+                        positions[i] = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2; // x
+                        positions[i + 1] = 0; // y
+                        positions[i + 2] = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2; // z
+
+                        scales[j] = 1;
+
+                        i += 3;
+                        j++;
+                    }
+                }
+
+                const geometry = new THREE.BufferGeometry();
+                geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+                geometry.setAttribute("scale", new THREE.BufferAttribute(scales, 1));
+
+                const material = new THREE.ShaderMaterial({
+                    uniforms: {
+                        color: { value: new THREE.Color(0xffffff) },
+                    },
+                    vertexShader: document.getElementById("vertexshader").textContent,
+                    fragmentShader: document.getElementById("fragmentshader").textContent,
+                });
+
+                pwParticles = new THREE.Points(geometry, material);
+                pwScene.add(pwParticles);
+
+                // 렌더러 초기화
+                pwRenderer = new THREE.WebGLRenderer({ antialias: true });
+                pwRenderer.setPixelRatio(window.devicePixelRatio);
+                pwRenderer.setSize(window.innerWidth, window.innerHeight);
+                pwRenderer.setAnimationLoop(pwAnimate);
+                container.appendChild(pwRenderer.domElement);
+
+                pwStats = new Stats();
+                container.appendChild(pwStats.dom);
+
+                container.style.touchAction = "none";
+                container.addEventListener("pointermove", pwOnPointerMove);
+
+                // 조명 추가
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+                pwScene.add(ambientLight);
+
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+                directionalLight.position.set(5, 5, 5);
+                pwScene.add(directionalLight);
+
+                // DDS 물체 추가
+                const cubeGeometry = new THREE.BoxGeometry(200, 200, 200); // 물체 크기 조정
+                const loader = new DDSLoader();
+
+                const cubemap = loader.load("textures/compressed/Mountains_argb_mip.dds", function (texture) {
+                    texture.magFilter = THREE.LinearFilter;
+                    texture.minFilter = THREE.LinearFilter;
+                    texture.mapping = THREE.CubeReflectionMapping;
+                    texture.colorSpace = THREE.SRGBColorSpace;
+                    cubeMaterial.needsUpdate = true;
+                });
+
+                const cubeMaterial = new THREE.MeshBasicMaterial({ envMap: cubemap });
+
+                let ddsMesh;
+
+                ddsMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
+                ddsMesh.position.set(1000, 250, 300);
+                pwScene.add(ddsMesh);
+                ddsMeshes.push(ddsMesh);
+
+                ddsMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
+                ddsMesh.position.set(-300, 250, 1000);
+                pwScene.add(ddsMesh);
+                ddsMeshes.push(ddsMesh);
+
+                ddsMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
+                ddsMesh.position.set(-1900, 250, -2300);
+                pwScene.add(ddsMesh);
+                ddsMeshes.push(ddsMesh);
+            }
+
+            function pwOnWindowResize() {
+                pwWindowHalfX = window.innerWidth / 2;
+                pwWindowHalfY = window.innerHeight / 2;
+
+                pwCamera.aspect = window.innerWidth / window.innerHeight;
+                pwCamera.updateProjectionMatrix();
+
+                pwRenderer.setSize(window.innerWidth, window.innerHeight);
+            }
+
+            function pwOnPointerMove(event) {
+                if (event.isPrimary === false) return;
+
+                pwMouseX = event.clientX - pwWindowHalfX;
+                pwMouseY = event.clientY - pwWindowHalfY;
+            }
+
+            function pwAnimate() {
+                pwRender();
+                pwStats.update();
+            }
+
+            function pwRender() {
+                pwCamera.lookAt(pwScene.position);
+
+                const positions = pwParticles.geometry.attributes.position.array;
+                const scales = pwParticles.geometry.attributes.scale.array;
+
+                let i = 0,
+                    j = 0;
+
+                for (let ix = 0; ix < AMOUNTX; ix++) {
+                    for (let iy = 0; iy < AMOUNTY; iy++) {
+                        positions[i + 1] = Math.sin((ix + pwCount) * 0.3) * 50 + Math.sin((iy + pwCount) * 0.5) * 50;
+
+                        scales[j] =
+                            (Math.sin((ix + pwCount) * 0.3) + 1) * 20 + (Math.sin((iy + pwCount) * 0.5) + 1) * 20;
+
+                        i += 3;
+                        j++;
+                    }
+                }
+
+                pwParticles.geometry.attributes.position.needsUpdate = true;
+                pwParticles.geometry.attributes.scale.needsUpdate = true;
+
+                const time = Date.now() * 0.001;
+
+                for (let i = 0; i < ddsMeshes.length; i++) {
+                    const ddsMesh = ddsMeshes[i];
+                    ddsMesh.rotation.x = time;
+                    ddsMesh.rotation.y = time;
+                }
+
+                pwRenderer.render(pwScene, pwCamera);
+
+                pwCount += 0.1;
+            }
+            /* △△△△△△△△△△ points waves △△△△△△△△△△ */
+        </script>
+        <script type="module">
+            const wave = document.querySelector(".wave");
+
+            wave.innerHTML = wave.textContent
+                .split("")
+                .map((letter, idx) => {
+                    if (letter === " ") return " ";
+                    return `<span style="animation-delay:${idx * 15}ms" class="letter">${letter}</span>`;
+                })
+                .join("");
+        </script>
+
+        <script>
+            function moveToScroll(id) {
+                console.log(id, "아직 미구현");
+                return;
+                const element = document.getElementById(id);
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        </script>
+    </body>
+</html>

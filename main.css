@@ -1,0 +1,180 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+/* 문서 가로 너비 기본 1920 */
+html {
+    width: 1920px;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #fff;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+        "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    overscroll-behavior: none;
+}
+
+a {
+    color: #ff0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#blocker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#info {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1; /* TODO Solve this in HTML */
+}
+
+a,
+button,
+input,
+select {
+    pointer-events: auto;
+}
+
+#overlay {
+    position: absolute;
+    font-size: 16px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#overlay button {
+    background: transparent;
+    border: 0;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 12px 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#notSupported {
+    width: 50%;
+    margin: auto;
+    background-color: #f00;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#pdContainer {
+    position: relative;
+}
+#pdContainer .gradient {
+    width: 1920px;
+    height: 795px;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 82%;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(5, 74, 252, 0.9),
+        rgba(41, 114, 255, 0.7),
+        rgba(0, 0, 0, 0)
+    );
+}
+.main-button-box {
+    position: absolute;
+    width: 25%;
+    text-align: center;
+    bottom: 20%;
+    right: 15%;
+}
+.main-button-box button {
+    width: 181px;
+    height: 54px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+#toMainPJ {
+    background-color: #8dbfff;
+    color: #000000;
+}
+#toYoutube {
+    border-width: 1px;
+    border-color: #ffffff;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+#youtubeContainer {
+    width: 100%;
+    height: 3000px;
+}
+
+.swiper {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    border-top: 0.8px solid #ffffff;
+    border-bottom: 0.8px solid #ffffff;
+}
+
+.swiper-wrapper {
+    position: relative;
+    transition-timing-function: linear;
+    column-gap: 0px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.swiper-slide img {
+    margin: 0 30px;
+}
+
+#cardSlide3d {
+    width: 100%;
+    height: calc(1920px + 700px);
+    background-image: url("img/squintingNightCity.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
