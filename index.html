@@ -848,7 +848,6 @@
             import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
 
             // points dynamic
-            import Stats from "three/addons/libs/stats.module.js";
             import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
             import { BloomPass } from "three/addons/postprocessing/BloomPass.js";
             import { FilmPass } from "three/addons/postprocessing/FilmPass.js";
@@ -874,8 +873,6 @@
             let pdComposer, pdEffectFocus;
 
             const clock = new THREE.Clock();
-
-            let pdStats;
 
             pdInit();
 
@@ -1043,9 +1040,6 @@
                 pdComposer.addPass(pdEffectFocus);
                 // pdComposer.addPass(outputPass);
 
-                pdStats = new Stats();
-                // pdContainer.appendChild(pdStats.dom);
-
                 // 창크기에 따라 조정되지 않도록 주석 처리
                 // window.addEventListener("resize", pdOnWindowResize);
             }
@@ -1137,7 +1131,6 @@
 
             function pdAnimate() {
                 render();
-                pdStats.update();
             }
 
             function render() {
@@ -1364,15 +1357,7 @@
             /* △△△△△△△△△△ youtube △△△△△△△△△△ */
 
             /* ▽▽▽▽▽▽▽▽▽▽ postprocessing depth-of-field ▽▽▽▽▽▽▽▽▽▽ */
-            let dofCamera,
-                dofScene,
-                dofRenderer,
-                dofStats,
-                singleMaterial,
-                zmaterial,
-                parameters,
-                nobjects,
-                cubeMaterial;
+            let dofCamera, dofScene, dofRenderer, singleMaterial, zmaterial, parameters, nobjects, cubeMaterial;
 
             let dofMouseX = 0,
                 dofMouseY = 0;
@@ -1472,9 +1457,6 @@
 
                 dofRenderer.autoClear = false;
 
-                dofStats = new Stats();
-                // dofContainer.appendChild(dofStats.dom);
-
                 dofContainer.style.touchAction = "none";
                 dofContainer.addEventListener("pointermove", dofOnPointerMove);
 
@@ -1524,9 +1506,7 @@
             }
 
             function dofAnimate() {
-                dofStats.begin();
                 dofRender();
-                dofStats.end();
             }
 
             function dofRender() {
@@ -1555,7 +1535,6 @@
                 AMOUNTX = 50,
                 AMOUNTY = 50;
 
-            let pwStats;
             let pwCamera, pwScene, pwRenderer;
 
             let pwParticles,
@@ -1630,9 +1609,6 @@
                 pwRenderer.setAnimationLoop(pwAnimate);
                 container.appendChild(pwRenderer.domElement);
 
-                pwStats = new Stats();
-                // container.appendChild(pwStats.dom);
-
                 container.style.touchAction = "none";
                 container.addEventListener("pointermove", pwOnPointerMove);
 
@@ -1695,7 +1671,6 @@
 
             function pwAnimate() {
                 pwRender();
-                pwStats.update();
             }
 
             function pwRender() {
