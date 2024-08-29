@@ -1,4 +1,18 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* 영어일 때는 Montserrat, 한글일 때는 Pretendard 사용 */
+:lang(ko) {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+        "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+:lang(en) {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; /* 기본 500, 400~600도 있는 것으로 보임 */
+    font-style: normal;
+}
 
 /* 문서 가로 너비 기본 1920 */
 html {
@@ -11,9 +25,6 @@ body {
     padding: 0;
     background-color: #000000;
     color: #fff;
-    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
-        "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     font-size: 13px;
     line-height: 24px;
     overscroll-behavior: none;
@@ -177,4 +188,16 @@ select {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+#AIChemist-swiper .swiper-slide {
+    width: 392px;
+}
+#AIChemist-swiper .swiper-slide .grid {
+    justify-content: center;
+}
+
+#pwContainer {
+    width: 100%;
+    height: 1834px;
 }

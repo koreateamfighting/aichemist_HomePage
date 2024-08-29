@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>AICHEMIST</title>
         <meta charset="utf-8" />
@@ -27,11 +27,12 @@
             .wave {
                 word-spacing: 2px;
                 overflow: hidden;
+                width: fit-content;
             }
 
             .title {
                 margin: 0;
-                font-size: 2.5rem;
+                font-size: 90px;
             }
 
             .letter {
@@ -62,7 +63,7 @@
         </div>
 
         <!-- 무한 슬라이드 1 -->
-        <div class="swiper">
+        <div class="swiper" id="make-the-world-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
@@ -567,8 +568,236 @@
             </div>
         </div>
 
-        <div class="title wave">About AIchemist</div>
+        <div class="title wave part-a">About</div>
 
+        <div class="title wave part-a">AIchemist</div>
+
+        <div
+            class="bg-gradient-to-b from-[#054AFC] from-0% via-[#054AFC] via-90% via-[#2972FF] via-100% via-[#91B7FF] via-100% to-[#FFFFFF] to-100%"
+        >
+            <div>Meet our team</div>
+
+            <!-- 사원 슬라이드 -->
+            <div class="swiper border-0" id="AIChemist-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Jung_Min-wook.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Jung Min-wook</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">
+                                    Representative
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Jung_Ji-soo.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Jung Ji-soo</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">CTO</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Kim_Geun-hye.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Kim Geun-hye</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">CSO</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Choi_Jin-woo.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Choi Jin-woo</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">
+                                    Deputy Representative
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Park_Chan-woo.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Park Chan-woo</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">
+                                    Deputy Representative
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Oh_Junk-yung.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Oh Junk-yung</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">
+                                    Deputy Representative
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Lee_Eui-rim.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Lee Eui-rim</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">
+                                    Deputy Representative
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Youn_Young-sun.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Youn young-sun</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">
+                                    UXUI Designer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Choi_Yu-ri.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Choi Yu-ri</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">
+                                    Designer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Son_Jang-hwan.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Son Jang-hwan</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">
+                                    Designer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Choi_Young-im.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Choi Young-im</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">
+                                    Designer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide m-6">
+                        <div class="rounded-lg shadow-sm bg-white bg-opacity-10 w-[392px] h-[449px]">
+                            <div class="p-6 grid gap-6">
+                                <div class="text-center leading-[28px] font-medium text-[14px] text-[#8DBFFF]">
+                                    Alchemist
+                                </div>
+                                <img class="w-[175px] h-[226px]" src="/img/team/Park_Hyung-seok.png" />
+                                <div class="text-center leading-[28px] font-medium text-[30px]">Park Hyung-seok</div>
+                                <div class="text-center leading-[28px] font-medium text-[18px] opacity-60">
+                                    Designer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title wave part-b">The world you're</div>
+            <div class="title wave part-b">imagining</div>
+            <div class="title wave part-b">From Ichemist to</div>
+            <div class="title wave part-b">reality!</div>
+
+            <div class="flex flex-row mt-[50px]">
+                <div class="font-medium text-[16px] leading-[19.5px]">
+                    Bringing imagination to life using AI technology Beyond reality, the new world of the Metaverse<br />
+                    XR adding new realism and immersion An alchemist creating chemistry in between.
+                </div>
+                <div></div>
+            </div>
+
+            <!-- 풋터 -->
+            <div class="flex flex-row justify-center">
+                <div class="flex flex-col gap-3">
+                    <div class="flex flex-row gap-6">
+                        <div class="font-light text-[12px] leading-[18px]">
+                            131, Gasan digital 1-ro, Geumcheon-gu, B 10F Room 1005-Ga , Seoul, Republic of Korea,
+                            (08506)
+                        </div>
+                        <div class="font-light text-[12px] leading-[18px]">
+                            45, Yuseong-daero 642beon-gil, Yuseong-gu, Room 101 F8 , Daejeon, Republic of Korea, (34182)
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-around text-[12px] leading-[18px]">
+                        <div class="flex flex-row gap-2 font-light">
+                            <img src="./img/icon/call.png" alt="" />+82 02 6959 9722 (Ext)
+                        </div>
+
+                        <div class="flex flex-row gap-2 font-light">
+                            <img src="./img/icon/call.png" alt="" />+82 10 9277 8647 (H.P)
+                        </div>
+                        <div class="flex flex-row gap-2 font-light">
+                            <img src="./img/icon/fax.png" alt="" />070 8630 9722 (FAX)
+                        </div>
+
+                        <div class="flex flex-row gap-2 font-light">
+                            <img src="./img/icon/email.png" alt="" />minwookjeong@aichemist.kr
+                        </div>
+                    </div>
+                    <div class="flex flex-row leading-[18px] justify-center gap-2 align-center">
+                        <img src="./img/icon/aichemistNameLogo.png" alt="" />
+                        <div class="font-light text-[12px] text-base">© 2023. AIchemist. All rights reserved.</div>
+                    </div>
+                </div>
+                <div class="fit-content">
+                    <img src="./img/icon/aichemistBigLogo.png" alt="" />
+                </div>
+            </div>
+        </div>
         <script type="x-shader/x-vertex" id="vertexshader">
 
             attribute float scale;
@@ -610,7 +839,6 @@
             import * as THREE from "three";
 
             // css3d youtube
-            import { TrackballControls } from "three/addons/controls/TrackballControls.js";
             import { CSS3DRenderer, CSS3DObject } from "three/addons/renderers/CSS3DRenderer.js";
 
             // postprocessing depth-of-field
@@ -1013,20 +1241,34 @@
                 pdComposer.render(0.01);
             }
 
-            const swiperSlides = document.querySelectorAll(".swiper");
+            const MTWSwiper = new Swiper("#make-the-world-swiper", {
+                centeredSlides: true,
+                autoplay: {
+                    delay: 0,
+                    desableOnInteraction: false,
+                },
+                speed: 3000,
+                loop: true,
+                slidesPerView: 6.81,
+                allowTouchMove: false, // 터치/마우스 드래그를 비활성화
+                simulateTouch: false, // 마우스로 슬라이드를 드래그할 수 없도록 설정
+                preventClicks: true, // 슬라이드에서 클릭 이벤트를 비활성화
+                preventClicksPropagation: true, // 슬라이드에서 클릭 이벤트 전파를 비활성화
+            });
 
-            swiperSlides.forEach(function (element, index) {
-                element.classList.add("swiper-" + index);
-                let swiper = new Swiper(".swiper-" + index, {
-                    autoplay: {
-                        delay: 1,
-                        desableOnInteraction: false,
-                    },
-                    speed: 3000,
-                    loop: true,
-                    slidesPerView: 7.3,
-                    // height: 40,
-                });
+            const AIChemistSwiper = new Swiper("#AIChemist-swiper", {
+                centeredSlides: true,
+                autoplay: {
+                    delay: 0,
+                    desableOnInteraction: false,
+                },
+                speed: 3000,
+                loop: true,
+                slidesPerView: "auto",
+                allowTouchMove: false,
+                simulateTouch: false,
+                preventClicks: true,
+                preventClicksPropagation: true,
             });
             /* △△△△△△△△△△ points dynamic △△△△△△△△△△ */
 
@@ -1332,8 +1574,14 @@
             function pwInit() {
                 const container = document.getElementById("pwContainer");
                 document.body.appendChild(container);
+                console.log(container.offsetWidth, container.offsetHeight);
+                console.log(container.offsetWidth / container.offsetHeight);
+                console.log(window.innerWidth, window.innerHeight);
+                console.log(window.innerWidth / window.innerHeight);
 
-                pwCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+                // pwCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+                // 너비와 높이를 container의 너비와 높이로 설정
+                pwCamera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 1, 10000);
                 pwCamera.position.set(1700, 800, 1000); // 카메라 위치 조정
 
                 pwScene = new THREE.Scene();
@@ -1378,12 +1626,12 @@
                 // 렌더러 초기화
                 pwRenderer = new THREE.WebGLRenderer({ antialias: true });
                 pwRenderer.setPixelRatio(window.devicePixelRatio);
-                pwRenderer.setSize(window.innerWidth, window.innerHeight);
+                pwRenderer.setSize(container.offsetWidth, container.offsetHeight);
                 pwRenderer.setAnimationLoop(pwAnimate);
                 container.appendChild(pwRenderer.domElement);
 
                 pwStats = new Stats();
-                container.appendChild(pwStats.dom);
+                // container.appendChild(pwStats.dom);
 
                 container.style.touchAction = "none";
                 container.addEventListener("pointermove", pwOnPointerMove);
@@ -1489,15 +1737,37 @@
             /* △△△△△△△△△△ points waves △△△△△△△△△△ */
         </script>
         <script type="module">
-            const wave = document.querySelector(".wave");
+            function textEffect(name) {
+                const waveAll = document.querySelectorAll(`.${name}`);
 
-            wave.innerHTML = wave.textContent
-                .split("")
-                .map((letter, idx) => {
-                    if (letter === " ") return " ";
-                    return `<span style="animation-delay:${idx * 15}ms" class="letter">${letter}</span>`;
-                })
-                .join("");
+                waveAll.forEach((span, idx) => {
+                    span.innerHTML = span.textContent
+                        .split("")
+                        .map((letter, idx) => {
+                            if (letter === " ") return " ";
+                            return `<span style="animation-delay:${idx * 30}ms" class="letter">${letter}</span>`;
+                        })
+                        .join("");
+                });
+
+                function resetAnimation() {
+                    waveAll.forEach((line, idx) => {
+                        line.querySelectorAll(".letter").forEach((span, idx) => {
+                            span.style.animation = "none"; // 기존 애니메이션 제거
+                            void span.offsetWidth; // 리플로우 트릭
+                            span.style.animation = `reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards`; // 애니메이션 다시 활성화
+                            span.style.animationDelay = `${idx * 15}ms`; // 애니메이션 딜레이 재적용
+                        });
+                    });
+                }
+
+                waveAll.forEach((line) => {
+                    line.addEventListener("mouseenter", resetAnimation);
+                });
+            }
+
+            textEffect("part-a");
+            textEffect("part-b");
         </script>
 
         <script>
