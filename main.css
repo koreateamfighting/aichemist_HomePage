@@ -275,4 +275,34 @@ select {
 .price-box {
     margin-top: 100px;
     gap: 20px;
+    height: 518px;
+}
+.price-box h2 {
+    letter-spacing: -1px;
+}
+.price-box ul li {
+    margin-top: 0;
+}
+.price-box .font-bold {
+    font-weight: 700;
+}
+.price-box button {
+    text-align: left;
+    color: #999;
+    font-family: Pretendard;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 15px */
+    padding-left: 12px;
+}
+.price-box .price-card {
+    padding: 28px;
+}
+.price-card .price-card-contents-top {
+    min-height: 168px;
+}
+
+footer {
+    margin: 0 48px;
 }
