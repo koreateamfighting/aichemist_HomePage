@@ -54,6 +54,8 @@
     </head>
 
     <body>
+        <div id="logoContainer"></div>
+
         <div id="pdContainer">
             <div class="gradient"></div>
             <div class="main-button-box">
@@ -798,6 +800,15 @@
                 </div>
             </div>
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery.nicescroll@3.7.6/jquery.nicescroll.min.js"></script>
+        <script>
+            $("html").niceScroll({
+                mousescrollstep: 10, // 마우스 휠 동작 시 스크롤되는 정도
+            });
+        </script>
+
         <script type="x-shader/x-vertex" id="vertexshader">
 
             attribute float scale;
@@ -855,11 +866,167 @@
             import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
             import { FontLoader } from "three/addons/loaders/FontLoader.js";
             import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
+            import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
 
             import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 
             // loader texture dds
             import { DDSLoader } from "three/addons/loaders/DDSLoader.js";
+
+            // 화면 크기 기본값 설정
+            const WIDTH = 1920,
+                HEIGHT = 981;
+
+            // 3D LOGO
+            const LOGO_WIDTH = 200;
+            const logoContainer = document.getElementById("logoContainer");
+            let logoObject; // 오브젝트를 저장할 변수
+            const LOGO_SIZE = 22; // 로고 크기
+            const LOGO_ROTATE_X = 0.5; // 로고 X축 회전
+            const LOGO_ROTATE_Y = 5.8; // 로고 Y축 회전
+            const LOGO_POSITION = {
+                top: logoContainer.offsetTop,
+                left: logoContainer.offsetLeft,
+            }; // 로고 초기 위치
+
+            const cardSlide3dContainer = document.getElementById("cardSlide3d");
+
+            function init3DLogo() {
+                const textureLoader = new THREE.TextureLoader();
+                const texture = textureLoader.load("/CEN_3D_Logo/CEN_Logo_3D_Base_color.png"); // 텍스처 이미지 파일 경로
+                const logoMaterial = new THREE.MeshBasicMaterial({ map: texture });
+
+                const logoScene = new THREE.Scene();
+
+                // pdCamera = new THREE.PerspectiveCamera(20, WIDTH / HEIGHT, 1, 50000);
+                const logoCamera = new THREE.PerspectiveCamera(20, LOGO_WIDTH / LOGO_WIDTH, 1, 50000);
+                logoCamera.position.set(0, 0, 500);
+
+                const renderer = new THREE.WebGLRenderer();
+                renderer.setSize(LOGO_WIDTH, LOGO_WIDTH);
+                renderer.setClearColor(0x000000, 0); // 배경색을 투명으로 설정
+                logoContainer.appendChild(renderer.domElement);
+
+                const logoOBJLoader = new OBJLoader();
+                logoOBJLoader.load("/CEN_3D_Logo/CEN_Logo_3D.obj", (object) => {
+                    // 모델에 재질 적용
+                    object.traverse(
+                        (child) => {
+                            if (child.isMesh) {
+                                const texture = new THREE.TextureLoader().load(
+                                    "/CEN_3D_Logo/CEN_Logo_3D_Base_color.png"
+                                );
+                                child.material.map = texture;
+                                child.material.needsUpdate = true;
+                                child.material.transparent = true; // 투명도 설정
+                                child.material.opacity = 0.5; // 투명도 값
+                            }
+                        },
+                        (xhr) => {
+                            console.log((xhr.loaded / xhr.total) * 100 + "% loaded!!!!");
+                        },
+                        (error) => {
+                            console.log("!!!!An error happened", error);
+                        }
+                    );
+
+                    // 장면에 추가
+                    logoScene.add(object);
+
+                    object.position.set(0, -50, 0); // 로고의 위치 조정
+                    // 로고 크기 조정
+                    object.scale.set(LOGO_SIZE, LOGO_SIZE, LOGO_SIZE);
+                    object.rotation.y = LOGO_ROTATE_Y;
+                    object.rotation.x = LOGO_ROTATE_X;
+                    logoScene.add(object);
+
+                    let light1 = new THREE.DirectionalLight(0xffffff, 1);
+                    light1.position.set(-100, 0, 100);
+                    let light2 = new THREE.DirectionalLight(0xffffff, 1);
+                    light2.position.set(100, 0, 100);
+                    let light3 = new THREE.DirectionalLight(0xffffff, 1);
+                    light3.position.set(100, 0, -100);
+                    logoScene.add(light1);
+                    logoScene.add(light2);
+                    logoScene.add(light3);
+
+                    logoObject = object;
+                });
+
+                // 애니메이션 루프
+                function animate() {
+                    requestAnimationFrame(animate);
+
+                    if (logoObject) {
+                        // 오브젝트를 회전
+                        // logoObject.rotation.x += 0.01; // X축 회전
+                        // logoObject.rotation.y += 0.01; // Y축 회전
+                    }
+
+                    renderer.render(logoScene, logoCamera);
+                }
+
+                animate();
+
+                window.addEventListener("scroll", () => {
+                    // 스크롤에 따라 로고 회전시키기
+                    scrollToUpdateLogo(window.scrollY);
+                    // 스크롤에 따라 로고컨테이너가 따라다니도록 설정
+                    logoContainer.style.top = LOGO_POSITION.top + window.scrollY + "px";
+                });
+            }
+            init3DLogo();
+            function scrollToUpdateLogo(scrollY) {
+                console.log("scrollY", scrollY);
+                if (logoObject) {
+                    // 로고를 스크롤에 따라 y축으로 회전
+                    logoObject.rotation.y = 5.8 + scrollY * 0.002;
+
+                    if (scrollY < cardSlide3dContainer.offsetTop) {
+                        logoContainer.style.left = LOGO_POSITION.left + window.scrollY / 4 + "px";
+                    } else {
+                    }
+                }
+            }
+
+            // 스크롤 속도 제어
+            let isScrolling = false;
+            let scrollTargetY;
+            let startScrollTop;
+
+            window.addEventListener(
+                "wheel",
+                (event) => {
+                    event.preventDefault();
+
+                    isScrolling = true;
+                    scrollTargetY = window.scrollY + event.deltaY * 0.5;
+                    startScrollTop = window.scrollY;
+
+                    animateScroll();
+                },
+                { passive: false }
+            );
+
+            function animateScroll() {
+                if (!isScrolling) return;
+
+                const currentTime = performance.now();
+                const timeDiff = (currentTime - startScrollTop) / 1000;
+                const progress = timeDiff / 1;
+
+                if (progress > 1) {
+                    window.scrollTo(0, scrollTargetY);
+                    isScrolling = false;
+                    return;
+                }
+
+                const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+                const currentY = easeInOutQuad(progress) * (scrollTargetY - startScrollTop) + startScrollTop;
+                window.scrollTo(0, currentY);
+
+                requestAnimationFrame(animateScroll);
+            }
 
             /* ▽▽▽▽▽▽▽▽▽▽ points dynamic ▽▽▽▽▽▽▽▽▽▽ */
 
@@ -879,9 +1046,6 @@
             function pdInit() {
                 const pdContainer = document.querySelector("#pdContainer");
 
-                // 화면 크기 기본값 설정
-                const WIDTH = 1920,
-                    HEIGHT = 981;
                 pdCamera = new THREE.PerspectiveCamera(20, WIDTH / HEIGHT, 1, 50000);
                 pdCamera.position.set(0, 700, 8000);
 
@@ -1039,22 +1203,6 @@
                 // pdComposer.addPass(effectFilm);
                 pdComposer.addPass(pdEffectFocus);
                 // pdComposer.addPass(outputPass);
-
-                // 창크기에 따라 조정되지 않도록 주석 처리
-                // window.addEventListener("resize", pdOnWindowResize);
-            }
-
-            function pdOnWindowResize() {
-                pdCamera.aspect = window.innerWidth / window.innerHeight;
-                pdCamera.updateProjectionMatrix();
-
-                pdCamera.lookAt(pdScene.position);
-
-                pdRenderer.setSize(window.innerWidth, window.innerHeight);
-                pdComposer.setSize(window.innerWidth, window.innerHeight);
-
-                pdEffectFocus.uniforms["screenWidth"].value = window.innerWidth * window.devicePixelRatio;
-                pdEffectFocus.uniforms["screenHeight"].value = window.innerHeight * window.devicePixelRatio;
             }
 
             function combineBuffer(model, bufferName) {
@@ -1553,10 +1701,6 @@
             function pwInit() {
                 const container = document.getElementById("pwContainer");
                 document.body.appendChild(container);
-                console.log(container.offsetWidth, container.offsetHeight);
-                console.log(container.offsetWidth / container.offsetHeight);
-                console.log(window.innerWidth, window.innerHeight);
-                console.log(window.innerWidth / window.innerHeight);
 
                 // pwCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
                 // 너비와 높이를 container의 너비와 높이로 설정
