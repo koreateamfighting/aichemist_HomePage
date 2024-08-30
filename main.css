@@ -111,11 +111,11 @@ select {
 }
 
 #logoContainer {
-    width: 200px;
-    height: 200px;
+    width: 17%;
+    aspect-ratio: 1 / 1;
     position: absolute;
     top: 330px;
-    left: 700px;
+    left: 27%;
     transform: translate(-50%, -50%);
     z-index: 2;
 }
@@ -141,14 +141,55 @@ select {
         rgba(0, 0, 0, 0)
     );
 }
-.main-button-box {
+#pdContainer .textLogo {
     position: absolute;
-    width: 25%;
-    text-align: center;
-    bottom: 20%;
-    right: 15%;
+    transform: translateX(-50%);
+    left: 25%;
+    top: 40px;
 }
-.main-button-box button {
+.main-title {
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    text-align: center;
+}
+.main-title h1 {
+    font-size: 268.475px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.main-title .subtitle {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.36px;
+    margin-top: -30px;
+}
+.main-contents {
+    width: max-content;
+    transform: translateY(-50%);
+    position: absolute;
+    right: 19%;
+    top: 68%;
+    text-align: right;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.main-contents-desc {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.main-contents-button-box {
+    margin-top: 76px;
+}
+.main-contents-button-box button {
     width: 181px;
     height: 54px;
     border-radius: 10px;
@@ -216,6 +257,7 @@ select {
 
 #AIChemist-swiper .swiper-slide {
     width: 392px;
+    height: 449px;
 }
 #AIChemist-swiper .swiper-slide .grid {
     justify-content: center;
@@ -224,4 +266,13 @@ select {
 #pwContainer {
     width: 100%;
     height: 1834px;
+}
+
+.title.wave.part-b {
+    color: #000000;
+}
+
+.price-box {
+    margin-top: 100px;
+    gap: 20px;
 }
