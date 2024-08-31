@@ -16,20 +16,28 @@
 
 /* 문서 가로 너비 기본 1920 */
 html {
-    width: 1920px;
-    margin: 0 auto;
 }
 
 body {
     position: relative;
-    width: 100%;
-    margin: 0;
+    max-width: 1920px;
+    margin: 0 auto;
     padding: 0;
     background-color: #000000;
     color: #fff;
     font-size: 13px;
     line-height: 24px;
     overscroll-behavior: none;
+}
+#fixedContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+.blank-space.space1 {
+    height: 3000px;
 }
 
 a {
@@ -117,7 +125,8 @@ select {
     top: 330px;
     left: 27%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 10;
+    transition: left 0s ease-out, top 0s ease;
 }
 #logoContainer,
 #logoContainer canvas {
@@ -240,19 +249,91 @@ select {
 }
 
 #cardSlide3d {
+    position: relative;
     width: 100%;
-    height: calc(1920px + 700px);
-    background-image: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 1) 25%,
-            rgba(0, 0, 0, 0) 35%,
-            rgba(0, 0, 0, 0) 65%,
-            rgba(0, 0, 0, 1) 75%
-        ),
-        url("img/squintingNightCity.png");
+    /* aspect-ratio: 1 / 4; */
+    aspect-ratio: 1 / 2;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#cardSlide3d img {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 25%,
+        rgba(0, 0, 0, 0) 35%,
+        rgba(0, 0, 0, 0) 65%,
+        rgba(0, 0, 0, 1) 75%
+    );
+}
+#logoMoveSection2 {
+    position: absolute;
+    top: 5%;
+}
+#logoMoveSection3 {
+    position: absolute;
+    top: 30%;
+}
+#logoMoveSection4 {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    transition: top 0s ease;
+}
+#logoMoveSection4 .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0) 90%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    z-index: 2;
+}
+#logoMoveSection4 img {
+    display: none;
+}
+#pjCardDrawingPaper {
+    width: 330px;
+    height: 393px;
+    padding: 30px;
+    font-style: normal;
+    line-height: normal;
+    flex-shrink: 0;
+    border-radius: 16.559px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6.209717750549316px);
+    text-align: center;
+    color: #fff;
+}
+#pjCardDrawingPaper .card-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+}
+#pjCardDrawingPaper .card-image {
+    margin-top: 12px;
+}
+#pjCardDrawingPaper .card-desc {
+    margin-top: 12px;
+    min-height: 85px;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+}
+#pjCardDrawingPaper .card-desc2 {
+    margin-top: 12px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 #AIChemist-swiper .swiper-slide {

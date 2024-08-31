@@ -53,7 +53,8 @@
         </style>
     </head>
 
-    <body>
+    <body style="margin: 0 auto">
+        <div id="fixedContainer"></div>
         <div id="logoContainer"></div>
 
         <div id="pdContainer">
@@ -146,40 +147,69 @@
             </div>
         </div>
 
-        <!-- 무한 슬라이드 1 -->
-        <div class="swiper" id="make-the-world-swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
-                </div>
-                <div class="swiper-slide">
-                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
-                </div>
-                <div class="swiper-slide">
-                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
-                </div>
-                <div class="swiper-slide">
-                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
-                </div>
-                <div class="swiper-slide">
-                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
-                </div>
-                <div class="swiper-slide">
-                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
-                </div>
-                <div class="swiper-slide">
-                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
-                </div>
-                <div class="swiper-slide">
-                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
-                </div>
-                <div class="swiper-slide">
-                    <span>Make the world</span>&nbsp;<strong>CEN</strong><img src="/img/twinkleTwinkleLittleStar.png" />
+        <div id="logoMoveSection1">
+            <!-- 무한 슬라이드 1 -->
+            <div class="swiper" id="make-the-world-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <span>Make the world</span>&nbsp;<strong>CEN</strong
+                        ><img src="/img/twinkleTwinkleLittleStar.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <span>Make the world</span>&nbsp;<strong>CEN</strong
+                        ><img src="/img/twinkleTwinkleLittleStar.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <span>Make the world</span>&nbsp;<strong>CEN</strong
+                        ><img src="/img/twinkleTwinkleLittleStar.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <span>Make the world</span>&nbsp;<strong>CEN</strong
+                        ><img src="/img/twinkleTwinkleLittleStar.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <span>Make the world</span>&nbsp;<strong>CEN</strong
+                        ><img src="/img/twinkleTwinkleLittleStar.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <span>Make the world</span>&nbsp;<strong>CEN</strong
+                        ><img src="/img/twinkleTwinkleLittleStar.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <span>Make the world</span>&nbsp;<strong>CEN</strong
+                        ><img src="/img/twinkleTwinkleLittleStar.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <span>Make the world</span>&nbsp;<strong>CEN</strong
+                        ><img src="/img/twinkleTwinkleLittleStar.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <span>Make the world</span>&nbsp;<strong>CEN</strong
+                        ><img src="/img/twinkleTwinkleLittleStar.png" />
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="cardSlide3d"></div>
+        <div class="blank-space space1"></div>
+
+        <div id="cardSlide3d">
+            <div id="logoMoveSection2"></div>
+            <div id="logoMoveSection3"></div>
+            <div id="logoMoveSection4">
+                <div class="gradient"></div>
+                <img src="img/squintingNightCity.png" />
+            </div>
+        </div>
+        <div id="pjCardDrawingPaper">
+            <div class="card-title">CEN’ Synthetic data</div>
+            <img class="card-image" src="/img/pj_card/image_631.png" />
+            <div class="card-desc">
+                By utilizing generative AI algorithms, 100 desired data pieces can be created within 10 seconds,
+                tailored to the user's specific objectives
+            </div>
+            <div class="card-desc2">Enhancing AI Training Speed by 500% and Reducing Costs by 50%</div>
+        </div>
 
         <div id="youtubeContainer"></div>
 
@@ -915,13 +945,7 @@
             </footer>
         </div>
 
-        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery.nicescroll@3.7.6/jquery.nicescroll.min.js"></script>
-        <script>
-            $("html").niceScroll({
-                mousescrollstep: 10, // 마우스 휠 동작 시 스크롤되는 정도
-            });
-        </script> -->
+        <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
         <script type="x-shader/x-vertex" id="vertexshader">
 
@@ -981,6 +1005,7 @@
             import { FontLoader } from "three/addons/loaders/FontLoader.js";
             import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
             import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
+            import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 
             import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 
@@ -991,6 +1016,15 @@
             const WIDTH = 1920,
                 HEIGHT = 981;
 
+            const logoMoveSection1 = document.getElementById("logoMoveSection1");
+            const logoMoveSection2 = document.getElementById("logoMoveSection2");
+            const logoMoveSection3 = document.getElementById("logoMoveSection3");
+            const logoMoveSection4 = document.getElementById("logoMoveSection4");
+            const MTWSwiperContainer = document.getElementById("make-the-world-swiper");
+            const blankSpace1 = document.querySelector(".blank-space.space1");
+            const cardSlide3dContainer = document.getElementById("cardSlide3d");
+            let cardSlide3dCanvas = cardSlide3dContainer.querySelector("canvas");
+
             // 3D LOGO
             const logoContainer = document.getElementById("logoContainer");
             const LOGO_WIDTH = logoContainer.offsetWidth;
@@ -998,14 +1032,115 @@
             const LOGO_SIZE = 22; // 로고 크기
             const LOGO_ROTATE_X = 0.5; // 로고 X축 회전
             const LOGO_ROTATE_Y = 5.8; // 로고 Y축 회전
+
+            let cardGroup = new THREE.Group();
+
+            // 로고 초기 위치
             const LOGO_POSITION = {
                 top: logoContainer.offsetTop,
                 left: logoContainer.offsetLeft,
-            }; // 로고 초기 위치
+            };
+            // 로고가 MTWSwiperContainer에 도달했을 때의 위치
+            const LOGO_POSITION_SECOND = {
+                top: MTWSwiperContainer.offsetTop,
+                left: MTWSwiperContainer.offsetLeft,
+            };
+
+            // Lenis 초기화
+            const lenis = new Lenis({
+                smooth: true,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+
+            lenis.on("scroll", ({ scroll }) => {
+                // 스크롤 이벤트에 따라 카메라 위치 업데이트
+                if (logoObject) {
+                    // 로고를 스크롤에 따라 y축으로 회전
+                    logoObject.rotation.y = 5.8 + scroll * 0.002;
+
+                    // console.log(
+                    //     // scroll,
+                    //     // logoMoveSection1.offsetTop,
+                    //     // logoMoveSection2.getBoundingClientRect().top,
+                    //     // logoMoveSection3.getBoundingClientRect().top,
+                    //     logoMoveSection4.getBoundingClientRect().top
+                    // );
+                    let newLeftPosition;
+                    // 스크롤이 logoMoveSection1 보다 위에 있을 때는 로고를 천천히 왼쪽으로 이동
+                    if (scroll <= logoMoveSection1.offsetTop) {
+                        newLeftPosition = LOGO_POSITION.left - scroll * 0.2;
+
+                        // 스크롤이 logoMoveSection2 보다 위에 있을 때는 로고를 그대로 유지
+                    } else if (scroll <= logoMoveSection2.getBoundingClientRect().top + scroll) {
+                        newLeftPosition = LOGO_POSITION.left - logoMoveSection1.offsetTop * 0.2;
+
+                        // 스크롤이 logoMoveSection3 보다 위에 있을 때는 로고를 천천히 오른쪽으로 이동
+                    } else if (scroll <= logoMoveSection3.getBoundingClientRect().top + scroll) {
+                        newLeftPosition = LOGO_POSITION.left - logoMoveSection1.offsetTop * 0.2;
+                        newLeftPosition -= logoMoveSection2.getBoundingClientRect().top * 0.7;
+
+                        // 스크롤이 logoMoveSection4 보다 위에 있을 때는 로고를 유지
+                    } else {
+                        newLeftPosition = LOGO_POSITION.left - logoMoveSection1.offsetTop * 0.2;
+                        newLeftPosition -= logoMoveSection2.getBoundingClientRect().top * 0.7;
+                        newLeftPosition += logoMoveSection3.getBoundingClientRect().top * 0.7;
+
+                        // 스크롤이 logoMoveSection4 보다 아래에 있을 때는 로고를 기본 위치로 설정
+                    }
+                    let newTopPosition;
+                    if (scroll < logoMoveSection3.getBoundingClientRect().top + scroll) {
+                        newTopPosition = LOGO_POSITION.top + scroll * 1;
+                    } else if (scroll < logoMoveSection4.getBoundingClientRect().top + scroll) {
+                        newTopPosition = LOGO_POSITION.top + scroll * 1;
+                        newTopPosition += logoMoveSection3.getBoundingClientRect().top * 0.2;
+                    } else {
+                        newTopPosition = LOGO_POSITION.top + scroll * 1;
+                        // console.log(logoMoveSection3.getBoundingClientRect().top * 0.2);
+                        newTopPosition += logoMoveSection3.getBoundingClientRect().top * 0.2;
+                        // newTopPosition -= logoMoveSection4.getBoundingClientRect().top;
+                    }
+
+                    if (scroll < logoMoveSection4.getBoundingClientRect().top + scroll) {
+                        logoMoveSection4.querySelector(".gradient").style.top = "0px";
+                        logoMoveSection4.querySelector("img").style.top = "0px";
+                    } else {
+                        logoMoveSection4.style.height = logoMoveSection4.offsetHeight + "px";
+                        logoMoveSection4.querySelector(".gradient").style.top =
+                            -logoMoveSection4.getBoundingClientRect().top + "px";
+                        logoMoveSection4.querySelector("img").style.top =
+                            -logoMoveSection4.getBoundingClientRect().top + "px";
+                        logoMoveSection4.querySelector("img").style.position = "absolute";
+                    }
+                    // console.log(newTopPosition);
+                    logoContainer.style.left = newLeftPosition + "px";
+                    logoContainer.style.top = newTopPosition + "px";
+                }
+
+                if (cardGroup.children.length > 0) {
+                    // console.log(cardSlide3dCanvas.getBoundingClientRect().top, scroll);
+                    if (cardSlide3dCanvas.getBoundingClientRect().top < 0) {
+                        // 카드 그룹 위치 업데이트
+                        cardGroup.position.y = -cardSlide3dCanvas.getBoundingClientRect().top * 1 - 500;
+                        // 카메라 위치 업데이트
+                        cs3dCamera.position.y = cardGroup.position.y + 500;
+                        // // 카드 그룹 회전
+                        cardGroup.rotation.z = -cardSlide3dCanvas.getBoundingClientRect().top * 0.0015 - 150;
+                        cardGroup.children.forEach((card) => {
+                            card.rotation.z = cardSlide3dCanvas.getBoundingClientRect().top * 0.0015 + 150;
+                        });
+                        // cs3dCamera.lookAt(cardGroup.position);
+                        // cs3dCamera.position.x = -cardSlide3dCanvas.getBoundingClientRect().top * 1 - 500;
+                    }
+                }
+            });
 
             const MTW_CEN_FONT_SIZE = 18;
-
-            const cardSlide3dContainer = document.getElementById("cardSlide3d");
 
             function init3DLogo() {
                 const textureLoader = new THREE.TextureLoader();
@@ -1023,19 +1158,25 @@
                 renderer.setClearColor(0x000000, 0); // 배경색을 투명으로 설정
                 logoContainer.appendChild(renderer.domElement);
 
+                const composer = new EffectComposer(renderer);
+                composer.addPass(new RenderPass(logoScene, logoCamera));
+                const bloomPass = new UnrealBloomPass(
+                    new THREE.Vector2(WIDTH, HEIGHT),
+                    1.5, // 강도
+                    0.4, // 반경
+                    0.85 // 임계값
+                );
+                composer.addPass(bloomPass);
+
                 const logoOBJLoader = new OBJLoader();
                 logoOBJLoader.load("/CEN_3D_Logo/CEN_Logo_3D.obj", (object) => {
-                    // 모델에 재질 적용
+                    const texture = new THREE.TextureLoader().load("/CEN_3D_Logo/CEN_Logo_3D_Base_color.png");
                     object.traverse(
                         (child) => {
                             if (child.isMesh) {
-                                const texture = new THREE.TextureLoader().load(
-                                    "/CEN_3D_Logo/CEN_Logo_3D_Base_color.png"
-                                );
                                 child.material.map = texture;
-                                child.material.needsUpdate = true;
                                 child.material.transparent = true; // 투명도 설정
-                                child.material.opacity = 0.5; // 투명도 값
+                                child.material.needsUpdate = true;
                             }
                         },
                         (xhr) => {
@@ -1056,11 +1197,11 @@
                     object.rotation.x = LOGO_ROTATE_X;
                     logoScene.add(object);
 
-                    let light1 = new THREE.DirectionalLight(0xffffff, 1);
+                    let light1 = new THREE.DirectionalLight(0xffffff, 3);
                     light1.position.set(-100, 0, 100);
-                    let light2 = new THREE.DirectionalLight(0xffffff, 1);
+                    let light2 = new THREE.DirectionalLight(0xffffff, 3);
                     light2.position.set(100, 0, 100);
-                    let light3 = new THREE.DirectionalLight(0xffffff, 1);
+                    let light3 = new THREE.DirectionalLight(0xffffff, 3);
                     light3.position.set(100, 0, -100);
                     logoScene.add(light1);
                     logoScene.add(light2);
@@ -1078,71 +1219,13 @@
                         // logoObject.rotation.x += 0.01; // X축 회전
                         // logoObject.rotation.y += 0.01; // Y축 회전
                     }
-
+                    composer.render();
                     renderer.render(logoScene, logoCamera);
                 }
 
                 animate();
-
-                window.addEventListener("scroll", () => {
-                    // 스크롤에 따라 로고 회전시키기
-                    scrollToUpdateLogo(window.scrollY);
-                    // 스크롤에 따라 로고컨테이너가 따라다니도록 설정
-                    logoContainer.style.top = LOGO_POSITION.top + window.scrollY + "px";
-                });
             }
             init3DLogo();
-            function scrollToUpdateLogo(scrollY) {
-                console.log("scrollY", scrollY);
-                if (logoObject) {
-                    // 로고를 스크롤에 따라 y축으로 회전
-                    logoObject.rotation.y = 5.8 + scrollY * 0.002;
-
-                    if (scrollY < cardSlide3dContainer.offsetTop) {
-                        logoContainer.style.left = LOGO_POSITION.left + window.scrollY / 4 + "px";
-                    } else {
-                    }
-                }
-            }
-
-            // // 스크롤 속도 제어
-            // let isScrolling = false;
-            // let scrollTargetY;
-            // let startScrollTop;
-
-            // window.addEventListener(
-            //     "wheel",
-            //     (event) => {
-            //         event.preventDefault();
-
-            //         isScrolling = true;
-            //         scrollTargetY = window.scrollY + event.deltaY * 0.5;
-            //         startScrollTop = window.scrollY;
-
-            //         animateScroll();
-            //     },
-            //     { passive: false }
-            // );
-
-            function animateScroll() {
-                if (!isScrolling) return;
-
-                const currentTime = performance.now();
-                const timeDiff = (currentTime - startScrollTop) / 1000;
-                const progress = timeDiff / 1;
-
-                if (progress > 1) {
-                    window.scrollTo(0, scrollTargetY);
-                    isScrolling = false;
-                    return;
-                }
-
-                const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
-                const currentY = easeInOutQuad(progress) * (scrollTargetY - startScrollTop) + startScrollTop;
-                window.scrollTo(0, currentY);
-
-                requestAnimationFrame(animateScroll);
-            }
 
             /* ▽▽▽▽▽▽▽▽▽▽ points dynamic ▽▽▽▽▽▽▽▽▽▽ */
 
@@ -1551,6 +1634,217 @@
                 preventClicksPropagation: true,
             });
             /* △△△△△△△△△△ points dynamic △△△△△△△△△△ */
+
+            let cs3dCamera, cs3dScene, cs3dRenderer, cs3dMesh;
+            function initCardSlide3d() {
+                cs3dCamera = new THREE.PerspectiveCamera(20, WIDTH / HEIGHT, 1, 10000);
+                cs3dCamera.position.z = 9000;
+                cs3dCamera.aspect = WIDTH / (HEIGHT * 4);
+                cs3dCamera.updateProjectionMatrix();
+
+                cs3dScene = new THREE.Scene();
+
+                cs3dRenderer = new THREE.WebGLRenderer({
+                    antialias: true,
+                    alpha: true,
+                });
+                cs3dRenderer.setSize(WIDTH, HEIGHT * 4);
+                cs3dRenderer.setClearColor(0x000000, 0); // 배경을 투명하게 설정
+
+                cardSlide3dContainer.appendChild(cs3dRenderer.domElement);
+                cardSlide3dCanvas = cs3dRenderer.domElement;
+
+                // 이미지 텍스처 로드
+                const textureLoader = new THREE.TextureLoader();
+
+                const cardPaper = document.getElementById("pjCardDrawingPaper");
+                const cardTitle = cardPaper.querySelector(".card-title");
+                const cardImage = cardPaper.querySelector(".card-image");
+                const cardDesc = cardPaper.querySelector(".card-desc");
+                const cardDesc2 = cardPaper.querySelector(".card-desc2");
+
+                const cardArr = [
+                    {
+                        title: "CEN’ Synthetic data",
+                        imageName: "image_631.png",
+                        desc: "By utilizing generative AI algorithms, 100 desired data pieces can be created within 10 seconds, tailored to the user's specific objectives",
+                        desc2: "Enhancing AI Training Speed by 500% and Reducing Costs by 50%",
+                        rotation: 30,
+                    },
+                    {
+                        title: "CEN STORE",
+                        imageName: "image_631.png",
+                        desc: "To address resource issues that drive the costs of synthetic data consulting and solutions, we are launching a store and advancing research in Text To 3D.",
+                        desc2: "Resource Cost Savings of 50% Compared to Competitors",
+                        rotation: 35,
+                    },
+                    {
+                        title: "CEN DATA CLOUD",
+                        imageName: "image_631.png",
+                        desc: "Through the space dedicated to AI training and optimization, we aim to accelerate data scale by absorbing user training models and training data within the platform.",
+                        desc2: "Dominating Over 3% of the Domestic Synthetic and Real-World Data Market",
+                        rotation: 40,
+                    },
+                    {
+                        title: "MS Bing",
+                        imageName: "image_631.png",
+                        desc: "Extracting artificial satellite data (HeightMap) based on MS Bing",
+                        desc2: "Appearance of the extracted artificial satellite data",
+                        rotation: 45,
+                    },
+                    {
+                        title: "Algorithms",
+                        imageName: "image_631.png",
+                        desc: "Physical 3D representation through procedural algorithms",
+                        desc2: "Mimicking the absolute procedures of nature",
+                        rotation: 50,
+                    },
+                    {
+                        title: "Detail",
+                        imageName: "image_631.png",
+                        desc: "Detail representation through depiction of natural components",
+                        desc2: "Describing over 300 types of natural environments",
+                        rotation: 55,
+                    },
+                ];
+                for (let i = 0; i < 12; i++) {
+                    cardArr.push({ title: "dummy" });
+                }
+
+                function wrapText(context, text, x, y, maxWidth, lineHeight) {
+                    const words = text.split(" ");
+                    let line = "";
+                    for (let n = 0; n < words.length; n++) {
+                        const testLine = line + words[n] + " ";
+                        const metrics = context.measureText(testLine);
+                        const testWidth = metrics.width;
+                        if (testWidth > maxWidth && n > 0) {
+                            context.fillText(line, x, y);
+                            line = words[n] + " ";
+                            y += lineHeight;
+                        } else {
+                            line = testLine;
+                        }
+                    }
+                    context.fillText(line, x, y);
+                }
+
+                const initCardRotation = (Math.PI / 180) * 90;
+
+                cardArr.forEach((card, index) => {
+                    if (card.title === "dummy") {
+                        // 더미면 그룹에 빈 오브젝트 추가
+                        cardGroup.add(new THREE.Object3D());
+                        return;
+                    }
+                    textureLoader.load(`/img/pj_card/${card.imageName}`, function (imageTexture) {
+                        cardTitle.textContent = card.title;
+                        cardDesc.textContent = card.desc;
+                        cardDesc2.textContent = card.desc2;
+
+                        const cardPaperStyle = getComputedStyle(cardPaper);
+                        const cardTitleStyle = getComputedStyle(cardTitle);
+                        const cardImageStyle = getComputedStyle(cardImage);
+                        const cardDescStyle = getComputedStyle(cardDesc);
+                        const cardDesc2Style = getComputedStyle(cardDesc2);
+
+                        // 텍스트 텍스처 생성
+                        const canvas = document.createElement("canvas");
+                        const context = canvas.getContext("2d");
+                        canvas.width = parseInt(cardPaperStyle.width);
+                        canvas.height = parseInt(cardPaperStyle.height);
+
+                        // 배경 색상 설정
+                        context.fillStyle = cardPaperStyle.backgroundColor;
+                        context.textBaseline = "top";
+                        context.fillRect(0, 0, canvas.width, canvas.height);
+
+                        // radius 설정
+                        const radius = 20;
+                        context.beginPath();
+                        context.moveTo(radius, 0);
+                        context.lineTo(canvas.width - radius, 0);
+                        context.quadraticCurveTo(canvas.width, 0, canvas.width, radius);
+                        context.lineTo(canvas.width, canvas.height - radius);
+                        context.quadraticCurveTo(canvas.width, canvas.height, canvas.width - radius, canvas.height);
+                        context.lineTo(radius, canvas.height);
+                        context.quadraticCurveTo(0, canvas.height, 0, canvas.height - radius);
+                        context.lineTo(0, radius);
+                        context.quadraticCurveTo(0, 0, radius, 0);
+                        context.closePath();
+                        context.clip();
+
+                        // 텍스트 스타일 설정
+                        context.textAlign = "center";
+
+                        // 제목 추가 (1/4)
+                        context.fillStyle = cardTitleStyle.color;
+                        context.font = cardTitleStyle.font;
+                        context.fillText(card.title, canvas.width / 2, parseInt(cardPaperStyle.padding), 279);
+                        // 이미지 추가 (2/4)
+                        const imgWidth = parseInt(cardImageStyle.width);
+                        const imgHeight = parseInt(cardImageStyle.height);
+                        const imgX = (canvas.width - imgWidth) / 2; // 가운데 정렬
+                        const imgY = 66; // 이미지의 Y 위치
+                        context.drawImage(imageTexture.image, imgX, imgY, imgWidth, imgHeight);
+                        // 설명 추가 (3/4)
+                        context.fillStyle = cardDescStyle.color;
+                        context.font = cardDescStyle.font;
+                        wrapText(context, card.desc, canvas.width / 2, 233, 279, 20);
+                        // 보조글 추가 (4/4)
+                        context.fillStyle = cardDesc2Style.color;
+                        context.font = cardDesc2Style.font;
+                        wrapText(context, card.desc2, canvas.width / 2, 329, 273, 20);
+
+                        // 텍스처 생성
+                        const combinedTexture = new THREE.CanvasTexture(canvas);
+
+                        // 카드 형식의 평면 생성
+                        const cardGeometry = new THREE.PlaneGeometry(canvas.width, canvas.height);
+                        const cardMaterial = new THREE.MeshBasicMaterial({ map: combinedTexture, transparent: true });
+
+                        const cardMesh = new THREE.Mesh(cardGeometry, cardMaterial);
+
+                        const cardPositionRadius = 1500; // 원의 반지름
+
+                        const angleStep = (Math.PI * 2) / cardArr.length; // 각 카드 사이의 각도
+
+                        // 각 카드의 각도 계산
+                        const angle = (cardArr.length - 1 - index) * angleStep;
+
+                        let x = cardPositionRadius * Math.cos(angle); // x 좌표 계산
+                        let y = cardPositionRadius * Math.sin(angle); // y 좌표 계산
+
+                        // 카드의 위치 설정
+                        cardMesh.position.set(x, y, 0);
+                        cardMesh.rotation.x = card.rotation * (Math.PI / 180); // 카드의 회전 설정
+                        cardMesh.rotation.z = -initCardRotation; // 카드의 z축 회전 설정
+
+                        // 그룹에 카드 추가
+                        cardGroup.add(cardMesh);
+                    });
+                });
+
+                cs3dScene.add(cardGroup);
+                cardGroup.position.y = 1100;
+                cardGroup.position.x = 400;
+                cardGroup.rotation.z = initCardRotation;
+
+                cs3dCamera.position.x = 0;
+                cs3dCamera.position.y = cardGroup.position.y + 500;
+
+                function animate() {
+                    requestAnimationFrame(animate);
+                    cs3dRenderer.render(cs3dScene, cs3dCamera);
+                    // // 카드 그룹 회전
+                    // cardGroup.rotation.z += 0.02;
+                    // cardGroup.children.forEach((card, index) => {
+                    //     card.rotation.z -= 0.02;
+                    // });
+                }
+                animate();
+            }
+            initCardSlide3d();
 
             /* ▽▽▽▽▽▽▽▽▽▽ youtube ▽▽▽▽▽▽▽▽▽▽ */
 
