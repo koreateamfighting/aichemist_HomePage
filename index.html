@@ -140,7 +140,7 @@
                         the leap into electronic typesetting, remaining essentially unchanged.
                     </div>
                     <div class="main-contents-button-box">
-                        <button id="toMainPJ" onclick="moveToScroll('mainPJPosition')">Main project</button>
+                        <button id="toMainPJ" onclick="moveToScroll('pjCar')">Main project</button>
                         <button id="toYoutube" onclick="moveToScroll('youtubePosition')">Our video clip</button>
                     </div>
                 </div>
@@ -202,7 +202,7 @@
         </div>
         <div id="pjCardDrawingPaper">
             <div class="card-title">CEN’ Synthetic data</div>
-            <img class="card-image" src="/img/pj_card/image_631.png" />
+            <img class="card-image" src="/img/pj_card/c_detail.png" />
             <div class="card-desc">
                 By utilizing generative AI algorithms, 100 desired data pieces can be created within 10 seconds,
                 tailored to the user's specific objectives
@@ -215,9 +215,11 @@
 
         <div class="blank-space space2"></div>
         <div class="blank-space space3"></div>
-        <div class="blank-space space4"></div>
+        <div class="blank-space space4" id="pjCar"></div>
         <div class="blank-space space5"></div>
         <div class="blank-space space6"></div>
+        <div class="blank-space space7"></div>
+        <div class="blank-space space8"></div>
 
         <div id="youtubeContainer"></div>
 
@@ -1035,6 +1037,7 @@
             const blankSpace4 = document.querySelector(".blank-space.space4");
             const blankSpace5 = document.querySelector(".blank-space.space5");
             const blankSpace6 = document.querySelector(".blank-space.space6");
+            const blankSpace7 = document.querySelector(".blank-space.space7");
 
             const cardSlide3dContainer = document.getElementById("cardSlide3d");
             let cardSlide3dCanvas = cardSlide3dContainer.querySelector("canvas");
@@ -1147,15 +1150,12 @@
             requestAnimationFrame(raf);
 
             lenis.on("scroll", ({ scroll }) => {
-                // 스크롤 이벤트에 따라 카메라 위치 업데이트
                 if (logoObject) {
                     if (scroll < cardSlide3dContainer.offsetTop) {
                         const progress = scroll / cardSlide3dContainer.offsetTop;
                         const logoPosition = bezier(logoControlPoints, progress);
                         logoContainer.style.left = `${logoPosition.x}px`;
                         logoContainer.style.top = `${logoPosition.y}px`;
-
-                        // cardSlide3dCanvas.style.display = "none";
                     } else {
                         logoContainer.style.left = `${logoControlPoints[logoControlPoints.length - 1].x}px`;
                         const logoPositionY =
@@ -1167,9 +1167,7 @@
                             const logoPosition = bezier(logoControlPoints2, progress);
                             logoObject.position.z = logoPosition.z;
                         }
-                        // cardSlide3dCanvas.style.display = "block";
                     }
-                    // scroll이 cardSlide3dContainer에 도달했을 때부터는
                 }
 
                 const temps = [];
@@ -1177,10 +1175,11 @@
                     if (scroll < cardSlide3dContainer.offsetTop) {
                         logoMoveSection4.style.position = "relative";
                         cardSlide3dCanvas.style.display = "none";
-                        // } else if (scroll < blankSpace3.offsetTop) {
+                        cardSlide3dCanvas.style.position = "relative";
                     } else {
                         logoMoveSection4.style.position = "fixed";
                         cardSlide3dCanvas.style.display = "block";
+                        cardSlide3dCanvas.style.position = "fixed";
 
                         const progress =
                             (scroll - cardSlide3dContainer.offsetTop) /
@@ -1211,35 +1210,55 @@
                     if (scroll > blankSpace4.offsetTop) {
                         const progress =
                             (scroll - blankSpace4.offsetTop) / (blankSpace5.offsetTop - blankSpace4.offsetTop);
-                        console.log(1, progress);
                         bicCardSlide(progress, 0);
                     }
 
                     if (scroll > blankSpace5.offsetTop) {
                         const progress =
                             (scroll - blankSpace5.offsetTop) / (blankSpace6.offsetTop - blankSpace5.offsetTop);
-                        console.log(2, progress);
                         bicCardSlide(progress, 1);
                     }
 
                     if (scroll > blankSpace6.offsetTop) {
                         const progress =
-                            (scroll - blankSpace6.offsetTop) / (youtubeContainer.offsetTop - blankSpace6.offsetTop);
-                        console.log(3, progress);
+                            (scroll - blankSpace6.offsetTop) / (blankSpace7.offsetTop - blankSpace6.offsetTop);
                         bicCardSlide(progress, 2);
                     }
+                }
+
+                if (scroll > blankSpace7.offsetTop) {
+                    const top = scroll - blankSpace7.offsetTop;
+                    // console.log(top);
+                    logoMoveSection4.style.top = `-${top}px`;
+                    // // 검은색으로 아래에서 위로 덮히는 그라데이션
+                    // logoMoveSection4.querySelector(
+                    //     ".gradient"
+                    // ).style.backgroundImage = `linear-gradient(to top, rgba(0, 0, 0, 1) ${top}px, rgba(0, 0, 0, 0) 100%)`;
+                    // logoMoveSection4.style.position = "relative";
+                    // cardSlide3dCanvas.style.display = "none";
+                    // cardSlide3dCanvas.style.position = "relative";
+                } else {
+                    logoMoveSection4.style.top = "";
                 }
             });
 
             function bicCardSlide(progress, index) {
+                // index가 1인 경우는 좌우 좌표를 반전
+                let controlPoints = bigCardControlPoints1;
+                if (index === 1) {
+                    controlPoints = bigCardControlPoints1.map((point) => {
+                        return { x: -point.x, y: point.y };
+                    });
+                }
+
                 if (progress < 0) {
-                    bigCards[index].position.set(bigCardControlPoints1.x, bigCardControlPoints1.y, 0);
+                    bigCards[index].position.set(controlPoints.x, controlPoints.y, 0);
                     return;
                 } else if (progress > 1) {
-                    bigCards[index].position.set(bigCardControlPoints1.x, bigCardControlPoints1.y, 0);
+                    bigCards[index].position.set(controlPoints.x, controlPoints.y, 0);
                     return;
                 }
-                const bigCardPosition = bezier(bigCardControlPoints1, progress);
+                const bigCardPosition = bezier(controlPoints, progress);
                 bigCards[index].position.set(bigCardPosition.x, bigCardPosition.y, 0);
             }
 
@@ -1677,37 +1696,37 @@
                 const cardArr = [
                     {
                         title: "CEN’ Synthetic data",
-                        imageName: "image_632.png",
+                        imageName: "c_synthetic_data.png",
                         desc: "By utilizing generative AI algorithms, 100 desired data pieces can be created within 10 seconds, tailored to the user's specific objectives",
                         desc2: "Enhancing AI Training Speed by 500% and Reducing Costs by 50%",
                     },
                     {
                         title: "CEN STORE",
-                        imageName: "image_632.png",
+                        imageName: "c_store.png",
                         desc: "To address resource issues that drive the costs of synthetic data consulting and solutions, we are launching a store and advancing research in Text To 3D.",
                         desc2: "Resource Cost Savings of 50% Compared to Competitors",
                     },
                     {
                         title: "CEN DATA CLOUD",
-                        imageName: "image_632.png",
+                        imageName: "c_data_cloud.png",
                         desc: "Through the space dedicated to AI training and optimization, we aim to accelerate data scale by absorbing user training models and training data within the platform.",
                         desc2: "Dominating Over 3% of the Domestic Synthetic and Real-World Data Market",
                     },
                     {
                         title: "MS Bing",
-                        imageName: "image_632.png",
+                        imageName: "c_ms_bing.png",
                         desc: "Extracting artificial satellite data (HeightMap) based on MS Bing",
                         desc2: "Appearance of the extracted artificial satellite data",
                     },
                     {
                         title: "Algorithms",
-                        imageName: "image_632.png",
+                        imageName: "c_algorithms.png",
                         desc: "Physical 3D representation through procedural algorithms",
                         desc2: "Mimicking the absolute procedures of nature",
                     },
                     {
                         title: "Detail",
-                        imageName: "image_632.png",
+                        imageName: "c_detail.png",
                         desc: "Detail representation through depiction of natural components",
                         desc2: "Describing over 300 types of natural environments",
                     },
@@ -1844,9 +1863,26 @@
                         // 이미지 추가
                         const imgWidth = imageTexture.image.width;
                         const imgHeight = imageTexture.image.height;
-                        const imgX = (canvas.width - imgWidth) / 2; // 가운데 정렬
-                        const imgY = (canvas.height - imgHeight) / 2; // 이미지의 Y 위치
-                        context.drawImage(imageTexture.image, imgX, imgY, imgWidth, imgHeight);
+                        const canvasAspect = canvas.width / canvas.height;
+                        const imgAspect = imgWidth / imgHeight;
+
+                        let drawWidth, drawHeight, drawX, drawY;
+
+                        if (imgAspect > canvasAspect) {
+                            // 이미지가 캔버스보다 더 넓음
+                            drawWidth = canvas.width;
+                            drawHeight = canvas.width / imgAspect;
+                            drawX = 0;
+                            drawY = (canvas.height - drawHeight) / 2;
+                        } else {
+                            // 이미지가 캔버스보다 더 높음
+                            drawWidth = canvas.height * imgAspect;
+                            drawHeight = canvas.height;
+                            drawX = (canvas.width - drawWidth) / 2;
+                            drawY = 0;
+                        }
+
+                        context.drawImage(imageTexture.image, drawX, drawY, drawWidth, drawHeight);
 
                         // 텍스처 생성
                         const combinedTexture = new THREE.CanvasTexture(canvas);
@@ -1862,7 +1898,7 @@
                         const cardMesh = new THREE.Mesh(cardGeometry, cardMaterial);
 
                         // 카드의 위치 설정
-                        cardMesh.position.set(1500, 0, 0);
+                        cardMesh.position.set(1800, 0, 0);
 
                         bigCards.push(cardMesh);
                         // 장면에 카드 추가
@@ -2366,11 +2402,32 @@
         </script>
 
         <script>
-            function moveToScroll(id) {
-                console.log(id, "아직 미구현");
-                return;
-                const element = document.getElementById(id);
-                element.scrollIntoView({ behavior: "smooth" });
+            // function moveToScroll(id) {
+            //     // const element = document.getElementById(id);
+            //     // element.scrollIntoView({ behavior: "smooth" });
+            // }
+            function moveToScroll(targetId) {
+                const target = document.getElementById(targetId);
+                let targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                if (targetId == "pjCar") {
+                    targetPosition += 800;
+                }
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                const duration = 2000;
+                let start = null;
+
+                window.requestAnimationFrame(step);
+
+                function step(timestamp) {
+                    if (!start) start = timestamp;
+                    const progress = timestamp - start;
+                    const progressRatio = Math.min(progress / duration, 1);
+                    window.scrollTo(0, startPosition + distance * progressRatio);
+                    if (progress < duration) {
+                        window.requestAnimationFrame(step);
+                    }
+                }
             }
         </script>
     </body>
