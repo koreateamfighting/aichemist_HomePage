@@ -198,10 +198,9 @@
             <div id="logoMoveSection3"></div>
             <div id="logoMoveSection4">
                 <div class="gradient"></div>
-                <img src="img/squintingNightCity.png" />
             </div>
         </div>
-        <div id="pjCardDrawingPaper">
+        <div id="pjCardDrawingPaper" style="display: none">
             <div class="card-title">CEN’ Synthetic data</div>
             <img class="card-image" src="/img/pj_card/image_631.png" />
             <div class="card-desc">
@@ -210,6 +209,10 @@
             </div>
             <div class="card-desc2">Enhancing AI Training Speed by 500% and Reducing Costs by 50%</div>
         </div>
+
+        <div class="blank-space space2"></div>
+        <div class="blank-space space3"></div>
+        <div class="blank-space space4"></div>
 
         <div id="youtubeContainer"></div>
 
@@ -1022,8 +1025,70 @@
             const logoMoveSection4 = document.getElementById("logoMoveSection4");
             const MTWSwiperContainer = document.getElementById("make-the-world-swiper");
             const blankSpace1 = document.querySelector(".blank-space.space1");
+            const blankSpace2 = document.querySelector(".blank-space.space2");
+            const blankSpace3 = document.querySelector(".blank-space.space3");
+            const blankSpace4 = document.querySelector(".blank-space.space4");
             const cardSlide3dContainer = document.getElementById("cardSlide3d");
             let cardSlide3dCanvas = cardSlide3dContainer.querySelector("canvas");
+            const youtubeContainer = document.getElementById("youtubeContainer");
+
+            // 이항 계수를 계산하는 함수
+            function binomialCoefficient(n, k) {
+                let result = 1;
+                for (let i = 0; i < k; i++) {
+                    result *= n - i;
+                    result /= i + 1;
+                }
+                return result;
+            }
+
+            // 다항 베지어 곡선을 계산하는 함수
+            function bezier(points, t) {
+                const n = points.length - 1;
+                let x = 0,
+                    y = 0,
+                    z = 0;
+
+                for (let i = 0; i <= n; i++) {
+                    const binom = binomialCoefficient(n, i);
+                    const factor = binom * Math.pow(1 - t, n - i) * Math.pow(t, i);
+                    x += factor * points[i].x;
+                    y += factor * points[i].y;
+                    z += factor * points[i].z || 0; // Add z value if it exists, otherwise default to 0
+                }
+
+                return { x, y, z };
+            }
+
+            const logoControlPoints = [
+                { x: 550, y: 340 },
+                { x: 74, y: 1334 },
+                { x: 166, y: 2826 },
+                { x: 702, y: 3226 },
+                { x: 1354, y: 3170 },
+                { x: 1280, y: 4200 },
+            ];
+
+            function canvasToThreeJS({ x, y }) {
+                const canvasWidth = 1920 * 1.2;
+                const canvasHeight = 981 * 1.2;
+                // 캔버스의 중심을 Three.js의 중심으로 변환
+                const threeX = x - canvasWidth / 2;
+                const threeY = canvasHeight / 2 - y; // y축은 반대로 변환
+                return { x: threeX, y: threeY };
+            }
+            const cardControlPoints = [
+                canvasToThreeJS({ x: 2500, y: 753 }),
+                canvasToThreeJS({ x: 1834, y: 535 }),
+                canvasToThreeJS({ x: 1369, y: 578 }),
+                canvasToThreeJS({ x: 894, y: 624 }),
+                canvasToThreeJS({ x: 538, y: 796 }),
+                canvasToThreeJS({ x: 456, y: 1034 }),
+                canvasToThreeJS({ x: 0, y: 1039 }),
+            ];
+            const initCardRotation = -35 * (Math.PI / 180);
+
+            const cards = [];
 
             // 3D LOGO
             const logoContainer = document.getElementById("logoContainer");
@@ -1061,81 +1126,61 @@
             lenis.on("scroll", ({ scroll }) => {
                 // 스크롤 이벤트에 따라 카메라 위치 업데이트
                 if (logoObject) {
-                    // 로고를 스크롤에 따라 y축으로 회전
-                    logoObject.rotation.y = 5.8 + scroll * 0.002;
+                    if (scroll < cardSlide3dContainer.offsetTop) {
+                        const progress = scroll / cardSlide3dContainer.offsetTop;
+                        const logoPosition = bezier(logoControlPoints, progress);
+                        logoContainer.style.left = `${logoPosition.x}px`;
+                        logoContainer.style.top = `${logoPosition.y}px`;
 
-                    // console.log(
-                    //     // scroll,
-                    //     // logoMoveSection1.offsetTop,
-                    //     // logoMoveSection2.getBoundingClientRect().top,
-                    //     // logoMoveSection3.getBoundingClientRect().top,
-                    //     logoMoveSection4.getBoundingClientRect().top
-                    // );
-                    let newLeftPosition;
-                    // 스크롤이 logoMoveSection1 보다 위에 있을 때는 로고를 천천히 왼쪽으로 이동
-                    if (scroll <= logoMoveSection1.offsetTop) {
-                        newLeftPosition = LOGO_POSITION.left - scroll * 0.2;
-
-                        // 스크롤이 logoMoveSection2 보다 위에 있을 때는 로고를 그대로 유지
-                    } else if (scroll <= logoMoveSection2.getBoundingClientRect().top + scroll) {
-                        newLeftPosition = LOGO_POSITION.left - logoMoveSection1.offsetTop * 0.2;
-
-                        // 스크롤이 logoMoveSection3 보다 위에 있을 때는 로고를 천천히 오른쪽으로 이동
-                    } else if (scroll <= logoMoveSection3.getBoundingClientRect().top + scroll) {
-                        newLeftPosition = LOGO_POSITION.left - logoMoveSection1.offsetTop * 0.2;
-                        newLeftPosition -= logoMoveSection2.getBoundingClientRect().top * 0.7;
-
-                        // 스크롤이 logoMoveSection4 보다 위에 있을 때는 로고를 유지
+                        // cardSlide3dCanvas.style.display = "none";
                     } else {
-                        newLeftPosition = LOGO_POSITION.left - logoMoveSection1.offsetTop * 0.2;
-                        newLeftPosition -= logoMoveSection2.getBoundingClientRect().top * 0.7;
-                        newLeftPosition += logoMoveSection3.getBoundingClientRect().top * 0.7;
+                        logoContainer.style.left = `${logoControlPoints[logoControlPoints.length - 1].x}px`;
+                        const logoPositionY =
+                            logoControlPoints[logoControlPoints.length - 1].y + scroll - cardSlide3dContainer.offsetTop;
+                        logoContainer.style.top = `${logoPositionY}px`;
 
-                        // 스크롤이 logoMoveSection4 보다 아래에 있을 때는 로고를 기본 위치로 설정
+                        // cardSlide3dCanvas.style.display = "block";
                     }
-                    let newTopPosition;
-                    if (scroll < logoMoveSection3.getBoundingClientRect().top + scroll) {
-                        newTopPosition = LOGO_POSITION.top + scroll * 1;
-                    } else if (scroll < logoMoveSection4.getBoundingClientRect().top + scroll) {
-                        newTopPosition = LOGO_POSITION.top + scroll * 1;
-                        newTopPosition += logoMoveSection3.getBoundingClientRect().top * 0.2;
-                    } else {
-                        newTopPosition = LOGO_POSITION.top + scroll * 1;
-                        // console.log(logoMoveSection3.getBoundingClientRect().top * 0.2);
-                        newTopPosition += logoMoveSection3.getBoundingClientRect().top * 0.2;
-                        // newTopPosition -= logoMoveSection4.getBoundingClientRect().top;
-                    }
-
-                    if (scroll < logoMoveSection4.getBoundingClientRect().top + scroll) {
-                        logoMoveSection4.querySelector(".gradient").style.top = "0px";
-                        logoMoveSection4.querySelector("img").style.top = "0px";
-                    } else {
-                        logoMoveSection4.style.height = logoMoveSection4.offsetHeight + "px";
-                        logoMoveSection4.querySelector(".gradient").style.top =
-                            -logoMoveSection4.getBoundingClientRect().top + "px";
-                        logoMoveSection4.querySelector("img").style.top =
-                            -logoMoveSection4.getBoundingClientRect().top + "px";
-                        logoMoveSection4.querySelector("img").style.position = "absolute";
-                    }
-                    // console.log(newTopPosition);
-                    logoContainer.style.left = newLeftPosition + "px";
-                    logoContainer.style.top = newTopPosition + "px";
+                    // scroll이 cardSlide3dContainer에 도달했을 때부터는
                 }
 
-                if (cardGroup.children.length > 0) {
-                    // console.log(cardSlide3dCanvas.getBoundingClientRect().top, scroll);
-                    if (cardSlide3dCanvas.getBoundingClientRect().top < 0) {
-                        // 카드 그룹 위치 업데이트
-                        cardGroup.position.y = -cardSlide3dCanvas.getBoundingClientRect().top * 1 - 500;
-                        // 카메라 위치 업데이트
-                        cs3dCamera.position.y = cardGroup.position.y + 500;
-                        // // 카드 그룹 회전
-                        cardGroup.rotation.z = -cardSlide3dCanvas.getBoundingClientRect().top * 0.0015 - 150;
-                        cardGroup.children.forEach((card) => {
-                            card.rotation.z = cardSlide3dCanvas.getBoundingClientRect().top * 0.0015 + 150;
+                const temps = [];
+                if (cards.length != 0) {
+                    if (scroll < cardSlide3dContainer.offsetTop) {
+                        logoMoveSection4.style.position = "relative";
+                        cardSlide3dCanvas.style.display = "none";
+                        // } else if (scroll < blankSpace3.offsetTop) {
+                    } else {
+                        logoMoveSection4.style.position = "fixed";
+                        cardSlide3dCanvas.style.display = "block";
+
+                        const progress =
+                            (scroll - cardSlide3dContainer.offsetTop) /
+                            (blankSpace3.offsetTop - cardSlide3dContainer.offsetTop);
+
+                        cards.forEach((card, index) => {
+                            const temp = progress - index * 0.25;
+                            temps[index] = temp;
+                            if (temp < 0) {
+                                card.position.set(cardControlPoints[0].x, cardControlPoints[0].y, 0);
+                                return;
+                            } else if (temp > 1) {
+                                card.position.set(
+                                    cardControlPoints[cardControlPoints.length - 1].x,
+                                    cardControlPoints[cardControlPoints.length - 1].y,
+                                    0
+                                );
+                                return;
+                            }
+                            const cardPosition = bezier(cardControlPoints, temp);
+                            card.position.set(cardPosition.x, cardPosition.y, 0);
+                            card.rotation.y = initCardRotation + temp * 2;
                         });
-                        // cs3dCamera.lookAt(cardGroup.position);
-                        // cs3dCamera.position.x = -cardSlide3dCanvas.getBoundingClientRect().top * 1 - 500;
+                        if (cards[cards.length - 1].position.x == cardControlPoints[cardControlPoints.length - 1].x) {
+                            const bProgress =
+                                (scroll - blankSpace3.offsetTop) / (blankSpace4.offsetTop - blankSpace3.offsetTop);
+                            console.log(bProgress);
+                        }
                     }
                 }
             });
@@ -1217,7 +1262,7 @@
                     if (logoObject) {
                         // 오브젝트를 회전
                         // logoObject.rotation.x += 0.01; // X축 회전
-                        // logoObject.rotation.y += 0.01; // Y축 회전
+                        logoObject.rotation.y += 0.01; // Y축 회전
                     }
                     composer.render();
                     renderer.render(logoScene, logoCamera);
@@ -1424,6 +1469,20 @@
                 // pdComposer.addPass(effectFilm);
                 pdComposer.addPass(pdEffectFocus);
                 // pdComposer.addPass(outputPass);
+                // window.addEventListener("resize", pdOnWindowResize);
+            }
+
+            function pdOnWindowResize() {
+                pdCamera.aspect = window.innerWidth / window.innerHeight;
+                pdCamera.updateProjectionMatrix();
+
+                pdCamera.lookAt(pdScene.position);
+
+                pdRenderer.setSize(window.innerWidth, window.innerHeight);
+                pdComposer.setSize(window.innerWidth, window.innerHeight);
+
+                pdEffectFocus.uniforms["screenWidth"].value = window.innerWidth * window.devicePixelRatio;
+                pdEffectFocus.uniforms["screenHeight"].value = window.innerHeight * window.devicePixelRatio;
             }
 
             function combineBuffer(model, bufferName) {
@@ -1638,9 +1697,9 @@
             let cs3dCamera, cs3dScene, cs3dRenderer, cs3dMesh;
             function initCardSlide3d() {
                 cs3dCamera = new THREE.PerspectiveCamera(20, WIDTH / HEIGHT, 1, 10000);
-                cs3dCamera.position.z = 9000;
-                cs3dCamera.aspect = WIDTH / (HEIGHT * 4);
-                cs3dCamera.updateProjectionMatrix();
+                cs3dCamera.position.z = 3000;
+                // cs3dCamera.aspect = WIDTH / HEIGHT;
+                // cs3dCamera.updateProjectionMatrix();
 
                 cs3dScene = new THREE.Scene();
 
@@ -1648,7 +1707,7 @@
                     antialias: true,
                     alpha: true,
                 });
-                cs3dRenderer.setSize(WIDTH, HEIGHT * 4);
+                cs3dRenderer.setSize(WIDTH, HEIGHT);
                 cs3dRenderer.setClearColor(0x000000, 0); // 배경을 투명하게 설정
 
                 cardSlide3dContainer.appendChild(cs3dRenderer.domElement);
@@ -1669,47 +1728,38 @@
                         imageName: "image_631.png",
                         desc: "By utilizing generative AI algorithms, 100 desired data pieces can be created within 10 seconds, tailored to the user's specific objectives",
                         desc2: "Enhancing AI Training Speed by 500% and Reducing Costs by 50%",
-                        rotation: 30,
                     },
                     {
                         title: "CEN STORE",
                         imageName: "image_631.png",
                         desc: "To address resource issues that drive the costs of synthetic data consulting and solutions, we are launching a store and advancing research in Text To 3D.",
                         desc2: "Resource Cost Savings of 50% Compared to Competitors",
-                        rotation: 35,
                     },
                     {
                         title: "CEN DATA CLOUD",
                         imageName: "image_631.png",
                         desc: "Through the space dedicated to AI training and optimization, we aim to accelerate data scale by absorbing user training models and training data within the platform.",
                         desc2: "Dominating Over 3% of the Domestic Synthetic and Real-World Data Market",
-                        rotation: 40,
                     },
                     {
                         title: "MS Bing",
                         imageName: "image_631.png",
                         desc: "Extracting artificial satellite data (HeightMap) based on MS Bing",
                         desc2: "Appearance of the extracted artificial satellite data",
-                        rotation: 45,
                     },
                     {
                         title: "Algorithms",
                         imageName: "image_631.png",
                         desc: "Physical 3D representation through procedural algorithms",
                         desc2: "Mimicking the absolute procedures of nature",
-                        rotation: 50,
                     },
                     {
                         title: "Detail",
                         imageName: "image_631.png",
                         desc: "Detail representation through depiction of natural components",
                         desc2: "Describing over 300 types of natural environments",
-                        rotation: 55,
                     },
                 ];
-                for (let i = 0; i < 12; i++) {
-                    cardArr.push({ title: "dummy" });
-                }
 
                 function wrapText(context, text, x, y, maxWidth, lineHeight) {
                     const words = text.split(" ");
@@ -1729,14 +1779,9 @@
                     context.fillText(line, x, y);
                 }
 
-                const initCardRotation = (Math.PI / 180) * 90;
+                // const initCardRotation = (Math.PI / 180) * 90;
 
                 cardArr.forEach((card, index) => {
-                    if (card.title === "dummy") {
-                        // 더미면 그룹에 빈 오브젝트 추가
-                        cardGroup.add(new THREE.Object3D());
-                        return;
-                    }
                     textureLoader.load(`/img/pj_card/${card.imageName}`, function (imageTexture) {
                         cardTitle.textContent = card.title;
                         cardDesc.textContent = card.desc;
@@ -1805,33 +1850,27 @@
 
                         const cardMesh = new THREE.Mesh(cardGeometry, cardMaterial);
 
-                        const cardPositionRadius = 1500; // 원의 반지름
-
-                        const angleStep = (Math.PI * 2) / cardArr.length; // 각 카드 사이의 각도
-
-                        // 각 카드의 각도 계산
-                        const angle = (cardArr.length - 1 - index) * angleStep;
-
-                        let x = cardPositionRadius * Math.cos(angle); // x 좌표 계산
-                        let y = cardPositionRadius * Math.sin(angle); // y 좌표 계산
-
                         // 카드의 위치 설정
-                        cardMesh.position.set(x, y, 0);
-                        cardMesh.rotation.x = card.rotation * (Math.PI / 180); // 카드의 회전 설정
-                        cardMesh.rotation.z = -initCardRotation; // 카드의 z축 회전 설정
+                        cardMesh.position.set(2500, 0, 0);
+                        cardMesh.rotation.y = -35 * (Math.PI / 180); // 카드의 회전 설정
+                        // cardMesh.rotation.z = -initCardRotation; // 카드의 z축 회전 설정
 
                         // 그룹에 카드 추가
-                        cardGroup.add(cardMesh);
+                        // cardGroup.add(cardMesh);
+
+                        cards.push(cardMesh);
+                        // 장면에 카드 추가
+                        cs3dScene.add(cardMesh);
                     });
                 });
 
-                cs3dScene.add(cardGroup);
-                cardGroup.position.y = 1100;
-                cardGroup.position.x = 400;
-                cardGroup.rotation.z = initCardRotation;
+                // cs3dScene.add(cardGroup);
+                // cardGroup.position.y = 1100;
+                // cardGroup.position.x = 400;
+                // cardGroup.rotation.z = initCardRotation;
 
-                cs3dCamera.position.x = 0;
-                cs3dCamera.position.y = cardGroup.position.y + 500;
+                // cs3dCamera.position.x = 0;
+                // cs3dCamera.position.y = cardGroup.position.y + 500;
 
                 function animate() {
                     requestAnimationFrame(animate);
@@ -1882,8 +1921,6 @@
             youtubeAnimate();
 
             function youtubeInit() {
-                const youtubeContainer = document.getElementById("youtubeContainer");
-
                 youtubeCamera = new THREE.PerspectiveCamera(
                     70, // 카메라의 가로 시야각
                     youtubeContainer.offsetWidth / youtubeContainer.offsetHeight,
