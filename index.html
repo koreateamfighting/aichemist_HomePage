@@ -200,7 +200,7 @@
                 <div class="gradient"></div>
             </div>
         </div>
-        <div id="pjCardDrawingPaper" style="display: none">
+        <div id="pjCardDrawingPaper">
             <div class="card-title">CEN’ Synthetic data</div>
             <img class="card-image" src="/img/pj_card/image_631.png" />
             <div class="card-desc">
@@ -209,10 +209,15 @@
             </div>
             <div class="card-desc2">Enhancing AI Training Speed by 500% and Reducing Costs by 50%</div>
         </div>
+        <div id="pjCardDrawingPaperBig">
+            <img src="/img/pj_card/car.png" />
+        </div>
 
         <div class="blank-space space2"></div>
         <div class="blank-space space3"></div>
         <div class="blank-space space4"></div>
+        <div class="blank-space space5"></div>
+        <div class="blank-space space6"></div>
 
         <div id="youtubeContainer"></div>
 
@@ -1028,6 +1033,9 @@
             const blankSpace2 = document.querySelector(".blank-space.space2");
             const blankSpace3 = document.querySelector(".blank-space.space3");
             const blankSpace4 = document.querySelector(".blank-space.space4");
+            const blankSpace5 = document.querySelector(".blank-space.space5");
+            const blankSpace6 = document.querySelector(".blank-space.space6");
+
             const cardSlide3dContainer = document.getElementById("cardSlide3d");
             let cardSlide3dCanvas = cardSlide3dContainer.querySelector("canvas");
             const youtubeContainer = document.getElementById("youtubeContainer");
@@ -1068,6 +1076,12 @@
                 { x: 1354, y: 3170 },
                 { x: 1280, y: 4200 },
             ];
+            const logoControlPoints2 = [
+                { x: 1280, y: 4200, z: 0 },
+                { x: 1280, y: 4200, z: -700 },
+                { x: 1280, y: 4200, z: -1400 },
+                { x: 1280, y: 4200, z: -5000 },
+            ];
 
             function canvasToThreeJS({ x, y }) {
                 const canvasWidth = 1920 * 1.2;
@@ -1082,13 +1096,22 @@
                 canvasToThreeJS({ x: 1834, y: 535 }),
                 canvasToThreeJS({ x: 1369, y: 578 }),
                 canvasToThreeJS({ x: 894, y: 624 }),
-                canvasToThreeJS({ x: 538, y: 796 }),
-                canvasToThreeJS({ x: 456, y: 1034 }),
-                canvasToThreeJS({ x: 0, y: 1039 }),
+                canvasToThreeJS({ x: 538, y: 600 }),
+                canvasToThreeJS({ x: 456, y: 750 }),
+                canvasToThreeJS({ x: 0, y: 800 }),
             ];
             const initCardRotation = -35 * (Math.PI / 180);
 
+            const bigCardControlPoints1 = [
+                canvasToThreeJS({ x: 3000, y: 300 }),
+                canvasToThreeJS({ x: 2500, y: 600 }),
+                canvasToThreeJS({ x: 1200, y: 900 }),
+                canvasToThreeJS({ x: 800, y: 1000 }),
+                canvasToThreeJS({ x: 400, y: 1700 }),
+            ];
+
             const cards = [];
+            const bigCards = [];
 
             // 3D LOGO
             const logoContainer = document.getElementById("logoContainer");
@@ -1138,7 +1161,12 @@
                         const logoPositionY =
                             logoControlPoints[logoControlPoints.length - 1].y + scroll - cardSlide3dContainer.offsetTop;
                         logoContainer.style.top = `${logoPositionY}px`;
-
+                        if (scroll > blankSpace3.offsetTop) {
+                            const progress =
+                                (scroll - blankSpace3.offsetTop) / (blankSpace4.offsetTop - blankSpace3.offsetTop);
+                            const logoPosition = bezier(logoControlPoints2, progress);
+                            logoObject.position.z = logoPosition.z;
+                        }
                         // cardSlide3dCanvas.style.display = "block";
                     }
                     // scroll이 cardSlide3dContainer에 도달했을 때부터는
@@ -1176,14 +1204,44 @@
                             card.position.set(cardPosition.x, cardPosition.y, 0);
                             card.rotation.y = initCardRotation + temp * 2;
                         });
-                        if (cards[cards.length - 1].position.x == cardControlPoints[cardControlPoints.length - 1].x) {
-                            const bProgress =
-                                (scroll - blankSpace3.offsetTop) / (blankSpace4.offsetTop - blankSpace3.offsetTop);
-                            console.log(bProgress);
-                        }
+                    }
+                }
+
+                if (bigCards.length != 0) {
+                    if (scroll > blankSpace4.offsetTop) {
+                        const progress =
+                            (scroll - blankSpace4.offsetTop) / (blankSpace5.offsetTop - blankSpace4.offsetTop);
+                        console.log(1, progress);
+                        bicCardSlide(progress, 0);
+                    }
+
+                    if (scroll > blankSpace5.offsetTop) {
+                        const progress =
+                            (scroll - blankSpace5.offsetTop) / (blankSpace6.offsetTop - blankSpace5.offsetTop);
+                        console.log(2, progress);
+                        bicCardSlide(progress, 1);
+                    }
+
+                    if (scroll > blankSpace6.offsetTop) {
+                        const progress =
+                            (scroll - blankSpace6.offsetTop) / (youtubeContainer.offsetTop - blankSpace6.offsetTop);
+                        console.log(3, progress);
+                        bicCardSlide(progress, 2);
                     }
                 }
             });
+
+            function bicCardSlide(progress, index) {
+                if (progress < 0) {
+                    bigCards[index].position.set(bigCardControlPoints1.x, bigCardControlPoints1.y, 0);
+                    return;
+                } else if (progress > 1) {
+                    bigCards[index].position.set(bigCardControlPoints1.x, bigCardControlPoints1.y, 0);
+                    return;
+                }
+                const bigCardPosition = bezier(bigCardControlPoints1, progress);
+                bigCards[index].position.set(bigCardPosition.x, bigCardPosition.y, 0);
+            }
 
             const MTW_CEN_FONT_SIZE = 18;
 
@@ -1195,7 +1253,7 @@
                 const logoScene = new THREE.Scene();
 
                 // pdCamera = new THREE.PerspectiveCamera(20, WIDTH / HEIGHT, 1, 50000);
-                const logoCamera = new THREE.PerspectiveCamera(20, LOGO_WIDTH / LOGO_WIDTH, 1, 50000);
+                const logoCamera = new THREE.PerspectiveCamera(20, LOGO_WIDTH / LOGO_WIDTH, 1, 5000);
                 logoCamera.position.set(0, 0, 500);
 
                 const renderer = new THREE.WebGLRenderer();
@@ -1303,112 +1361,6 @@
                 textureLoader.load(backgroundImagePath, function (texture) {
                     pdScene.background = texture;
                 });
-
-                // // 폰트 로더를 사용하여 폰트를 로드
-                // const fontLoader = new FontLoader();
-
-                // const CompanyName = "CEN";
-                // const CompanyLabel = "Make the world you're imagining a reality";
-                // const companyDescription = `Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum`;
-                // // 텍스트 줄 배열
-                // const paragraphLines = [
-                //     "First line of the paragraph.",
-                //     "Second line of the paragraph.",
-                //     "Third line of the paragraph.",
-                // ];
-                // const CompanyLabelSize = MTW_CEN_FONT_SIZE * 5;
-                // const CompanyNameSize = CompanyLabelSize * 7.45;
-
-                // fontLoader.load("fonts/Montserrat Medium_Regular.json", function (font) {
-                //     // 회사명 텍스트 설정
-                //     const companyNameGeometry = new TextGeometry(CompanyName, {
-                //         font: font,
-                //         size: CompanyNameSize, // 회사명 텍스트 크기
-                //         curveSegments: 100,
-                //         bevelEnabled: true, // 베벨 활성화
-                //         bevelThickness: 10, // 베벨 두께
-                //         bevelSize: 10, // 베벨 크기
-                //         bevelOffset: 0, // 베벨 오프셋
-                //         bevelSegments: 5, // 베벨의 세밀도
-                //     });
-
-                //     const companyNameMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-                //     const companyNameMesh = new THREE.Mesh(companyNameGeometry, companyNameMaterial);
-                //     companyNameMesh.position.set(-500, 300, 0); // 텍스트 위치 설정
-
-                //     pdScene.add(companyNameMesh);
-                // });
-
-                // fontLoader.load("fonts/Montserrat_Regular.typeface.json", function (font) {
-                //     // // 회사명 텍스트 설정
-                //     // const companyNameGeometry = new TextGeometry(CompanyName, {
-                //     //     font: font,
-                //     //     size: CompanyNameSize, // 회사명 텍스트 크기
-                //     //     height: 50,
-                //     //     curveSegments: 100,
-                //     //     bevelEnabled: true, // 베벨 활성화
-                //     //     bevelThickness: 10, // 베벨 두께
-                //     //     bevelSize: 10, // 베벨 크기
-                //     //     bevelOffset: 0, // 베벨 오프셋
-                //     //     bevelSegments: 5, // 베벨의 세밀도
-                //     // });
-
-                //     // const companyNameMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-                //     // const companyNameMesh = new THREE.Mesh(companyNameGeometry, companyNameMaterial);
-
-                //     // companyNameMesh.position.set(-500, 300, 0); // 텍스트 위치 설정
-
-                //     // pdScene.add(companyNameMesh);
-
-                //     // 회사명 라벨 설정
-                //     const companyLabelGeometry = new TextGeometry(CompanyLabel, {
-                //         font: font,
-                //         size: CompanyLabelSize, // 회사명 텍스트 크기
-                //         height: 10,
-                //         curveSegments: 100,
-                //         bevelEnabled: false, // 베벨 활성화
-                //     });
-
-                //     const companyLabelMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-                //     const companyLabelMesh = new THREE.Mesh(companyLabelGeometry, companyLabelMaterial);
-
-                //     companyLabelMesh.position.set(-700, 150, 0); // 중앙 위치 설정
-                //     pdScene.add(companyLabelMesh);
-
-                //     // 오른쪽 정렬할 위치 (화면의 가로폭의 끝부분)
-                //     const rightEdge = 1500; // 조정 가능한 값, 오른쪽 끝의 x 좌표
-
-                //     // 각 줄에 대해 TextGeometry 및 Mesh 생성
-                //     paragraphLines.forEach((line, index) => {
-                //         const lineGeometry = new TextGeometry(line, {
-                //             font: font,
-                //             size: 40, // 텍스트 크기
-                //             height: 10, // 텍스트 두께
-                //             curveSegments: 12,
-                //             bevelEnabled: false,
-                //         });
-
-                //         const lineMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-                //         const lineMesh = new THREE.Mesh(lineGeometry, lineMaterial);
-
-                //         // 각 줄의 위치를 조정 (줄 사이에 간격 추가)
-                //         lineGeometry.computeBoundingBox();
-                //         const textWidth = lineGeometry.boundingBox.max.x - lineGeometry.boundingBox.min.x;
-
-                //         // 줄 사이 간격 조정
-                //         const lineHeight = 60;
-                //         // x 위치를 오른쪽 정렬에 맞게 조정
-                //         const xPosition = rightEdge - textWidth;
-                //         // y 위치를 index에 따라 조정
-                //         const yPosition = -index * lineHeight;
-
-                //         lineMesh.position.set(xPosition, yPosition, 0);
-                //         // 장면에 추가
-                //         pdScene.add(lineMesh);
-                //     });
-                // });
-
-                ////
 
                 pdScene.fog = new THREE.FogExp2(0x000104, 0.0000675);
 
@@ -1695,8 +1647,8 @@
             /* △△△△△△△△△△ points dynamic △△△△△△△△△△ */
 
             let cs3dCamera, cs3dScene, cs3dRenderer, cs3dMesh;
-            function initCardSlide3d() {
-                cs3dCamera = new THREE.PerspectiveCamera(20, WIDTH / HEIGHT, 1, 10000);
+            async function initCardSlide3d() {
+                cs3dCamera = new THREE.PerspectiveCamera(20, WIDTH / HEIGHT, 1, 5000);
                 cs3dCamera.position.z = 3000;
                 // cs3dCamera.aspect = WIDTH / HEIGHT;
                 // cs3dCamera.updateProjectionMatrix();
@@ -1725,37 +1677,37 @@
                 const cardArr = [
                     {
                         title: "CEN’ Synthetic data",
-                        imageName: "image_631.png",
+                        imageName: "image_632.png",
                         desc: "By utilizing generative AI algorithms, 100 desired data pieces can be created within 10 seconds, tailored to the user's specific objectives",
                         desc2: "Enhancing AI Training Speed by 500% and Reducing Costs by 50%",
                     },
                     {
                         title: "CEN STORE",
-                        imageName: "image_631.png",
+                        imageName: "image_632.png",
                         desc: "To address resource issues that drive the costs of synthetic data consulting and solutions, we are launching a store and advancing research in Text To 3D.",
                         desc2: "Resource Cost Savings of 50% Compared to Competitors",
                     },
                     {
                         title: "CEN DATA CLOUD",
-                        imageName: "image_631.png",
+                        imageName: "image_632.png",
                         desc: "Through the space dedicated to AI training and optimization, we aim to accelerate data scale by absorbing user training models and training data within the platform.",
                         desc2: "Dominating Over 3% of the Domestic Synthetic and Real-World Data Market",
                     },
                     {
                         title: "MS Bing",
-                        imageName: "image_631.png",
+                        imageName: "image_632.png",
                         desc: "Extracting artificial satellite data (HeightMap) based on MS Bing",
                         desc2: "Appearance of the extracted artificial satellite data",
                     },
                     {
                         title: "Algorithms",
-                        imageName: "image_631.png",
+                        imageName: "image_632.png",
                         desc: "Physical 3D representation through procedural algorithms",
                         desc2: "Mimicking the absolute procedures of nature",
                     },
                     {
                         title: "Detail",
-                        imageName: "image_631.png",
+                        imageName: "image_632.png",
                         desc: "Detail representation through depiction of natural components",
                         desc2: "Describing over 300 types of natural environments",
                     },
@@ -1781,88 +1733,142 @@
 
                 // const initCardRotation = (Math.PI / 180) * 90;
 
-                cardArr.forEach((card, index) => {
-                    textureLoader.load(`/img/pj_card/${card.imageName}`, function (imageTexture) {
-                        cardTitle.textContent = card.title;
-                        cardDesc.textContent = card.desc;
-                        cardDesc2.textContent = card.desc2;
+                for (const card of cardArr) {
+                    textureLoader.load(
+                        `/img/pj_card/${card.imageName}`,
+                        function (imageTexture) {
+                            if (!imageTexture || !imageTexture.image) {
+                                console.error("이미지 텍스처 로드 실패:", card.imageName);
+                                return;
+                            }
 
-                        const cardPaperStyle = getComputedStyle(cardPaper);
-                        const cardTitleStyle = getComputedStyle(cardTitle);
-                        const cardImageStyle = getComputedStyle(cardImage);
-                        const cardDescStyle = getComputedStyle(cardDesc);
-                        const cardDesc2Style = getComputedStyle(cardDesc2);
+                            cardTitle.textContent = card.title;
+                            cardDesc.textContent = card.desc;
+                            cardDesc2.textContent = card.desc2;
+
+                            const cardPaperStyle = getComputedStyle(cardPaper);
+                            const cardTitleStyle = getComputedStyle(cardTitle);
+                            const cardImageStyle = getComputedStyle(cardImage);
+                            const cardDescStyle = getComputedStyle(cardDesc);
+                            const cardDesc2Style = getComputedStyle(cardDesc2);
+
+                            // 텍스트 텍스처 생성
+                            const canvas = document.createElement("canvas");
+                            const context = canvas.getContext("2d");
+                            canvas.width = parseInt(cardPaperStyle.width);
+                            canvas.height = parseInt(cardPaperStyle.height);
+
+                            // 배경 색상 설정
+                            context.fillStyle = cardPaperStyle.backgroundColor;
+                            context.textBaseline = "top";
+                            context.fillRect(0, 0, canvas.width, canvas.height);
+
+                            // 텍스트 스타일 설정
+                            context.textAlign = "center";
+
+                            // 제목 추가 (1/4)
+                            context.fillStyle = cardTitleStyle.color;
+                            context.font = cardTitleStyle.font;
+                            context.fillText(card.title, canvas.width / 2, parseInt(cardPaperStyle.padding), 279);
+                            // 이미지 추가 (2/4)
+                            const imgWidth = parseInt(cardImageStyle.width);
+                            const imgHeight = parseInt(cardImageStyle.height);
+                            const imgX = (canvas.width - imgWidth) / 2; // 가운데 정렬
+                            const imgY = 66; // 이미지의 Y 위치
+                            context.drawImage(imageTexture.image, imgX, imgY, imgWidth, imgHeight);
+                            // 설명 추가 (3/4)
+                            context.fillStyle = cardDescStyle.color;
+                            context.font = cardDescStyle.font;
+                            wrapText(context, card.desc, canvas.width / 2, 233, 279, 20);
+                            // 보조글 추가 (4/4)
+                            context.fillStyle = cardDesc2Style.color;
+                            context.font = cardDesc2Style.font;
+                            wrapText(context, card.desc2, canvas.width / 2, 329, 273, 20);
+
+                            // 텍스처 생성
+                            const combinedTexture = new THREE.CanvasTexture(canvas);
+
+                            // 카드 형식의 평면 생성
+                            const cardGeometry = new THREE.PlaneGeometry(canvas.width, canvas.height);
+                            const cardMaterial = new THREE.MeshBasicMaterial({
+                                map: combinedTexture,
+                                transparent: true,
+                            });
+
+                            const cardMesh = new THREE.Mesh(cardGeometry, cardMaterial);
+
+                            // 카드의 위치 설정
+                            cardMesh.position.set(2500, 0, 0);
+                            cardMesh.rotation.y = -35 * (Math.PI / 180); // 카드의 회전 설정
+                            // cardMesh.rotation.z = -initCardRotation; // 카드의 z축 회전 설정
+
+                            // 그룹에 카드 추가
+                            // cardGroup.add(cardMesh);
+
+                            cards.push(cardMesh);
+                            // 장면에 카드 추가
+                            cs3dScene.add(cardMesh);
+                        },
+                        undefined,
+                        function (error) {
+                            console.error("텍스처 로드 중 오류 발생:", error);
+                        }
+                    );
+                }
+
+                const bigCardPaper = document.getElementById("pjCardDrawingPaperBig");
+                const bigCardArr = ["car.png", "ninggen_back.png", "notebook.png"];
+                for (const bigCard of bigCardArr) {
+                    textureLoader.load(`/img/pj_card/${bigCard}`, function (imageTexture) {
+                        if (!imageTexture || !imageTexture.image) {
+                            console.error("이미지 텍스처 로드 실패:", bigCard);
+                            return;
+                        }
+
+                        const bigCardPaperStyle = getComputedStyle(bigCardPaper);
 
                         // 텍스트 텍스처 생성
                         const canvas = document.createElement("canvas");
                         const context = canvas.getContext("2d");
-                        canvas.width = parseInt(cardPaperStyle.width);
-                        canvas.height = parseInt(cardPaperStyle.height);
+                        canvas.width = parseInt(bigCardPaperStyle.width);
+                        canvas.height = parseInt(bigCardPaperStyle.height);
 
                         // 배경 색상 설정
-                        context.fillStyle = cardPaperStyle.backgroundColor;
+                        context.fillStyle = bigCardPaperStyle.backgroundColor;
                         context.textBaseline = "top";
                         context.fillRect(0, 0, canvas.width, canvas.height);
-
-                        // radius 설정
-                        const radius = 20;
-                        context.beginPath();
-                        context.moveTo(radius, 0);
-                        context.lineTo(canvas.width - radius, 0);
-                        context.quadraticCurveTo(canvas.width, 0, canvas.width, radius);
-                        context.lineTo(canvas.width, canvas.height - radius);
-                        context.quadraticCurveTo(canvas.width, canvas.height, canvas.width - radius, canvas.height);
-                        context.lineTo(radius, canvas.height);
-                        context.quadraticCurveTo(0, canvas.height, 0, canvas.height - radius);
-                        context.lineTo(0, radius);
-                        context.quadraticCurveTo(0, 0, radius, 0);
-                        context.closePath();
-                        context.clip();
 
                         // 텍스트 스타일 설정
                         context.textAlign = "center";
 
-                        // 제목 추가 (1/4)
-                        context.fillStyle = cardTitleStyle.color;
-                        context.font = cardTitleStyle.font;
-                        context.fillText(card.title, canvas.width / 2, parseInt(cardPaperStyle.padding), 279);
-                        // 이미지 추가 (2/4)
-                        const imgWidth = parseInt(cardImageStyle.width);
-                        const imgHeight = parseInt(cardImageStyle.height);
+                        // 이미지 추가
+                        const imgWidth = imageTexture.image.width;
+                        const imgHeight = imageTexture.image.height;
                         const imgX = (canvas.width - imgWidth) / 2; // 가운데 정렬
-                        const imgY = 66; // 이미지의 Y 위치
+                        const imgY = (canvas.height - imgHeight) / 2; // 이미지의 Y 위치
                         context.drawImage(imageTexture.image, imgX, imgY, imgWidth, imgHeight);
-                        // 설명 추가 (3/4)
-                        context.fillStyle = cardDescStyle.color;
-                        context.font = cardDescStyle.font;
-                        wrapText(context, card.desc, canvas.width / 2, 233, 279, 20);
-                        // 보조글 추가 (4/4)
-                        context.fillStyle = cardDesc2Style.color;
-                        context.font = cardDesc2Style.font;
-                        wrapText(context, card.desc2, canvas.width / 2, 329, 273, 20);
 
                         // 텍스처 생성
                         const combinedTexture = new THREE.CanvasTexture(canvas);
 
                         // 카드 형식의 평면 생성
                         const cardGeometry = new THREE.PlaneGeometry(canvas.width, canvas.height);
-                        const cardMaterial = new THREE.MeshBasicMaterial({ map: combinedTexture, transparent: true });
+                        const cardMaterial = new THREE.MeshBasicMaterial({
+                            map: combinedTexture,
+                            transparent: true,
+                            alphaTest: 0.8,
+                        });
 
                         const cardMesh = new THREE.Mesh(cardGeometry, cardMaterial);
 
                         // 카드의 위치 설정
-                        cardMesh.position.set(2500, 0, 0);
-                        cardMesh.rotation.y = -35 * (Math.PI / 180); // 카드의 회전 설정
-                        // cardMesh.rotation.z = -initCardRotation; // 카드의 z축 회전 설정
+                        cardMesh.position.set(1500, 0, 0);
 
-                        // 그룹에 카드 추가
-                        // cardGroup.add(cardMesh);
-
-                        cards.push(cardMesh);
+                        bigCards.push(cardMesh);
                         // 장면에 카드 추가
                         cs3dScene.add(cardMesh);
                     });
-                });
+                }
 
                 // cs3dScene.add(cardGroup);
                 // cardGroup.position.y = 1100;

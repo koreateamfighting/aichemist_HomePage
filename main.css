@@ -43,10 +43,12 @@ body {
     height: 4000px;
 }
 .blank-space.space3 {
-    height: 10000px;
+    height: 5500px;
 }
-.blank-space.space4 {
-    height: 1000px;
+.blank-space.space4,
+.blank-space.space5,
+.blank-space.space6 {
+    height: 5000px;
 }
 
 a {
@@ -344,6 +346,9 @@ select {
     backdrop-filter: blur(6.209717750549316px);
     text-align: center;
     color: #fff;
+    z-index: -100;
+    position: absolute;
+    opacity: 0;
 }
 #pjCardDrawingPaper .card-title {
     font-family: Montserrat;
@@ -366,6 +371,26 @@ select {
     font-family: Montserrat;
     font-size: 12px;
     font-weight: 500;
+}
+#pjCardDrawingPaperBig {
+    width: 1000px;
+    height: 600px;
+    z-index: -100;
+    background: rgba(255, 255, 255, 0);
+    position: absolute;
+    opacity: 1;
+}
+#pjCardDrawingPaperBig img {
+    width: 100%;
+    /* z-index: -100; */
+    background: rgba(255, 255, 255, 0);
+    /* position: absolute; */
+    /* opacity: 0; */
+    /*     background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; */
+    /* 이미지는 contain으로 */
+    object-fit: contain;
 }
 
 #AIChemist-swiper .swiper-slide {
