@@ -15,51 +15,48 @@
  * }
  */
 
-import {
-	ExtrudeGeometry
-} from 'three';
+import { ExtrudeGeometry } from 'three'
 
 class TextGeometry extends ExtrudeGeometry {
+    constructor(text, parameters = {}) {
+        const font = parameters.font
 
-	constructor( text, parameters = {} ) {
+        if (font === undefined) {
+            super() // generate default extrude geometry
+        } else {
+            const shapes = font.generateShapes(text, parameters.size)
 
-		const font = parameters.font;
+            // translate parameters to ExtrudeGeometry API
 
-		if ( font === undefined ) {
+            if (
+                parameters.depth === undefined &&
+                parameters.height !== undefined
+            ) {
+                console.warn(
+                    'THREE.TextGeometry: .height is now depreciated. Please use .depth instead'
+                ) // @deprecated, r163
+            }
 
-			super(); // generate default extrude geometry
+            parameters.depth =
+                parameters.depth !== undefined
+                    ? parameters.depth
+                    : parameters.height !== undefined
+                      ? parameters.height
+                      : 50
 
-		} else {
+            // defaults
 
-			const shapes = font.generateShapes( text, parameters.size );
+            if (parameters.bevelThickness === undefined)
+                parameters.bevelThickness = 10
+            if (parameters.bevelSize === undefined) parameters.bevelSize = 8
+            if (parameters.bevelEnabled === undefined)
+                parameters.bevelEnabled = false
 
-			// translate parameters to ExtrudeGeometry API
+            super(shapes, parameters)
+        }
 
-			if ( parameters.depth === undefined && parameters.height !== undefined ) {
-
-				console.warn( 'THREE.TextGeometry: .height is now depreciated. Please use .depth instead' ); // @deprecated, r163
-
-			}
-
-			parameters.depth = parameters.depth !== undefined ?
-				parameters.depth : parameters.height !== undefined ?
-					parameters.height : 50;
-
-			// defaults
-
-			if ( parameters.bevelThickness === undefined ) parameters.bevelThickness = 10;
-			if ( parameters.bevelSize === undefined ) parameters.bevelSize = 8;
-			if ( parameters.bevelEnabled === undefined ) parameters.bevelEnabled = false;
-
-			super( shapes, parameters );
-
-		}
-
-		this.type = 'TextGeometry';
-
-	}
-
+        this.type = 'TextGeometry'
+    }
 }
 
-
-export { TextGeometry };
+export { TextGeometry }
