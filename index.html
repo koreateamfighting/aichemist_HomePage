@@ -1678,7 +1678,7 @@
                         cardSlide3dCanvas.style.position = 'relative'
                         replacementBox.style.height = '0'
                         logoContainer.style.position = 'absolute'
-                    } else {
+                    } else if (scroll < blankSpace7.offsetTop) {
                         logoMoveSection4.style.position = 'fixed'
                         // fixed로 바뀌면서 너비가 줄어들어서 다시 너비를 맞춰줌
                         // cardSlide3dCanvas.style.width = `${cardSlide3dContainer.offsetWidth}px`;
@@ -1754,10 +1754,11 @@
                     }
                 }
 
-                if (scroll > blankSpace7.offsetTop) {
-                    const top = scroll - blankSpace7.offsetTop
+                if (scroll > blankSpace4.offsetTop) {
+                    const top = scroll - blankSpace4.offsetTop
                     logoMoveSection4.style.top = `-${top}px`
-                    if (top > blankSpace7.offsetHeight) {
+                    console.log(top, blankSpace7.offsetTop)
+                    if (top > blankSpace7.offsetTop) {
                         cardSlide3dCanvas.style.position = 'relative'
                     } else {
                         cardSlide3dCanvas.style.position = 'fixed'
