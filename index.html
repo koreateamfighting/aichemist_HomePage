@@ -2552,125 +2552,149 @@
                 }
 
                 // const initCardRotation = (Math.PI / 180) * 90;
-
-                for (const card of cardArr) {
-                    textureLoader.load(
-                        `/img/pj_card/${card.imageName}`,
-                        function (imageTexture) {
-                            if (!imageTexture || !imageTexture.image) {
-                                console.error(
-                                    '이미지 텍스처 로드 실패:',
-                                    card.imageName
-                                )
-                                return
-                            }
-
-                            cardTitle.textContent = card.title
-                            cardDesc.textContent = card.desc
-                            cardDesc2.textContent = card.desc2
-
-                            const cardPaperStyle = getComputedStyle(cardPaper)
-                            const cardTitleStyle = getComputedStyle(cardTitle)
-                            const cardImageStyle = getComputedStyle(cardImage)
-                            const cardDescStyle = getComputedStyle(cardDesc)
-                            const cardDesc2Style = getComputedStyle(cardDesc2)
-
-                            // 텍스트 텍스처 생성
-                            const canvas = document.createElement('canvas')
-                            const context = canvas.getContext('2d')
-                            canvas.width = parseInt(cardPaperStyle.width)
-                            canvas.height = parseInt(cardPaperStyle.height)
-
-                            // 배경 색상 설정
-                            context.fillStyle = cardPaperStyle.backgroundColor
-                            context.textBaseline = 'top'
-                            context.fillRect(0, 0, canvas.width, canvas.height)
-
-                            // 텍스트 스타일 설정
-                            context.textAlign = 'center'
-
-                            // 제목 추가 (1/4)
-                            context.fillStyle = cardTitleStyle.color
-                            context.font = cardTitleStyle.font
-                            context.fillText(
-                                card.title,
-                                canvas.width / 2,
-                                parseInt(cardPaperStyle.padding),
-                                279
-                            )
-                            // 이미지 추가 (2/4)
-                            const imgWidth = parseInt(cardImageStyle.width)
-                            const imgHeight = parseInt(cardImageStyle.height)
-                            const imgX = (canvas.width - imgWidth) / 2 // 가운데 정렬
-                            const imgY = 66 // 이미지의 Y 위치
-                            context.drawImage(
-                                imageTexture.image,
-                                imgX,
-                                imgY,
-                                imgWidth,
-                                imgHeight
-                            )
-                            // 설명 추가 (3/4)
-                            context.fillStyle = cardDescStyle.color
-                            context.font = cardDescStyle.font
-                            wrapText(
-                                context,
-                                card.desc,
-                                canvas.width / 2,
-                                233,
-                                279,
-                                20
-                            )
-                            // 보조글 추가 (4/4)
-                            context.fillStyle = cardDesc2Style.color
-                            context.font = cardDesc2Style.font
-                            wrapText(
-                                context,
-                                card.desc2,
-                                canvas.width / 2,
-                                329,
-                                273,
-                                20
-                            )
-
-                            // 텍스처 생성
-                            const combinedTexture = new THREE.CanvasTexture(
-                                canvas
-                            )
-
-                            // 카드 형식의 평면 생성
-                            const cardGeometry = new THREE.PlaneGeometry(
-                                canvas.width,
-                                canvas.height
-                            )
-                            const cardMaterial = new THREE.MeshBasicMaterial({
-                                map: combinedTexture,
-                                transparent: true,
-                            })
-
-                            const cardMesh = new THREE.Mesh(
-                                cardGeometry,
-                                cardMaterial
-                            )
-
-                            // 카드의 위치 설정
-                            cardMesh.position.set(2500, 0, 0)
-                            cardMesh.rotation.y = -35 * (Math.PI / 180) // 카드의 회전 설정
-                            // cardMesh.rotation.z = -initCardRotation; // 카드의 z축 회전 설정
-
-                            // 그룹에 카드 추가
-                            // cardGroup.add(cardMesh);
-
-                            cards.push(cardMesh)
-                            // 장면에 카드 추가
-                            cs3dScene.add(cardMesh)
-                        },
-                        undefined,
-                        function (error) {
-                            console.error('텍스처 로드 중 오류 발생:', error)
-                        }
-                    )
+                const loadTexture = (url) => {
+                    return new Promise((resolve, reject) => {
+                        textureLoader.load(
+                            url,
+                            (texture) => resolve(texture),
+                            undefined,
+                            (error) => reject(error)
+                        )
+                    })
                 }
+
+                const loadAllTextures = async (cardArr) => {
+                    const texturePromises = cardArr.map((card) =>
+                        loadTexture(`/img/pj_card/${card.imageName}`)
+                            .then((texture) => ({ card, texture }))
+                            .catch((error) => {
+                                console.error(
+                                    '텍스처 로드 중 오류 발생:',
+                                    error
+                                )
+                                return null
+                            })
+                    )
+
+                    return Promise.all(texturePromises)
+                }
+
+                const loadAllTextures2 = async (cardArr) => {
+                    const texturePromises = cardArr.map((card) =>
+                        loadTexture(`/img/pj_card/${card}`)
+                            .then((texture) => ({ card, texture }))
+                            .catch((error) => {
+                                console.error(
+                                    '텍스처 로드 중 오류 발생:',
+                                    error
+                                )
+                                return null
+                            })
+                    )
+
+                    return Promise.all(texturePromises)
+                }
+
+                const initCards = async () => {
+                    const loadedCards = await loadAllTextures(cardArr)
+
+                    loadedCards.forEach(({ card, texture }) => {
+                        if (!texture || !texture.image) {
+                            console.error(
+                                '이미지 텍스처 로드 실패:',
+                                card.imageName
+                            )
+                            return
+                        }
+
+                        cardTitle.textContent = card.title
+                        cardDesc.textContent = card.desc
+                        cardDesc2.textContent = card.desc2
+
+                        const cardPaperStyle = getComputedStyle(cardPaper)
+                        const cardTitleStyle = getComputedStyle(cardTitle)
+                        const cardImageStyle = getComputedStyle(cardImage)
+                        const cardDescStyle = getComputedStyle(cardDesc)
+                        const cardDesc2Style = getComputedStyle(cardDesc2)
+
+                        const canvas = document.createElement('canvas')
+                        const context = canvas.getContext('2d')
+                        canvas.width = parseInt(cardPaperStyle.width)
+                        canvas.height = parseInt(cardPaperStyle.height)
+
+                        context.fillStyle = cardPaperStyle.backgroundColor
+                        context.textBaseline = 'top'
+                        context.fillRect(0, 0, canvas.width, canvas.height)
+
+                        context.textAlign = 'center'
+
+                        context.fillStyle = cardTitleStyle.color
+                        context.font = cardTitleStyle.font
+                        context.fillText(
+                            card.title,
+                            canvas.width / 2,
+                            parseInt(cardPaperStyle.padding),
+                            279
+                        )
+
+                        const imgWidth = parseInt(cardImageStyle.width)
+                        const imgHeight = parseInt(cardImageStyle.height)
+                        const imgX = (canvas.width - imgWidth) / 2
+                        const imgY = 66
+                        context.drawImage(
+                            texture.image,
+                            imgX,
+                            imgY,
+                            imgWidth,
+                            imgHeight
+                        )
+
+                        context.fillStyle = cardDescStyle.color
+                        context.font = cardDescStyle.font
+                        wrapText(
+                            context,
+                            card.desc,
+                            canvas.width / 2,
+                            233,
+                            279,
+                            20
+                        )
+
+                        context.fillStyle = cardDesc2Style.color
+                        context.font = cardDesc2Style.font
+                        wrapText(
+                            context,
+                            card.desc2,
+                            canvas.width / 2,
+                            329,
+                            273,
+                            20
+                        )
+
+                        const combinedTexture = new THREE.CanvasTexture(canvas)
+
+                        const cardGeometry = new THREE.PlaneGeometry(
+                            canvas.width,
+                            canvas.height
+                        )
+                        const cardMaterial = new THREE.MeshBasicMaterial({
+                            map: combinedTexture,
+                            transparent: true,
+                        })
+
+                        const cardMesh = new THREE.Mesh(
+                            cardGeometry,
+                            cardMaterial
+                        )
+                        cardMesh.position.set(2500, 0, 0)
+                        cardMesh.rotation.y = -35 * (Math.PI / 180)
+
+                        cards.push(cardMesh)
+                        cs3dScene.add(cardMesh)
+                    })
+                }
+
+                initCards()
 
                 const bigCardPaper = document.getElementById(
                     'pjCardDrawingPaperBig'
@@ -2680,96 +2704,79 @@
                     'ninggen_back.png',
                     'notebook.png',
                 ]
-                for (const bigCard of bigCardArr) {
-                    textureLoader.load(
-                        `/img/pj_card/${bigCard}`,
-                        function (imageTexture) {
-                            if (!imageTexture || !imageTexture.image) {
-                                console.error(
-                                    '이미지 텍스처 로드 실패:',
-                                    bigCard
-                                )
-                                return
-                            }
+                const initBigCards = async () => {
+                    const loadedCards = await loadAllTextures2(bigCardArr)
 
-                            const bigCardPaperStyle =
-                                getComputedStyle(bigCardPaper)
-
-                            // 텍스트 텍스처 생성
-                            const canvas = document.createElement('canvas')
-                            const context = canvas.getContext('2d')
-                            canvas.width = parseInt(bigCardPaperStyle.width)
-                            canvas.height = parseInt(bigCardPaperStyle.height)
-
-                            // 배경 색상 설정
-                            context.fillStyle =
-                                bigCardPaperStyle.backgroundColor
-                            context.textBaseline = 'top'
-                            context.fillRect(0, 0, canvas.width, canvas.height)
-
-                            // 텍스트 스타일 설정
-                            context.textAlign = 'center'
-
-                            // 이미지 추가
-                            const imgWidth = imageTexture.image.width
-                            const imgHeight = imageTexture.image.height
-                            const canvasAspect = canvas.width / canvas.height
-                            const imgAspect = imgWidth / imgHeight
-
-                            let drawWidth, drawHeight, drawX, drawY
-
-                            if (imgAspect > canvasAspect) {
-                                // 이미지가 캔버스보다 더 넓음
-                                drawWidth = canvas.width
-                                drawHeight = canvas.width / imgAspect
-                                drawX = 0
-                                drawY = (canvas.height - drawHeight) / 2
-                            } else {
-                                // 이미지가 캔버스보다 더 높음
-                                drawWidth = canvas.height * imgAspect
-                                drawHeight = canvas.height
-                                drawX = (canvas.width - drawWidth) / 2
-                                drawY = 0
-                            }
-
-                            context.drawImage(
-                                imageTexture.image,
-                                drawX,
-                                drawY,
-                                drawWidth,
-                                drawHeight
-                            )
-
-                            // 텍스처 생성
-                            const combinedTexture = new THREE.CanvasTexture(
-                                canvas
-                            )
-
-                            // 카드 형식의 평면 생성
-                            const cardGeometry = new THREE.PlaneGeometry(
-                                canvas.width,
-                                canvas.height
-                            )
-                            const cardMaterial = new THREE.MeshBasicMaterial({
-                                map: combinedTexture,
-                                transparent: true,
-                                alphaTest: 0.8,
-                            })
-
-                            const cardMesh = new THREE.Mesh(
-                                cardGeometry,
-                                cardMaterial
-                            )
-
-                            // 카드의 위치 설정
-                            cardMesh.position.set(1800, 0, 0)
-
-                            bigCards.push(cardMesh)
-                            // 장면에 카드 추가
-                            cs3dScene.add(cardMesh)
+                    loadedCards.forEach(({ card, texture }) => {
+                        if (!texture || !texture.image) {
+                            console.error('이미지 텍스처 로드 실패:', card)
+                            return
                         }
-                    )
+
+                        const bigCardPaperStyle = getComputedStyle(bigCardPaper)
+
+                        const canvas = document.createElement('canvas')
+                        const context = canvas.getContext('2d')
+                        canvas.width = parseInt(bigCardPaperStyle.width)
+                        canvas.height = parseInt(bigCardPaperStyle.height)
+
+                        context.fillStyle = bigCardPaperStyle.backgroundColor
+                        context.textBaseline = 'top'
+                        context.fillRect(0, 0, canvas.width, canvas.height)
+
+                        context.textAlign = 'center'
+
+                        const imgWidth = texture.image.width
+                        const imgHeight = texture.image.height
+                        const canvasAspect = canvas.width / canvas.height
+                        const imgAspect = imgWidth / imgHeight
+
+                        let drawWidth, drawHeight, drawX, drawY
+
+                        if (imgAspect > canvasAspect) {
+                            drawWidth = canvas.width
+                            drawHeight = canvas.width / imgAspect
+                            drawX = 0
+                            drawY = (canvas.height - drawHeight) / 2
+                        } else {
+                            drawWidth = canvas.height * imgAspect
+                            drawHeight = canvas.height
+                            drawX = (canvas.width - drawWidth) / 2
+                            drawY = 0
+                        }
+
+                        context.drawImage(
+                            texture.image,
+                            drawX,
+                            drawY,
+                            drawWidth,
+                            drawHeight
+                        )
+
+                        const combinedTexture = new THREE.CanvasTexture(canvas)
+
+                        const cardGeometry = new THREE.PlaneGeometry(
+                            canvas.width,
+                            canvas.height
+                        )
+                        const cardMaterial = new THREE.MeshBasicMaterial({
+                            map: combinedTexture,
+                            transparent: true,
+                            alphaTest: 0.8,
+                        })
+
+                        const cardMesh = new THREE.Mesh(
+                            cardGeometry,
+                            cardMaterial
+                        )
+                        cardMesh.position.set(1800, 0, 0)
+
+                        bigCards.push(cardMesh)
+                        cs3dScene.add(cardMesh)
+                    })
                 }
+
+                initBigCards()
 
                 function animate() {
                     requestAnimationFrame(animate)
