@@ -265,7 +265,7 @@
         <div class="blank-space space5"></div>
         <div class="blank-space space6"></div>
         <div class="blank-space space7"></div>
-        <div class="blank-space space8"></div>
+        <div class="blank-space space8" id="youtubePosition"></div>
         <div class="blank-space space9"></div>
         <div class="blank-space space10"></div>
         <div class="blank-space space11"></div>
@@ -3242,10 +3242,15 @@
         <script>
             function moveToScroll(targetId) {
                 const target = document.getElementById(targetId)
-                let targetPosition =
-                    target.getBoundingClientRect().top + window.pageYOffset
+                let targetPosition
+
                 if (targetId == 'pjCar') {
-                    targetPosition += 800
+                    targetPosition =
+                        target.getBoundingClientRect().top +
+                        window.pageYOffset +
+                        800
+                } else if (targetId == 'youtubePosition') {
+                    targetPosition = target.offsetTop + 2200
                 }
                 const startPosition = window.pageYOffset
                 const distance = targetPosition - startPosition
