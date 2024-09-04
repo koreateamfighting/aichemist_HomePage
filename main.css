@@ -1,17 +1,41 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* 영어일 때는 Montserrat, 한글일 때는 Pretendard 사용 */
 :lang(ko) {
-    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
-        "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-family:
+        'Pretendard Variable',
+        Pretendard,
+        -apple-system,
+        BlinkMacSystemFont,
+        system-ui,
+        Roboto,
+        'Helvetica Neue',
+        'Segoe UI',
+        'Apple SD Gothic Neo',
+        'Noto Sans KR',
+        'Malgun Gothic',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        sans-serif;
 }
 :lang(en) {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-optical-sizing: auto;
     font-weight: 500; /* 기본 500, 400~600도 있는 것으로 보임 */
     font-style: normal;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0;
+}
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+::-webkit-scrollbar-thumb {
+    background: #054afc;
+    border-radius: 6px;
 }
 
 /* 문서 가로 너비 기본 1920 */
@@ -21,6 +45,7 @@ html {
 body {
     position: relative;
     width: 1920px;
+    max-width: 1920px;
     margin: 0 auto;
     padding: 0;
     background-color: #000000;
@@ -28,12 +53,14 @@ body {
     font-size: 13px;
     line-height: 24px;
     overscroll-behavior: none;
+    z-index: 0;
 }
 #fixedContainer {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    max-width: inherit;
     z-index: 100;
 }
 .blank-space.space1 {
@@ -51,7 +78,37 @@ body {
     height: 5000px;
 }
 .blank-space.space7 {
-    height: 1281px;
+    height: 900px;
+}
+.blank-space.space8 {
+    height: 4250px;
+}
+.blank-space.space9 {
+    height: 400px;
+}
+.blank-space.space10 {
+    height: 1800px;
+}
+.blank-space.space11 {
+    height: 0px;
+}
+.blank-space.space12 {
+    height: 2000px;
+}
+.blank-space.space13 {
+    height: 1000px;
+}
+.blank-space.space14 {
+    height: 800px;
+}
+.blank-space.space15 {
+    height: 1000px;
+}
+.blank-space.space16 {
+    height: 1000px;
+}
+.blank-space.space17 {
+    height: 1000px;
 }
 
 a {
@@ -80,6 +137,7 @@ button {
     position: absolute;
     top: 0px;
     width: 100%;
+    max-width: inherit;
     padding: 10px;
     box-sizing: border-box;
     text-align: center;
@@ -98,49 +156,17 @@ select {
     pointer-events: auto;
 }
 
-#overlay {
-    position: absolute;
-    font-size: 16px;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-#overlay button {
-    background: transparent;
-    border: 0;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 4px;
-    color: #ffffff;
-    padding: 12px 18px;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-#notSupported {
-    width: 50%;
-    margin: auto;
-    background-color: #f00;
-    margin-top: 20px;
-    padding: 10px;
-}
-
 #logoContainer {
-    width: 17%;
+    width: 320px;
     aspect-ratio: 1 / 1;
     position: absolute;
     top: 330px;
     left: 27%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    transition: left 0s ease-out, top 0s ease;
+    transition:
+        left 0s ease-out,
+        top 0s ease;
 }
 #logoContainer,
 #logoContainer canvas {
@@ -231,8 +257,27 @@ select {
 }
 
 #youtubeContainer {
+    width: 1920px;
+    height: 975px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#youtubeContainer > div > div > div {
+    transform: translateX(0);
+}
+
+#lfwContainer {
     width: 100%;
-    height: 3000px;
+    max-width: inherit;
+    height: 975px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -9;
+    opacity: 0;
 }
 
 .swiper {
@@ -280,19 +325,6 @@ select {
     width: 3000px;
     height: 3000px;
 }
-#cardSlide3d img {
-    transform: translateX(-50%);
-    top: 0;
-    left: 50%;
-    width: 100%;
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1) 25%,
-        rgba(0, 0, 0, 0) 35%,
-        rgba(0, 0, 0, 0) 65%,
-        rgba(0, 0, 0, 1) 75%
-    );
-}
 #logoMoveSection2 {
     position: absolute;
     top: 5%;
@@ -304,6 +336,7 @@ select {
 #logoMoveSection4 {
     position: relative;
     width: 100%;
+    max-width: inherit;
     height: 1281px;
     transition: top 0s ease;
     transform: translateX(-50%);
@@ -313,6 +346,7 @@ select {
 #logoMoveSection4 .gradient {
     position: absolute;
     width: 100%;
+    max-width: inherit;
     height: 100%;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -320,12 +354,12 @@ select {
 
     background-image: linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 0) 10%,
-            rgba(0, 0, 0, 0) 90%,
-            rgba(0, 0, 0, 1) 100%
+            rgba(0, 0, 0, 1) 200px,
+            rgba(0, 0, 0, 0) 400px,
+            rgba(0, 0, 0, 0) 800px,
+            rgba(0, 0, 0, 1) 1000px
         ),
-        url("img/squintingNightCity.png");
+        url('img/squintingNightCity.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -385,17 +419,21 @@ select {
 }
 #pjCardDrawingPaperBig img {
     width: 100%;
-    /* z-index: -100; */
+    max-width: inherit;
     background: rgba(255, 255, 255, 0);
-    /* position: absolute; */
-    /* opacity: 0; */
-    /*     background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat; */
-    /* 이미지는 contain으로 */
     object-fit: contain;
 }
 
+#linesFatWireframe {
+    width: 100%;
+    max-width: inherit;
+    height: 975px;
+}
+
+#AIChemist-swiper {
+    height: max-content;
+    margin-bottom: 368px;
+}
 #AIChemist-swiper .swiper-slide {
     width: 392px;
     height: 449px;
@@ -406,15 +444,16 @@ select {
 
 #priceContainer {
     width: 100%;
-    height: calc(1920px + 700px);
+    max-width: inherit;
+    height: 1282px;
     background-image: linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 1) 25%,
-            rgba(0, 0, 0, 0) 35%,
-            rgba(0, 0, 0, 0) 65%,
-            rgba(0, 0, 0, 1) 75%
+            rgba(0, 0, 0, 1) 50px,
+            rgba(0, 0, 0, 0) 200px,
+            rgba(0, 0, 0, 0) 1000px,
+            rgba(0, 0, 0, 1) 1282px
         ),
-        url("img/backgroundCode.png");
+        url('img/backgroundCode.png');
     background-color: rgba(0, 0, 0, 0.8);
     background-position: center;
     background-size: contain;
@@ -424,11 +463,27 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    margin-bottom: 396px;
 }
 
 #pwContainer {
     width: 100%;
-    height: 1834px;
+    max-width: inherit;
+    height: 1048px;
+    margin-bottom: 502px;
+    position: relative;
+}
+#pwContainer .gradient {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 800px,
+        rgba(0, 0, 0, 1) 990px
+    );
+    position: absolute;
+    width: 100%;
+    max-width: inherit;
+    height: 100%;
 }
 
 .title.wave.part-b {
@@ -466,6 +521,108 @@ select {
 }
 .price-card .price-card-contents-top {
     min-height: 168px;
+}
+
+.gradient-blue-to-white {
+    background: linear-gradient(256deg, #fff 45.97%, #8dbfff 96.13%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradient-blue-to-white span {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-color: transparent;
+}
+
+.about-aichemist {
+    display: flex;
+    margin-left: 131px;
+    margin-bottom: 389px;
+}
+.about-aichemist .line-n-aichemist {
+    display: flex;
+    justify-content: end;
+}
+.about-aichemist .line-n-aichemist .line {
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    padding: 40px 20px;
+}
+.about-aichemist hr {
+    width: 126px;
+    border: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(141, 191, 255, 0.93) 100%
+    );
+    margin: 0;
+}
+
+.team-n-mail-n-footer {
+    height: 2584px;
+    background: linear-gradient(
+        180deg,
+        rgba(5, 74, 252, 0) 0%,
+        rgba(5, 74, 252, 0.9) 40%,
+        #2972ff 74.5%,
+        #91b7ff 93%,
+        #fff 100%
+    );
+    color: #000;
+}
+
+.imagine-really {
+    margin-left: 119px;
+    height: 340px;
+}
+.imagine-sub-n-mail-send {
+    display: flex;
+    justify-content: space-between;
+    margin: 66px 119px 518px;
+}
+
+.imagine-sub-n-mail-send input,
+.imagine-sub-n-mail-send textarea {
+    width: 500px;
+    height: 52px;
+    padding: 16px;
+    background-color: transparent;
+}
+.imagine-sub-n-mail-send input:focus,
+.imagine-sub-n-mail-send textarea:focus {
+}
+.imagine-sub-n-mail-send button {
+    width: 92px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #000;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+.mail-send {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+.mail-send hr {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
 }
 
 footer {
