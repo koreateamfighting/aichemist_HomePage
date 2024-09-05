@@ -348,7 +348,7 @@ select {
     transform: translateX(-50%);
     top: 0;
     left: 50%;
-    position: relative;
+    position: fixed;
     width: 3000px;
     height: 3000px;
 }

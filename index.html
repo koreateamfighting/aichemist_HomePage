@@ -1958,7 +1958,7 @@
                 { x: 271, y: 660 },
                 { x: 721, y: 840 },
                 { x: 1059, y: 976 },
-                { x: 1280, y: 1200 },
+                { x: 1280, y: 1150 },
             ]
             const logoControlPoints2 = [
                 { x: 1280, y: 4200, z: 0 },
@@ -1977,11 +1977,7 @@
             }
             const cardControlPoints = [
                 canvasToThreeJS({ x: 2500, y: 753 }),
-                canvasToThreeJS({ x: 1834, y: 535 }),
-                canvasToThreeJS({ x: 1369, y: 578 }),
-                canvasToThreeJS({ x: 894, y: 624 }),
-                canvasToThreeJS({ x: 538, y: 600 }),
-                canvasToThreeJS({ x: 456, y: 750 }),
+                canvasToThreeJS({ x: 1083, y: 400 }),
                 canvasToThreeJS({ x: 0, y: 800 }),
             ]
             const initCardRotation = -35 * (Math.PI / 180)
@@ -2035,6 +2031,7 @@
 
             lenis.on('scroll', (e) => {
                 const scroll = e.scroll
+                console.log('scroll', scroll)
                 if (logoObject) {
                     if (scroll < cardSlide3dContainer.offsetTop) {
                         // 로고 투명도 50%
@@ -2073,7 +2070,6 @@
                             //     logoControlPoints2,
                             //     progress
                             // )
-                            console.log(scroll - blankSpace3.offsetTop)
                         }
                     } else {
                     }
@@ -2084,15 +2080,14 @@
                     if (scroll < cardSlide3dContainer.offsetTop) {
                         logoMoveSection4.style.position = 'relative'
                         cardSlide3dCanvas.style.opacity = 0
-                        cardSlide3dCanvas.style.position = 'relative'
+                        cardSlide3dCanvas.style.zIndex = -10
                         replacementBox.style.height = '0'
                         logoContainer.style.position = 'absolute'
                     } else if (scroll < blankSpace7.offsetTop) {
                         logoMoveSection4.style.position = 'fixed'
                         // fixed로 바뀌면서 너비가 줄어들어서 다시 너비를 맞춰줌
-                        // cardSlide3dCanvas.style.width = `${cardSlide3dContainer.offsetWidth}px`;
                         cardSlide3dCanvas.style.opacity = 1
-                        cardSlide3dCanvas.style.position = 'fixed'
+                        cardSlide3dCanvas.style.zIndex = 5
                         replacementBox.style.height = `${cardSlide3dContainer.offsetHeight}px`
                         // 로고컨테이너도 fixed로 변경
                         logoContainer.style.position = 'fixed'
@@ -2104,11 +2099,11 @@
                         }px`
 
                         if (scroll < blankSpace3.offsetTop) {
-                            logoContainer.style.top = `${logoContainer.offsetHeight / 2}px`
+                            logoContainer.style.top = `${logoContainer.offsetHeight / 2 - 50}px`
                             logoContainer.style.opacity = 1
                         } else {
                             // 로고 컨테이너 아래로 내려가면서 투명도 0으로
-                            logoContainer.style.top = `${logoContainer.offsetHeight / 2 + (scroll - blankSpace3.offsetTop) * 0.05}px`
+                            logoContainer.style.top = `${logoContainer.offsetHeight / 2 - 50 + (scroll - blankSpace3.offsetTop) * 0.05}px`
                             // logoContainer.style.top = `-${(scroll - blankSpace3.offsetTop) * 0.1}px`
                             logoContainer.style.opacity =
                                 1 - (scroll - blankSpace3.offsetTop) * 0.0005
@@ -2120,7 +2115,7 @@
                                 cardSlide3dContainer.offsetTop)
 
                         cards.forEach((card, index) => {
-                            const temp = progress - index * 0.25
+                            const temp = progress - index * 0.2
                             temps[index] = temp
                             if (temp < 0) {
                                 card.position.set(
@@ -2176,11 +2171,12 @@
                 if (scroll > blankSpace4.offsetTop) {
                     const top = scroll - blankSpace4.offsetTop
                     logoMoveSection4.style.top = `-${top}px`
-                    console.log(top, blankSpace7.offsetTop)
                     if (top > blankSpace7.offsetTop) {
-                        cardSlide3dCanvas.style.position = 'relative'
+                        cardSlide3dCanvas.style.opacity = 0
+                        cardSlide3dCanvas.style.zIndex = -10
                     } else {
-                        cardSlide3dCanvas.style.position = 'fixed'
+                        cardSlide3dCanvas.style.opacity = 1
+                        cardSlide3dCanvas.style.zIndex = 5
                     }
                 } else {
                     logoMoveSection4.style.top = ''
@@ -2337,9 +2333,12 @@
                         lfwContainer.style.zIndex = '10'
                         lfwContainer.style.opacity = '1'
                         lfwContainer.style.top = `-${scroll - blankSpace16.offsetTop}px`
+
+                        console.log(scroll - pwContainer.offsetTop)
                     } else {
                         lfwContainer.style.zIndex = '-10'
                         lfwContainer.style.opacity = '0'
+                        lfwContainer.style.top = `-${scroll - blankSpace16.offsetTop}px`
                     }
                 }
             })
@@ -3157,6 +3156,7 @@
                             cardMaterial
                         )
                         cardMesh.position.set(2500, 0, 0)
+                        cardMesh.scale.set(1.2, 1.2, 1.2)
                         cardMesh.rotation.y = -35 * (Math.PI / 180)
 
                         cards.push(cardMesh)
