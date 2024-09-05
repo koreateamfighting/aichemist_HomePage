@@ -64,7 +64,8 @@ body {
     z-index: 100;
 }
 .blank-space.space1 {
-    height: 3000px;
+    /* height: 3000px; */
+    height: 0px;
 }
 .blank-space.space2 {
     height: 4000px;
@@ -157,7 +158,7 @@ select {
 }
 
 #logoContainer {
-    width: 320px;
+    width: 500px;
     aspect-ratio: 1 / 1;
     position: absolute;
     top: 330px;
@@ -167,9 +168,13 @@ select {
     transition:
         left 0s ease-out,
         top 0s ease;
+    border-radius: 80px;
 }
-#logoContainer,
 #logoContainer canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 80px;
 }
 

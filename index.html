@@ -1563,11 +1563,10 @@
 
             const logoControlPoints = [
                 { x: 500, y: 340 },
-                { x: 74, y: 1334 },
-                { x: 166, y: 2826 },
-                { x: 702, y: 3226 },
-                { x: 1354, y: 3170 },
-                { x: 1280, y: 4200 },
+                { x: 271, y: 660 },
+                { x: 721, y: 840 },
+                { x: 1059, y: 976 },
+                { x: 1280, y: 1200 },
             ]
             const logoControlPoints2 = [
                 { x: 1280, y: 4200, z: 0 },
@@ -1608,7 +1607,7 @@
 
             // 3D LOGO
             const logoContainer = document.getElementById('logoContainer')
-            const LOGO_WIDTH = logoContainer.offsetWidth
+            const LOGO_WIDTH = 320
             let logoObject // 오브젝트를 저장할 변수
             const LOGO_SIZE = 22 // 로고 크기
             const LOGO_ROTATE_X = 0.5 // 로고 X축 회전
@@ -1645,11 +1644,25 @@
             lenis.on('scroll', ({ scroll }) => {
                 if (logoObject) {
                     if (scroll < cardSlide3dContainer.offsetTop) {
+                        // 로고 투명도 50%
+                        logoObject.traverse((child) => {
+                            if (child.isMesh) {
+                                child.material.opacity = 0.5
+                            }
+                        })
+
                         const progress = scroll / cardSlide3dContainer.offsetTop
                         const logoPosition = bezier(logoControlPoints, progress)
                         logoContainer.style.left = `${logoPosition.x}px`
                         logoContainer.style.top = `${logoPosition.y}px`
                     } else if (scroll < blankSpace7.offsetTop) {
+                        // 로고 투명도 70%
+                        logoObject.traverse((child) => {
+                            if (child.isMesh) {
+                                child.material.opacity = 0.7
+                            }
+                        })
+
                         logoContainer.style.left = `${logoControlPoints[logoControlPoints.length - 1].x}px`
                         const logoPositionY =
                             logoControlPoints[logoControlPoints.length - 1].y +
@@ -1989,6 +2002,7 @@
                                 child.material.map = texture
                                 child.material.transparent = true // 투명도 설정
                                 child.material.needsUpdate = true
+                                child.material.opacity = 0.5
                             }
                         },
                         (xhr) => {
