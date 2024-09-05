@@ -614,17 +614,47 @@ select {
     margin: 66px 119px 518px;
 }
 
-.imagine-sub-n-mail-send input,
-.imagine-sub-n-mail-send textarea {
-    width: 500px;
-    height: 52px;
-    padding: 16px;
+.mail-send-box {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: end;
+}
+.mail-send-box .input-box {
+    position: relative;
+    padding: 16px 0;
+    margin: 0 16px;
+}
+.mail-send-box input {
+    width: 468px;
+    height: 20px;
     background-color: transparent;
 }
-.imagine-sub-n-mail-send input:focus,
-.imagine-sub-n-mail-send textarea:focus {
+.mail-send-box input:focus-visible {
+    outline: none;
 }
-.imagine-sub-n-mail-send button {
+.mail-send-box .placeholder {
+    color: #000;
+    position: absolute;
+    left: 0;
+    cursor: text;
+}
+.mail-send-box .focused .placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+.mail-send-box .focused input {
+    color: rgba(255, 255, 255, 0.3);
+}
+.mail-send-box .filled .placeholder {
+    display: none;
+}
+.mail-send-box .warn {
+    position: absolute;
+    bottom: -30px;
+    color: #ff7070;
+    display: none;
+}
+.mail-send-box button {
     width: 92px;
     height: 32px;
     flex-shrink: 0;
@@ -641,15 +671,25 @@ select {
     align-items: center;
     gap: 7px;
 }
-.mail-send {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+.mail-send-box button.clicked {
+    background-color: #fff;
+    color: #000;
 }
-.mail-send hr {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+.mail-send-box .hr {
+    height: 1px;
+    margin-top: 1px;
+    background-image: linear-gradient(
+        90deg,
+        #000 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    position: relative;
+}
+.mail-send-box .hr svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
 }
 
 footer {
