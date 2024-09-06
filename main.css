@@ -27,7 +27,7 @@
     font-style: normal;
 }
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 20px;
     height: 0;
 }
 ::-webkit-scrollbar-track {
@@ -458,8 +458,8 @@ select {
 }
 
 #AIChemist-swiper {
+    margin-top: 33px;
     height: max-content;
-    margin-bottom: 368px;
 }
 #AIChemist-swiper .swiper-slide {
     width: 392px;
@@ -567,7 +567,6 @@ select {
 .about-aichemist {
     display: flex;
     margin-left: 131px;
-    margin-bottom: 389px;
 }
 .about-aichemist .line-n-aichemist {
     display: flex;
@@ -592,7 +591,11 @@ select {
 }
 
 .team-n-mail-n-footer {
+    padding-top: 389px;
+    padding-bottom: 34px;
     height: 2584px;
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(
         180deg,
         rgba(5, 74, 252, 0) 0%,
@@ -603,15 +606,33 @@ select {
     );
     color: #000;
 }
+.team-n-mail-n-footer .meet-our-team {
+    padding-left: 119px;
+    font-size: 30px;
+    background: linear-gradient(91deg, #fff 45.74%, #8dbfff 83.36%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
 
 .imagine-really {
+    margin-top: 368px;
     margin-left: 119px;
     height: 340px;
+    line-height: normal;
+    letter-spacing: -2.1px;
+}
+.imagine-really span {
+    font-size: 70px;
 }
 .imagine-sub-n-mail-send {
     display: flex;
     justify-content: space-between;
-    margin: 66px 119px 518px;
+    margin-top: 66px;
+    margin-left: 119px;
+    font-size: 16px;
+    flex: 1;
 }
 
 .mail-send-box {

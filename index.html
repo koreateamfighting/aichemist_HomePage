@@ -1285,7 +1285,7 @@
         </div>
 
         <div class="team-n-mail-n-footer">
-            <div class="gradient-blue-to-white">Meet our team</div>
+            <span class="meet-our-team">Meet our team</span>
 
             <!-- 사원 슬라이드 -->
             <div class="swiper border-0" id="AIChemist-swiper">
@@ -1618,13 +1618,13 @@
             </div>
 
             <div class="imagine-really">
-                <div class="title wave part-b">The world you're</div>
-                <div class="title wave part-b">imagining</div>
-                <div class="title wave part-b">From Ichemist to</div>
-                <div class="title wave part-b">reality!</div>
+                <div class="wave part-b">The world you're</div>
+                <div class="wave part-b">imagining</div>
+                <div class="wave part-b">From Ichemist to</div>
+                <div class="wave part-b">reality!</div>
             </div>
             <div class="imagine-sub-n-mail-send">
-                <div class="flex flex-row mt-[50px]">
+                <div class="flex flex-row">
                     <div class="font-medium text-[16px] leading-[19.5px]">
                         Bringing imagination to life using AI technology Beyond
                         reality, the new world of the Metaverse<br />
@@ -3815,7 +3815,7 @@
                     span.innerHTML = span.textContent
                         .split('')
                         .map((letter, idx) => {
-                            if (letter === ' ') return ' '
+                            if (letter === ' ') letter = '&nbsp;'
                             return `<span style="animation-delay:${idx * 30}ms" class="letter">${letter}</span>`
                         })
                         .join('')
