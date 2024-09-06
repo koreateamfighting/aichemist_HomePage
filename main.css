@@ -631,6 +631,7 @@ select {
     justify-content: space-between;
     margin-top: 66px;
     margin-left: 119px;
+    margin-right: 157px;
     font-size: 16px;
     flex: 1;
 }
@@ -676,6 +677,7 @@ select {
     display: none;
 }
 .mail-send-box button {
+    margin-right: 14px;
     width: 92px;
     height: 32px;
     flex-shrink: 0;
