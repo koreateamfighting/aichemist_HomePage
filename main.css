@@ -717,4 +717,10 @@ select {
 
 footer {
     margin: 0 48px;
+    position: relative;
+}
+footer .footer-logo {
+    position: absolute;
+    right: 48px;
+    bottom: 44px;
 }
