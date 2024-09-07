@@ -2186,27 +2186,73 @@
                 }
 
                 if (bigCards.length != 0) {
-                    if (scroll > blankSpace4.offsetTop) {
+                    if (scroll < blankSpace4.offsetTop) {
+                        bigCards[0].position.set(
+                            bigCardControlPoints1[0].x,
+                            bigCardControlPoints1[0].y,
+                            bigCardControlPoints1[0].z
+                        )
+                        bigCards[1].position.set(
+                            bigCardControlPoints2[0].x,
+                            bigCardControlPoints2[0].y,
+                            bigCardControlPoints2[0].z
+                        )
+                        bigCards[2].position.set(
+                            bigCardControlPoints3[0].x,
+                            bigCardControlPoints3[0].y,
+                            bigCardControlPoints3[0].z
+                        )
+                    } else if (scroll < blankSpace5.offsetTop) {
                         const progress =
                             (scroll - blankSpace4.offsetTop) /
                             (blankSpace5.offsetTop - blankSpace4.offsetTop)
                         bicCardSlide(progress, 0)
-                    }
-
-                    if (scroll > blankSpace5.offsetTop) {
+                    } else if (scroll < blankSpace6.offsetTop) {
                         logoContainer.style.position = 'absolute'
 
                         const progress =
                             (scroll - blankSpace5.offsetTop) /
                             (blankSpace6.offsetTop - blankSpace5.offsetTop)
                         bicCardSlide(progress, 1)
-                    }
-
-                    if (scroll > blankSpace6.offsetTop) {
+                    } else if (scroll < blankSpace7.offsetTop) {
                         const progress =
                             (scroll - blankSpace6.offsetTop) /
                             (blankSpace7.offsetTop - blankSpace6.offsetTop)
                         bicCardSlide(progress, 2)
+                    } else {
+                        bigCards[0].position.set(
+                            bigCardControlPoints1[
+                                bigCardControlPoints1.length - 1
+                            ].x,
+                            bigCardControlPoints1[
+                                bigCardControlPoints1.length - 1
+                            ].y,
+                            bigCardControlPoints1[
+                                bigCardControlPoints1.length - 1
+                            ].z
+                        )
+                        bigCards[1].position.set(
+                            bigCardControlPoints2[
+                                bigCardControlPoints2.length - 1
+                            ].x,
+                            bigCardControlPoints2[
+                                bigCardControlPoints2.length - 1
+                            ].y,
+                            bigCardControlPoints2[
+                                bigCardControlPoints2.length - 1
+                            ].z
+                        )
+                        bigCards[2].position.set(
+                            bigCardControlPoints3[
+                                bigCardControlPoints3.length - 1
+                            ].x,
+                            bigCardControlPoints3[
+                                bigCardControlPoints3.length - 1
+                            ].y,
+                            bigCardControlPoints3[
+                                bigCardControlPoints3.length - 1
+                            ].z
+                        )
                     }
                 }
 
@@ -2393,14 +2439,14 @@
                     controlPoints = bigCardControlPoints3
                 }
 
-                if (progress < 0) {
+                if (progress <= 0) {
                     bigCards[index].position.set(
                         controlPoints.x,
                         controlPoints.y,
                         0
                     )
                     return
-                } else if (progress > 1) {
+                } else if (progress >= 1) {
                     bigCards[index].position.set(
                         controlPoints.x,
                         controlPoints.y,
@@ -2420,14 +2466,6 @@
             const MTW_CEN_FONT_SIZE = 18
 
             function init3DLogo() {
-                const textureLoader = new THREE.TextureLoader()
-                const texture = textureLoader.load(
-                    '/CEN_3D_Logo/CEN_Logo_3D_Base_color.png'
-                ) // 텍스처 이미지 파일 경로
-                const logoMaterial = new THREE.MeshBasicMaterial({
-                    map: texture,
-                })
-
                 const logoScene = new THREE.Scene()
 
                 // pdCamera = new THREE.PerspectiveCamera(20, WIDTH / HEIGHT, 1, 50000);
@@ -2460,7 +2498,10 @@
                 const logoOBJLoader = new OBJLoader()
                 logoOBJLoader.load('/CEN_3D_Logo/CEN_Logo_3D.obj', (object) => {
                     const texture = new THREE.TextureLoader().load(
-                        '/CEN_3D_Logo/CEN_Logo_3D_Base_color.png'
+                        '/CEN_3D_Logo/CEN_Logo_3D_Base_color.png',
+                        () => {
+                            texture.encoding = THREE.sRGBEncoding
+                        }
                     )
                     object.traverse(
                         (child) => {
@@ -2999,6 +3040,8 @@
 
                 cardSlide3dContainer.appendChild(cs3dRenderer.domElement)
                 cardSlide3dCanvas = cs3dRenderer.domElement
+                cardSlide3dCanvas.style.zIndex = -10
+                cardSlide3dCanvas.style.opacity = 0
 
                 // 이미지 텍스처 로드
                 const textureLoader = new THREE.TextureLoader()
@@ -3482,7 +3525,7 @@
             /* ▽▽▽▽▽▽▽▽▽▽ lines fat wireframe ▽▽▽▽▽▽▽▽▽▽ */
 
             let wireframe, lfwRenderer, lfwScene, lfwCamera
-            let matLine, matLineBasic, matLineDashed
+            let matLine
             const initLfwPositionY = 40
             const initLfwScale = 0.1
             let lfwComposer
@@ -3530,37 +3573,21 @@
                 wireframe.position.set(0, initLfwPositionY, 0)
                 lfwScene.add(wireframe)
 
-                // 로고 추가
-                const textureLoader = new THREE.TextureLoader()
-                const texture = textureLoader.load(
-                    '/CEN_3D_Logo/CEN_Logo_3D_Base_color.png'
-                ) // 텍스처 이미지 파일 경로
-                const logoMaterial = new THREE.MeshBasicMaterial({
-                    map: texture,
-                })
-
                 const logoOBJLoader = new OBJLoader()
                 logoOBJLoader.load('/CEN_3D_Logo/CEN_Logo_3D.obj', (object) => {
                     const texture = new THREE.TextureLoader().load(
-                        '/CEN_3D_Logo/CEN_Logo_3D_Base_color.png'
-                    )
-                    object.traverse(
-                        (child) => {
-                            if (child.isMesh) {
-                                child.material.map = texture
-                                child.material.transparent = true // 투명도 설정
-                                child.material.needsUpdate = true
-                            }
-                        },
-                        (xhr) => {
-                            console.log(
-                                (xhr.loaded / xhr.total) * 100 + '% loaded!!!!'
-                            )
-                        },
-                        (error) => {
-                            console.log('!!!!An error happened', error)
+                        '/CEN_3D_Logo/CEN_Logo_3D_Base_color.png',
+                        () => {
+                            texture.encoding = THREE.sRGBEncoding
                         }
                     )
+                    object.traverse((child) => {
+                        if (child.isMesh) {
+                            child.material.map = texture
+                            child.material.transparent = true // 투명도 설정
+                            child.material.needsUpdate = true
+                        }
+                    })
 
                     object.position.set(0, 0, 0) // 로고의 위치 조정
                     // 로고 크기 조정
@@ -3587,47 +3614,32 @@
 
             function animate() {
                 // main lfwScene
-
                 lfwRenderer.setClearColor(0x000000, 0)
-
                 lfwRenderer.setViewport(
                     0,
                     0,
                     lfwContainer.offsetWidth,
                     lfwContainer.offsetHeight
                 )
-
                 lfwRenderer.render(lfwScene, lfwCamera)
 
                 // inset lfwScene
-
                 lfwRenderer.setClearColor(0x222222, 1)
-
                 lfwRenderer.clearDepth() // important!
-
                 lfwRenderer.setScissorTest(true)
-
                 lfwRenderer.setScissor(
                     20,
                     20,
                     lfwContainer.offsetWidth / 4,
                     lfwContainer.offsetHeight / 4
                 )
-
                 lfwRenderer.setViewport(
                     20,
                     20,
                     lfwContainer.offsetWidth / 4,
                     lfwContainer.offsetHeight / 4
                 )
-
                 lfwRenderer.setScissorTest(false)
-
-                // wireframe.scale.set(
-                //     wireframe.scale.x + 0.01,
-                //     wireframe.scale.y + 0.01,
-                //     wireframe.scale.z + 0.01
-                // )
 
                 if (logoObject2) {
                     // 오브젝트를 회전
