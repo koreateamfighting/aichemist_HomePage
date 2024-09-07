@@ -27,7 +27,7 @@
     font-style: normal;
 }
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
     height: 0;
 }
 ::-webkit-scrollbar-track {

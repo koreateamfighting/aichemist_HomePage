@@ -2102,18 +2102,12 @@
                             logoControlPoints[logoControlPoints.length - 1].y +
                             scroll -
                             cardSlide3dContainer.offsetTop
-                        if (scroll < blankSpace3.offsetTop) {
-                            // logoContainer.style.top = `${logoPositionY}px`
-                        } else {
-                            // const progress =
-                            //     (scroll - blankSpace3.offsetTop) /
-                            //     (blankSpace4.offsetTop - blankSpace3.offsetTop)
-                            // const logoPosition = bezier(
-                            //     logoControlPoints2,
-                            //     progress
-                            // )
-                        }
                     } else {
+                    }
+                    if (scroll < blankSpace4.offsetTop) {
+                        logoContainer.style.zIndex = 1
+                    } else {
+                        logoContainer.style.zIndex = -10
                     }
                 }
 
@@ -2207,6 +2201,28 @@
                             (scroll - blankSpace4.offsetTop) /
                             (blankSpace5.offsetTop - blankSpace4.offsetTop)
                         bicCardSlide(progress, 0)
+                        bigCards[1].position.set(
+                            bigCardControlPoints2[
+                                bigCardControlPoints2.length - 1
+                            ].x,
+                            bigCardControlPoints2[
+                                bigCardControlPoints2.length - 1
+                            ].y,
+                            bigCardControlPoints2[
+                                bigCardControlPoints2.length - 1
+                            ].z
+                        )
+                        bigCards[2].position.set(
+                            bigCardControlPoints3[
+                                bigCardControlPoints3.length - 1
+                            ].x,
+                            bigCardControlPoints3[
+                                bigCardControlPoints3.length - 1
+                            ].y,
+                            bigCardControlPoints3[
+                                bigCardControlPoints3.length - 1
+                            ].z
+                        )
                     } else if (scroll < blankSpace6.offsetTop) {
                         logoContainer.style.position = 'absolute'
 
@@ -2214,11 +2230,49 @@
                             (scroll - blankSpace5.offsetTop) /
                             (blankSpace6.offsetTop - blankSpace5.offsetTop)
                         bicCardSlide(progress, 1)
+                        bigCards[0].position.set(
+                            bigCardControlPoints1[0].x,
+                            bigCardControlPoints1[0].y,
+                            bigCardControlPoints1[0].z
+                        )
+                        bigCards[2].position.set(
+                            bigCardControlPoints3[
+                                bigCardControlPoints3.length - 1
+                            ].x,
+                            bigCardControlPoints3[
+                                bigCardControlPoints3.length - 1
+                            ].y,
+                            bigCardControlPoints3[
+                                bigCardControlPoints3.length - 1
+                            ].z
+                        )
                     } else if (scroll < blankSpace7.offsetTop) {
                         const progress =
                             (scroll - blankSpace6.offsetTop) /
                             (blankSpace7.offsetTop - blankSpace6.offsetTop)
                         bicCardSlide(progress, 2)
+                        bigCards[0].position.set(
+                            bigCardControlPoints1[
+                                bigCardControlPoints1.length - 1
+                            ].x,
+                            bigCardControlPoints1[
+                                bigCardControlPoints1.length - 1
+                            ].y,
+                            bigCardControlPoints1[
+                                bigCardControlPoints1.length - 1
+                            ].z
+                        )
+                        bigCards[1].position.set(
+                            bigCardControlPoints2[
+                                bigCardControlPoints2.length - 1
+                            ].x,
+                            bigCardControlPoints2[
+                                bigCardControlPoints2.length - 1
+                            ].y,
+                            bigCardControlPoints2[
+                                bigCardControlPoints2.length - 1
+                            ].z
+                        )
                     } else {
                         bigCards[0].position.set(
                             bigCardControlPoints1[
@@ -2465,6 +2519,8 @@
 
             const MTW_CEN_FONT_SIZE = 18
 
+            const logoOBJLoader = new OBJLoader()
+
             function init3DLogo() {
                 const logoScene = new THREE.Scene()
 
@@ -2495,7 +2551,6 @@
                 // )
                 // composer.addPass(bloomPass)
 
-                const logoOBJLoader = new OBJLoader()
                 logoOBJLoader.load('/CEN_3D_Logo/CEN_Logo_3D.obj', (object) => {
                     const texture = new THREE.TextureLoader().load(
                         '/CEN_3D_Logo/CEN_Logo_3D_Base_color.png',
@@ -3036,7 +3091,6 @@
                 })
                 cs3dRenderer.setSize(canvasExpansionW, canvasExpansionH)
                 cs3dRenderer.setClearColor(0x000000, 0) // 배경을 투명하게 설정
-                cs3dRenderer.outputEncoding = THREE.sRGBEncoding
 
                 cardSlide3dContainer.appendChild(cs3dRenderer.domElement)
                 cardSlide3dCanvas = cs3dRenderer.domElement
@@ -3326,6 +3380,7 @@
                     loadedCards.forEach(({ card, texture }, index) => {
                         texture.encoding = THREE.sRGBEncoding // 텍스처의 색상 공간을 sRGB로 설정
                         texture.needsUpdate = true // 텍스처 업데이트 필요 설정
+                        texture.colorSpace = THREE.SRGBColorSpace
 
                         const imgWidth = texture.image.width
                         const imgHeight = texture.image.height
@@ -3528,11 +3583,6 @@
             let matLine
             const initLfwPositionY = 40
             const initLfwScale = 0.1
-            let lfwComposer
-
-            // viewport
-            let insetWidth
-            let insetHeight
 
             init()
 
@@ -3557,7 +3607,7 @@
                 )
                 lfwCamera.position.set(0, 0, 100)
 
-                let geo = new THREE.IcosahedronGeometry(20, 1)
+                const geo = new THREE.IcosahedronGeometry(20, 1)
 
                 const geometry = new WireframeGeometry2(geo)
 
@@ -3573,7 +3623,6 @@
                 wireframe.position.set(0, initLfwPositionY, 0)
                 lfwScene.add(wireframe)
 
-                const logoOBJLoader = new OBJLoader()
                 logoOBJLoader.load('/CEN_3D_Logo/CEN_Logo_3D.obj', (object) => {
                     const texture = new THREE.TextureLoader().load(
                         '/CEN_3D_Logo/CEN_Logo_3D_Base_color.png',
@@ -3598,11 +3647,11 @@
                     // 장면에 추가
                     lfwScene.add(object)
 
-                    let light1 = new THREE.DirectionalLight(0xffffff, 3)
+                    const light1 = new THREE.DirectionalLight(0xffffff, 3)
                     light1.position.set(-100, 0, 100)
-                    let light2 = new THREE.DirectionalLight(0xffffff, 3)
+                    const light2 = new THREE.DirectionalLight(0xffffff, 3)
                     light2.position.set(100, 0, 100)
-                    let light3 = new THREE.DirectionalLight(0xffffff, 3)
+                    const light3 = new THREE.DirectionalLight(0xffffff, 3)
                     light3.position.set(100, 0, -100)
                     lfwScene.add(light1)
                     lfwScene.add(light2)
