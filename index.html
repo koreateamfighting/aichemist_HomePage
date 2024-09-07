@@ -60,7 +60,6 @@
     </head>
 
     <body style="margin: 0 auto">
-        <div id="fixedContainer"></div>
         <div id="logoContainer"></div>
 
         <div id="pdContainer">
@@ -273,6 +272,16 @@
         <div class="blank-space space12"></div>
         <div class="blank-space space13"></div>
         <div class="blank-space space14"></div>
+
+        <div class="one-click">
+            <div class="one-click-sub part-a-box">
+                <div class="gradient"></div>
+                <div class="wave part-a">A digital world that can be</div>
+                <div class="wave part-a">automatically generated with</div>
+            </div>
+            <div class="one-click-main">ONE-CLICK</div>
+        </div>
+
         <div class="blank-space space15"></div>
         <div class="blank-space space16"></div>
 
@@ -1225,11 +1234,11 @@
         </div>
 
         <div class="about-aichemist">
-            <div>
-                <div class="title wave part-a">About</div>
+            <div class="part-b-box">
+                <div class="title wave part-b">About</div>
                 <div class="line-n-aichemist">
                     <div class="line"><hr /></div>
-                    <div class="title wave part-a">AIchemist</div>
+                    <div class="title wave part-b">AIchemist</div>
                     <sub><img src="/img/twinkleTwinkleLittleStar.png" /></sub>
                 </div>
             </div>
@@ -1618,11 +1627,11 @@
                 </div>
             </div>
 
-            <div class="imagine-really">
-                <div class="wave part-b">The world you're</div>
-                <div class="wave part-b">imagining</div>
-                <div class="wave part-b">From Ichemist to</div>
-                <div class="wave part-b">reality!</div>
+            <div class="imagine-really part-c-box">
+                <div class="wave part-c">The world you're</div>
+                <div class="wave part-c">imagining</div>
+                <div class="wave part-c">From Ichemist to</div>
+                <div class="wave part-c">reality!</div>
             </div>
             <div class="imagine-sub-n-mail-send">
                 <div class="flex flex-row">
@@ -1936,6 +1945,9 @@
                 'make-the-world-swiper2'
             )
             let youtubeCanvas = youtubeContainer.querySelector('canvas')
+            const oneClickBox = document.querySelector('.one-click')
+            const oneClickBoxMain = oneClickBox.querySelector('.one-click-main')
+            const oneClickBoxSub = oneClickBox.querySelector('.one-click-sub')
             const pwContainer = document.getElementById('pwContainer')
 
             // 이항 계수를 계산하는 함수
@@ -2058,6 +2070,8 @@
             // const initLogoScale = 0.1
 
             let logoObject2
+            const logoObject2MaxScale = 3
+            const logoObject2MinPositionY = -25
 
             let cardGroup = new THREE.Group()
 
@@ -2070,6 +2084,26 @@
             const LOGO_POSITION_SECOND = {
                 top: MTWSwiperContainer.offsetTop,
                 left: MTWSwiperContainer.offsetLeft,
+            }
+
+            function oneClickBoxOn() {
+                oneClickBox.style.zIndex = 10
+                oneClickBox.style.transition = ''
+                oneClickBox.style.opacity = 1
+                oneClickBoxMain.style.opacity = 1
+                oneClickBoxSub.style.transition = 'opacity 0s'
+                if (oneClickBoxSub.style.opacity == 0) {
+                    textEffect('part-a')
+                    oneClickBoxSub.style.opacity = 1
+                }
+            }
+            function oneClickBoxOff() {
+                oneClickBox.style.zIndex = -10
+                oneClickBox.style.transition = 'opacity 1s'
+                oneClickBox.style.opacity = 0
+                oneClickBoxMain.style.opacity = 0
+                oneClickBoxSub.style.transition = 'opacity 1s'
+                oneClickBoxSub.style.opacity = 0
             }
 
             lenis.on('scroll', (e) => {
@@ -2113,18 +2147,14 @@
 
                 const temps = []
                 if (cards.length != 0) {
-                    if (scroll < cardSlide3dContainer.offsetTop) {
-                        logoMoveSection4.style.position = 'relative'
+                    if (scroll < blankSpace1.offsetTop) {
                         cardSlide3dCanvas.style.opacity = 0
                         cardSlide3dCanvas.style.zIndex = -10
-                        replacementBox.style.height = '0'
                         logoContainer.style.position = 'absolute'
                     } else if (scroll < blankSpace7.offsetTop) {
-                        logoMoveSection4.style.position = 'fixed'
                         // fixed로 바뀌면서 너비가 줄어들어서 다시 너비를 맞춰줌
                         cardSlide3dCanvas.style.opacity = 1
                         cardSlide3dCanvas.style.zIndex = 5
-                        replacementBox.style.height = `${cardSlide3dContainer.offsetHeight}px`
                         // 로고컨테이너도 fixed로 변경
                         logoContainer.style.position = 'fixed'
                         // left는 html 너비의 절반 + logoControlPoints2[logoControlPoints2.length - 1]를 더한 값만큼
@@ -2176,6 +2206,7 @@
                             card.position.set(cardPosition.x, cardPosition.y, 0)
                             card.rotation.y = initCardRotation + temp * 2
                         })
+                    } else {
                     }
                 }
 
@@ -2321,7 +2352,11 @@
                         cardSlide3dCanvas.style.zIndex = 5
                     }
                 } else {
-                    logoMoveSection4.style.top = ''
+                    if (scroll > blankSpace1.offsetTop) {
+                        logoMoveSection4.style.top = `0`
+                    } else {
+                        logoMoveSection4.style.top = `${blankSpace1.offsetTop - scroll}px`
+                    }
                 }
 
                 if (scroll < blankSpace8.offsetTop) {
@@ -2372,17 +2407,22 @@
                     youtubeContainer.style.opacity = '0'
                     MTWSwiper2Container.style.zIndex = '-10'
                     MTWSwiper2Container.style.opacity = '0'
+                    youtubeGroup.scale.set(0, 0, 0)
                 }
 
                 // 구체 컨트롤
                 if (logoObject2 && wireframe) {
                     if (scroll < blankSpace12.offsetTop) {
+                        oneClickBoxOff()
+
                         wireframe.position.y = initLfwPositionY
                         lfwContainer.style.zIndex = '-10'
                         lfwContainer.style.opacity = '0'
                         logoObject2.scale.set(0.01, 0.01, 0.01)
                         logoObject2.position.y = 0
                     } else if (scroll < blankSpace13.offsetTop) {
+                        oneClickBoxOff()
+
                         // 현재는 로고2 안보이게
                         logoObject2.scale.set(0.01, 0.01, 0.01)
                         logoObject2.position.y = 0
@@ -2413,19 +2453,30 @@
                         }
                         wireframe.scale.set(newScale, newScale, newScale)
                     } else if (scroll < blankSpace14.offsetTop) {
+                        oneClickBoxOff()
+
                         lfwContainer.style.zIndex = '10'
                         lfwContainer.style.opacity = '1'
 
                         const newLogoScale =
                             0.01 + (scroll - blankSpace13.offsetTop) * 0.002
-                        // 로고 점점 크게
-                        logoObject2.scale.set(
-                            newLogoScale,
-                            newLogoScale,
-                            newLogoScale
-                        )
-                        logoObject2.position.y =
-                            0 - (scroll - blankSpace13.offsetTop) * 0.01
+                        if (newLogoScale > 3) {
+                            logoObject2.scale.set(3, 3, 3)
+                        } else {
+                            // 로고 점점 크게
+                            logoObject2.scale.set(
+                                newLogoScale,
+                                newLogoScale,
+                                newLogoScale
+                            )
+                        }
+                        const newLogoPositionY =
+                            0 - (scroll - blankSpace13.offsetTop) * 0.02
+                        if (newLogoPositionY > logoObject2MinPositionY) {
+                            logoObject2.position.y = newLogoPositionY
+                        } else {
+                            logoObject2.position.y = logoObject2MinPositionY
+                        }
 
                         wireframe.position.y = 0
                         const newCalc =
@@ -2439,19 +2490,30 @@
                             (scroll - blankSpace13.offsetTop) * 0.007
                         wireframe.scale.set(newScale, newScale, newScale)
                     } else if (scroll < blankSpace15.offsetTop) {
+                        oneClickBoxOff()
+
                         lfwContainer.style.zIndex = '10'
                         lfwContainer.style.opacity = '1'
 
                         const newLogoScale =
                             0.01 + (scroll - blankSpace13.offsetTop) * 0.002
-                        // 로고 점점 크게
-                        logoObject2.scale.set(
-                            newLogoScale,
-                            newLogoScale,
-                            newLogoScale
-                        )
-                        logoObject2.position.y =
-                            0 - (scroll - blankSpace13.offsetTop) * 0.01
+                        if (newLogoScale > 3) {
+                            logoObject2.scale.set(3, 3, 3)
+                        } else {
+                            // 로고 점점 크게
+                            logoObject2.scale.set(
+                                newLogoScale,
+                                newLogoScale,
+                                newLogoScale
+                            )
+                        }
+                        const newLogoPositionY =
+                            0 - (scroll - blankSpace13.offsetTop) * 0.02
+                        if (newLogoPositionY > logoObject2MinPositionY) {
+                            logoObject2.position.y = newLogoPositionY
+                        } else {
+                            logoObject2.position.y = logoObject2MinPositionY
+                        }
 
                         wireframe.position.y = 0
                         const newCalc =
@@ -2467,18 +2529,120 @@
                         wireframe.scale.set(newScale, newScale, newScale)
                     } else if (scroll < blankSpace16.offsetTop) {
                         // 로고 위에 글자 띄우기
+                        oneClickBoxOn()
+
                         console.log('blankSpace15')
                         lfwContainer.style.zIndex = '10'
                         lfwContainer.style.opacity = '1'
+                        wireframe.position.y = 0
+                        const newCalc =
+                            (scroll - blankSpace12.offsetTop) * 0.0007
+                        wireframe.rotation.y = newCalc
+                        wireframe.rotation.x = newCalc
+                        wireframe.rotation.z = newCalc
+                        const newScale =
+                            initLfwScale +
+                            newCalc +
+                            (scroll - blankSpace13.offsetTop) * 0.007 +
+                            (scroll - blankSpace14.offsetTop) * 0.08
+                        wireframe.scale.set(newScale, newScale, newScale)
+
+                        const newLogoScale =
+                            0.01 + (scroll - blankSpace13.offsetTop) * 0.002
+                        if (newLogoScale > 3) {
+                            logoObject2.scale.set(3, 3, 3)
+                        } else {
+                            // 로고 점점 크게
+                            logoObject2.scale.set(
+                                newLogoScale,
+                                newLogoScale,
+                                newLogoScale
+                            )
+                        }
+                        const newLogoPositionY =
+                            0 - (scroll - blankSpace13.offsetTop) * 0.02
+                        if (newLogoPositionY > logoObject2MinPositionY) {
+                            logoObject2.position.y = newLogoPositionY
+                        } else {
+                            logoObject2.position.y = logoObject2MinPositionY
+                        }
                     } else if (scroll < pwContainer.offsetTop) {
+                        oneClickBoxOff()
+
                         // lfwContainer 위로 올리기
                         lfwContainer.style.zIndex = '10'
                         lfwContainer.style.opacity = '1'
+                        wireframe.position.y = 0
+                        const newCalc =
+                            (scroll - blankSpace12.offsetTop) * 0.0007
+                        wireframe.rotation.y = newCalc
+                        wireframe.rotation.x = newCalc
+                        wireframe.rotation.z = newCalc
+                        const newScale =
+                            initLfwScale +
+                            newCalc +
+                            (scroll - blankSpace13.offsetTop) * 0.007 +
+                            (scroll - blankSpace14.offsetTop) * 0.08
+                        wireframe.scale.set(newScale, newScale, newScale)
                         lfwContainer.style.top = `-${scroll - blankSpace16.offsetTop}px`
+
+                        const newLogoScale =
+                            0.01 + (scroll - blankSpace13.offsetTop) * 0.002
+                        if (newLogoScale > 3) {
+                            logoObject2.scale.set(3, 3, 3)
+                        } else {
+                            // 로고 점점 크게
+                            logoObject2.scale.set(
+                                newLogoScale,
+                                newLogoScale,
+                                newLogoScale
+                            )
+                        }
+                        const newLogoPositionY =
+                            0 - (scroll - blankSpace13.offsetTop) * 0.02
+                        if (newLogoPositionY > logoObject2MinPositionY) {
+                            logoObject2.position.y = newLogoPositionY
+                        } else {
+                            logoObject2.position.y = logoObject2MinPositionY
+                        }
                     } else {
+                        oneClickBoxOff()
+
                         lfwContainer.style.zIndex = '-10'
                         lfwContainer.style.opacity = '0'
+                        wireframe.position.y = 0
+                        const newCalc =
+                            (scroll - blankSpace12.offsetTop) * 0.0007
+                        wireframe.rotation.y = newCalc
+                        wireframe.rotation.x = newCalc
+                        wireframe.rotation.z = newCalc
+                        const newScale =
+                            initLfwScale +
+                            newCalc +
+                            (scroll - blankSpace13.offsetTop) * 0.007 +
+                            (scroll - blankSpace14.offsetTop) * 0.08
+                        wireframe.scale.set(newScale, newScale, newScale)
                         lfwContainer.style.top = `-${scroll - blankSpace16.offsetTop}px`
+
+                        const newLogoScale =
+                            0.01 + (scroll - blankSpace13.offsetTop) * 0.002
+                        if (newLogoScale > 3) {
+                            logoObject2.scale.set(3, 3, 3)
+                        } else {
+                            // 로고 점점 크게
+                            logoObject2.scale.set(
+                                newLogoScale,
+                                newLogoScale,
+                                newLogoScale
+                            )
+                        }
+                        const newLogoPositionY =
+                            0 - (scroll - blankSpace13.offsetTop) * 0.02
+                        if (newLogoPositionY > logoObject2MinPositionY) {
+                            logoObject2.position.y = newLogoPositionY
+                        } else {
+                            logoObject2.position.y = logoObject2MinPositionY
+                        }
                     }
                 }
             })
@@ -3855,7 +4019,7 @@
             }
             /* △△△△△△△△△△ points waves △△△△△△△△△△ */
         </script>
-        <script type="module">
+        <script>
             function textEffect(name) {
                 const waveAll = document.querySelectorAll(`.${name}`)
 
@@ -3864,34 +4028,46 @@
                         .split('')
                         .map((letter, idx) => {
                             if (letter === ' ') letter = '&nbsp;'
-                            return `<span style="animation-delay:${idx * 30}ms" class="letter">${letter}</span>`
+                            return `<span style="animation-delay:${idx * 15}ms" class="letter">${letter}</span>`
                         })
                         .join('')
                 })
 
-                function resetAnimation() {
-                    waveAll.forEach((line, idx) => {
-                        line.querySelectorAll('.letter').forEach(
-                            (span, idx) => {
-                                span.style.animation = 'none' // 기존 애니메이션 제거
-                                void span.offsetWidth // 리플로우 트릭
-                                span.style.animation = `reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards` // 애니메이션 다시 활성화
-                                span.style.animationDelay = `${idx * 15}ms` // 애니메이션 딜레이 재적용
-                            }
-                        )
-                    })
-                }
+                // waveAll.forEach((line) => {
+                //     line.addEventListener('mouseenter', resetAnimation)
+                // })
+            }
+            // function resetAnimation(els) {
+            //     els.forEach((line, idx) => {
+            //         line.querySelectorAll('.letter').forEach((span, idx) => {
+            //             span.style.animation = 'none' // 기존 애니메이션 제거
+            //             void span.offsetWidth // 리플로우 트릭
+            //             span.style.animation = `reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards` // 애니메이션 다시 활성화
+            //             span.style.animationDelay = `${idx * 15}ms` // 애니메이션 딜레이 재적용
+            //         })
+            //     })
+            // }
 
-                waveAll.forEach((line) => {
-                    line.addEventListener('mouseenter', resetAnimation)
-                })
+            function observeElements(className) {
+                const element = document.querySelector(`.${className}`)
+                const parent = element.parentElement
+                const observer = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                textEffect(className)
+                            }
+                        })
+                    }
+                )
+
+                observer.observe(parent)
             }
 
-            textEffect('part-a')
-            textEffect('part-b')
-        </script>
+            observeElements('part-a')
+            observeElements('part-b')
+            observeElements('part-c')
 
-        <script>
             function moveToScroll(targetId) {
                 const target = document.getElementById(targetId)
 
