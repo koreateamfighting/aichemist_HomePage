@@ -32,10 +32,12 @@
 }
 ::-webkit-scrollbar-track {
     background: #000000;
+    cursor: pointer;
 }
 ::-webkit-scrollbar-thumb {
     background: #054afc;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 /* 문서 가로 너비 기본 1920 */
@@ -71,12 +73,15 @@ body {
     height: 4000px;
 }
 .blank-space.space3 {
-    height: 5500px;
+    height: 1500px;
+}
+.blank-space.space3_1 {
+    height: 1000px;
 }
 .blank-space.space4,
 .blank-space.space5,
 .blank-space.space6 {
-    height: 5000px;
+    height: 2000px;
 }
 .blank-space.space7 {
     height: 900px;

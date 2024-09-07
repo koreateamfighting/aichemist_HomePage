@@ -261,6 +261,7 @@
 
         <div class="blank-space space2"></div>
         <div class="blank-space space3"></div>
+        <div class="blank-space space3_1"></div>
         <div class="blank-space space4" id="pjCar"></div>
         <div class="blank-space space5"></div>
         <div class="blank-space space6"></div>
@@ -1811,6 +1812,18 @@
         </div>
 
         <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+        <script>
+            const lenis = new Lenis({
+                smooth: true,
+            })
+
+            function raf(time) {
+                lenis.raf(time)
+                requestAnimationFrame(raf)
+            }
+
+            requestAnimationFrame(raf)
+        </script>
 
         <script type="x-shader/x-vertex" id="vertexshader">
 
@@ -1862,7 +1875,6 @@
             import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
             import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
             import { BokehPass } from 'three/addons/postprocessing/BokehPass.js'
-            import { OutputPass } from 'three/addons/postprocessing/OutputPass.js'
 
             // points dynamic
             import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js'
@@ -1896,6 +1908,9 @@
             const blankSpace1 = document.querySelector('.blank-space.space1')
             const blankSpace2 = document.querySelector('.blank-space.space2')
             const blankSpace3 = document.querySelector('.blank-space.space3')
+            const blankSpace3_1 = document.querySelector(
+                '.blank-space.space3_1'
+            )
             const blankSpace4 = document.querySelector('.blank-space.space4')
             const blankSpace5 = document.querySelector('.blank-space.space5')
             const blankSpace6 = document.querySelector('.blank-space.space6')
@@ -1966,27 +1981,68 @@
                 { x: 1280, y: 4200, z: -5000 },
             ]
 
-            function canvasToThreeJS({ x, y }) {
-                const canvasWidth = 1920 * 1.2
-                const canvasHeight = 981 * 1.2
+            function canvasToThreeJS({ x, y, z = 0 }) {
+                const canvasWidth = 3520
+                const canvasHeight = 3300
                 // 캔버스의 중심을 Three.js의 중심으로 변환
                 const threeX = x - canvasWidth / 2
                 const threeY = canvasHeight / 2 - y // y축은 반대로 변환
-                return { x: threeX, y: threeY }
+                const threeZ = z
+
+                return { x: threeX, y: threeY, z: threeZ }
             }
             const cardControlPoints = [
-                canvasToThreeJS({ x: 2500, y: 753 }),
-                canvasToThreeJS({ x: 1083, y: 400 }),
-                canvasToThreeJS({ x: 0, y: 800 }),
+                canvasToThreeJS({ x: 3400, y: 1850 }),
+                canvasToThreeJS({ x: 1960, y: 600 }),
+                canvasToThreeJS({ x: 200, y: 1850 }),
             ]
             const initCardRotation = -35 * (Math.PI / 180)
 
             const bigCardControlPoints1 = [
-                canvasToThreeJS({ x: 3000, y: 300 }),
-                canvasToThreeJS({ x: 2500, y: 600 }),
-                canvasToThreeJS({ x: 1200, y: 900 }),
-                canvasToThreeJS({ x: 800, y: 1000 }),
-                canvasToThreeJS({ x: 400, y: 1700 }),
+                canvasToThreeJS({ x: 2880, y: 140 }),
+                canvasToThreeJS({ x: 1880, y: 1240 }),
+                canvasToThreeJS({ x: 1880, y: 1240 }),
+                canvasToThreeJS({ x: 1880, y: 1240 }),
+                canvasToThreeJS({ x: 1880, y: 1240 }),
+                canvasToThreeJS({ x: 1880, y: 1240 }),
+                canvasToThreeJS({ x: 1880, y: 1240 }),
+                canvasToThreeJS({ x: 1880, y: 1240 }),
+                canvasToThreeJS({ x: 1410, y: 3230 }),
+            ]
+            const bigCardControlPoints2 = [
+                canvasToThreeJS({ x: 2590, y: 70 }),
+                canvasToThreeJS({ x: 1860, y: 620 }),
+                canvasToThreeJS({ x: 1720, y: 760 }),
+                canvasToThreeJS({ x: 1460, y: 1100 }),
+                canvasToThreeJS({ x: 1400, y: 1300 }),
+                canvasToThreeJS({ x: 1400, y: 1300 }),
+                canvasToThreeJS({ x: 1400, y: 1300 }),
+                canvasToThreeJS({ x: 1400, y: 1300 }),
+                canvasToThreeJS({ x: 1400, y: 1300 }),
+                canvasToThreeJS({ x: 1400, y: 1300 }),
+                canvasToThreeJS({ x: 1400, y: 1300 }),
+                canvasToThreeJS({ x: 1400, y: 1300 }),
+                canvasToThreeJS({ x: 1400, y: 1300 }),
+                canvasToThreeJS({ x: 1320, y: 1530 }),
+                canvasToThreeJS({ x: 1270, y: 1720 }),
+                canvasToThreeJS({ x: 1210, y: 2030 }),
+                canvasToThreeJS({ x: 1320, y: 2720 }),
+            ]
+            const bigCardControlPoints3 = [
+                canvasToThreeJS({ x: 2750, y: 10, z: 0 }),
+                canvasToThreeJS({ x: 2320, y: 560, z: 0 }),
+                canvasToThreeJS({ x: 2090, y: 960, z: 0 }),
+                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
+                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
+                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
+                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
+                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
+                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
+                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
+                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
+                canvasToThreeJS({ x: 1920, y: 1300, z: 1000 }),
+                canvasToThreeJS({ x: 1920, y: 1600, z: 2500 }),
+                canvasToThreeJS({ x: 2300, y: 1600, z: 4000 }),
             ]
 
             const cards = []
@@ -2016,21 +2072,8 @@
                 left: MTWSwiperContainer.offsetLeft,
             }
 
-            // Lenis 초기화
-            const lenis = new Lenis({
-                smooth: true,
-            })
-
-            function raf(time) {
-                lenis.raf(time)
-                requestAnimationFrame(raf)
-            }
-
-            requestAnimationFrame(raf)
-
             lenis.on('scroll', (e) => {
                 const scroll = e.scroll
-                console.log('scroll', scroll)
                 if (logoObject) {
                     if (scroll < cardSlide3dContainer.offsetTop) {
                         // 로고 투명도 50%
@@ -2114,7 +2157,7 @@
                                 cardSlide3dContainer.offsetTop)
 
                         cards.forEach((card, index) => {
-                            const temp = progress - index * 0.2
+                            const temp = progress - index * 0.085
                             temps[index] = temp
                             if (temp < 0) {
                                 card.position.set(
@@ -2167,8 +2210,8 @@
                     }
                 }
 
-                if (scroll > blankSpace4.offsetTop) {
-                    const top = scroll - blankSpace4.offsetTop
+                if (scroll > blankSpace3_1.offsetTop) {
+                    const top = scroll - blankSpace3_1.offsetTop
                     logoMoveSection4.style.top = `-${top}px`
                     if (top > blankSpace7.offsetTop) {
                         cardSlide3dCanvas.style.opacity = 0
@@ -2332,8 +2375,6 @@
                         lfwContainer.style.zIndex = '10'
                         lfwContainer.style.opacity = '1'
                         lfwContainer.style.top = `-${scroll - blankSpace16.offsetTop}px`
-
-                        console.log(scroll - pwContainer.offsetTop)
                     } else {
                         lfwContainer.style.zIndex = '-10'
                         lfwContainer.style.opacity = '0'
@@ -2343,12 +2384,13 @@
             })
 
             function bicCardSlide(progress, index) {
-                // index가 1인 경우는 좌우 좌표를 반전
-                let controlPoints = bigCardControlPoints1
-                if (index === 1) {
-                    controlPoints = bigCardControlPoints1.map((point) => {
-                        return { x: -point.x, y: point.y }
-                    })
+                let controlPoints
+                if (index === 0) {
+                    controlPoints = bigCardControlPoints1
+                } else if (index === 1) {
+                    controlPoints = bigCardControlPoints2
+                } else if (index === 2) {
+                    controlPoints = bigCardControlPoints3
                 }
 
                 if (progress < 0) {
@@ -2367,10 +2409,11 @@
                     return
                 }
                 const bigCardPosition = bezier(controlPoints, progress)
+
                 bigCards[index].position.set(
                     bigCardPosition.x,
                     bigCardPosition.y,
-                    0
+                    bigCardPosition.z
                 )
             }
 
@@ -2396,20 +2439,23 @@
                 )
                 logoCamera.position.set(0, 0, 500)
 
-                const renderer = new THREE.WebGLRenderer()
+                const renderer = new THREE.WebGLRenderer({
+                    antialias: true,
+                    alpha: true,
+                })
                 renderer.setSize(LOGO_WIDTH, LOGO_WIDTH)
                 renderer.setClearColor(0x000000, 0) // 배경색을 투명으로 설정
                 logoContainer.appendChild(renderer.domElement)
 
-                const composer = new EffectComposer(renderer)
-                composer.addPass(new RenderPass(logoScene, logoCamera))
-                const bloomPass = new UnrealBloomPass(
-                    new THREE.Vector2(WIDTH, HEIGHT),
-                    1.5, // 강도
-                    0.4, // 반경
-                    0.85 // 임계값
-                )
-                composer.addPass(bloomPass)
+                // const composer = new EffectComposer(renderer)
+                // composer.addPass(new RenderPass(logoScene, logoCamera))
+                // const bloomPass = new UnrealBloomPass(
+                //     new THREE.Vector2(WIDTH, HEIGHT),
+                //     1.5, // 강도
+                //     0.4, // 반경
+                //     0.85 // 임계값
+                // )
+                // composer.addPass(bloomPass)
 
                 const logoOBJLoader = new OBJLoader()
                 logoOBJLoader.load('/CEN_3D_Logo/CEN_Logo_3D.obj', (object) => {
@@ -2464,7 +2510,7 @@
                         // logoObject.rotation.x += 0.01; // X축 회전
                         logoObject.rotation.y += 0.01 // Y축 회전
                     }
-                    composer.render()
+                    // composer.render()
                     renderer.render(logoScene, logoCamera)
                 }
 
@@ -2661,8 +2707,6 @@
                     window.innerWidth * window.devicePixelRatio
                 pdEffectFocus.uniforms['screenHeight'].value =
                     window.innerHeight * window.devicePixelRatio
-
-                const outputPass = new OutputPass()
 
                 pdComposer = new EffectComposer(pdRenderer)
 
@@ -2931,14 +2975,16 @@
 
             let cs3dCamera, cs3dScene, cs3dRenderer, cs3dMesh
             async function initCardSlide3d() {
+                const canvasExpansionW = WIDTH
+                const canvasExpansionH = 2400
                 cs3dCamera = new THREE.PerspectiveCamera(
-                    20,
-                    WIDTH / HEIGHT,
+                    20, // 시야각
+                    canvasExpansionW / canvasExpansionH, // 종횡비
                     1,
-                    5000
+                    50000
                 )
-                cs3dCamera.position.z = 3000
-                // cs3dCamera.aspect = WIDTH / HEIGHT;
+                cs3dCamera.position.z = 4000
+                // cs3dCamera.aspect = canvasExpansionW / canvasExpansionH;
                 // cs3dCamera.updateProjectionMatrix();
 
                 cs3dScene = new THREE.Scene()
@@ -2947,8 +2993,9 @@
                     antialias: true,
                     alpha: true,
                 })
-                cs3dRenderer.setSize(WIDTH, HEIGHT)
+                cs3dRenderer.setSize(canvasExpansionW, canvasExpansionH)
                 cs3dRenderer.setClearColor(0x000000, 0) // 배경을 투명하게 설정
+                cs3dRenderer.outputEncoding = THREE.sRGBEncoding
 
                 cardSlide3dContainer.appendChild(cs3dRenderer.domElement)
                 cardSlide3dCanvas = cs3dRenderer.domElement
@@ -3202,7 +3249,7 @@
                             cardMaterial
                         )
                         cardMesh.position.set(2500, 0, 0)
-                        cardMesh.scale.set(1.2, 1.2, 1.2)
+                        cardMesh.scale.set(0.6, 0.6, 0.6)
                         cardMesh.rotation.y = -35 * (Math.PI / 180)
 
                         cards.push(cardMesh)
@@ -3230,108 +3277,49 @@
                     })
                 }
 
-                function removeColorProfile(image) {
-                    const canvas = document.createElement('canvas')
-                    const context = canvas.getContext('2d')
-                    canvas.width = image.width
-                    canvas.height = image.height
-
-                    // 이미지를 캔버스에 그립니다.
-                    context.drawImage(image, 0, 0)
-
-                    // 픽셀 데이터를 가져옵니다.
-                    const imageData = context.getImageData(
-                        0,
-                        0,
-                        canvas.width,
-                        canvas.height
-                    )
-                    const data = imageData.data
-
-                    // 픽셀 데이터를 표준 RGB로 변환합니다.
-                    for (let i = 0; i < data.length; i += 4) {
-                        // 여기서 색상 프로파일 변환 로직을 추가할 수 있습니다.
-                        // 예를 들어, sRGB로 변환하는 로직을 추가할 수 있습니다.
-                        // 현재는 단순히 데이터를 그대로 사용합니다.
-                    }
-
-                    // 변환된 데이터를 다시 캔버스에 그립니다.
-                    context.putImageData(imageData, 0, 0)
-
-                    return canvas
-                }
-
                 async function initBigCards() {
                     const loadedCards = await loadAllTextures2(bigCardArr)
 
-                    loadedCards.forEach(({ card, texture }) => {
-                        if (!texture || !texture.image) {
-                            console.error('이미지 텍스처 로드 실패:', card)
-                            return
-                        }
-
-                        const bigCardPaperStyle = getComputedStyle(bigCardPaper)
-
-                        const canvas = document.createElement('canvas')
-                        const context = canvas.getContext('2d')
-                        canvas.width = parseInt(bigCardPaperStyle.width)
-                        canvas.height = parseInt(bigCardPaperStyle.height)
-
-                        context.fillStyle = bigCardPaperStyle.backgroundColor
-                        context.textBaseline = 'top'
-                        context.fillRect(0, 0, canvas.width, canvas.height)
-
-                        context.textAlign = 'center'
+                    loadedCards.forEach(({ card, texture }, index) => {
+                        texture.encoding = THREE.sRGBEncoding // 텍스처의 색상 공간을 sRGB로 설정
+                        texture.needsUpdate = true // 텍스처 업데이트 필요 설정
 
                         const imgWidth = texture.image.width
                         const imgHeight = texture.image.height
-                        const canvasAspect = canvas.width / canvas.height
-                        const imgAspect = imgWidth / imgHeight
-
-                        let drawWidth, drawHeight, drawX, drawY
-
-                        if (imgAspect > canvasAspect) {
-                            drawWidth = canvas.width
-                            drawHeight = canvas.width / imgAspect
-                            drawX = 0
-                            drawY = (canvas.height - drawHeight) / 2
-                        } else {
-                            drawWidth = canvas.height * imgAspect
-                            drawHeight = canvas.height
-                            drawX = (canvas.width - drawWidth) / 2
-                            drawY = 0
-                        }
-
-                        // 색상 프로파일을 제거한 이미지를 캔버스에 그립니다.
-                        const processedCanvas = removeColorProfile(
-                            texture.image
-                        )
-                        context.drawImage(
-                            processedCanvas,
-                            drawX,
-                            drawY,
-                            drawWidth,
-                            drawHeight
-                        )
-
-                        const combinedTexture = new THREE.CanvasTexture(canvas)
 
                         const cardGeometry = new THREE.PlaneGeometry(
-                            canvas.width,
-                            canvas.height
+                            imgWidth,
+                            imgHeight
                         )
                         const cardMaterial = new THREE.MeshBasicMaterial({
-                            map: combinedTexture,
+                            map: texture,
                             transparent: true,
-                            alphaTest: 0.1,
                         })
-
                         const cardMesh = new THREE.Mesh(
                             cardGeometry,
                             cardMaterial
                         )
+                        if (index === 0) {
+                            cardMesh.position.set(
+                                bigCardControlPoints1[0].x,
+                                bigCardControlPoints1[0].y,
+                                0
+                            )
+                        } else if (index === 1) {
+                            cardMesh.position.set(
+                                bigCardControlPoints2[0].x,
+                                bigCardControlPoints2[0].y,
+                                0
+                            )
+                        } else if (index === 2) {
+                            cardMesh.position.set(
+                                bigCardControlPoints3[0].x,
+                                bigCardControlPoints3[0].y,
+                                0
+                            )
+                        }
                         cardMesh.position.set(1800, 0, 0)
-
+                        cardMesh.scale.set(0.26, 0.26, 0.26)
                         bigCards.push(cardMesh)
                         cs3dScene.add(cardMesh)
                     })
@@ -3845,32 +3833,11 @@
         <script>
             function moveToScroll(targetId) {
                 const target = document.getElementById(targetId)
-                let targetPosition
 
-                if (targetId == 'pjCar') {
-                    targetPosition =
-                        target.getBoundingClientRect().top +
-                        window.pageYOffset +
-                        800
-                } else if (targetId == 'youtubePosition') {
-                    targetPosition = target.offsetTop + 2200
-                }
-                const startPosition = window.pageYOffset
-                const distance = targetPosition - startPosition
-                const duration = 2000
-                let start = null
-
-                window.requestAnimationFrame(step)
-
-                function step(timestamp) {
-                    if (!start) start = timestamp
-                    const progress = timestamp - start
-                    const progressRatio = Math.min(progress / duration, 1)
-                    window.scrollTo(0, startPosition + distance * progressRatio)
-                    if (progress < duration) {
-                        window.requestAnimationFrame(step)
-                    }
-                }
+                lenis.scrollTo(target, {
+                    duration: 2,
+                    easing: (t) => t,
+                })
             }
 
             const mailSendBoxInputEls = document.querySelectorAll(
