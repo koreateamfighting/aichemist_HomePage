@@ -403,6 +403,87 @@ select {
 #logoMoveSection4 img {
     position: absolute;
 }
+
+.cen-card-container {
+    z-index: -10;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    min-width: 1920px;
+    max-width: inherit;
+    min-height: 975px;
+    transition: opacity 1s;
+}
+
+.cen-card-text {
+    position: absolute;
+
+    padding: 40px 54px 0 74px;
+    transition: opacity 1s;
+
+    width: 673px;
+    height: 247px;
+}
+.cen-card-text.text1 {
+    left: 360px;
+    top: 554px;
+}
+.cen-card-text.text2 {
+    left: 887px;
+    top: 559px;
+}
+.cen-card-text.text3 {
+    left: 360px;
+    top: 518px;
+}
+
+.cen-card-blur-back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+.cen-card-blur-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(20px); /* 블러 효과 */
+    z-index: -1; /* 글자 뒤에 위치하도록 설정 */
+}
+
+.cen-card-title {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.cen-card-title sub {
+    bottom: 0.4rem;
+}
+
+.cen-card-content {
+    font-family: Montserrat;
+    position: absolute;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    list-style-type: disc;
+    padding-left: 10px;
+    padding-right: 80px;
+}
+.cen-card-content li {
+    margin-top: 10px;
+}
+
 #pjCardDrawingPaper {
     width: 330px;
     height: 393px;
