@@ -264,6 +264,8 @@
         <div class="blank-space space4" id="pjCar"></div>
 
         <div class="cen-card-container">
+            <div class="rorarora aurora1"></div>
+            <div class="rorarora aurora2"></div>
             <div class="cen-card-text text1">
                 <span class="cen-card-blur-back">
                     <svg
@@ -514,6 +516,8 @@
         <div class="blank-space space16"></div>
 
         <div id="youtubeContainer">
+            <div class="aurora3"></div>
+
             <div class="swiper" id="make-the-world-swiper2">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -2169,6 +2173,8 @@
             const blankSpace18 = document.querySelector('.blank-space.space18')
             const replacementBox = document.getElementById('replacementBox')
 
+            const aurora1 = document.querySelector('.aurora1')
+            const aurora2 = document.querySelector('.aurora2')
             const cardSlide3dContainer = document.getElementById('cardSlide3d')
             let cardSlide3dCanvas = cardSlide3dContainer.querySelector('canvas')
             const lfwContainer = document.getElementById('lfwContainer')
@@ -2491,6 +2497,29 @@
                         })
                     } else {
                     }
+                }
+
+                if (scroll < blankSpace3_1.offsetTop) {
+                    aurora1.style.opacity = 0
+                    aurora1.style.zIndex = -10
+                    aurora1.style.top = `${3000}px`
+                    aurora2.style.opacity = 0
+                    aurora2.style.zIndex = -10
+                    aurora2.style.top = `${6500}px`
+                } else if (scroll < blankSpace7.offsetTop) {
+                    aurora1.style.opacity = 1
+                    aurora1.style.zIndex = 10
+                    aurora1.style.top = `${3000 - (scroll - blankSpace3_1.offsetTop) * 1}px`
+                    aurora2.style.opacity = 1
+                    aurora2.style.zIndex = 10
+                    aurora2.style.top = `${6500 - (scroll - blankSpace3_1.offsetTop) * 1}px`
+                } else {
+                    aurora1.style.opacity = 0
+                    aurora1.style.zIndex = -10
+                    aurora1.style.top = `${-4000}px`
+                    aurora2.style.opacity = 0
+                    aurora2.style.zIndex = -10
+                    aurora2.style.top = `${-500}px`
                 }
 
                 if (bigCards.length != 0) {

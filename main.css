@@ -266,6 +266,21 @@ select {
     margin-left: 5px;
 }
 
+.aurora3 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 1418px;
+    height: 1418px;
+    flex-shrink: 0;
+    border-radius: 1418px;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(5, 74, 252, 0.4) 0%,
+        rgba(5, 74, 252, 0) 100%
+    );
+}
 #youtubeContainer {
     width: 1920px;
     height: 975px;
@@ -275,6 +290,9 @@ select {
     transform: translateX(-50%);
     z-index: -10;
     opacity: 0;
+
+    transition-duration: 1s;
+    transition-property: opacity;
 }
 #youtubeContainer #youtubeDiv {
     transform: translateX(0);
@@ -337,6 +355,29 @@ select {
 
 .swiper-slide img {
     margin: 0 30px;
+}
+
+.rorarora {
+    width: 1578.717px;
+    height: 1364.624px;
+    position: absolute;
+    transform: rotate(-31.019deg) translate(-50%, -50%);
+
+    flex-shrink: 0;
+    border-radius: 1578.717px;
+    opacity: 0.5;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(96, 170, 202, 0.35) 0%,
+        rgba(96, 170, 202, 0) 100%
+    );
+    z-index: 1;
+}
+.aurora1 {
+    left: 620px;
+}
+.aurora2 {
+    left: 2000px;
 }
 
 #cardSlide3d {
