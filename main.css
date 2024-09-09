@@ -166,7 +166,7 @@ select {
     width: 320px;
     aspect-ratio: 1 / 1;
     position: absolute;
-    top: 330px;
+    top: 313px;
     left: 500px;
     transform: translate(-50%, -50%);
     z-index: 10;
