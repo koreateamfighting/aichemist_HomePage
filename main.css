@@ -229,6 +229,7 @@ select {
 }
 .main-contents {
     width: max-content;
+    max-width: 631px;
     transform: translateY(-50%);
     position: absolute;
     right: 19%;

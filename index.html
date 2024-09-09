@@ -161,16 +161,16 @@
                 </div>
                 <div class="main-contents">
                     <div class="main-contents-desc">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. <br />
-                        Lorem Ipsum has been the industry's standard dummy text
-                        ever since the<br />
-                        1500s, when an unknown printer took a galley of type and
-                        scrambled it to<br />
-                        make a type specimen book. It has survived not only five
-                        centuries, but also<br />
-                        the leap into electronic typesetting, remaining
-                        essentially unchanged.
+                        CEN is an advanced platform for synthetic data
+                        generation powered by automated digital twin technology.
+                        It significantly reduces labeling costs and expedites
+                        data processing, eliminating the need for specialized 3D
+                        scanning equipment. Optimized for applications in smart
+                        factories and robotics, CEN enhances operational
+                        efficiency and offers comprehensive, customizable
+                        simulations. As an all-in-one solution, CEN drives
+                        economic scalability and precision in synthetic data
+                        generation.
                     </div>
                     <div class="main-contents-button-box">
                         <button id="toMainPJ" onclick="moveToScroll('pjCar')">
@@ -4490,6 +4490,11 @@
                 lenis.scrollTo(target, {
                     duration: 2,
                     easing: (t) => t,
+                    // 타겟의 중앙으로
+                    offset: {
+                        x: 0,
+                        y: -window.innerHeight / 2,
+                    },
                 })
             }
 
