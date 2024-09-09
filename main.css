@@ -186,6 +186,9 @@ select {
 #pdContainer {
     position: relative;
 }
+#pdContainer * {
+    z-index: 5;
+}
 #pdContainer .gradient {
     width: 1920px;
     height: 795px;
@@ -199,12 +202,17 @@ select {
         rgba(41, 114, 255, 0.7),
         rgba(0, 0, 0, 0)
     );
+    z-index: 4;
 }
 #pdContainer .textLogo {
     position: absolute;
     transform: translateX(-50%);
     left: 25%;
     top: 40px;
+}
+#logoMoveSection1 {
+    position: relative;
+    z-index: 5;
 }
 .main-title {
     transform: translateX(-50%);
@@ -260,11 +268,22 @@ select {
     background-color: #8dbfff;
     color: #000000;
 }
+#toMainPJ:hover {
+    background: #fff;
+    color: #054afc;
+}
 #toYoutube {
     border-width: 1px;
     border-color: #ffffff;
     color: #ffffff;
     margin-left: 5px;
+}
+#toYoutube:hover {
+    background: linear-gradient(
+        91deg,
+        rgba(255, 255, 255, 0.2) 0.55%,
+        rgba(141, 191, 255, 0.2) 101.58%
+    );
 }
 
 .aurora3 {
