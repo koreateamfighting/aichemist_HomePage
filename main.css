@@ -236,26 +236,78 @@ select {
     margin-top: -30px;
 }
 .main-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     width: max-content;
     max-width: 631px;
-    transform: translateY(-50%);
     position: absolute;
     right: 19%;
-    top: 68%;
+    top: 495px;
     text-align: right;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
+.main-contents .subsubtitle {
+    display: flex;
+}
+.main-contents .subsubtitle > div {
+    width: 164px;
+    height: 48px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: default;
+}
+.main-contents .subsubtitle > div:hover {
+    color: rgba(255, 255, 255, 1);
+}
+.main-contents .subsubtitle > div:hover .hr {
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+.main-contents .subsubtitle > div:hover path {
+    fill: rgba(255, 255, 255, 1);
+}
+.main-contents .subsubtitle > div span {
+    margin-top: 11px;
+}
+.main-contents .hr {
+    width: 123px;
+    height: 1px;
+    margin-top: 5px;
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    position: relative;
+}
+.main-contents .hr svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
 .main-contents-desc {
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    min-height: 180px;
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    opacity: 0;
 }
 .main-contents-button-box {
-    margin-top: 76px;
+    margin-top: 13px;
 }
 .main-contents-button-box button {
     width: 181px;
