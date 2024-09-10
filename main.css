@@ -1,27 +1,14 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* 영어일 때는 Montserrat, 한글일 때는 Pretendard 사용 */
 :lang(ko) {
-    font-family:
-        'Pretendard Variable',
-        Pretendard,
-        -apple-system,
-        BlinkMacSystemFont,
-        system-ui,
-        Roboto,
-        'Helvetica Neue',
-        'Segoe UI',
-        'Apple SD Gothic Neo',
-        'Noto Sans KR',
-        'Malgun Gothic',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        sans-serif;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+        "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 :lang(en) {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500; /* 기본 500, 400~600도 있는 것으로 보임 */
     font-style: normal;
@@ -170,9 +157,7 @@ select {
     left: 500px;
     transform: translate(-50%, -50%);
     z-index: 10;
-    transition:
-        left 0s ease-out,
-        top 0s ease;
+    transition: left 0s ease-out, top 0s ease;
     border-radius: 80px;
 }
 #logoContainer canvas {
@@ -268,11 +253,7 @@ select {
     color: rgba(255, 255, 255, 1);
 }
 .main-contents .subsubtitle > div:nth-of-type(1) .hr {
-    background-image: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 .main-contents .subsubtitle > div:nth-of-type(1) path {
     fill: rgba(255, 255, 255, 1);
@@ -281,11 +262,7 @@ select {
     color: rgba(255, 255, 255, 1);
 }
 .main-contents .subsubtitle > div:nth-of-type(2):hover .hr {
-    background-image: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 .main-contents .subsubtitle > div:nth-of-type(2) path {
     fill: rgba(255, 255, 255, 0.5);
@@ -300,11 +277,7 @@ select {
     width: 123px;
     height: 1px;
     margin-top: 5px;
-    background-image: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
     position: relative;
 }
 .main-contents .hr svg {
@@ -367,11 +340,7 @@ select {
     margin-left: 5px;
 }
 #toYoutube:hover {
-    background: linear-gradient(
-        91deg,
-        rgba(255, 255, 255, 0.2) 0.55%,
-        rgba(141, 191, 255, 0.2) 101.58%
-    );
+    background: linear-gradient(91deg, rgba(255, 255, 255, 0.2) 0.55%, rgba(141, 191, 255, 0.2) 101.58%);
 }
 
 .aurora3 {
@@ -383,11 +352,7 @@ select {
     height: 1418px;
     flex-shrink: 0;
     border-radius: 1418px;
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        rgba(5, 74, 252, 0.4) 0%,
-        rgba(5, 74, 252, 0) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%, rgba(5, 74, 252, 0.4) 0%, rgba(5, 74, 252, 0) 100%);
 }
 #youtubeContainer {
     width: 1920px;
@@ -474,11 +439,7 @@ select {
     flex-shrink: 0;
     border-radius: 1578.717px;
     opacity: 0.5;
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        rgba(96, 170, 202, 0.35) 0%,
-        rgba(96, 170, 202, 0) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%, rgba(96, 170, 202, 0.35) 0%, rgba(96, 170, 202, 0) 100%);
     z-index: 1;
 }
 .aurora1 {
@@ -496,11 +457,7 @@ select {
 
     border-radius: 911.193px;
     opacity: 0.7;
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        rgba(141, 191, 255, 0.5) 0%,
-        rgba(141, 191, 255, 0) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%, rgba(141, 191, 255, 0.5) 0%, rgba(141, 191, 255, 0) 100%);
     z-index: 1000;
 }
 .rorarora-shape-2 {
@@ -510,11 +467,7 @@ select {
     position: absolute;
 
     border-radius: 1037px;
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        #000 0%,
-        rgba(0, 0, 0, 0) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%, #000 0%, rgba(0, 0, 0, 0) 100%);
     z-index: 1000;
 }
 
@@ -527,11 +480,7 @@ select {
 
     border-radius: 993.572px;
     opacity: 0.5;
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        rgba(96, 170, 202, 0.7) 0%,
-        rgba(96, 170, 202, 0) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%, rgba(96, 170, 202, 0.7) 0%, rgba(96, 170, 202, 0) 100%);
     z-index: 1000;
 }
 .rorarora-shape-4 {
@@ -542,11 +491,7 @@ select {
 
     border-radius: 1277.109px;
     opacity: 0.4;
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        rgba(1, 70, 249, 0.7) 0%,
-        rgba(1, 70, 249, 0) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%, rgba(1, 70, 249, 0.7) 0%, rgba(1, 70, 249, 0) 100%);
     z-index: 1000;
 }
 
@@ -623,7 +568,7 @@ select {
             rgba(0, 0, 0, 0) 800px,
             rgba(0, 0, 0, 1) 1000px
         ),
-        url('img/squintingNightCity.png');
+        url("img/squintingNightCity.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -677,7 +622,7 @@ select {
     z-index: 99;
 }
 .cen-card-blur-back::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -798,12 +743,7 @@ select {
     max-width: inherit;
     height: 100%;
     max-height: inherit;
-    background: linear-gradient(
-        81deg,
-        rgba(0, 0, 0, 0) 41.34%,
-        rgba(0, 0, 0, 1) 95.33%
-    );
-
+    background: linear-gradient(81deg, rgba(0, 0, 0, 0) 41.34%, rgba(0, 0, 0, 0.3) 95.33%);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -842,11 +782,7 @@ select {
     font-weight: 600;
     line-height: 100px;
     letter-spacing: -2.28px;
-    background: linear-gradient(
-        79deg,
-        #fff 72.86%,
-        rgba(255, 255, 255, 0.5) 94.55%
-    );
+    background: linear-gradient(79deg, #fff 72.86%, rgba(255, 255, 255, 0.5) 94.55%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -881,7 +817,7 @@ select {
             rgba(0, 0, 0, 0) 1000px,
             rgba(0, 0, 0, 1) 1282px
         ),
-        url('img/backgroundCode.png');
+        url("img/backgroundCode.png");
     background-color: rgba(0, 0, 0, 0.8);
     background-position: center;
     background-size: contain;
@@ -903,11 +839,7 @@ select {
     position: relative;
 }
 #pwContainer .gradient {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 800px,
-        rgba(0, 0, 0, 1) 990px
-    );
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 800px, rgba(0, 0, 0, 1) 990px);
     position: absolute;
     width: 100%;
     max-width: inherit;
@@ -983,26 +915,21 @@ select {
     width: 126px;
     border: 0;
     height: 2px;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(141, 191, 255, 0.93) 100%
-    );
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(141, 191, 255, 0.93) 100%);
     margin: 0;
 }
 
 .team-n-mail-n-footer {
     padding-top: 389px;
     padding-bottom: 34px;
-    height: 2584px;
     display: flex;
     flex-direction: column;
     background: linear-gradient(
         180deg,
         rgba(5, 74, 252, 0) 0%,
-        rgba(5, 74, 252, 0.9) 40%,
-        #2972ff 74.5%,
-        #91b7ff 93%,
+        rgba(5, 74, 252, 0.9) 17.5%,
+        #2972ff 85.53%,
+        #91b7ff 96.24%,
         #fff 100%
     );
     color: #000;
@@ -1010,15 +937,101 @@ select {
 .team-n-mail-n-footer .meet-our-team {
     padding-left: 119px;
     font-size: 30px;
-    background: linear-gradient(91deg, #fff 45.74%, #8dbfff 83.36%);
+    background: linear-gradient(
+        180deg,
+        rgba(5, 74, 252, 0) 0%,
+        rgba(5, 74, 252, 0.9) 17.5%,
+        #2972ff 85.53%,
+        #91b7ff 96.24%,
+        #fff 100%
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
 }
 
+.history {
+    width: 1920px;
+    height: 2400px;
+    flex-shrink: 0;
+    background-color: #2972ff;
+    position: relative;
+    background-blend-mode: lighten;
+    background-image: linear-gradient(180deg, rgba(5, 74, 252, 0) 0%, rgba(5, 74, 252, 0.9) 17.5%, #2972ff 125.53%),
+        url("/img/nightCity.jfif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(5, 74, 252, 0.9);
+}
+.history .history-title {
+    margin-top: 174px;
+    margin-left: 118px;
+    width: max-content;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: linear-gradient(91deg, #fff 45.74%, #8dbfff 83.36%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.history .history-contents {
+    margin-top: 92px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4px;
+    padding-left: 130px;
+    width: 1202px;
+    height: 1650px;
+    backdrop-filter: blur(12px);
+    background: rgba(5, 74, 252, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.history .history-contents table td {
+    padding-top: 56px;
+    vertical-align: top;
+}
+.history .history-contents table td:nth-child(2) {
+    padding-left: 99px;
+}
+.history .history-contents table td:nth-child(3) {
+    width: 100%;
+    padding-left: 67px;
+}
+.history .history-contents .highlight {
+    color: #a3ff46;
+}
+.history .history-footer {
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 72px;
+    background: linear-gradient(180deg, #a3ff46 12.5%, #d3ffa6 70.93%, #fff 94.79%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .imagine-really {
-    margin-top: 368px;
+    margin-top: 58px;
     margin-left: 119px;
     height: 340px;
     line-height: normal;
@@ -1101,11 +1114,7 @@ select {
 .mail-send-box .hr {
     height: 1px;
     margin-top: 1px;
-    background-image: linear-gradient(
-        90deg,
-        #000 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background-image: linear-gradient(90deg, #000 0%, rgba(255, 255, 255, 0) 100%);
     position: relative;
 }
 .mail-send-box .hr svg {
