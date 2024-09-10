@@ -867,6 +867,7 @@ select {
 }
 #AIChemist-swiper .swiper-slide .grid img {
     margin-top: 22px;
+    object-fit: cover;
 }
 
 #priceContainer {
