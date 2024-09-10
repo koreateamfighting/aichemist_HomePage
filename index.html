@@ -5205,6 +5205,14 @@
                     sendBtnSvgPathEl.style.fill = 'white'
                     sendBtnEl.classList.remove('clicked')
                 }, 200)
+
+                const mailSendBoxInputEls = document.querySelectorAll(
+                    '.mail-send-box input'
+                )
+                mailSendBoxInputEls.forEach((inputEl) => {
+                    inputEl.value = ''
+                    inputEl.parentElement.classList.remove('filled')
+                })
             })
 
             const mainContentsDescEl1 = document.querySelector('.desc1')
