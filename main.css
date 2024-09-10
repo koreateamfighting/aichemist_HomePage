@@ -430,25 +430,6 @@ select {
     margin: 0 30px;
 }
 
-.rorarora {
-    width: 1578.717px;
-    height: 1364.624px;
-    position: absolute;
-    transform: rotate(-31.019deg) translate(-50%, -50%);
-
-    flex-shrink: 0;
-    border-radius: 1578.717px;
-    opacity: 0.5;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(96, 170, 202, 0.35) 0%, rgba(96, 170, 202, 0) 100%);
-    z-index: 1;
-}
-.aurora1 {
-    left: 620px;
-}
-.aurora2 {
-    left: 2000px;
-}
-
 .rorarora-shape-1 {
     width: 709.224px;
     height: 911.193px;
@@ -472,15 +453,15 @@ select {
 }
 
 .rorarora-shape-3 {
-    width: 993.572px;
-    height: 858.832px;
+    width: 1051.453px;
+    height: 908.863px;
     transform: rotate(-31.019deg);
     flex-shrink: 0;
     position: absolute;
 
-    border-radius: 993.572px;
-    opacity: 0.5;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(96, 170, 202, 0.7) 0%, rgba(96, 170, 202, 0) 100%);
+    border-radius: 1051.453px;
+
+    background: radial-gradient(50% 50% at 50% 50%, rgba(96, 170, 202, 0.35) 0%, rgba(96, 170, 202, 0) 100%);
     z-index: 1000;
 }
 .rorarora-shape-4 {
@@ -493,6 +474,12 @@ select {
     opacity: 0.4;
     background: radial-gradient(50% 50% at 50% 50%, rgba(1, 70, 249, 0.7) 0%, rgba(1, 70, 249, 0) 100%);
     z-index: 1000;
+}
+
+.aurora1 {
+}
+
+.aurora2 {
 }
 
 .aurora4 {
@@ -510,6 +497,14 @@ select {
     left: 1400px;
     z-index: 1000;
 }
+.aurora8 {
+    left: -300px;
+}
+
+.aurora9 {
+    left: 100px;
+}
+
 .aurora7 {
     top: 500px;
     left: 800px;
