@@ -264,17 +264,30 @@ select {
     color: rgba(255, 255, 255, 0.5);
     cursor: default;
 }
-.main-contents .subsubtitle > div:hover {
+.main-contents .subsubtitle > div:nth-of-type(1) {
     color: rgba(255, 255, 255, 1);
 }
-.main-contents .subsubtitle > div:hover .hr {
+.main-contents .subsubtitle > div:nth-of-type(1) .hr {
     background-image: linear-gradient(
         90deg,
         rgba(255, 255, 255, 1) 0%,
         rgba(255, 255, 255, 0) 100%
     );
 }
-.main-contents .subsubtitle > div:hover path {
+.main-contents .subsubtitle > div:nth-of-type(1) path {
+    fill: rgba(255, 255, 255, 1);
+}
+.main-contents .subsubtitle > div:nth-of-type(2):hover {
+    color: rgba(255, 255, 255, 1);
+}
+.main-contents .subsubtitle > div:nth-of-type(2):hover .hr {
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+.main-contents .subsubtitle > div:nth-of-type(2):hover path {
     fill: rgba(255, 255, 255, 1);
 }
 .main-contents .subsubtitle > div span {
@@ -298,11 +311,26 @@ select {
     transform: translate(-50%, -50%);
 }
 .main-contents-desc {
+    position: relative;
+    min-height: 180px;
+    min-width: 640px;
+}
+.desc1 {
+    position: absolute;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    min-height: 180px;
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    opacity: 1;
+}
+.desc2 {
+    position: absolute;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
     transition-duration: 0.5s;
     transition-property: opacity;
     opacity: 0;
@@ -451,6 +479,89 @@ select {
 }
 .aurora2 {
     left: 2000px;
+}
+
+.rorarora-shape-1 {
+    width: 709.224px;
+    height: 911.193px;
+    position: absolute;
+    transform: rotate(-38.166deg);
+
+    border-radius: 911.193px;
+    opacity: 0.7;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(141, 191, 255, 0.5) 0%,
+        rgba(141, 191, 255, 0) 100%
+    );
+    z-index: 1000;
+}
+.rorarora-shape-2 {
+    width: 1037px;
+    height: 1027px;
+    transform: rotate(-38.166deg);
+    position: absolute;
+
+    border-radius: 1037px;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        #000 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 1000;
+}
+
+.rorarora-shape-3 {
+    width: 993.572px;
+    height: 858.832px;
+    transform: rotate(-31.019deg);
+    flex-shrink: 0;
+    position: absolute;
+
+    border-radius: 993.572px;
+    opacity: 0.5;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(96, 170, 202, 0.7) 0%,
+        rgba(96, 170, 202, 0) 100%
+    );
+    z-index: 1000;
+}
+.rorarora-shape-4 {
+    width: 1277.109px;
+    height: 583.252px;
+    flex-shrink: 0;
+    position: absolute;
+
+    border-radius: 1277.109px;
+    opacity: 0.4;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(1, 70, 249, 0.7) 0%,
+        rgba(1, 70, 249, 0) 100%
+    );
+    z-index: 1000;
+}
+
+.aurora4 {
+    top: 50px;
+    left: 100px;
+}
+
+.aurora5 {
+    top: 180px;
+    left: 100px;
+    z-index: 1000;
+}
+.aurora6 {
+    top: 150px;
+    left: 1400px;
+    z-index: 1000;
+}
+.aurora7 {
+    top: 500px;
+    left: 800px;
+    z-index: 1000;
 }
 
 #cardSlide3d {
