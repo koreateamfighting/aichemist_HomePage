@@ -2859,9 +2859,11 @@
                 return { x: threeX, y: threeY, z: threeZ }
             }
             const cardControlPoints = [
-                canvasToThreeJS({ x: 3400, y: 1850 }),
-                canvasToThreeJS({ x: 1960, y: 600 }),
-                canvasToThreeJS({ x: 200, y: 1850 }),
+                canvasToThreeJS({ x: 2740, y: 2000 }),
+                canvasToThreeJS({ x: 2460, y: 300 }),
+                canvasToThreeJS({ x: 1200, y: 1660 }),
+                canvasToThreeJS({ x: 300, y: 1840 }),
+                canvasToThreeJS({ x: -600, y: 1840 }),
             ]
             const initCardRotation = -35 * (Math.PI / 180)
 
@@ -3034,14 +3036,12 @@
                     }
                 }
 
-                const temps = []
                 if (cards.length != 0) {
                     if (scroll < blankSpace1.offsetTop) {
                         cardSlide3dCanvas.style.opacity = 0
                         cardSlide3dCanvas.style.zIndex = -10
                         logoContainer.style.position = 'absolute'
                     } else if (scroll < blankSpace7.offsetTop) {
-                        // fixed로 바뀌면서 너비가 줄어들어서 다시 너비를 맞춰줌
                         cardSlide3dCanvas.style.opacity = 1
                         cardSlide3dCanvas.style.zIndex = 5
                         // 로고컨테이너도 fixed로 변경
@@ -3070,8 +3070,7 @@
                                 cardSlide3dContainer.offsetTop)
 
                         cards.forEach((card, index) => {
-                            const temp = progress - index * 0.085
-                            temps[index] = temp
+                            const temp = progress - index * 0.08
                             if (temp < 0) {
                                 card.position.set(
                                     cardControlPoints[0].x,
@@ -3093,7 +3092,7 @@
                             }
                             const cardPosition = bezier(cardControlPoints, temp)
                             card.position.set(cardPosition.x, cardPosition.y, 0)
-                            card.rotation.y = initCardRotation + temp * 2
+                            card.rotation.y = initCardRotation + temp * 3.2
                         })
                     } else {
                     }
@@ -4463,7 +4462,8 @@
                         )
                         cardMesh.position.set(2500, 0, 0)
                         cardMesh.scale.set(0.6, 0.6, 0.6)
-                        cardMesh.rotation.y = -35 * (Math.PI / 180)
+                        cardMesh.rotation.y = initCardRotation
+                        cardMesh.rotation.x = 6.5 * (Math.PI / 180)
 
                         cards.push(cardMesh)
                         cs3dScene.add(cardMesh)
