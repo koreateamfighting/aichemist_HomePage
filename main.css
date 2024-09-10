@@ -851,6 +851,9 @@ select {
 #AIChemist-swiper .swiper-slide .grid {
     justify-content: center;
 }
+#AIChemist-swiper .swiper-slide .grid img {
+    margin-top: 22px;
+}
 
 #priceContainer {
     width: 100%;
@@ -1016,7 +1019,6 @@ select {
     margin-left: 119px;
     margin-right: 157px;
     font-size: 16px;
-    flex: 1;
 }
 
 .mail-send-box {
@@ -1096,6 +1098,35 @@ select {
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
+}
+
+.companies-with-aichemist-container {
+    margin-top: 119px;
+    flex: 1;
+}
+.companies-with-aichemist-container h4 {
+    padding-left: 118px;
+    color: #054afc;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+#companies-with-aichemist-swiper {
+    margin-top: 24px;
+    background-color: #fff;
+    height: 88px;
+}
+#companies-with-aichemist-swiper .swiper-slide {
+    width: max-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#companies-with-aichemist-swiper img {
+    height: 100%;
+    width: max-content;
+    margin: 0;
 }
 
 footer {
