@@ -2056,7 +2056,7 @@
                     logoContainer.style.position = 'fixed'
                     // left는 html 너비의 절반 + logoControlPoints2[logoControlPoints2.length - 1]를 더한 값만큼
                     logoContainer.style.left = `${logoControlPoints2[logoControlPoints2.length - 1]
-                            .x +
+                        .x +
                         (window.innerWidth - document.body.clientWidth) / 2
                         }px`
 
@@ -3531,7 +3531,7 @@
             function createTextMesh(text) {
                 return new Promise((resolve, reject) => {
                     fontLoader.load(
-                        '/fonts/Montserrat_Regular.typeface.json',
+                        '/fonts/Montserrat Medium_Regular.typeface.json',
                         function (font) {
                             const textGeometry = new TextGeometry(text, {
                                 font: font,
