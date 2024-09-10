@@ -316,7 +316,8 @@ select {
 .main-contents-desc {
     position: relative;
     min-height: 180px;
-    min-width: 824px;
+    min-width: 784px;
+    margin-top: 39px;
 }
 .main-contents-desc h6 {
     font-weight: 700;
