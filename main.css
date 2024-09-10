@@ -715,6 +715,13 @@ select {
 .cen-card-content li {
     margin-top: 10px;
 }
+/* 마지막 .cen-card-content의 마지막 li는 스타일 따로주기 */
+.text3 li:last-child {
+    list-style-type: none;
+    margin-top: 16px;
+    margin-left: -20px;
+    font-weight: 600;
+}
 
 #pjCardDrawingPaper {
     width: 330px;
