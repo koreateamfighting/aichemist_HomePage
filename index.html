@@ -296,6 +296,11 @@
                 <div class="rorarora-shape-3 aurora6"></div>
                 <div class="rorarora-shape-4 aurora7"></div>
             </div>
+            <div class="card-title-box">
+                <div class="title wave part-b">Bring Your</div>
+                <div class="title wave part-b">Imagination to Life</div>
+                <div class="title wave part-b">with AIchemist</div>
+            </div>
         </div>
         <div id="pjCardDrawingPaper">
             <div class="card-title">CEN’ Synthetic data</div>
@@ -2780,6 +2785,7 @@
             const aurora8 = document.querySelector('.aurora8')
             const aurora9 = document.querySelector('.aurora9')
             const cardSlide3dContainer = document.getElementById('cardSlide3d')
+            const cardTitleBox = document.querySelector('.card-title-box')
             let cardSlide3dCanvas = cardSlide3dContainer.querySelector('canvas')
             const lfwContainer = document.getElementById('lfwContainer')
             const youtubeContainer = document.getElementById('youtubeContainer')
@@ -3042,6 +3048,8 @@
 
                 if (cards.length != 0) {
                     if (scroll < blankSpace1.offsetTop) {
+                        cardTitleBox.style.transition = 'opacity 0.5s'
+                        cardTitleBox.style.opacity = 0
                         cardSlide3dCanvas.style.opacity = 0
                         cardSlide3dCanvas.style.zIndex = -10
                         logoContainer.style.position = 'absolute'
@@ -3058,9 +3066,18 @@
                         }px`
 
                         if (scroll < blankSpace3.offsetTop) {
+                            cardTitleBox.style.transition = ''
+                            if (cardTitleBox.style.opacity == 0) {
+                                cardTitleBox.style.opacity = 1
+                                textEffect('part-b')
+                            }
+
                             logoContainer.style.top = `${logoContainer.offsetHeight / 2 - 50}px`
                             logoContainer.style.opacity = 1
                         } else {
+                            cardTitleBox.style.transition = 'opacity 0.5s'
+                            cardTitleBox.style.opacity = 0
+
                             // 로고 컨테이너 아래로 내려가면서 투명도 0으로
                             logoContainer.style.top = `${logoContainer.offsetHeight / 2 - 50 + (scroll - blankSpace3.offsetTop) * 0.05}px`
                             // logoContainer.style.top = `-${(scroll - blankSpace3.offsetTop) * 0.1}px`
@@ -3099,6 +3116,7 @@
                             card.rotation.y = initCardRotation + temp * 3.2
                         })
                     } else {
+                        cardTitleBox.style.opacity = 0
                     }
                 }
 
@@ -4348,7 +4366,7 @@
                 const initCards = async () => {
                     const loadedCards = await loadAllTextures(cardArr)
 
-                    loadedCards.forEach(({ card, texture }) => {
+                    loadedCards.forEach(async ({ card, texture }) => {
                         if (!texture || !texture.image) {
                             console.error(
                                 '이미지 텍스처 로드 실패:',
@@ -4487,6 +4505,27 @@
                         cardMesh.scale.set(0.6, 0.6, 0.6)
                         cardMesh.rotation.y = initCardRotation
                         cardMesh.rotation.x = 6.5 * (Math.PI / 180)
+
+                        // const textMesh1 = await createTextMesh('Bringing Your')
+                        // const textMesh2 =
+                        //     await createTextMesh('Imagined World to')
+                        // const textMesh3 = await createTextMesh(
+                        //     'Reality with Aichemist'
+                        // )
+
+                        // textMesh1.position.set(0, 650, 0)
+                        // textMesh2.position.set(0, 450, 0)
+                        // textMesh3.position.set(0, 250, 0)
+
+                        // const textGroup = new THREE.Group()
+                        // textGroup.add(textMesh1)
+                        // textGroup.add(textMesh2)
+                        // textGroup.add(textMesh3)
+
+                        // textGroup.position.set(-500, 300, -2000)
+                        // textGroup.scale.set(0.6, 0.6, 0.6)
+
+                        // // cs3dScene.add(textGroup)
 
                         cards.push(cardMesh)
                         cs3dScene.add(cardMesh)

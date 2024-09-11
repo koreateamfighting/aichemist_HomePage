@@ -316,7 +316,7 @@ select {
 .main-contents-desc {
     position: relative;
     min-height: 180px;
-    min-width: 784px;
+    min-width: 825px;
     margin-top: 39px;
 }
 .main-contents-desc h6 {
@@ -324,6 +324,7 @@ select {
 }
 .desc1 {
     position: absolute;
+    right: 0;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -334,6 +335,7 @@ select {
 }
 .desc2 {
     position: absolute;
+    right: 0;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -564,7 +566,7 @@ select {
 
 #cardSlide3d {
     position: relative;
-    width: 100%;
+    width: inherit;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -590,7 +592,7 @@ select {
 }
 #logoMoveSection4 {
     position: fixed;
-    width: 100%;
+    width: inherit;
     max-width: inherit;
     height: 1281px;
     transition: top 0s ease;
@@ -625,6 +627,19 @@ select {
 }
 #logoMoveSection4 img {
     position: absolute;
+}
+.card-title-box {
+    position: fixed;
+    top: 100px;
+    left: 118px;
+    opacity: 0;
+    z-index: 0;
+    font-family: Montserrat;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100px; /* 111.111% */
+    letter-spacing: -2.7px;
 }
 
 .cen-card-container {
