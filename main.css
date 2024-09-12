@@ -431,7 +431,7 @@ select {
 #lfwContainer {
     width: 100%;
     max-width: inherit;
-    height: 975px;
+    height: 1000px;
     position: fixed;
     top: 0;
     left: 50%;
