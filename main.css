@@ -897,8 +897,10 @@ select {
 
 #pwContainer {
     width: 100%;
+    min-width: 1920px;
     max-width: inherit;
     height: 1048px;
+    min-height: 1048px;
     margin-bottom: 502px;
     position: relative;
 }
