@@ -4712,9 +4712,11 @@
             let youtubeCamera, youtubeScene, youtubeRenderer
             let youtubeControls
             let youtubeGroup
+
             const iframeAdjMul = 2.5
             const initYoutubeScale = 0.01
             const maxYoutubeScale = 1.5
+            const maxYoutubeAspect = 1920 / 975
 
             let youtubeParent
 
@@ -4761,7 +4763,6 @@
 
                 youtubeRenderer = new CSS3DRenderer()
 
-                // 컨테이너의 너비, 높이 만큼 렌더러도 동일한 크기로 설정
                 youtubeRenderer.setSize(
                     youtubeContainer.offsetWidth,
                     youtubeContainer.offsetHeight
@@ -5132,6 +5133,27 @@
                     preventClicksPropagation: true,
                 }
             )
+
+            // 화면 리사이즈 되면 실행
+            window.addEventListener('resize', () => {
+                pwOnWindowResize()
+
+                if (
+                    youtubeContainer.offsetHeight /
+                        youtubeContainer.offsetWidth >
+                    maxYoutubeAspect
+                ) {
+                    youtubeCamera.aspect = maxYoutubeAspect
+                } else {
+                    youtubeCamera.aspect =
+                        youtubeContainer.offsetWidth /
+                        youtubeContainer.offsetHeight
+                }
+                lfwRenderer.setSize(
+                    lfwContainer.offsetWidth,
+                    lfwContainer.offsetHeight
+                )
+            })
         </script>
         <script>
             function textEffect(name) {
