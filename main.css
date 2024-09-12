@@ -588,8 +588,8 @@ select {
     position: fixed;
     width: inherit;
     max-width: inherit;
-    /* height: 1281px; */
-    height: 100vh;
+    height: 1281px;
+    /* height: 100vh; */
     transition: top 0s ease;
     transform: translateX(-50%);
     top: 100%;
