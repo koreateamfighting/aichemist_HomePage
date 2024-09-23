@@ -2677,6 +2677,17 @@
 
             requestAnimationFrame(raf)
         </script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+        ></script>
+        <script type="text/javascript">
+            ;(function () {
+                emailjs.init({
+                    publicKey: 'YOUR_PUBLIC_KEY',
+                })
+            })()
+        </script>
 
         <script type="x-shader/x-vertex" id="vertexshader">
 
@@ -4624,12 +4635,12 @@
 
             let youtubeParent
 
-            function Element(src, x, y, z, ry) {
+            function Element(src, x, y, z, ry, bgc = 'rgba(0,0,0,0)') {
                 const div = document.createElement('div')
                 div.position = 'absolute'
                 div.style.width = `${480 * iframeAdjMul}px`
                 div.style.height = `${360 * iframeAdjMul}px`
-                div.style.backgroundColor = 'rgba(0,0,0,0)'
+                div.style.backgroundColor = bgc
                 div.style.top = `calc(50% + 100px)`
                 div.style.left = `50%`
                 div.style.transform = 'translate(-50%, -50%)'
@@ -4683,11 +4694,11 @@
                 youtubeGroup = new THREE.Group()
 
                 const src1 =
-                        'https://us.aving.net/news/articleView.html?idxno=50850',
+                        'https://news.mt.co.kr/mtview.php?no=2024020713482479013',
                     src2 =
                         'https://www.youtube.com/embed/Dh8Cgr4SNjs?rel=0loop=1&autoplay=0&mute=1&controls=0&modestbranding=1iv_load_policy=3&fs=0&disablekb=1',
                     src3 =
-                        'https://www.youtube.com/embed/jHR2M25glaY?rel=0loop=1&autoplay=0&mute=1&controls=0&modestbranding=1iv_load_policy=3&fs=0&disablekb=1',
+                        'https://www.youtube.com/embed/sCXMJBSJdF0?rel=0loop=1&autoplay=0&mute=1&controls=0&modestbranding=1iv_load_policy=3&fs=0&disablekb=1',
                     src4 =
                         'https://www.youtube.com/embed/6sApMI68hpM?rel=0loop=1&autoplay=0&mute=1&controls=0&modestbranding=1iv_load_policy=3&fs=0&disablekb=1'
 
@@ -4696,7 +4707,9 @@
                 // TODO : 변경점 https://www.youtube.com/watch?v=mFbILexYSQg&t=1s => mFbILexYSQg 부분으로 대체
                 // 첫번째 요소는 유튜브 말고 웹페이지 삽입
                 const deployLocation = 240 * iframeAdjMul
-                youtubeGroup.add(new Element(src1, 0, 0, deployLocation, 0))
+                youtubeGroup.add(
+                    new Element(src1, 0, 0, deployLocation, 0, '#ffffff')
+                )
                 youtubeGroup.add(
                     new Element(src2, deployLocation, 0, 0, Math.PI / 2)
                 )
