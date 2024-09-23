@@ -158,6 +158,9 @@
                     <div class="subtitle">
                         Make the world you're imagining a reality
                     </div>
+                    <div class="subsubtitle">
+                        <span>C</span>reatio <span>E</span>x <span>N</span>hilo
+                    </div>
                 </div>
                 <div class="main-contents">
                     <div class="subsubtitle">
@@ -303,16 +306,16 @@
             </div>
         </div>
         <div id="pjCardDrawingPaper">
-            <div class="card-title">CEN’ Synthetic data</div>
-            <img class="card-image" src="/img/pj_card/c_detail.png" />
-            <div class="card-desc">
+            <!-- <div class="card-title">CEN’ Synthetic data</div> -->
+            <img class="card-image" src="/img/pj_card/c_1.png" />
+            <!-- <div class="card-desc">
                 By utilizing generative AI algorithms, 100 desired data pieces
                 can be created within 10 seconds, tailored to the user's
                 specific objectives
             </div>
             <div class="card-desc2">
                 Enhancing AI Training Speed by 500% and Reducing Costs by 50%
-            </div>
+            </div> -->
         </div>
         <div id="pjCardDrawingPaperBig">
             <img src="/img/pj_card/car.png" />
@@ -2869,13 +2872,15 @@
                 return { x: threeX, y: threeY, z: threeZ }
             }
             const cardControlPoints = [
-                canvasToThreeJS({ x: 2740, y: 2000 }),
-                canvasToThreeJS({ x: 2460, y: 300 }),
-                canvasToThreeJS({ x: 1200, y: 1660 }),
-                canvasToThreeJS({ x: 300, y: 1840 }),
-                canvasToThreeJS({ x: -600, y: 1840 }),
+                canvasToThreeJS({ x: 3740 - 1000, y: 2000 + 75 }),
+                canvasToThreeJS({ x: 3030 - 1000, y: 390 + 75 }),
+                canvasToThreeJS({ x: 2760 - 1000, y: 1510 + 75 }),
+                canvasToThreeJS({ x: 1970 - 1000, y: 1750 + 75 }),
+                canvasToThreeJS({ x: 40 - 1000, y: 1840 + 75 }),
             ]
             const initCardRotation = -35 * (Math.PI / 180)
+            const initCardScale = 0.6
+            const expansionCardScale = 0.9
 
             const bigCardControlPoints1 = [
                 canvasToThreeJS({ x: 2900, y: 140, z: 0 }),
@@ -3076,7 +3081,11 @@
                             cardTitleBox.style.opacity = 0
 
                             // 로고 컨테이너 아래로 내려가면서 투명도 0으로
-                            logoContainer.style.top = `${logoContainer.offsetHeight / 2 - 50 + (scroll - blankSpace3.offsetTop) * 0.05}px`
+                            logoContainer.style.top = `${
+                                logoContainer.offsetHeight / 2 -
+                                50 +
+                                (scroll - blankSpace3.offsetTop) * 0.05
+                            }px`
                             // logoContainer.style.top = `-${(scroll - blankSpace3.offsetTop) * 0.1}px`
                             logoContainer.style.opacity =
                                 1 - (scroll - blankSpace3.offsetTop) * 0.0005
@@ -3088,7 +3097,7 @@
                                 cardSlide3dContainer.offsetTop)
 
                         cards.forEach((card, index) => {
-                            const temp = progress - index * 0.08
+                            const temp = progress - index * 0.14
                             if (temp < 0) {
                                 card.position.set(
                                     cardControlPoints[0].x,
@@ -3111,6 +3120,35 @@
                             const cardPosition = bezier(cardControlPoints, temp)
                             card.position.set(cardPosition.x, cardPosition.y, 0)
                             card.rotation.y = initCardRotation + temp * 3.2
+                            // 카드 정점에서 커지기
+                            if (temp > 0.2 && temp < 0.45) {
+                                // if (temp > 0.2 && temp < 0.45 && index == 1) {
+                                let tempScale
+                                if (temp >= 0.25 && temp <= 0.35) {
+                                    tempScale = expansionCardScale
+                                } else if (temp < 0.25 && temp >= 0.2) {
+                                    tempScale =
+                                        initCardScale +
+                                        ((expansionCardScale - initCardScale) *
+                                            (temp - 0.2)) /
+                                            0.05
+                                } else if (temp > 0.35 && temp <= 0.45) {
+                                    // 점점 작아지기
+                                    tempScale =
+                                        expansionCardScale -
+                                        ((expansionCardScale - initCardScale) *
+                                            (temp - 0.35)) /
+                                            0.1
+                                }
+                                card.scale.set(tempScale, tempScale, tempScale)
+                            } else {
+                                //
+                                card.scale.set(
+                                    initCardScale,
+                                    initCardScale,
+                                    initCardScale
+                                )
+                            }
                         })
                     } else {
                         cardTitleBox.style.opacity = 0
@@ -3746,6 +3784,11 @@
                     logoScene.add(light3)
 
                     logoObject = object
+                    if (pdComposer) {
+                        document.querySelector(
+                            '.main-title .subsubtitle'
+                        ).style.opacity = 1
+                    }
                 })
 
                 // 애니메이션 루프
@@ -3963,6 +4006,12 @@
                 pdComposer.addPass(pdEffectFocus)
                 // pdComposer.addPass(outputPass);
                 // window.addEventListener("resize", pdOnWindowResize);
+
+                if (logoObject) {
+                    document.querySelector(
+                        '.main-title .subsubtitle'
+                    ).style.opacity = 1
+                }
             }
 
             function pdOnWindowResize() {
@@ -4255,44 +4304,25 @@
                 const cardTitle = cardPaper.querySelector('.card-title')
                 const cardImage = cardPaper.querySelector('.card-image')
                 const cardDesc = cardPaper.querySelector('.card-desc')
-                const cardDesc2 = cardPaper.querySelector('.card-desc2')
 
                 const cardArr = [
                     {
-                        title: 'CEN’ Synthetic data',
-                        imageName: 'c_synthetic_data.png',
-                        desc: "By utilizing generative AI algorithms, 100 desired data pieces can be created within 10 seconds, tailored to the user's specific objectives",
-                        desc2: 'Enhancing AI Training Speed by 500% and Reducing Costs by 50%',
+                        file: 'c_1.png',
                     },
                     {
-                        title: 'CEN STORE',
-                        imageName: 'c_store.png',
-                        desc: 'To address resource issues that drive the costs of synthetic data consulting and solutions, we are launching a store and advancing research in Text To 3D.',
-                        desc2: 'Resource Cost Savings of 50% Compared to Competitors',
+                        file: 'c_2.png',
                     },
                     {
-                        title: 'CEN DATA CLOUD',
-                        imageName: 'c_data_cloud.png',
-                        desc: 'Through the space dedicated to AI training and optimization, we aim to accelerate data scale by absorbing user training models and training data within the platform.',
-                        desc2: 'Dominating Over 3% of the Domestic Synthetic and Real-World Data Market',
+                        file: 'c_3.png',
                     },
                     {
-                        title: 'MS Bing',
-                        imageName: 'c_ms_bing.png',
-                        desc: 'Extracting artificial satellite data (HeightMap) based on MS Bing',
-                        desc2: 'Appearance of the extracted artificial satellite data',
+                        file: 'c_4.png',
                     },
                     {
-                        title: 'Algorithms',
-                        imageName: 'c_algorithms.png',
-                        desc: 'Physical 3D representation through procedural algorithms',
-                        desc2: 'Mimicking the absolute procedures of nature',
+                        file: 'c_5.png',
                     },
                     {
-                        title: 'Detail',
-                        imageName: 'c_detail.png',
-                        desc: 'Detail representation through depiction of natural components',
-                        desc2: 'Describing over 300 types of natural environments',
+                        file: 'c_6.png',
                     },
                 ]
 
@@ -4359,7 +4389,7 @@
                 }
 
                 const initCards = async () => {
-                    const loadedCards = await loadAllTextures(cardArr)
+                    const loadedCards = await loadAllTextures2(cardArr)
 
                     loadedCards.forEach(async ({ card, texture }) => {
                         if (!texture || !texture.image) {
@@ -4370,128 +4400,25 @@
                             return
                         }
 
-                        cardTitle.textContent = card.title
-                        cardDesc.textContent = card.desc
-                        cardDesc2.textContent = card.desc2
+                        texture.encoding = THREE.sRGBEncoding // 텍스처의 색상 공간을 sRGB로 설정
+                        texture.needsUpdate = true // 텍스처 업데이트 필요 설정
+                        texture.colorSpace = THREE.SRGBColorSpace
 
-                        const cardPaperStyle = getComputedStyle(cardPaper)
-                        const cardTitleStyle = getComputedStyle(cardTitle)
-                        const cardImageStyle = getComputedStyle(cardImage)
-                        const cardDescStyle = getComputedStyle(cardDesc)
-                        const cardDesc2Style = getComputedStyle(cardDesc2)
-
-                        const canvas = document.createElement('canvas')
-                        const context = canvas.getContext('2d')
-                        canvas.width = parseInt(cardPaperStyle.width)
-                        canvas.height = parseInt(cardPaperStyle.height)
-
-                        const radius = 20
-
-                        // Rounded rectangle drawing function
-                        const drawRoundedRect = (
-                            ctx,
-                            x,
-                            y,
-                            width,
-                            height,
-                            radius
-                        ) => {
-                            ctx.beginPath()
-                            ctx.moveTo(x + radius, y)
-                            ctx.lineTo(x + width - radius, y)
-                            ctx.quadraticCurveTo(
-                                x + width,
-                                y,
-                                x + width,
-                                y + radius
-                            )
-                            ctx.lineTo(x + width, y + height - radius)
-                            ctx.quadraticCurveTo(
-                                x + width,
-                                y + height,
-                                x + width - radius,
-                                y + height
-                            )
-                            ctx.lineTo(x + radius, y + height)
-                            ctx.quadraticCurveTo(
-                                x,
-                                y + height,
-                                x,
-                                y + height - radius
-                            )
-                            ctx.lineTo(x, y + radius)
-                            ctx.quadraticCurveTo(x, y, x + radius, y)
-                            ctx.closePath()
-                        }
-
-                        context.fillStyle = cardPaperStyle.backgroundColor
-                        context.textBaseline = 'top'
-                        drawRoundedRect(
-                            context,
-                            0,
-                            0,
-                            canvas.width,
-                            canvas.height,
-                            radius
+                        const imgWidth = parseInt(
+                            getComputedStyle(cardPaper).width
                         )
-                        context.fill()
-
-                        context.textAlign = 'center'
-
-                        context.fillStyle = cardTitleStyle.color
-                        context.font = cardTitleStyle.font
-                        context.fillText(
-                            card.title,
-                            canvas.width / 2,
-                            parseInt(cardPaperStyle.padding),
-                            279
+                        const imgHeight = parseInt(
+                            getComputedStyle(cardPaper).height
                         )
 
-                        const imgWidth = parseInt(cardImageStyle.width)
-                        const imgHeight = parseInt(cardImageStyle.height)
-                        const imgX = (canvas.width - imgWidth) / 2
-                        const imgY = 66
-                        context.drawImage(
-                            texture.image,
-                            imgX,
-                            imgY,
+                        const cardGeometry = new THREE.PlaneGeometry(
                             imgWidth,
                             imgHeight
                         )
-
-                        context.fillStyle = cardDescStyle.color
-                        context.font = cardDescStyle.font
-                        wrapText(
-                            context,
-                            card.desc,
-                            canvas.width / 2,
-                            233,
-                            279,
-                            20
-                        )
-
-                        context.fillStyle = cardDesc2Style.color
-                        context.font = cardDesc2Style.font
-                        wrapText(
-                            context,
-                            card.desc2,
-                            canvas.width / 2,
-                            329,
-                            273,
-                            20
-                        )
-
-                        const combinedTexture = new THREE.CanvasTexture(canvas)
-
-                        const cardGeometry = new THREE.PlaneGeometry(
-                            canvas.width,
-                            canvas.height
-                        )
                         const cardMaterial = new THREE.MeshBasicMaterial({
-                            map: combinedTexture,
+                            map: texture,
                             transparent: true,
                         })
-
                         const cardMesh = new THREE.Mesh(
                             cardGeometry,
                             cardMaterial
@@ -4500,27 +4427,6 @@
                         cardMesh.scale.set(0.6, 0.6, 0.6)
                         cardMesh.rotation.y = initCardRotation
                         cardMesh.rotation.x = 6.5 * (Math.PI / 180)
-
-                        // const textMesh1 = await createTextMesh('Bringing Your')
-                        // const textMesh2 =
-                        //     await createTextMesh('Imagined World to')
-                        // const textMesh3 = await createTextMesh(
-                        //     'Reality with Aichemist'
-                        // )
-
-                        // textMesh1.position.set(0, 650, 0)
-                        // textMesh2.position.set(0, 450, 0)
-                        // textMesh3.position.set(0, 250, 0)
-
-                        // const textGroup = new THREE.Group()
-                        // textGroup.add(textMesh1)
-                        // textGroup.add(textMesh2)
-                        // textGroup.add(textMesh3)
-
-                        // textGroup.position.set(-500, 300, -2000)
-                        // textGroup.scale.set(0.6, 0.6, 0.6)
-
-                        // // cs3dScene.add(textGroup)
 
                         cards.push(cardMesh)
                         cs3dScene.add(cardMesh)

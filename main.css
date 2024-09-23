@@ -206,12 +206,15 @@ select {
     position: relative;
     z-index: 5;
 }
-.main-title {
+.main-box {
     transform: translateX(-50%);
     position: absolute;
     left: 50%;
     top: 15%;
     text-align: center;
+}
+.main-title {
+    width: 1200px;
 }
 .main-title h1 {
     font-size: 268.475px;
@@ -225,17 +228,36 @@ select {
     font-weight: 500;
     line-height: normal;
     letter-spacing: -0.36px;
-    margin-top: -30px;
+    margin-top: -55px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.main-title .subsubtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: Montserrat;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    transition-duration: 1s;
+    transition-property: opacity;
+    opacity: 0;
+}
+.main-title .subsubtitle span {
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 .main-contents {
+    margin-top: -10px;
     display: flex;
     flex-direction: column;
     align-items: end;
     width: max-content;
     max-width: 631px;
-    position: absolute;
-    right: 19%;
-    top: 495px;
+    float: right;
     text-align: right;
     font-size: 16px;
     font-style: normal;
@@ -307,9 +329,9 @@ select {
 }
 .main-contents-desc {
     position: relative;
-    min-height: 180px;
+    min-height: 140px;
     min-width: 825px;
-    margin-top: 39px;
+    margin-top: 23px;
 }
 .main-contents-desc h6 {
     font-weight: 700;
@@ -337,7 +359,7 @@ select {
     opacity: 0;
 }
 .main-contents-button-box {
-    margin-top: 13px;
+    margin-top: 38px;
 }
 .main-contents-button-box button {
     width: 181px;
@@ -589,6 +611,7 @@ select {
     width: inherit;
     max-width: inherit;
     height: 1281px;
+    overflow: hidden;
     /* height: 100vh; */
     transition: top 0s ease;
     transform: translateX(-50%);
@@ -625,8 +648,10 @@ select {
 }
 .card-title-box {
     position: fixed;
+    width: inherit;
+    max-width: inherit;
     top: 100px;
-    left: 118px;
+    margin-left: 118px;
     opacity: 0;
     z-index: 0;
     font-family: Montserrat;
@@ -725,8 +750,8 @@ select {
 }
 
 #pjCardDrawingPaper {
-    width: 330px;
-    height: 393px;
+    width: 416px;
+    height: 494px;
     padding: 30px;
     font-style: normal;
     line-height: normal;
