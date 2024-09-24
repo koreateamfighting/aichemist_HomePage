@@ -4,6 +4,7 @@
 #loading-container {
     position: fixed;
     width: 100vw;
+    max-width: 1920px;
     height: 100vh;
     padding: 0 10%;
     display: flex;
@@ -24,6 +25,7 @@
     border-radius: 5px;
 }
 #loaded-content {
+    width: 100%;
     opacity: 0;
 }
 
@@ -649,7 +651,7 @@ select {
 #logoMoveSection4 {
     position: fixed;
     width: inherit;
-    max-width: inherit;
+    max-width: 1920px;
     height: 1281px;
     overflow: hidden;
     /* height: 100vh; */
