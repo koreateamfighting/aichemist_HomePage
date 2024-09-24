@@ -3501,6 +3501,9 @@
 
                 if (scroll < blankSpace8.offsetTop) {
                     youtubeContainer.style.zIndex = '-10'
+                    youtubeContainer.querySelectorAll('*').forEach((el) => {
+                        el.style.display = 'none'
+                    })
                     youtubeContainer.style.opacity = '0'
                     youtubeContainer.style.top = -2000
                     youtubeGroup.scale.set(
@@ -3513,6 +3516,9 @@
                     MTWSwiper2Container.style.opacity = '0'
                 } else if (scroll < blankSpace13.offsetTop) {
                     youtubeContainer.style.zIndex = '10'
+                    youtubeContainer.querySelectorAll('*').forEach((el) => {
+                        el.style.display = ''
+                    })
                     youtubeContainer.style.opacity = '1'
                     MTWSwiper2Container.style.zIndex = '8'
                     if (scroll < blankSpace9.offsetTop) {
@@ -3545,6 +3551,9 @@
                     }
                 } else {
                     youtubeContainer.style.zIndex = '-10'
+                    youtubeContainer.querySelectorAll('*').forEach((el) => {
+                        el.style.display = 'none'
+                    })
                     youtubeContainer.style.opacity = '0'
                     youtubeContainer.style.top = -2000
                     MTWSwiper2Container.style.zIndex = '-10'
@@ -4389,8 +4398,8 @@
                 loop: true,
                 slidesPerView: 'auto',
                 spaceBetween: 24,
-                allowTouchMove: false,
-                simulateTouch: false,
+                allowTouchMove: true,
+                simulateTouch: true,
                 preventClicks: true,
                 preventClicksPropagation: true,
             })
