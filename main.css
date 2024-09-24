@@ -136,6 +136,19 @@ body {
     height: 1000px;
 }
 
+#lr-gradient {
+    z-index: 999;
+    width: 100%;
+    position: absolute;
+    background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 19px,
+        rgba(0, 0, 0, 0) calc(100% - 19px),
+        rgba(0, 0, 0, 1) 100%
+    );
+}
+
 a {
     color: #ff0;
     text-decoration: none;
@@ -472,7 +485,7 @@ select {
 #lfwContainer {
     width: 100%;
     min-width: 1920px;
-    max-width: inherit;
+    max-width: 1920px;
     height: 100vh;
     min-height: 1000px;
     position: fixed;
@@ -950,7 +963,7 @@ select {
 #pwContainer {
     width: 100%;
     min-width: 1920px;
-    max-width: inherit;
+    max-width: 1920px;
     height: 1048px;
     min-height: 1048px;
     margin-bottom: 502px;

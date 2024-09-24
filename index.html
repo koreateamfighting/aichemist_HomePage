@@ -66,6 +66,8 @@
         </div>
 
         <div id="loaded-content">
+            <div id="lr-gradient"></div>
+
             <div id="logoContainer"></div>
 
             <div id="pdContainer">
@@ -2738,6 +2740,8 @@
             const totalThreeJs = 14
             let loadedThreeJsCount = 0
 
+            document.querySelector('#lr-gradient').style.height =
+                document.querySelector('.blank-space.space15').offsetTop + 'px'
             function updateProgress() {
                 const totalItems = totalImages + totalThreeJs
                 const loadedItems = loadedImages + loadedThreeJsCount
@@ -3501,9 +3505,11 @@
 
                 if (scroll < blankSpace8.offsetTop) {
                     youtubeContainer.style.zIndex = '-10'
-                    youtubeContainer.querySelectorAll('*').forEach((el) => {
-                        el.style.display = 'none'
-                    })
+                    youtubeContainer
+                        .querySelectorAll('iframe')
+                        .forEach((el) => {
+                            el.style.display = 'none'
+                        })
                     youtubeContainer.style.opacity = '0'
                     youtubeContainer.style.top = -2000
                     youtubeGroup.scale.set(
@@ -3516,9 +3522,11 @@
                     MTWSwiper2Container.style.opacity = '0'
                 } else if (scroll < blankSpace13.offsetTop) {
                     youtubeContainer.style.zIndex = '10'
-                    youtubeContainer.querySelectorAll('*').forEach((el) => {
-                        el.style.display = ''
-                    })
+                    youtubeContainer
+                        .querySelectorAll('iframe')
+                        .forEach((el) => {
+                            el.style.display = ''
+                        })
                     youtubeContainer.style.opacity = '1'
                     MTWSwiper2Container.style.zIndex = '8'
                     if (scroll < blankSpace9.offsetTop) {
@@ -5195,26 +5203,26 @@
                 }
             )
 
-            // 화면 리사이즈 되면 실행
-            window.addEventListener('resize', () => {
-                pwOnWindowResize()
+            // // 화면 리사이즈 되면 실행
+            // window.addEventListener('resize', () => {
+            //     pwOnWindowResize()
 
-                if (
-                    youtubeContainer.offsetHeight /
-                        youtubeContainer.offsetWidth >
-                    maxYoutubeAspect
-                ) {
-                    youtubeCamera.aspect = maxYoutubeAspect
-                } else {
-                    youtubeCamera.aspect =
-                        youtubeContainer.offsetWidth /
-                        youtubeContainer.offsetHeight
-                }
-                lfwRenderer.setSize(
-                    lfwContainer.offsetWidth,
-                    lfwContainer.offsetHeight
-                )
-            })
+            //     if (
+            //         youtubeContainer.offsetHeight /
+            //             youtubeContainer.offsetWidth >
+            //         maxYoutubeAspect
+            //     ) {
+            //         youtubeCamera.aspect = maxYoutubeAspect
+            //     } else {
+            //         youtubeCamera.aspect =
+            //             youtubeContainer.offsetWidth /
+            //             youtubeContainer.offsetHeight
+            //     }
+            //     lfwRenderer.setSize(
+            //         lfwContainer.offsetWidth,
+            //         lfwContainer.offsetHeight
+            //     )
+            // })
         </script>
         <script>
             function textEffect(name) {
