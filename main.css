@@ -94,11 +94,203 @@ body {
     height: 4000px;
 }
 .blank-space.space3 {
-    height: 1500px;
+    height: 1200px;
 }
 .blank-space.space3_1 {
-    height: 1000px;
+    height: 1100px;
 }
+
+.patents-etc-container {
+    margin-top: -200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.patents-etc-container h3 {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: normal;
+}
+.patents-etc-container h6 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 16px;
+}
+
+.patents-etc-container .corp-name-box,
+.patents-etc-container .corp-box {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
+.patents-etc-container .corp-name-box div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: 400;
+}
+.patents-etc-container .corp-box {
+    height: 177px;
+    margin-top: 22px;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #fff 0%, #fff 100%);
+}
+.patents-etc-container .corp-box div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.patents-etc-container .corp-box img {
+    height: 100%;
+    width: max-content;
+}
+
+@keyframes bounceUp {
+    0% {
+        transform: translateY(500%);
+    }
+    70% {
+        transform: translateY(-10%);
+    }
+    90% {
+        transform: translateY(5%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes bounceDown {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+}
+
+.attracted-investment,
+.solution-provision {
+    height: 1280px;
+    min-height: 1280px;
+    background: url('/img/backgroundSpace1.png') rgb(0, 0, 0) 50% / cover
+        no-repeat;
+    background-blend-mode: hard-light;
+}
+.attracted-investment .appear-opacity {
+    transition-property: opacity;
+    transition-duration: 1s;
+}
+.attracted-investment .appear-BtoT,
+.solution-provision .appear-BtoT {
+    animation: bounceDown 0.8s;
+    animation-fill-mode: forwards;
+}
+.attracted-investment .appear-BtoT.on,
+.solution-provision .appear-BtoT.on {
+    animation: bounceUp 0.8s;
+    animation-fill-mode: forwards;
+}
+.attracted-investment h3 {
+    margin-top: 518px;
+}
+.attracted-investment h1 {
+    margin-top: 94px;
+    text-shadow: 0px 0px 12px #8dbfff;
+    font-family: Pretendard;
+    font-size: 104.096px;
+    font-weight: 600;
+    line-height: normal;
+}
+.attracted-investment .corp-name-box {
+    margin-top: 16px;
+    width: 1173px;
+}
+.attracted-investment .corp-name-box div,
+.attracted-investment .corp-box div {
+    flex: 1;
+}
+.attracted-investment .corp-box {
+    margin-top: 22px;
+    width: 1173px;
+}
+
+.solution-provision {
+    margin-top: -80px;
+    padding-top: 337px;
+    flex: 1;
+}
+.solution-provision .appear-opacity {
+    transition-property: opacity;
+    transition-duration: 1s;
+}
+.solution-provision .corp-name-box {
+    justify-content: start;
+    margin-top: 100px;
+    width: 1684px;
+    padding: 0 42px;
+}
+.solution-provision .corp-box {
+    position: relative;
+    align-items: center;
+    width: 1684px;
+    padding: 0 42px;
+}
+.solution-provision .corp-box div {
+    /* position: absolute;
+    transform: translateX(-50%); */
+}
+
+.solution-provision .corp-name-box > :first-child {
+    width: 224px;
+    margin-right: 82px;
+}
+.solution-provision .corp-name-box > :nth-child(3) {
+    width: 530px;
+    margin-right: 50px;
+}
+.solution-provision .corp-name-box > :last-child {
+    margin-left: 160px;
+}
+.solution-provision .corp-box > :first-child {
+    margin-right: 82px;
+}
+.solution-provision .corp-box > :nth-child(3) {
+    margin: 0 129px;
+}
+.solution-provision .corp-box > :last-child {
+    margin-left: 82px;
+    align-items: center;
+}
+
+.patents-certificate {
+    width: 100%;
+    height: 1280px;
+    margin-top: -347px;
+    padding-top: 347px;
+    background: url('/img/backgroundSpace3.png') rgb(0, 0, 0) 50% / cover
+        no-repeat;
+    background-blend-mode: hard-light;
+}
+.patents-certificate h3 {
+}
+.patents-certificate h6 {
+}
+#patents-certificate-swiper {
+    margin-top: 61px;
+}
+#patents-certificate-swiper .swiper-slide {
+    width: auto;
+}
+#patents-certificate-swiper img {
+    width: 210px;
+    height: 300px;
+}
+
 .blank-space.space4,
 .blank-space.space5,
 .blank-space.space6 {
@@ -499,12 +691,16 @@ select {
     opacity: 0;
 }
 
-.swiper {
+#make-the-world-swiper.swiper {
     width: 100%;
     height: 80%;
     position: relative;
     border-top: 0.8px solid #ffffff;
     border-bottom: 0.8px solid #ffffff;
+}
+#make-the-world-swiper2.swiper {
+    /* width: 100%; */
+    position: relative;
 }
 
 .swiper-wrapper {
@@ -522,7 +718,7 @@ select {
     transition: transform 0.3s;
 }
 
-.swiper-slide img {
+#make-the-world-swiper.swiper .swiper-slide img {
     margin: 0 30px;
 }
 
@@ -674,7 +870,7 @@ select {
             to bottom,
             rgba(0, 0, 0, 1) 200px,
             rgba(0, 0, 0, 0) 400px,
-            rgba(0, 0, 0, 0) 800px,
+            rgba(0, 0, 0, 0) 950px,
             rgba(0, 0, 0, 1) 1000px
         ),
         url('img/squintingNightCity.png');
@@ -924,6 +1120,7 @@ select {
 
 #AIChemist-swiper {
     margin-top: 33px;
+    width: 100%;
     height: max-content;
 }
 #AIChemist-swiper .swiper-slide {
@@ -935,6 +1132,8 @@ select {
 }
 #AIChemist-swiper .swiper-slide .grid img {
     margin-top: 22px;
+    margin-left: auto;
+    margin-right: auto;
     object-fit: cover;
 }
 
