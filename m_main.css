@@ -136,6 +136,7 @@ body {
     margin-top: 22px;
     padding: 8px 0;
     border-radius: 6px;
+    width: fit-content;
     background: linear-gradient(90deg, #fff 0%, #fff 100%);
 }
 .patents-etc-container .corp-box div {
@@ -237,7 +238,6 @@ body {
 .solution-provision .corp-box {
     align-items: center;
     height: 140px;
-    /* width: 1684px; */
     padding: 20px;
     flex-direction: column;
 }
@@ -260,9 +260,13 @@ body {
 }
 #patents-certificate-swiper {
     margin-top: 80px;
+    height: 172px;
 }
 #patents-certificate-swiper .swiper-slide {
     width: auto;
+}
+#patents-certificate-swiper .swiper-slide img {
+    height: 100%;
 }
 
 .blank-space.space4 {
@@ -384,10 +388,12 @@ select {
     display: flex;
     flex-direction: column;
     font-size: 3.125rem;
-    font-weight: 600;
     line-height: 3.125rem;
     gap: 9px;
     text-shadow: 0 0 12px rgba(9, 71, 222, 0.5);
+}
+#pdContainer .main-title div {
+    font-weight: 600;
 }
 #pdContainer .main-title div:nth-child(2) {
     padding-left: 2ch;
@@ -396,11 +402,13 @@ select {
     padding-left: 4ch;
 }
 #pdContainer .main-title span {
+    font-weight: 600;
     color: rgba(255, 255, 255, 0.5);
 }
 #pdContainer .main-title .subtitle {
     padding-top: 0.5rem;
     font-size: 0.688rem;
+    font-weight: 500;
     letter-spacing: -0.007rem;
     color: rgba(255, 255, 255, 0.8);
     line-height: normal;
@@ -408,7 +416,8 @@ select {
 #pdContainer .main-contents {
     margin-top: -32px;
     padding-top: 58px;
-    padding-left: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
     padding-bottom: 70px;
     background: linear-gradient(
         180deg,
@@ -502,10 +511,13 @@ select {
 }
 #pdContainer .main-contents-button-box {
     margin-top: 38px;
+    display: flex;
+    gap: 6px;
 }
 #pdContainer .main-contents-button-box button {
     width: 142px;
     height: 42px;
+    flex-grow: 1;
     border-radius: 6px;
     font-weight: 600;
     font-family: Pretendard;
@@ -519,7 +531,6 @@ select {
     border-width: 1px;
     border-color: #ffffff;
     color: #ffffff;
-    margin-left: 5px;
 }
 #toYoutube:hover {
     background: linear-gradient(
@@ -1099,7 +1110,8 @@ select {
     color: #fff;
 }
 #price-swiper {
-    transform: translateX(-10px);
+    padding-left: 16px;
+    padding-right: 16px;
 }
 #price-swiper h2,
 #price-swiper p,

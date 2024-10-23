@@ -301,8 +301,9 @@
                     <div class="appear-opacity">
                         <h3>ATTRACTED INVESTMENT</h3>
                         <h6>
-                            Recognized for our growth potential, we confidently
-                            leap forward together toward a brighter future.
+                            Recognized for our growth potential,<br />
+                            we confidently leap forward together<br />
+                            toward a brighter future.
                         </h6>
                         <h1>$374K</h1>
                         <svg
@@ -379,8 +380,9 @@
                     <div class="appear-opacity">
                         <h3>SOLUTION PROVISION</h3>
                         <h6>
-                            Leading the journey of innovation alongside global
-                            companies, shaping a brighter future together.
+                            Leading the journey of innovation<br />
+                            alongside global companies, shaping<br />
+                            a brighter future together.
                         </h6>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -489,8 +491,9 @@
                     <div class="appear-opacity">
                         <h3>PATENTS & CERTIFICATE</h3>
                         <h6>
-                            Certified technology that drives innovation,
-                            unlocking infinite possibilities for the future.
+                            Certified technology that drives<br />
+                            innovation, unlocking infinite<br />
+                            possibilities for the future.
                         </h6>
                     </div>
                     <div class="swiper" id="patents-certificate-swiper">
@@ -574,7 +577,8 @@
                             Proprietary deep learning services.
                         </li>
                         <li>
-                            Realistic topography with live-action integration.
+                            Realistic topography with live-action<br />
+                            integration.
                         </li>
                         <li>
                             Data-driven compositions and variables.
@@ -588,13 +592,16 @@
                     <ul class="cen-card-content">
                         <li>Unity-based solution.</li>
                         <li>
-                            Front/side photos to Meta-Human (18 hrs) – 10x faster than competitors.
+                            Front/side photos to Meta-Human (18 hrs)<br />
+                            – 10x faster than competitors.
                         </li>
                         <li>
-                            Automated landmarks, 3D mesh, and high-reasoning virtual avatars.
+                            Automated landmarks, 3D mesh, and<br />
+                            high-reasoning virtual avatars.
                         </li>
                         <li>
-                            Realistic movements: rigging and micro-muscle control.
+                            Realistic movements: rigging and micro-<br />
+                            muscle control.
                         </li>
                     </ul>
                 </div>
@@ -614,10 +621,12 @@
                             Auto-place urban objects (e.g., streetlights).
                         </li>
                         <li>
-                            AI adds dynamic elements (vehicles, humans).
+                            AI adds dynamic elements (vehicles,<br />
+                            humans).
                         </li>
                         <li>
-                            This process blends AI and data techniques for realistic 3D urban environments.
+                            This process blends AI and data techniques for<br />
+                            realistic 3D urban environments.
                         </li>
                     </ul>
                 </div>
@@ -2325,7 +2334,7 @@
                     },
                     speed: 3000,
                     loop: true,
-                    slidesPerView: 2.5,
+                    slidesPerView: 'auto',
                     spaceBetween: 12,
                     allowTouchMove: false, // 터치/마우스 드래그를 비활성화
                     simulateTouch: false, // 마우스로 슬라이드를 드래그할 수 없도록 설정
@@ -2351,27 +2360,12 @@
             })
 
             const priceSwiper = new Swiper('#price-swiper', {
-                centeredSlides: true,
                 slidesPerView: 'auto',
                 spaceBetween: 10,
                 allowTouchMove: true,
                 simulateTouch: true,
                 preventClicks: true,
                 preventClicksPropagation: true,
-                on: {
-                    slideChange: function () {
-                        const swiper = this
-                        if (!swiper.isEnd) {
-                            swiper.slides.forEach((slide) => {
-                                slide.style.transform = 'translateX(0px)'
-                            })
-                        } else {
-                            swiper.slides.forEach((slide) => {
-                                slide.style.transform = 'translateX(+20px)'
-                            })
-                        }
-                    }
-                }
             })
 
             const AIChemistSwiper = new Swiper('#AIChemist-swiper', {
@@ -2634,8 +2628,8 @@
             // const initLogoScale = 0.1
 
             let logoObject2
-            const logoObject2MaxScale = 3
-            const logoObject2MinPositionY = -25
+            const logoObject2MaxScale = 2.5
+            const logoObject2MinPositionY = -10
 
             let cardGroup = new THREE.Group()
 
@@ -3083,7 +3077,6 @@
                     attractedInvestmentLogoBox.classList.remove('on')
                     solutionProvisionLogoBox.classList.remove('on')
                 } else if (scroll < solutionProvisionEventPosition) {
-                    console.log('attractedInvestmentEventPosition');
                     attractedInvestmentTextBox.style.opacity = 1
                     solutionProvisionTextBox.style.opacity = 0
                     patentsCertificateTextBox.style.opacity = 0
@@ -3198,18 +3191,17 @@
                         wireframe.position.y = initLfwPositionY
                         lfwContainer.style.zIndex = '-10'
                         lfwContainer.style.opacity = '0'
+
+                        // 로고 정위치
+                        logoObject2.position.y = 0
                         logoObject2.scale.set(0.01, 0.01, 0.01)
                     } else if (scroll < blankSpace13.offsetTop) {
                         lfwContainer.style.top = `-0px`
 
                         oneClickBoxOff()
 
-                        // 현재는 로고2 안보이게
-                        logoObject2.scale.set(0.01, 0.01, 0.01)
-
                         lfwContainer.style.zIndex = '10'
                         lfwContainer.style.opacity = '1'
-
                         const progress1 = 
                             (scroll - blankSpace12.offsetTop) /
                             (blankSpace13.offsetTop - blankSpace12.offsetTop)
@@ -3226,6 +3218,10 @@
                         // 구체 크기 0.1에서 점점 커지게
                         const newScale = initLfwScale + progress2 * 1.2
                         wireframe.scale.set(newScale, newScale, newScale)
+
+                        // 로고 정위치
+                        logoObject2.position.y = 0
+                        logoObject2.scale.set(0.01, 0.01, 0.01)
                     } else if (scroll < blankSpace14.offsetTop) {
                         lfwContainer.style.top = `-0px`
 
@@ -3265,7 +3261,9 @@
                         )
                         wireframe.scale.set(x, x, x)
 
-                        // 로고 
+                        // 로고 위치 아래로 이동
+                        const newLogoPositionY = progress1 * logoObject2MinPositionY
+                        logoObject2.position.y = newLogoPositionY
                         const newLogoScale = progress1 * logoObject2MaxScale
                         logoObject2.scale.set(newLogoScale, newLogoScale, newLogoScale)
                     } else if (scroll < blankSpace15.offsetTop) {
@@ -3285,6 +3283,7 @@
                         wireframe.scale.set(maxLfwScale, maxLfwScale, maxLfwScale)
 
                         // 로고 
+                        logoObject2.position.y = logoObject2MinPositionY
                         logoObject2.scale.x = logoObject2MaxScale
                         logoObject2.scale.y = logoObject2MaxScale
                         logoObject2.scale.z = logoObject2MaxScale
@@ -3313,6 +3312,7 @@
                         wireframe.scale.set(maxLfwScale, maxLfwScale, maxLfwScale)
 
                         // 로고 
+                        logoObject2.position.y = logoObject2MinPositionY
                         logoObject2.scale.x = logoObject2MaxScale
                         logoObject2.scale.y = logoObject2MaxScale
                         logoObject2.scale.z = logoObject2MaxScale
