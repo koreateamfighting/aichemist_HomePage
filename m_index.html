@@ -2530,20 +2530,6 @@
                 return { x, y, z }
             }
 
-            const logoControlPoints = [
-                { x: 500, y: 313 },
-                { x: 271, y: 660 },
-                { x: 721, y: 840 },
-                { x: 1059, y: 976 },
-                { x: 1280, y: 1150 },
-            ]
-            const logoControlPoints2 = [
-                { x: 1280, y: 4200, z: 0 },
-                { x: 1280, y: 4200, z: -700 },
-                { x: 1280, y: 4200, z: -1400 },
-                { x: 1280, y: 4200, z: -5000 },
-            ]
-
             function canvasToThreeJS({ x, y, z = 0 }) {
                 const canvasWidth = 3520
                 const canvasHeight = 3300
@@ -2565,56 +2551,71 @@
             const initCardScale = 0.6
             const expansionCardScale = 1
 
-            const initBigCardScale = 0.26
+            const refWidth = 320
+            const refHeight = 568
+            const refAspectRatio = refWidth / refHeight
+            const deviceWidth = window.innerWidth;
+            const deviceHeight = window.innerHeight;
+            const deviceAspectRatio = window.innerWidth / window.innerHeight
+            let initBigCardScale = 0.26
+            const widthRatio = (deviceWidth / refWidth) * 0.6
+            const heightRatio = (deviceHeight / refHeight) * 0.6
+            // 기기가 기준(320x568)이랑 다른 경우 이미지 크기 조절
+            if (deviceAspectRatio > refAspectRatio) {
+                initBigCardScale = 0.26 * heightRatio
+            } else {
+                initBigCardScale = 0.26 * widthRatio
+            }
+            
             const bigCardMinProgress = 0.3
             const bigCardMaxProgress = 0.7
             const bigCardControlPoints1 = [
-                canvasToThreeJS({ x: 3500 - 20, y: 700 -300 }),
-                canvasToThreeJS({ x: 2560 - 20, y: 900 -100 }),
-                canvasToThreeJS({ x: 2070 - 20, y: 1000 +40 }),
-                canvasToThreeJS({ x: 1800 - 20, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 - 20, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 - 20, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 - 20, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 - 20, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 - 20, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 - 20, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 - 20, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1200 - 20, y: 1400 +40 }),
-                canvasToThreeJS({ x: 1800 - 20, y: 2000 +40 }),
-                canvasToThreeJS({ x: 3000 - 20, y: 2400 +40 }),
+                {x: 0 + 1700,       y: 100 + 830 },
+                {x: 0 + 760,        y: 100 + 430 },
+                {x: 0 + 270,        y: 100 + 190 },
+                {x: 0,              y: 100 + 0},
+                {x: 0,              y: 100 + 0},
+                {x: 0,              y: 100 + 0},
+                {x: 0,              y: 100 + 0},
+                {x: 0,              y: 100 + 0},
+                {x: 0,              y: 100 + 0},
+                {x: 0,              y: 100 + 0},
+                {x: 0,              y: 100 + 0},
+                {x: 0 - 600,        y: 100 - 210 },
+                {x: 0,              y: 100 - 810 },
+                {x: 0 + 1200,       y: 100 - 1210 },
             ]
             const bigCardControlPoints2 = [
-                canvasToThreeJS({ x: 3500 -50, y: 700 -500 }),
-                canvasToThreeJS({ x: 2560 -50, y: 900 -400 }),
-                canvasToThreeJS({ x: 2070 -50, y: 1000 +40 }),
-                canvasToThreeJS({ x: 1800 -50, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 -50, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 -50, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 -50, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 -50, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 -50, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 -50, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1800 -50, y: 1190 +40 }),
-                canvasToThreeJS({ x: 1200 -50, y: 1400 +40 }),
-                canvasToThreeJS({ x: 1800 -50, y: 2000 +40 }),
-                canvasToThreeJS({ x: 3000 -50, y: 2400 +40 }),
+                {x: -30 + 1700,       y: 100 + 1030 },
+                {x: -30 + 760,        y: 100 + 730 },
+                {x: -30 + 270,        y: 100 + 190 },
+                {x: -30 + 0,          y: 100 + 0 },
+                {x: -30 + 0,          y: 100 + 0 },
+                {x: -30 + 0,          y: 100 + 0 },
+                {x: -30 + 0,          y: 100 + 0 },
+                {x: -30 + 0,          y: 100 + 0 },
+                {x: -30 + 0,          y: 100 + 0 },
+                {x: -30 + 0,          y: 100 + 0 },
+                {x: -30 + 0,          y: 100 + 0 },
+                {x: -30 - 600,        y: 100 + -210 },
+                {x: -30 + 0,          y: 100 + -810 },
+                {x: -30 + 1200,       y: 100 + -1210 },
             ]
             const bigCardControlPoints3 = [
-                canvasToThreeJS({ x: 3500 -30, y: 700 -500 }),
-                canvasToThreeJS({ x: 2560 -30, y: 900 -400 }),
-                canvasToThreeJS({ x: 2070 -30, y: 1000 +0 }),
-                canvasToThreeJS({ x: 1800 -30, y: 1190 +80 }),
-                canvasToThreeJS({ x: 1800 -30, y: 1190 +80 }),
-                canvasToThreeJS({ x: 1800 -30, y: 1190 +80 }),
-                canvasToThreeJS({ x: 1800 -30, y: 1190 +80 }),
-                canvasToThreeJS({ x: 1800 -30, y: 1190 +80 }),
-                canvasToThreeJS({ x: 1800 -30, y: 1190 +80 }),
-                canvasToThreeJS({ x: 1800 -30, y: 1190 +80 }),
-                canvasToThreeJS({ x: 1800 -30, y: 1190 +80 }),
-                canvasToThreeJS({ x: 1200 -30, y: 1400 +80 }),
-                canvasToThreeJS({ x: 1800 -30, y: 2000 +80 }),
-                canvasToThreeJS({ x: 3000 -30, y: 2400 +80 }),
+                {x: -10 + 1700,       y: 100 + 1030 },
+                {x: -10 + 760,        y: 100 + 730 },
+                {x: -10 + 270,        y: 100 + 150 },
+                {x: -10 + 0,          y: 100 + 0 },
+                {x: -10 + 0,          y: 100 + 0 },
+                {x: -10 + 0,          y: 100 + 0 },
+                {x: -10 + 0,          y: 100 + 0 },
+                {x: -10 + 0,          y: 100 + 0 },
+                {x: -10 + 0,          y: 100 + 0 },
+                {x: -10 + 0,          y: 100 + 0 },
+                {x: -10 + 0,          y: 100 + 0 },
+                {x: -10 - 600,        y: 100 + -210 },
+                {x: -10 + 0,          y: 100 + -810 },
+                {x: -10 + 1200,       y: 100 + -1210 },
             ]
 
             const cards = []
@@ -3374,17 +3375,13 @@
 
             let cs3dCamera, cs3dScene, cs3dRenderer, cs3dMesh
             async function initCardSlide3d() {
-                const canvasExpansionW = WIDTH
-                const canvasExpansionH = 900
                 cs3dCamera = new THREE.PerspectiveCamera(
                     20, // 시야각
-                    canvasExpansionW / canvasExpansionH, // 종횡비
+                    deviceWidth / deviceHeight, // 종횡비
                     1,
                     50000
                 )
-                cs3dCamera.position.z = 4000
-                // cs3dCamera.aspect = canvasExpansionW / canvasExpansionH;
-                // cs3dCamera.updateProjectionMatrix();
+                cs3dCamera.position.z = 2500
 
                 cs3dScene = new THREE.Scene()
 
@@ -3392,7 +3389,7 @@
                     antialias: true,
                     alpha: true,
                 })
-                cs3dRenderer.setSize(canvasExpansionW, canvasExpansionH)
+                cs3dRenderer.setSize(deviceWidth, deviceHeight)
                 cs3dRenderer.setClearColor(0x000000, 0) // 배경을 투명하게 설정
 
                 cardSlide3dContainer.appendChild(cs3dRenderer.domElement)
@@ -3406,7 +3403,7 @@
                 const cardPaper = document.getElementById('pjCardDrawingPaper')
 
                 const cardArr = [
-                    {
+                {
                         file: 'c_1.png',
                     },
                     {
@@ -3443,7 +3440,7 @@
                     }
                     context.fillText(line, x, y)
                 }
-
+                
                 // const initCardRotation = (Math.PI / 180) * 90;
                 const loadTexture = (url) => {
                     return new Promise((resolve, reject) => {
@@ -3455,7 +3452,7 @@
                         )
                     })
                 }
-
+                
                 const loadAllTextures = async (cardArr) => {
                     const texturePromises = cardArr.map((card) =>
                         loadTexture(`/img/pj_card/${card.imageName}`)

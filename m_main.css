@@ -718,7 +718,7 @@ select {
 .rorarora-shape-3 {
     width: 1051.453px;
     height: 908.863px;
-    transform: rotate(-31.019deg);
+    transform: rotate(-31.019deg) translateX(-50%);
     flex-shrink: 0;
     position: absolute;
 
@@ -748,16 +748,14 @@ select {
 }
 
 .aurora1 {
+    left: 90%;
 }
-
 .aurora2 {
 }
-
 .aurora4 {
     top: 50px;
     left: 100px;
 }
-
 .aurora5 {
     top: 180px;
     left: 100px;
@@ -892,13 +890,13 @@ select {
     height: 247px;
 }
 .cen-card-text.text1 {
-    top: calc(50% + 13px);
+    top: 52.5%;
 }
 .cen-card-text.text2 {
-    top: calc(60% + 13px);
+    top: 62.5%;
 }
 .cen-card-text.text3 {
-    top: calc(50% + 13px);
+    top: 52.5%;
 }
 
 .cen-card-title {
