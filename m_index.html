@@ -2540,15 +2540,17 @@
 
                 return { x: threeX, y: threeY, z: threeZ }
             }
+            const cardMinProgress = 0.25
+            const cardMaxProgress = 0.75
             const cardControlPoints = [
-                canvasToThreeJS({ x: 2380, y: 2000 + 250 }),
-                canvasToThreeJS({ x: 1720, y: 390 + 250 }),
-                canvasToThreeJS({ x: 1500, y: 1510 + 250 }),
-                canvasToThreeJS({ x: 760, y: 1750 + 250 }),
-                canvasToThreeJS({ x: -1120, y: 1840 + 250 }),
+                { x: 680,   y: -850 },
+                { x: 20,    y: 760 },
+                { x: -200,  y: -360 },
+                { x: -940,  y: -600 },
+                { x: -2820, y: -690 },
             ]
             const initCardRotation = -50 * (Math.PI / 180)
-            const initCardScale = 0.6
+            let initCardScale = 0.8
             const expansionCardScale = 1
 
             const refWidth = 320
@@ -2558,13 +2560,15 @@
             const deviceHeight = window.innerHeight;
             const deviceAspectRatio = window.innerWidth / window.innerHeight
             let initBigCardScale = 0.26
-            const widthRatio = (deviceWidth / refWidth) * 0.6
-            const heightRatio = (deviceHeight / refHeight) * 0.6
+            const widthRatio = (deviceWidth / refWidth)
+            const heightRatio = (deviceHeight / refHeight)
             // 기기가 기준(320x568)이랑 다른 경우 이미지 크기 조절
             if (deviceAspectRatio > refAspectRatio) {
-                initBigCardScale = 0.26 * heightRatio
+                initBigCardScale = initBigCardScale
             } else {
-                initBigCardScale = 0.26 * widthRatio
+                // 세로가 더 긴 경우 이미지가 맘대로 커져서 줄여줘야함
+                initCardScale = initCardScale / heightRatio
+                initBigCardScale = initBigCardScale / heightRatio
             }
             
             const bigCardMinProgress = 0.3
@@ -2724,28 +2728,14 @@
                         }
 
                         function changeCardScale(card, progress) {
-                            if (!progress) {
-                                card.scale.set(initCardScale, initCardScale, initCardScale)
-                                return
-                            }
+                            if (!progress) progress = 0
                             let tempScale
-                            if (progress >= 0.25 && progress <= 0.35) {
-                                tempScale = expansionCardScale
-                            } else if (progress < 0.25 && progress >= 0.2) {
-                                tempScale =
-                                    initCardScale +
-                                    ((expansionCardScale - initCardScale) *
-                                        (progress - 0.2)) /
-                                        0.05
-                            } else if (progress > 0.35 && progress <= 0.45) {
-                                // 점점 작아지기
-                                tempScale =
-                                    expansionCardScale -
-                                    ((expansionCardScale - initCardScale) *
-                                        (progress - 0.35)) /
-                                        0.1
-                            } else {
+                            if (progress <= cardMinProgress){
+                                tempScale = initCardScale - (cardMinProgress - progress)
+                            } else if (cardMinProgress < progress && progress < cardMaxProgress) {
                                 tempScale = initCardScale
+                            } else {
+                                tempScale = initCardScale + (progress - cardMaxProgress)
                             }
                             card.scale.set(tempScale, tempScale, tempScale)
                         }
@@ -3377,6 +3367,7 @@
             async function initCardSlide3d() {
                 cs3dCamera = new THREE.PerspectiveCamera(
                     20, // 시야각
+                    // refAspectRatio, // 고정종횡비
                     deviceWidth / deviceHeight, // 종횡비
                     1,
                     50000
