@@ -3505,21 +3505,10 @@
                 CSS3DObject,
             } from 'three/addons/renderers/CSS3DRenderer.js'
 
-            // postprocessing depth-of-field
-            import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
-            import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
-            import { BokehPass } from 'three/addons/postprocessing/BokehPass.js'
-
             // points dynamic
-            import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js'
-            import { BloomPass } from 'three/addons/postprocessing/BloomPass.js'
-            import { FilmPass } from 'three/addons/postprocessing/FilmPass.js'
-            import { FocusShader } from 'three/addons/shaders/FocusShader.js'
             import { OBJLoader } from 'three/addons/loaders/OBJLoader.js'
             import { FontLoader } from 'three/addons/loaders/FontLoader.js'
             import { TextGeometry } from 'three/addons/geometries/TextGeometry.js'
-            import { MTLLoader } from 'three/addons/loaders/MTLLoader.js'
-            import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 
             import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
@@ -4581,16 +4570,6 @@
                 renderer.setSize(LOGO_WIDTH, LOGO_WIDTH)
                 renderer.setClearColor(0x000000, 0) // 배경색을 투명으로 설정
                 logoContainer.appendChild(renderer.domElement)
-
-                // const composer = new EffectComposer(renderer)
-                // composer.addPass(new RenderPass(logoScene, logoCamera))
-                // const bloomPass = new UnrealBloomPass(
-                //     new THREE.Vector2(WIDTH, HEIGHT),
-                //     1.5, // 강도
-                //     0.4, // 반경
-                //     0.85 // 임계값
-                // )
-                // composer.addPass(bloomPass)
 
                 logoOBJLoader.load('/CEN_3D_Logo/CEN_Logo_3D.obj', (object) => {
                     const texture = new THREE.TextureLoader().load(
