@@ -2189,7 +2189,6 @@
         <script>
             const loadingContainer =
                 document.getElementById('loading-container')
-            const loadingBar = loadingContainer.querySelector('#loading-bar')
             const loadingPercent =
                 loadingContainer.querySelector('#loading-percent')
             const loadedContent = document.getElementById('loaded-content')
@@ -2203,7 +2202,6 @@
                 const totalItems = totalImages + totalThreeJs
                 const loadedItems = loadedImages + loadedThreeJsCount
                 const progress = (loadedItems / totalItems) * 100
-                loadingBar.style.width = progress + '%'
                 loadingPercent.textContent = Math.round(progress) + '%'
 
                 if (loadedItems === totalItems) {
