@@ -410,7 +410,9 @@ select {
 }
 
 #pdContainer {
+    height: 981px;
     position: relative;
+    background-image: url('textures/background/first.png');
 }
 #pdContainer * {
     z-index: 5;
