@@ -27,16 +27,14 @@
     position: relative;
 }
 #loading-container svg {
-    width: 50px;
-    height: 50px;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
 }
 #loading-spinner {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     box-sizing: border-box;
     background: conic-gradient(
         from 90deg at 50% 50%,
@@ -53,8 +51,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: 64px;
-    width: 64px;
+    height: 44px;
+    width: 44px;
     background: #000;
     border-radius: 48px;
 }
@@ -67,7 +65,7 @@
     height: 8px;
     width: 8px;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 50%;
 }
 
 @keyframes rotate {
@@ -77,6 +75,16 @@
     100% {
         transform: rotate(360deg);
     }
+}
+#loading-percent {
+    margin-top: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.48px;
 }
 
 #loaded-content {
@@ -145,10 +153,73 @@ body {
     overflow: hidden;
 }
 
+.blank-space.space1 {
+    height: 0px;
+}
+.blank-space.space2 {
+    height: 0px;
+}
+.blank-space.space2_0 {
+    height: 500px;
+}
+.blank-space.space2_1 {
+    height: 500px;
+    margin-top: -400px;
+}
+.blank-space.space2_2 {
+    height: 500px;
+    margin-top: -400px;
+}
+.blank-space.space2_3 {
+    height: 500px;
+    margin-top: -400px;
+}
+.blank-space.space2_4 {
+    height: 500px;
+    margin-top: -400px;
+}
+.blank-space.space2_5 {
+    height: 500px;
+    margin-top: -400px;
+}
+.blank-space.space3 {
+    height: 0px;
+}
+.blank-space.space3_1 {
+    height: 800px;
+}
+.blank-space.space3_2 {
+    height: 668px;
+}
+.blank-space.space3_3 {
+    height: 668px;
+}
+.blank-space.space3_4 {
+    height: 668px;
+}
+.blank-space.space3_5 {
+    height: 100vh;
+}
+
 .patents-etc-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: -10;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    background: url('/img/backgroundSpace1.png') rgb(0, 0, 0) 50% / cover
+        no-repeat;
+    background-blend-mode: hard-light;
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+.patents-etc-container > div {
+    position: relative;
+    height: 100%;
 }
 .patents-etc-container .appear-opacity {
     display: flex;
@@ -176,8 +247,6 @@ body {
 .patents-etc-container .corp-box {
     display: flex;
     justify-content: space-evenly;
-    margin-left: auto;
-    margin-right: auto;
 }
 .patents-etc-container .corp-name-box div {
     display: flex;
@@ -191,7 +260,6 @@ body {
     margin-top: 22px;
     padding: 8px 0;
     border-radius: 6px;
-    width: fit-content;
     background: linear-gradient(90deg, #fff 0%, #fff 100%);
 }
 .patents-etc-container .corp-box div {
@@ -230,15 +298,18 @@ body {
 
 .attracted-investment,
 .solution-provision,
-.patents-certificate div:nth-child(1) {
-    margin-left: 16px;
-    margin-right: 16px;
-    background: url('/img/backgroundSpace1.png') rgb(0, 0, 0) 50% / cover
-        no-repeat;
-    background-blend-mode: hard-light;
+.patents-certificate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.attracted-investment {
-    padding-top: 105px;
+.attracted-investment,
+.solution-provision {
+    padding-left: 16px;
+    padding-right: 16px;
 }
 .attracted-investment .appear-opacity {
     transition-property: opacity;
@@ -266,10 +337,6 @@ body {
     margin-top: 16px;
     width: 1173px;
 }
-.attracted-investment .corp-name-box div,
-.attracted-investment .corp-box div {
-    /* flex: 1; */
-}
 .attracted-investment .corp-box {
     margin-top: 22px;
     padding-left: 13px;
@@ -278,14 +345,10 @@ body {
     height: 78px;
 }
 .attracted-investment .corp-box img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
 }
 
-.solution-provision {
-    padding-top: 160px;
-    flex: 1;
-}
 .solution-provision .appear-opacity {
     transition-property: opacity;
     transition-duration: 1s;
@@ -297,14 +360,13 @@ body {
     flex-direction: column;
 }
 .solution-provision .corp-box div {
-    /* position: absolute;
-    transform: translateX(-50%); */
+    width: 100%;
     display: flex;
+    justify-content: space-evenly;
 }
 
 .patents-certificate {
     width: 100%;
-    padding-top: 170px;
     background: url('/img/backgroundSpace3.png') rgb(0, 0, 0) 50% / cover
         no-repeat;
     background-blend-mode: hard-light;
@@ -627,42 +689,6 @@ select {
     justify-content: center;
     align-items: center;
     transition: transform 0.3s;
-}
-
-.blank-space.space1 {
-    height: 0px;
-}
-.blank-space.space2 {
-    height: 0px;
-}
-.blank-space.space2_0 {
-    height: 500px;
-}
-.blank-space.space2_1 {
-    height: 500px;
-    margin-top: -400px;
-}
-.blank-space.space2_2 {
-    height: 500px;
-    margin-top: -400px;
-}
-.blank-space.space2_3 {
-    height: 500px;
-    margin-top: -400px;
-}
-.blank-space.space2_4 {
-    height: 500px;
-    margin-top: -400px;
-}
-.blank-space.space2_5 {
-    height: 500px;
-    margin-top: -400px;
-}
-.blank-space.space3 {
-    height: 0px;
-}
-.blank-space.space3_1 {
-    height: 800px;
 }
 
 #youtubeContainer {
