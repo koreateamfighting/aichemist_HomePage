@@ -66,8 +66,6 @@
         </div>
 
         <div id="loaded-content">
-            <div id="lr-gradient"></div>
-
             <div id="logoContainer"></div>
 
             <div id="pdContainer">
@@ -3357,52 +3355,6 @@
             const totalThreeJs = 13
             let loadedThreeJsCount = 0
 
-            document.querySelector('#lr-gradient').style.height =
-                document.querySelector('.blank-space.space15').offsetTop + 'px'
-            function updateProgress() {
-                const totalItems = totalImages + totalThreeJs
-                const loadedItems = loadedImages + loadedThreeJsCount
-                const progress = (loadedItems / totalItems) * 100
-                loadingBar.style.width = progress + '%'
-                loadingPercent.textContent = Math.round(progress) + '%'
-
-                if (loadedItems === totalItems) {
-                    setTimeout(() => {
-                        loadingContainer.style.opacity = 0
-                        loadingContainer.addEventListener(
-                            'transitionend',
-                            () => {
-                                loadingContainer.style.zIndex = -1000
-                                document.querySelector(
-                                    '.main-title .subsubtitle'
-                                ).style.opacity = 1
-                            }
-                        )
-                        loadedContent.style.opacity = 1
-                        window.scrollTo(0, 0)
-                        document.body.style.overflow = 'auto'
-                    }, 2000)
-                }
-            }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                for (let i = 0; i < totalImages; i++) {
-                    if (images[i].complete) {
-                        loadedImages++
-                        updateProgress()
-                    } else {
-                        images[i].addEventListener('load', function () {
-                            loadedImages++
-                            updateProgress()
-                        })
-                        images[i].addEventListener('error', function () {
-                            loadedImages++
-                            updateProgress()
-                        })
-                    }
-                }
-            })
-
             const patentsEtcContainer = document.querySelector(
                 '.patents-etc-container'
             )
@@ -3521,7 +3473,17 @@
             const WIDTH = 1920,
                 HEIGHT = 981
 
+            lenis.on('scroll', (e) => {
+                scroll = e.scroll
+                // 화면 크기에 따라 스크롤 값 조정
+                scroll = scroll * contentsRatioReverse
+                scrollAction()
+            })
+
             const fontLoader = new FontLoader()
+
+            let contentsRatio = WIDTH / WIDTH
+            let contentsRatioReverse = contentsRatio
 
             const logoMoveSection1 = document.getElementById('logoMoveSection1')
             const logoMoveSection2 = document.getElementById('logoMoveSection2')
@@ -3617,84 +3579,16 @@
                 return { x, y, z }
             }
 
-            const logoControlPoints = [
-                { x: 500, y: 313 },
-                { x: 271, y: 660 },
-                { x: 721, y: 840 },
-                { x: 1059, y: 976 },
-                { x: 1280, y: 1150 },
-            ]
-            const logoControlPoints2 = [
-                { x: 1280, y: 4200, z: 0 },
-                { x: 1280, y: 4200, z: -700 },
-                { x: 1280, y: 4200, z: -1400 },
-                { x: 1280, y: 4200, z: -5000 },
-            ]
-
-            function canvasToThreeJS({ x, y, z = 0 }) {
-                const canvasWidth = 3520
-                const canvasHeight = 3300
-                // 캔버스의 중심을 Three.js의 중심으로 변환
-                const threeX = x - canvasWidth / 2
-                const threeY = canvasHeight / 2 - y // y축은 반대로 변환
-                const threeZ = z
-
-                return { x: threeX, y: threeY, z: threeZ }
-            }
             const cardControlPoints = [
-                canvasToThreeJS({ x: 3740 - 1000, y: 2000 + 75 }),
-                canvasToThreeJS({ x: 3030 - 1000, y: 390 + 75 }),
-                canvasToThreeJS({ x: 2760 - 1000, y: 1510 + 75 }),
-                canvasToThreeJS({ x: 1970 - 1000, y: 1750 + 75 }),
-                canvasToThreeJS({ x: 40 - 1000, y: 1840 + 75 }),
+                { x: 980, y: -420 },
+                { x: 270, y: 1190 },
+                { x: 0, y: 70 },
+                { x: -790, y: -170 },
+                { x: -2720, y: -260 },
             ]
             const initCardRotation = -35 * (Math.PI / 180)
             const initCardScale = 0.6
             const expansionCardScale = 0.9
-
-            const bigCardControlPoints1 = [
-                canvasToThreeJS({ x: 2900, y: 140, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1240, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1240, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1240, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1240, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1240, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1240, z: 1000 }),
-                canvasToThreeJS({ x: 1950, y: 1240, z: 2500 }),
-                canvasToThreeJS({ x: 2300, y: 1700, z: 4000 }),
-            ]
-            const bigCardControlPoints2 = [
-                canvasToThreeJS({ x: 2385, y: 70, z: 0 }),
-                canvasToThreeJS({ x: 1955, y: 620, z: 0 }),
-                canvasToThreeJS({ x: 1725, y: 760, z: 0 }),
-                canvasToThreeJS({ x: 1535, y: 1100, z: 0 }),
-                canvasToThreeJS({ x: 1535, y: 1300, z: 0 }),
-                canvasToThreeJS({ x: 1535, y: 1300, z: 0 }),
-                canvasToThreeJS({ x: 1535, y: 1300, z: 0 }),
-                canvasToThreeJS({ x: 1535, y: 1300, z: 0 }),
-                canvasToThreeJS({ x: 1535, y: 1300, z: 0 }),
-                canvasToThreeJS({ x: 1535, y: 1300, z: 0 }),
-                canvasToThreeJS({ x: 1535, y: 1300, z: 0 }),
-                canvasToThreeJS({ x: 1555, y: 1300, z: 1000 }),
-                canvasToThreeJS({ x: 1555, y: 1300, z: 2500 }),
-                canvasToThreeJS({ x: 1635, y: 1630, z: 4000 }),
-            ]
-            const bigCardControlPoints3 = [
-                canvasToThreeJS({ x: 2750, y: 10, z: 0 }),
-                canvasToThreeJS({ x: 2320, y: 560, z: 0 }),
-                canvasToThreeJS({ x: 2090, y: 960, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
-                canvasToThreeJS({ x: 1900, y: 1290, z: 0 }),
-                canvasToThreeJS({ x: 1920, y: 1300, z: 1000 }),
-                canvasToThreeJS({ x: 1920, y: 1600, z: 2500 }),
-                canvasToThreeJS({ x: 2300, y: 1600, z: 4000 }),
-            ]
 
             const cards = []
             const bigCards = []
@@ -3779,8 +3673,8 @@
                 cenCardBox3.style.opacity = 0
             }
 
-            lenis.on('scroll', (e) => {
-                const scroll = e.scroll
+            let scroll
+            function scrollAction() {
                 if (logoObject) {
                     if (scroll < cardSlide3dContainer.offsetTop) {
                         // 로고 투명도 50%
@@ -3804,11 +3698,9 @@
                         })
                         logoDooDoongSil(e.targetScroll)
 
-                        logoContainer.style.left = `${logoControlPoints[logoControlPoints.length - 1].x}px`
-                        const logoPositionY =
-                            logoControlPoints[logoControlPoints.length - 1].y +
-                            scroll -
-                            cardSlide3dContainer.offsetTop
+                        const logoPosition = bezier(logoControlPoints, 1)
+                        logoContainer.style.left = `${logoPosition.x}px`
+                        logoContainer.style.top = `${logoPosition.y + scroll - cardSlide3dContainer.offsetTop}px`
                     } else {
                     }
                     if (scroll < blankSpace4.offsetTop) {
@@ -3830,12 +3722,7 @@
                         cardSlide3dCanvas.style.zIndex = 5
                         // 로고컨테이너도 fixed로 변경
                         logoContainer.style.position = 'fixed'
-                        // left는 html 너비의 절반 + logoControlPoints2[logoControlPoints2.length - 1]를 더한 값만큼
-                        logoContainer.style.left = `${
-                            logoControlPoints2[logoControlPoints2.length - 1]
-                                .x +
-                            (window.innerWidth - document.body.clientWidth) / 2
-                        }px`
+                        logoContainer.style.left = `${bezier(logoControlPoints, 1).x}px`
 
                         if (scroll < blankSpace3.offsetTop) {
                             cardTitleBox.style.transition = ''
@@ -4495,6 +4382,157 @@
                         }
                     }
                 }
+            }
+
+            const LOGO_CONTROL_POINTS = [
+                { x: 500, y: 313 },
+                { x: 271, y: 660 },
+                { x: 721, y: 840 },
+                { x: 1059, y: 976 },
+                { x: 1280, y: 1150 },
+            ]
+            const logoControlPoints = [
+                { x: 500, y: 313 },
+                { x: 271, y: 660 },
+                { x: 721, y: 840 },
+                { x: 1059, y: 976 },
+                { x: 1280, y: 1150 },
+            ]
+            const logoControlPoints2 = { x: 1280, y: 4200 }
+
+            const BIG_CARD_CONTROL_POINTS1 = [
+                { x: 1140, y: 1510, z: 0 },
+                { x: 140, y: 410, z: 0 },
+                { x: 140, y: 410, z: 0 },
+                { x: 140, y: 410, z: 0 },
+                { x: 140, y: 410, z: 0 },
+                { x: 140, y: 410, z: 0 },
+                { x: 140, y: 410, z: 1000 },
+                { x: 190, y: 410, z: 2500 },
+                { x: 540, y: -50, z: 4000 },
+            ]
+            const bigCardControlPoints1 = BIG_CARD_CONTROL_POINTS1.map(
+                (point) => ({
+                    x: point.x * contentsRatio,
+                    y: point.y * contentsRatio,
+                    z: point.z,
+                })
+            )
+            const BIG_CARD_CONTROL_POINTS2 = [
+                { x: 625, y: 1580, z: 0 },
+                { x: 195, y: 1030, z: 0 },
+                { x: -35, y: 890, z: 0 },
+                { x: -225, y: 550, z: 0 },
+                { x: -225, y: 350, z: 0 },
+                { x: -225, y: 350, z: 0 },
+                { x: -225, y: 350, z: 0 },
+                { x: -225, y: 350, z: 0 },
+                { x: -225, y: 350, z: 0 },
+                { x: -225, y: 350, z: 0 },
+                { x: -225, y: 350, z: 0 },
+                { x: -205, y: 350, z: 1000 },
+                { x: -205, y: 350, z: 2500 },
+                { x: -125, y: 20, z: 4000 },
+            ]
+            const bigCardControlPoints2 = BIG_CARD_CONTROL_POINTS2.map(
+                (point) => ({
+                    x: point.x * contentsRatio,
+                    y: point.y * contentsRatio,
+                    z: point.z,
+                })
+            )
+            const BIG_CARD_CONTROL_POINTS3 = [
+                { x: 990, y: 1640, z: 0 },
+                { x: 560, y: 1090, z: 0 },
+                { x: 330, y: 690, z: 0 },
+                { x: 140, y: 360, z: 0 },
+                { x: 140, y: 360, z: 0 },
+                { x: 140, y: 360, z: 0 },
+                { x: 140, y: 360, z: 0 },
+                { x: 140, y: 360, z: 0 },
+                { x: 140, y: 360, z: 0 },
+                { x: 140, y: 360, z: 0 },
+                { x: 140, y: 360, z: 0 },
+                { x: 160, y: 350, z: 1000 },
+                { x: 160, y: 50, z: 2500 },
+                { x: 540, y: 50, z: 4000 },
+            ]
+            const bigCardControlPoints3 = BIG_CARD_CONTROL_POINTS3.map(
+                (point) => ({
+                    x: point.x * contentsRatio,
+                    y: point.y * contentsRatio,
+                    z: point.z,
+                })
+            )
+
+            function updateProgress() {
+                const totalItems = totalImages + totalThreeJs
+                const loadedItems = loadedImages + loadedThreeJsCount
+                const progress = (loadedItems / totalItems) * 100
+                loadingBar.style.width = progress + '%'
+                loadingPercent.textContent = Math.round(progress) + '%'
+
+                if (loadedItems === totalItems) {
+                    setTimeout(() => {
+                        loadingContainer.style.opacity = 0
+                        loadingContainer.addEventListener(
+                            'transitionend',
+                            () => {
+                                loadingContainer.style.zIndex = -1000
+                                document.querySelector(
+                                    '.main-title .subsubtitle'
+                                ).style.opacity = 1
+                            }
+                        )
+                        loadedContent.style.opacity = 1
+                        window.scrollTo(0, 0)
+                        document.body.style.overflow = 'auto'
+                    }, 2000)
+                }
+            }
+
+            const LOGO_CONTAINER_TOP = parseFloat(logoContainer.style.top)
+            let logoContainerTop = LOGO_CONTAINER_TOP
+            const LOGO_CONTAINER_LEFT = parseFloat(logoContainer.style.left)
+            let logoContainerLeft = LOGO_CONTAINER_LEFT
+
+            function resize() {
+                contentsRatio = window.innerWidth / 1920
+                contentsRatioReverse = 1920 / window.innerWidth
+
+                document.body.style.zoom = `${contentsRatio}`
+
+                bigCardControlPoints1.forEach((point, i) => {
+                    point.x = BIG_CARD_CONTROL_POINTS1[i].x * contentsRatio
+                    point.y = BIG_CARD_CONTROL_POINTS1[i].y * contentsRatio
+                })
+                bigCardControlPoints2.forEach((point, i) => {
+                    point.x = BIG_CARD_CONTROL_POINTS2[i].x * contentsRatio
+                    point.y = BIG_CARD_CONTROL_POINTS2[i].y * contentsRatio
+                })
+                bigCardControlPoints3.forEach((point, i) => {
+                    point.x = BIG_CARD_CONTROL_POINTS3[i].x * contentsRatio
+                    point.y = BIG_CARD_CONTROL_POINTS3[i].y * contentsRatio
+                })
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                resize()
+                for (let i = 0; i < totalImages; i++) {
+                    if (images[i].complete) {
+                        loadedImages++
+                        updateProgress()
+                    } else {
+                        images[i].addEventListener('load', function () {
+                            loadedImages++
+                            updateProgress()
+                        })
+                        images[i].addEventListener('error', function () {
+                            loadedImages++
+                            updateProgress()
+                        })
+                    }
+                }
             })
 
             function bigCardSlide(progress, index) {
@@ -5100,6 +5138,7 @@
                 iframe.style.width = '100%' // 수정: 부모 요소의 너비에 맞춤
                 iframe.style.height = '100%' // 수정: 부모 요소의 높이에 맞춤
                 iframe.style.border = '0px'
+                iframe.sandbox = 'allow-scripts allow-same-origin' // 팝업 차단용
 
                 iframe.src = src
 
@@ -5515,26 +5554,10 @@
                 }
             )
 
-            // // 화면 리사이즈 되면 실행
-            // window.addEventListener('resize', () => {
-            //     pwOnWindowResize()
-
-            //     if (
-            //         youtubeContainer.offsetHeight /
-            //             youtubeContainer.offsetWidth >
-            //         maxYoutubeAspect
-            //     ) {
-            //         youtubeCamera.aspect = maxYoutubeAspect
-            //     } else {
-            //         youtubeCamera.aspect =
-            //             youtubeContainer.offsetWidth /
-            //             youtubeContainer.offsetHeight
-            //     }
-            //     lfwRenderer.setSize(
-            //         lfwContainer.offsetWidth,
-            //         lfwContainer.offsetHeight
-            //     )
-            // })
+            // 화면 리사이즈 되면 실행
+            window.addEventListener('resize', () => {
+                resize()
+            })
         </script>
         <script>
             function textEffect(name) {
