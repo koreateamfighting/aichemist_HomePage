@@ -4401,7 +4401,7 @@
             const logoControlPoints2 = { x: 1280, y: 4200 }
 
             const BIG_CARD_CONTROL_POINTS1 = [
-                { x: 1140, y: 1510, z: 0 },
+                { x: 1140, y: 1510, z: 5000 },
                 { x: 140, y: 410, z: 0 },
                 { x: 140, y: 410, z: 0 },
                 { x: 140, y: 410, z: 0 },
@@ -4419,7 +4419,7 @@
                 })
             )
             const BIG_CARD_CONTROL_POINTS2 = [
-                { x: 625, y: 1580, z: 0 },
+                { x: 625, y: 1580, z: 5000 },
                 { x: 195, y: 1030, z: 0 },
                 { x: -35, y: 890, z: 0 },
                 { x: -225, y: 550, z: 0 },
@@ -4442,7 +4442,7 @@
                 })
             )
             const BIG_CARD_CONTROL_POINTS3 = [
-                { x: 990, y: 1640, z: 0 },
+                { x: 990, y: 1640, z: 5000 },
                 { x: 560, y: 1090, z: 0 },
                 { x: 330, y: 690, z: 0 },
                 { x: 140, y: 360, z: 0 },
@@ -4536,23 +4536,8 @@
             })
 
             function bigCardSlide(progress, index) {
-                if (progress <= 0) {
-                    bigCards[index].position.set(
-                        controlPoints.x,
-                        controlPoints.y,
-                        0
-                    )
-                    return
-                } else if (progress >= 1) {
-                    bigCards[index].position.set(
-                        controlPoints.x,
-                        controlPoints.y,
-                        0
-                    )
-                    return
-                }
-
                 let controlPoints
+
                 if (index == 0) {
                     controlPoints = bigCardControlPoints1
                     if (0.25 < progress && progress < 0.8) {
