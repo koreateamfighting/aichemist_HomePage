@@ -61,8 +61,60 @@
 
     <body style="margin: 0 auto">
         <div id="loading-container">
-            <div id="loading-bar"></div>
-            <div id="loading-percent">0%</div>
+            <div id="loading-box">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="96"
+                    height="96"
+                    viewBox="0 0 96 96"
+                    fill="none"
+                >
+                    <path
+                        d="M79.2536 68.4958L51.3 21.355C50.5026 20.0088 49.1027 19.2012 47.5522 19.2012C46.0017 19.2012 44.6018 19.9999 43.8044 21.346L15.8508 68.4958C15.0268 69.8778 15.0002 71.547 15.7976 72.9649C16.5862 74.3649 18.0038 75.1995 19.5986 75.1995H75.5058C77.1095 75.1995 78.536 74.3559 79.3157 72.9559C80.0954 71.547 80.0776 69.8778 79.2536 68.4958ZM77.269 71.7803C77.0918 72.0944 76.5779 72.8213 75.5058 72.8213H19.5986C18.5265 72.8213 18.0038 72.0944 17.8266 71.7803C17.6583 71.4752 17.3127 70.6406 17.862 69.7163L45.8156 22.5754C46.3472 21.678 47.2067 21.5793 47.5522 21.5793C47.8978 21.5793 48.7572 21.678 49.2888 22.5754L77.2424 69.7163C77.7917 70.6406 77.4462 71.4752 77.269 71.7803Z"
+                        fill="url(#paint0_linear_2879_1625)"
+                    />
+                    <path
+                        d="M61.7181 47.6641V64.2302L47.542 72.5223V55.9471L61.7181 47.6641Z"
+                        fill="#C6C6C6"
+                    />
+                    <path
+                        d="M47.5423 55.9471V72.5223L33.375 64.2302V47.6641L47.5423 55.9471Z"
+                        fill="#DDDDDD"
+                    />
+                    <path
+                        d="M61.7185 47.6651L47.5423 55.9482L33.375 47.6651L47.5423 39.373L61.7185 47.6651Z"
+                        fill="url(#paint1_linear_2879_1625)"
+                    />
+                    <defs>
+                        <linearGradient
+                            id="paint0_linear_2879_1625"
+                            x1="47.5511"
+                            y1="19.2012"
+                            x2="47.5511"
+                            y2="75.1995"
+                            gradientUnits="userSpaceOnUse"
+                        >
+                            <stop stop-color="#8DBFFF" />
+                            <stop offset="1" stop-color="white" />
+                        </linearGradient>
+                        <linearGradient
+                            id="paint1_linear_2879_1625"
+                            x1="47.5467"
+                            y1="39.373"
+                            x2="47.5467"
+                            y2="55.9482"
+                            gradientUnits="userSpaceOnUse"
+                        >
+                            <stop stop-color="#8DBFFF" />
+                            <stop offset="1" stop-color="white" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div id="loading-bar-box">
+                    <div id="loading-bar-blank"></div>
+                    <div id="loading-bar-fill"></div>
+                </div>
+            </div>
         </div>
 
         <div id="loaded-content">
@@ -318,16 +370,7 @@
                 </div>
             </div>
             <div id="pjCardDrawingPaper">
-                <!-- <div class="card-title">CEN’ Synthetic data</div> -->
                 <img class="card-image" src="/img/pj_card/c_1.png" />
-                <!-- <div class="card-desc">
-                    By utilizing generative AI algorithms, 100 desired data pieces
-                    can be created within 10 seconds, tailored to the user's
-                    specific objectives
-                </div>
-                <div class="card-desc2">
-                    Enhancing AI Training Speed by 500% and Reducing Costs by 50%
-                </div> -->
             </div>
             <div id="pjCardDrawingPaperBig">
                 <img src="/img/pj_card/car.png" />
@@ -3345,6 +3388,8 @@
         <script>
             const loadingContainer =
                 document.getElementById('loading-container')
+            const loadingBarFill =
+                loadingContainer.querySelector('#loading-bar-fill')
             const loadingBar = loadingContainer.querySelector('#loading-bar')
             const loadingPercent =
                 loadingContainer.querySelector('#loading-percent')
@@ -4469,8 +4514,7 @@
                 const totalItems = totalImages + totalThreeJs
                 const loadedItems = loadedImages + loadedThreeJsCount
                 const progress = (loadedItems / totalItems) * 100
-                loadingBar.style.width = progress + '%'
-                loadingPercent.textContent = Math.round(progress) + '%'
+                loadingBarFill.style.width = progress + '%'
 
                 if (loadedItems === totalItems) {
                     setTimeout(() => {
