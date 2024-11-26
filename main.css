@@ -20,8 +20,7 @@
         rgba(84, 143, 255, 0) 100%
     );
     z-index: 1000;
-    transition: opacity 1s;
-    opacity: 1;
+    opacity: 0;
 }
 #loading-container #loading-box {
     width: 374px;
@@ -56,6 +55,7 @@
     overflow: hidden;
     width: 100%;
     opacity: 0;
+    transition: opacity 1s;
 }
 
 /* 영어일 때는 Montserrat, 한글일 때는 Pretendard 사용 */

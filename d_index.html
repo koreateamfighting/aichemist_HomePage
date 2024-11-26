@@ -4518,6 +4518,7 @@
 
                 if (loadedItems === totalItems) {
                     setTimeout(() => {
+                        loadingContainer.style.transition = 'opacity 1s'
                         loadingContainer.style.opacity = 0
                         loadingContainer.addEventListener(
                             'transitionend',
@@ -4549,6 +4550,7 @@
 
             document.addEventListener('DOMContentLoaded', function () {
                 resize()
+                loadingContainer.style.opacity = 1
                 for (let i = 0; i < totalImages; i++) {
                     if (images[i].complete) {
                         loadedImages++
