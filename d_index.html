@@ -3646,6 +3646,15 @@
             const LOGO_ROTATE_X = 0.5 // 로고 X축 회전
             const LOGO_ROTATE_Y = 5.8 // 로고 Y축 회전
             // const initLogoScale = 0.1
+            const LOGO_CONTROL_POINTS = [
+                { x: 500, y: 313 },
+                { x: 271, y: 660 },
+                { x: 721, y: 840 },
+                { x: 1059, y: 976 },
+                { x: 1280, y: 1150 },
+            ]
+            const INIT_LOGO_POSITION = bezier(LOGO_CONTROL_POINTS, 0)
+            const LAST_LOGO_POSITION = bezier(LOGO_CONTROL_POINTS, 1)
 
             let logoObject2
             const logoObject2MaxScale = 3
@@ -3653,11 +3662,6 @@
 
             let cardGroup = new THREE.Group()
 
-            // 로고 초기 위치
-            const LOGO_POSITION = {
-                top: logoContainer.offsetTop,
-                left: logoContainer.offsetLeft,
-            }
             // 로고가 MTWSwiperContainer에 도달했을 때의 위치
             const LOGO_POSITION_SECOND = {
                 top: MTWSwiperContainer.offsetTop,
@@ -3718,185 +3722,223 @@
                 cenCardBox3.style.opacity = 0
             }
 
+            function logoChangeEffect(opacity) {
+                logoObject.traverse((child) => {
+                    if (child.isMesh) {
+                        child.material.opacity = opacity
+                    }
+                })
+            }
+            function logoMove(x, y) {
+                logoContainer.style.left = `${x}px`
+                logoContainer.style.top = `${y}px`
+            }
+            function logoMoveLast() {
+                logoContainer.style.zIndex = -10
+                logoContainer.style.position = 'fixed'
+                logoMove(LAST_LOGO_POSITION.x, LAST_LOGO_POSITION.y)
+                logoChangeEffect(0)
+            }
+
+            function cardTitleOff() {
+                cardTitleBox.style.opacity = 0
+                cardTitleBox.style.transition = 'opacity 0.5s'
+            }
+            function cardTitleOn() {
+                cardTitleBox.style.transition = ''
+                if (cardTitleBox.style.opacity == 0) {
+                    cardTitleBox.style.opacity = 1
+                    textEffect('part-b')
+                }
+            }
+
+            function cardsAction() {
+                const progress =
+                    (scroll - blankSpace1.offsetTop) /
+                    (blankSpace3.offsetTop - blankSpace1.offsetTop)
+                cards.forEach((card, index) => {
+                    const temp = progress - index * 0.14
+                    if (temp < 0) {
+                        card.position.set(
+                            cardControlPoints[0].x,
+                            cardControlPoints[0].y,
+                            0
+                        )
+                        return
+                    } else if (temp > 1) {
+                        card.position.set(
+                            cardControlPoints[cardControlPoints.length - 1].x,
+                            cardControlPoints[cardControlPoints.length - 1].y,
+                            0
+                        )
+                        return
+                    }
+                    const cardPosition = bezier(cardControlPoints, temp)
+                    card.position.set(cardPosition.x, cardPosition.y, 0)
+                    card.rotation.y = initCardRotation + temp * 3.2
+                    // 카드 정점에서 커지기
+                    if (temp > 0.2 && temp < 0.45) {
+                        // if (temp > 0.2 && temp < 0.45 && index == 1) {
+                        let tempScale
+                        if (temp >= 0.25 && temp <= 0.35) {
+                            tempScale = expansionCardScale
+                        } else if (temp < 0.25 && temp >= 0.2) {
+                            tempScale =
+                                initCardScale +
+                                ((expansionCardScale - initCardScale) *
+                                    (temp - 0.2)) /
+                                    0.05
+                        } else if (temp > 0.35 && temp <= 0.45) {
+                            // 점점 작아지기
+                            tempScale =
+                                expansionCardScale -
+                                ((expansionCardScale - initCardScale) *
+                                    (temp - 0.35)) /
+                                    0.1
+                        }
+                        card.scale.set(tempScale, tempScale, tempScale)
+                    } else {
+                        //
+                        card.scale.set(
+                            initCardScale,
+                            initCardScale,
+                            initCardScale
+                        )
+                    }
+                })
+            }
+
+            function bigCardsAuroraPositionInit() {
+                aurora1.style.opacity = 0
+                aurora1.style.zIndex = -10
+                aurora1.style.top = `${3000}px`
+                aurora2.style.opacity = 0
+                aurora2.style.zIndex = -10
+                aurora2.style.top = `${6500}px`
+                aurora8.style.opacity = 0
+                aurora8.style.zIndex = -10
+                aurora8.style.top = `${3900}px`
+                aurora9.style.opacity = 0
+                aurora9.style.zIndex = -10
+                aurora9.style.top = `${6500}px`
+            }
+            function bigCardsAuroraPositionLast() {
+                aurora1.style.opacity = 0
+                aurora1.style.zIndex = -10
+                aurora1.style.top = `${-4000}px`
+                aurora2.style.opacity = 0
+                aurora2.style.zIndex = -10
+                aurora2.style.top = `${-500}px`
+                aurora8.style.opacity = 0
+                aurora8.style.zIndex = -10
+                aurora8.style.top = `${-4000}px`
+                aurora9.style.opacity = 0
+                aurora9.style.zIndex = -10
+                aurora9.style.top = `${-500}px`
+            }
+
             let scroll
             function scrollAction() {
-                if (logoObject) {
-                    if (scroll < cardSlide3dContainer.offsetTop) {
-                        // 로고 투명도 50%
-                        logoObject.traverse((child) => {
-                            if (child.isMesh) {
-                                child.material.opacity = 0.5
-                            }
-                        })
-
-                        const progress = scroll / cardSlide3dContainer.offsetTop
-                        const logoPosition = bezier(logoControlPoints, progress)
-                        logoContainer.style.left = `${logoPosition.x}px`
-                        logoContainer.style.top = `${logoPosition.y}px`
-                        cancelDooDoongSil(e.targetScroll)
-                    } else if (scroll < blankSpace7.offsetTop) {
-                        // 로고 투명도 70%
-                        logoObject.traverse((child) => {
-                            if (child.isMesh) {
-                                child.material.opacity = 0.7
-                            }
-                        })
-                        logoDooDoongSil(e.targetScroll)
-
-                        const logoPosition = bezier(logoControlPoints, 1)
-                        logoContainer.style.left = `${logoPosition.x}px`
-                        logoContainer.style.top = `${logoPosition.y + scroll - cardSlide3dContainer.offsetTop}px`
-                    } else {
-                    }
-                    if (scroll < blankSpace4.offsetTop) {
-                        logoContainer.style.zIndex = 1
-                    } else {
-                        logoContainer.style.zIndex = -10
-                    }
-                }
-
-                if (cards.length != 0) {
+                if (cards.length != 0 && logoObject) {
                     if (scroll < blankSpace1.offsetTop) {
+                        logoContainer.style.position = 'absolute'
+                        logoContainer.style.zIndex = 1
+                        const progress = scroll / blankSpace1.offsetTop
+                        // 로고 투명도 50%에서 70%로 변화
+                        logoChangeEffect(0.5 + 0.2 * progress)
+                        const logoPosition = bezier(
+                            LOGO_CONTROL_POINTS,
+                            progress
+                        )
+                        logoMove(logoPosition.x, logoPosition.y)
+                        cancelDooDoongSil(e.targetScroll)
+
+                        cardTitleOff()
+
                         cardTitleBox.style.transition = 'opacity 0.5s'
                         cardTitleBox.style.opacity = 0
                         cardSlide3dCanvas.style.opacity = 0
                         cardSlide3dCanvas.style.zIndex = -10
-                        logoContainer.style.position = 'absolute'
-                    } else if (scroll < blankSpace7.offsetTop) {
+
+                        bigCardsAuroraPositionInit()
+                    } else if (scroll < blankSpace3.offsetTop) {
+                        logoContainer.style.position = 'fixed'
+                        logoContainer.style.left = `${LAST_LOGO_POSITION.x}px`
+                        logoContainer.style.zIndex = 1
+                        logoChangeEffect(0.7) // 로고 투명도 70%
+                        logoDooDoongSil(e.targetScroll)
+                        logoContainer.style.top = `${logoContainer.offsetHeight / 2 - 50}px`
+
+                        cardTitleOn()
+
                         cardSlide3dCanvas.style.opacity = 1
                         cardSlide3dCanvas.style.zIndex = 5
-                        // 로고컨테이너도 fixed로 변경
+                        cardsAction()
+
+                        bigCardsAuroraPositionInit()
+                    } else if (scroll < blankSpace3_1.offsetTop) {
                         logoContainer.style.position = 'fixed'
-                        logoContainer.style.left = `${bezier(logoControlPoints, 1).x}px`
+                        logoContainer.style.left = `${LAST_LOGO_POSITION.x}px`
+                        logoContainer.style.zIndex = 1
+                        logoDooDoongSil(e.targetScroll)
+                        logoMove(
+                            LAST_LOGO_POSITION.x,
+                            LAST_LOGO_POSITION.y +
+                                scroll -
+                                blankSpace1.offsetTop
+                        )
+                        const logoDownProgress =
+                            (scroll - blankSpace3.offsetTop) /
+                            (blankSpace3_1.offsetTop - blankSpace3.offsetTop)
+                        // 로고 컨테이너 아래로 내려가면서 투명도 0으로
+                        logoContainer.style.top = `${
+                            logoContainer.offsetHeight / 2 -
+                            50 +
+                            50 * logoDownProgress
+                        }px`
+                        logoChangeEffect(0.7 - 0.7 * logoDownProgress)
 
-                        if (scroll < blankSpace3.offsetTop) {
-                            cardTitleBox.style.transition = ''
-                            if (cardTitleBox.style.opacity == 0) {
-                                cardTitleBox.style.opacity = 1
-                                textEffect('part-b')
-                            }
+                        cardTitleOff()
 
-                            logoContainer.style.top = `${logoContainer.offsetHeight / 2 - 50}px`
-                            logoContainer.style.opacity = 1
-                        } else {
-                            cardTitleBox.style.transition = 'opacity 0.5s'
-                            cardTitleBox.style.opacity = 0
+                        cardTitleBox.style.transition = 'opacity 0.5s'
+                        cardTitleBox.style.opacity = 0
 
-                            // 로고 컨테이너 아래로 내려가면서 투명도 0으로
-                            logoContainer.style.top = `${
-                                logoContainer.offsetHeight / 2 -
-                                50 +
-                                (scroll - blankSpace3.offsetTop) * 0.05
-                            }px`
-                            // logoContainer.style.top = `-${(scroll - blankSpace3.offsetTop) * 0.1}px`
-                            logoContainer.style.opacity =
-                                1 - (scroll - blankSpace3.offsetTop) * 0.0005
-                        }
+                        cardSlide3dCanvas.style.opacity = 1
+                        cardSlide3dCanvas.style.zIndex = 5
+                        cardsAction()
 
-                        const progress =
-                            (scroll - cardSlide3dContainer.offsetTop) /
-                            (blankSpace3.offsetTop -
-                                cardSlide3dContainer.offsetTop)
+                        bigCardsAuroraPositionInit()
+                    } else if (scroll < blankSpace7.offsetTop) {
+                        logoMoveLast()
 
-                        cards.forEach((card, index) => {
-                            const temp = progress - index * 0.14
-                            if (temp < 0) {
-                                card.position.set(
-                                    cardControlPoints[0].x,
-                                    cardControlPoints[0].y,
-                                    0
-                                )
-                                return
-                            } else if (temp > 1) {
-                                card.position.set(
-                                    cardControlPoints[
-                                        cardControlPoints.length - 1
-                                    ].x,
-                                    cardControlPoints[
-                                        cardControlPoints.length - 1
-                                    ].y,
-                                    0
-                                )
-                                return
-                            }
-                            const cardPosition = bezier(cardControlPoints, temp)
-                            card.position.set(cardPosition.x, cardPosition.y, 0)
-                            card.rotation.y = initCardRotation + temp * 3.2
-                            // 카드 정점에서 커지기
-                            if (temp > 0.2 && temp < 0.45) {
-                                // if (temp > 0.2 && temp < 0.45 && index == 1) {
-                                let tempScale
-                                if (temp >= 0.25 && temp <= 0.35) {
-                                    tempScale = expansionCardScale
-                                } else if (temp < 0.25 && temp >= 0.2) {
-                                    tempScale =
-                                        initCardScale +
-                                        ((expansionCardScale - initCardScale) *
-                                            (temp - 0.2)) /
-                                            0.05
-                                } else if (temp > 0.35 && temp <= 0.45) {
-                                    // 점점 작아지기
-                                    tempScale =
-                                        expansionCardScale -
-                                        ((expansionCardScale - initCardScale) *
-                                            (temp - 0.35)) /
-                                            0.1
-                                }
-                                card.scale.set(tempScale, tempScale, tempScale)
-                            } else {
-                                //
-                                card.scale.set(
-                                    initCardScale,
-                                    initCardScale,
-                                    initCardScale
-                                )
-                            }
-                        })
+                        cardTitleOff()
+
+                        cardSlide3dCanvas.style.opacity = 1
+                        cardSlide3dCanvas.style.zIndex = 5
+                        cardsAction()
+
+                        aurora1.style.opacity = 0.5
+                        aurora1.style.zIndex = 10
+                        aurora1.style.top = `${3000 - (scroll - blankSpace3_1.offsetTop) * 1}px`
+                        aurora2.style.opacity = 0.5
+                        aurora2.style.zIndex = 10
+                        aurora2.style.top = `${6500 - (scroll - blankSpace3_1.offsetTop) * 1}px`
+                        aurora2.style.left = '800px'
+                        aurora8.style.opacity = 0.5
+                        aurora8.style.zIndex = 10
+                        aurora8.style.top = `${3900 - (scroll - blankSpace3_1.offsetTop) * 1}px`
+                        aurora9.style.opacity = 0.5
+                        aurora9.style.zIndex = 10
+                        aurora9.style.top = `${6500 - (scroll - blankSpace3_1.offsetTop) * 0.95}px`
                     } else {
+                        logoMoveLast()
+
+                        cardSlide3dCanvas.style.opacity = 1
+                        cardSlide3dCanvas.style.zIndex = 5
+                        cardsAction()
+
                         cardTitleBox.style.opacity = 0
                     }
-                }
-
-                if (scroll < blankSpace4.offsetTop) {
-                    aurora1.style.opacity = 0
-                    aurora1.style.zIndex = -10
-                    aurora1.style.top = `${3000}px`
-                    aurora2.style.opacity = 0
-                    aurora2.style.zIndex = -10
-                    aurora2.style.top = `${6500}px`
-                    aurora8.style.opacity = 0
-                    aurora8.style.zIndex = -10
-                    aurora8.style.top = `${3900}px`
-                    aurora9.style.opacity = 0
-                    aurora9.style.zIndex = -10
-                    aurora9.style.top = `${6500}px`
-                } else if (scroll < blankSpace7.offsetTop) {
-                    aurora1.style.opacity = 0.5
-                    aurora1.style.zIndex = 10
-                    aurora1.style.top = `${3000 - (scroll - blankSpace3_1.offsetTop) * 1}px`
-                    aurora2.style.opacity = 0.5
-                    aurora2.style.zIndex = 10
-                    aurora2.style.top = `${6500 - (scroll - blankSpace3_1.offsetTop) * 1}px`
-                    aurora2.style.left = '800px'
-                    aurora8.style.opacity = 0.5
-                    aurora8.style.zIndex = 10
-                    aurora8.style.top = `${3900 - (scroll - blankSpace3_1.offsetTop) * 1}px`
-                    aurora9.style.opacity = 0.5
-                    aurora9.style.zIndex = 10
-                    aurora9.style.top = `${6500 - (scroll - blankSpace3_1.offsetTop) * 0.95}px`
-                } else {
-                    aurora1.style.opacity = 0
-                    aurora1.style.zIndex = -10
-                    aurora1.style.top = `${-4000}px`
-                    aurora2.style.opacity = 0
-                    aurora2.style.zIndex = -10
-                    aurora2.style.top = `${-500}px`
-                    aurora8.style.opacity = 0
-                    aurora8.style.zIndex = -10
-                    aurora8.style.top = `${-4000}px`
-                    aurora9.style.opacity = 0
-                    aurora9.style.zIndex = -10
-                    aurora9.style.top = `${-500}px`
                 }
 
                 if (bigCards.length != 0) {
@@ -3953,7 +3995,6 @@
                     } else if (scroll < blankSpace6.offsetTop) {
                         cenCardContainer.style.zIndex = 100
                         cenCardContainer.style.opacity = 1
-                        logoContainer.style.position = 'absolute'
 
                         const progress =
                             (scroll - blankSpace5.offsetTop) /
@@ -4429,22 +4470,6 @@
                 }
             }
 
-            const LOGO_CONTROL_POINTS = [
-                { x: 500, y: 313 },
-                { x: 271, y: 660 },
-                { x: 721, y: 840 },
-                { x: 1059, y: 976 },
-                { x: 1280, y: 1150 },
-            ]
-            const logoControlPoints = [
-                { x: 500, y: 313 },
-                { x: 271, y: 660 },
-                { x: 721, y: 840 },
-                { x: 1059, y: 976 },
-                { x: 1280, y: 1150 },
-            ]
-            const logoControlPoints2 = { x: 1280, y: 4200 }
-
             const BIG_CARD_CONTROL_POINTS1 = [
                 { x: 1140, y: 1510, z: 0 },
                 { x: 140, y: 410, z: 0 },
@@ -4536,14 +4561,10 @@
                 }
             }
 
-            const LOGO_CONTAINER_TOP = parseFloat(logoContainer.style.top)
-            let logoContainerTop = LOGO_CONTAINER_TOP
-            const LOGO_CONTAINER_LEFT = parseFloat(logoContainer.style.left)
-            let logoContainerLeft = LOGO_CONTAINER_LEFT
-
+            // 창크기에 따라 컨텐츠의 크기 조절
             function resize() {
-                contentsRatio = window.innerWidth / 1920
-                contentsRatioReverse = 1920 / window.innerWidth
+                contentsRatio = window.innerWidth / WIDTH
+                contentsRatioReverse = WIDTH / window.innerWidth
 
                 document.body.style.zoom = `${contentsRatio}`
             }
