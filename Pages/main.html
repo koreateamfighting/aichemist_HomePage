@@ -1,0 +1,1225 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+	<meta charset="utf-8">
+	<meta name="author" content="Ai-Chemist">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Ai-Chemist">
+	<meta property="og:image" content="/Docs/images/MainThumnail.png">
+	<!-- Fav Icon  -->
+	<link rel="shortcut icon" href="/Docs/images/favicon.png">
+	<!-- Site Title  -->
+	<title>AIChemist &amp; AI & Metaverse</title>
+	<!-- Base CSS -->
+	<link rel="stylesheet" href="/Docs/assets/css/vendor.bundle.css?ver=192">
+	<link rel="stylesheet" href="/Docs/assets/css/style-lobelia.css?ver=192" id="changeTheme">
+	<link rel="stylesheet" href="/Docs/assets/css/style.css">
+	<!-- Extra CSS -->
+	<link rel="stylesheet" href="/Docs/assets/css/theme.css?ver=192">
+	<link rel="stylesheet" href="/Docs/assets/css/bootstrap.css?ver=1">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<style>
+		@font-face {
+			font-family: 'Pretendard-Regular';
+			src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		body {
+			font-family: "Pretendard-Regular";
+		}
+
+		span {
+			font-size: 16px;
+		}
+
+		.btn {
+			--bs-btn-line-height: 1;
+		}
+
+		.contact_input {
+			color: black;
+			margin-left: 12px;
+			margin-right: 12px;
+			border-bottom-color: #DADADA;
+		}
+
+
+		.btn-primary {
+			--bs-btn-bg: #00A3FF !important;
+			--bs-btn-border-color: #00A3FF !important;
+		}
+
+
+		.section_1 > .container {
+			height: 80%;
+		}
+
+		#main_title_row {
+			height: 100% !important;
+		}
+
+
+		.multiple-items {
+			padding-bottom: 10%;
+		}
+
+		.mob_img_div {
+			position: absolute !important;
+		}
+
+		.pp {
+			margin-bottom: 24px;
+		}
+
+		.pp_color_img {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			opacity: 0;
+			z-index: 1;
+			padding-left: 12px;
+			padding-right: 12px;
+			margin-top: 24px;
+		}
+
+		.pp_gradation {
+			z-index: 2 !important;
+			padding-left: 12px;
+			padding-right: 12px;
+			margin-top: 24px;
+		}
+
+		.pp_text {
+			font-size: 26px;
+			font-weight: 700;
+			color: white;
+			transform: translate(-70%,-50%);
+			z-index: 3;
+		}
+
+		.cen_img_up {
+			margin-top: 5%;
+		}
+
+		.pp_color_img {
+			cursor: pointer;
+		}
+
+		.main-text-title {
+			font-size: 60px;
+		}
+
+		.sub_title {
+			font-size: 20px;
+			color: #00A3FF !important;
+			font-weight: bold;
+		}
+
+		.section_title {
+			font-size: 50px;
+			font-weight: bold;
+		}
+
+		.section_caption {
+			font-size: 24px;
+			display: block;
+		}
+
+		.section_caption_bold {
+			font-size: 30px;
+			font-weight: bold;
+		}
+
+		.contact_title {
+			font-weight: bold;
+			font-size: 20px;
+			padding-top: 3rem;
+			padding-bottom: 12px;
+		}
+
+		.main_sub_title {
+			font-weight: 700;
+			font-size: 30px;
+		}
+
+		.main_sub_content {
+			font-weight: 400;
+			font-size: 16px;
+		}
+
+
+
+		.main_footer {
+			width: 100%;
+			height: 20%;
+			position: absolute;
+			bottom: 0;
+		}
+
+		.section_black {
+			background-color: #242424;
+		}
+
+		.section_white {
+			background-color: transparent;
+		}
+
+		.section_grey {
+			background-color: #F8F8F8;
+		}
+
+		.section_1 {
+			padding: 0;
+		}
+
+		.section_2 {
+			padding-bottom: 0;
+		}
+		/*.section_3 {
+			margin-top: -4%;
+			z-index: 0;
+		}*/
+		.footer {
+			background-color: #F8F8F8;
+			color: #B4B4B4;
+			font-weight: 300;
+			padding: 1%;
+		}
+
+		.footer-col {
+			width: fit-content;
+			justify-content: center;
+			display: flex;
+			flex-wrap: wrap-reverse;
+		}
+
+		.footer-content {
+			font-size: 12px;
+		}
+
+		.footer-logo {
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+
+		.banner_img {
+			width: 100%;
+		}
+
+		.office_banner {
+			z-index: 999;
+			width: 100%;
+			position: fixed;
+			bottom: 0px;
+			cursor: pointer;
+		}
+
+		@media screen and (min-width: 1001px) {
+			.nav_menu_center {
+				transform: translateX(-10%);
+			}
+
+			.container {
+				width: 1120px !important;
+			}
+
+			.cen_img_up {
+				margin-top: -15%;
+			}
+
+			.section_1 {
+				background-image: url(/Docs/images/main_banner.png);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center bottom;
+			}
+		}
+
+		@media screen and (max-width: 1000px) {
+			.main_footer {
+				height: 40%;
+			}
+
+			.section_1 {
+				background-image: url(/Docs/images/main_banner_mob.png);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center bottom;
+			}
+
+				.section_1 > .container {
+					height: 60%;
+				}
+
+			.section_caption {
+				font-size: 16px;
+			}
+
+			.main-text-title {
+				font-size: 30px;
+			}
+
+			.section_title {
+				font-size: 32px;
+			}
+
+			.sub_title {
+				font-size: 20px;
+			}
+
+			.section_caption {
+				font-weight: 400;
+				font-size: 16px;
+			}
+
+			.section_caption_bold {
+				font-weight: 700;
+				font-size: 24px;
+			}
+
+			.slick-slider {
+				right: 20%;
+			}
+		}
+	</style>
+	<script src="/Docs/assets/js/jquery.bundle.js?ver=192"></script>
+
+	<script src="/Docs/assets/js/scripts.js?ver=192"></script>
+	<!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d8e1973b4cb920fbf809dc7596c86cd0&libraries=services,clusterer,drawing"></script>-->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+	<script type="text/javascript" src="/Docs/assets/js/bootstrap.js"></script>
+
+
+</head>
+
+<body class="nk-body body-wider mode-onepage bg-light">
+
+	<div class="nk-wrap nk-body body-wider mode-onepage bg-light no-touch nk-nio-theme page-loaded chrome">
+		<div id="banner" class="office_banner" onclick="MoveVirtualOffice();">
+			<img src="/Docs/images/twinoffice_banner.png" class="nk-block-img banner_img" />
+		</div>
+		<header class="nk-header page-header is-transparent is-sticky is-shrink" id="header">
+			<!-- Header @s -->
+			<div class="header-main">
+				<div class="header-container container">
+					<div class="header-wrap">
+						<!-- Logo @s -->
+						<div class="header-logo logo animated" data-animate="fadeInDown" data-delay=".6">
+							<a href="#" onclick="location.href='/Pages/main.html'" data-chapNum="0" class="logo-link">
+								<img class="logo-dark" src="/Docs/images/logo.png" srcset="/Docs/images/logo.png 2x" alt="logo">
+								<img class="logo-light" src="/Docs/images/logo-full-white.png" srcset="/Docs/images/logo-full-white.png 2x" alt="logo">
+							</a>
+						</div>
+
+						<!-- Menu Toogle @s -->
+						<div class="header-nav-toggle">
+							<a href="#" class="navbar-toggle" data-menu-toggle="header-menu">
+								<div class="toggle-line">
+									<span></span>
+								</div>
+							</a>
+						</div>
+						<!-- Menu @s -->
+						<!--<select id="lang" onchange="langChange()" style="margin-right:50px">
+							<option value="Korean">Korean</option>
+							<option value="English">English</option>
+						</select>-->
+						<div class="header-navbar animated " data-animate="fadeInDown" data-delay=".75">
+							<nav class="header-menu" id="header-menu">
+
+								<ul class="menu mb-0 nav_menu_center">
+									<li class="menu-item">
+										<a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/portfolio.html'" data-chapNum="5">PORTFOLIO</a>
+									</li>
+									<li class="menu-item">
+										<a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/company.html'" chapNum="2">COMPANY</a>
+									</li>
+									<li class="menu-item">
+										<a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/main.html?go=1'" data-chapNum="6">CONTACT US</a>
+									</li>
+									<li class="menu-item">
+										<a class="menu-link nav-link menu-toggle" href="#" onclick="$('#solutionMenu').slideToggle()">SOLUTION</a>
+										<div style="display:none;background-color:black" id="solutionMenu" onmouseleave="$('#solutionMenu').hide();">
+											<div style="display:block; color:white;">
+												<ul>
+													<li class="menu-item"><a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/cen.html?go=1'" data-chapNum="6">CEN</a></li>
+													<li class="menu-item"><a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/mason3d.html?go=1'" data-chapNum="6">Mason3D</a></li>
+													<li class="menu-item" style="color:darkgrey"><a class="menu-link nav-link menu-toggle" href="#" data-chapNum="6" style="color:#BBBBBB">ADAM</a></li>
+												</ul>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<ul class="menu mb-0">
+									<li class="menu-item" style="cursor: pointer; display: flex; align-items:center;">
+										<!--<a class="menu-link nav-link menu-toggle" href="https://d1bn2a1xwzmis9.cloudfront.net/" onclick="location.href ='https://d1bn2a1xwzmis9.cloudfront.net/'">Twin Office</a>-->
+										<img class="logo-light" src="/Docs/images/twinofficeicon.png" style="margin-right:5px;width:23px;height:20px;" />
+										<img class="logo-dark" src="/Docs/images/twinofficedarkicon.png" style="margin-right:5px;width:23px;height:20px;" />
+										<a class="menu-link nav-link menu-toggle" onclick="MoveVirtualOffice()">Twin Office</a>
+									</li>
+									<li class="menu-item" style="cursor: pointer; display: flex; align-items: center;">
+										<img class="logo-light" src="/Docs/images/twinschoolicon.png" style="margin-right: 5px; width: 22px; height: 19px;" />
+										<img class="logo-dark" src="/Docs/images/twinschooldarkicon.png" style="margin-right: 5px; width: 22px; height: 19px;" />
+										<!--<a class="menu-link nav-link menu-toggle" onclick="let width = screen.width; window.open(this.href, 'TwinSchool', 'left=0,top=0,width=1920,height=1080,toolbar=1,resizable=yes'); return false;" href="/Pages/edu.html" data-chapNum="6">Twin School</a>-->
+										<a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/edu.html'" data-chapNum="6">Twin School</a>
+									</li>
+									<li class="menu-item">
+										<div style="display:flex;cursor:pointer" onclick="$('#languageMenu').slideToggle()">
+											<img class="korean" style="width:40px;height:40px;" src="/Docs/images/51south-korea.png" />
+											<img class="english" style="display:none;width:40px;height:40px;" src="/Docs/images/51united-states.png" />
+											<!--<img style="width:28px;height:28px;" src="/Docs/images/bottom-arrow.png" />-->
+										</div>
+										<!--<a class="menu-link nav-link menu-toggle" href="#" onclick="$('#languageMenu').slideToggle()">LANGUAGES</a>-->
+										<div style="position: absolute; display: none; left: -10px;" id="languageMenu" onmouseleave="$('#languageMenu').hide()">
+											<ul style="padding-left:10px;padding-right:10px;background-color:black;">
+												<li id="liLangKor" style="display: none; cursor:pointer; width: 40px; height: 40px;" class="menu-item"><img onclick="changeKorean()" style="width:40px;height:40px;" src="/Docs/images/51south-korea.png" /></li>
+												<li id="liLangEng" class="menu-item" style="cursor:pointer;width:40px;height:40px;"><img onclick="changeEnglish()" src="/Docs/images/51united-states.png" style="width:40px;height:40px;" /></li>
+												<li id="liLangJpn" class="menu-item" style="width:40px;height:40px;"><img onclick="" src="/Docs/images/japan-off.png" style="width:40px;height:40px;" /></li>
+												<li id="liLangChi" class="menu-item" style="width:40px;height:40px;"><img onclick="" src="/Docs/images/china-off.png" style="width:40px;height:40px;" /></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div><!-- .header-navbar @e -->
+					</div>
+				</div>
+			</div><!-- .header-main @e -->
+			<!-- Banner @s -->
+		</header>
+
+		<main class="nk-pages">
+			<section class="section section_1 section_black d-flex overflow-hidden">
+				<div class="container">
+					<div class="row align-content-center" id="main_title_row">
+						<div class="col">
+							<div class="col-md-12 animated fadeInUp" data-animate="fadeInUp" data-delay="1.75">
+								<div class="row">
+									<div class="col-md-12">
+										
+										<div class="korean">
+											<h1 class="text-white fw-bold main-text-title text-center">
+												당신이 상상하는 세상을,<br />
+												아이케미스트에서 현실로!
+											</h1>
+										</div>
+										<div class="english">
+											<h1 class="text-white fw-bold main-text-title text-center">
+												Bringing Your Imagined World<br />
+												to Reality with Aichemist
+											</h1>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main_footer d-flex align-items-center section_grey">
+					<div class="container">
+						<div class="text-center animated fadeInUp" data-animate="fadeInUp" data-delay="1.95">
+							<div class="korean">
+								<h3 class="main_sub_title">
+									AI,METAVERSE,XR 그리고 Chemistry
+								</h3>
+							</div>
+							<div class="english">
+								AI,METAVERSE,XR and Chemistry
+							</div>
+							<div class="korean">
+								<span class="main_sub_content ">
+									AI 기술력을 이용해 상상을 현실로 만들고 현실 그 너머 새로운 세상의 Metaverse<br />
+									새로운 현실감과 몰입도를 더해주는 XR 그 사이에서 Chemistry를 만들어내는 연금술사
+								</span>
+							</div>
+							<div class="english">
+								<span class="main_sub_content ">
+									Utilizing AI technology to turn imagination into reality and beyond.<br/>
+									The alchemists at Aichemist create a new Metaverse, a world with enhanced realism and immersion through XR, adding a touch of chemistry in the process.
+								</span>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section section_2 section_white" style="overflow:hidden; height:auto!important;">
+				<div class="container" style="overflow:hidden; height:auto!important;">
+					<div class="row p-2 animated" data-animate="fadeInDown" data-delay="0.45">
+						<div class="col-md-12">
+							<h5 class="sub_title">Synthetic Avatar AI</h5>
+						</div>
+					</div>
+					<div class="feature row p-2 animated" data-animate="fadeInDown" data-delay="0.45">
+						<div class="col-md-12">
+							<div class="korean">
+								<h1 class="section_title">
+									3D모델의<br />
+									경량화의 선두
+								</h1>
+							</div>
+							<div class="english">
+								<h1 class="section_title">
+									Leading<br />
+									the Lightweighting of 3D Models
+								</h1>
+							</div>
+							
+						</div>
+					</div>
+					<div class="feature row p-2 animated" data-animate="fadeInDown" data-delay="0.65">
+						<div class="col-md-8">
+							<div class="korean">
+								<span class="section_caption">
+									사람의 일반적인 얼굴형태를 학습한 AI를 통해 2D사진을 3D모델로 자동 변환해주는
+									자사 IP 기반으로 천문학적인 비용이 드는 3D모델작업을 타사대비 18시간 이상 감소시켜주며
+									실시간 아바타인식기술을 획기적으로 높여 실사를 적용한 MetaVerse를 구축합니다.
+								</span>
+							</div>
+							<div class="english">
+								<span class="section_caption">
+									Utilizing our proprietary IP based on AI trained on common facial features, we automatically convert 2D photos into 3D models. This significantly reduces the astronomical costs of 3D modeling compared to other providers, cutting down the process by over 18 hours. We also revolutionize real-time avatar recognition technology, enabling the creation of a MetaVerse with real-world applications.
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="row text-center animated" data-animate="fadeInDown" data-delay="0.75">
+						<div class="col-md-4 p-0 mt-5">
+							<img src="/Docs/images/homepage_img/section_2/1.png" />
+						</div>
+						<div class="col-md-1 p-0 align-content-center d-flex" style=" flex-wrap: inherit; ">
+							<div class="col">
+								<div class="row pt-5 " id="arrow_div">
+									<img id="arrow_img" src="/Docs/images/fat-arrow.png" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 p-0 mt-5">
+							<img src="/Docs/images/homepage_img/section_2/2.png" />
+
+						</div>
+					</div>
+					<div class="row mt-5 animated" data-animate="fadeInDown" data-delay="0.75" style="display:flex; flex-direction:row-reverse;">
+						<div class="col-md-7 p-0">
+							<img class="round-lg" src="/Docs/images/homepage_img/section_2/3.gif" />
+						</div>
+						<div class="col-md-3 row align-content-end ">
+							<div class="col">
+								<div class="korean">
+									<span class="text-right m-3 section_caption" style="height:min-content;">
+										실제로 구현되는<br />
+										이미지 3d화
+									</span>
+								</div>
+								<div class="english">
+									<span class="text-right m-3 section_caption" style="height:min-content;">
+										Actualizing Image <br />
+										3D Transformation
+									</span>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.45" style="display:flex; flex-direction:row-reverse;">
+						<div class="col-md-6">
+							<div class="row align-content-center text-right" style="height:300px;">
+								<div class="col">
+									<div class="korean">
+										<span class="section_caption_bold">
+											다양한 인물들의<br />
+											AI 모델링
+										</span>
+									</div>
+									<div class="english">
+										<span class="section_caption_bold">
+											AI Modeling<br/>
+											of Various Personalities
+										</span>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="multiple-items">
+							<div class=" p-3">
+								<img class="multifle_img" src="/Docs/images/homepage_img/cc4/1.png">
+							</div>
+							<div class=" p-3" id="sec_div">
+								<img class="multifle_img" src="/Docs/images/homepage_img/cc4/2.png">
+							</div>
+							<div class=" p-3">
+								<img class="multifle_img" src="/Docs/images/homepage_img/cc4/3.png">
+							</div>
+							<div class=" p-3" id="forth_div">
+								<img class="multifle_img" src="/Docs/images/homepage_img/cc4/5.png">
+							</div>
+							<div class=" p-3">
+								<img class="multifle_img" src="/Docs/images/homepage_img/cc4/6.png">
+							</div>
+							<div class=" p-3">
+								<img class="multifle_img" src="/Docs/images/homepage_img/cc4/7.png">
+							</div>
+							<div class=" p-3">
+								<img class="multifle_img" src="/Docs/images/homepage_img/cc4/8.png">
+							</div>
+							<div class=" p-3">
+								<img class="multifle_img" src="/Docs/images/homepage_img/cc4/9.png">
+							</div>
+						</div>
+						<div class="mob_img_div" id="mob_img_div">
+						</div>
+
+					</div>
+				</div>
+				<div style="height: 300px; background-color: #242424;"> </div>
+			</section>
+			<section class="section section_3 section_black">
+				<div class="container">
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.55">
+						<div class="col-md-6">
+						</div>
+						<div class="pb-3 col-md-6 ">
+							<span class="sub_title">
+								Synthetic Avatar AI
+							</span>
+							<div class="korean">
+								<h1 class="section_title" style="color:white;">
+									당신만을 위한<br />
+									가상세계
+								</h1>
+							</div>
+							<div class="english">
+								<h1 class="section_title" style="color:white;">
+									Your Personal<br/>
+									Virtual World
+								</h1>
+							</div>
+							
+
+						</div>
+					</div>
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.75" style="display:flex; flex-direction:row-reverse;">
+						<div class="col-md-6">
+							<div class="korean">
+								<span class="section_caption" style="color:white;">
+									메타버스는 4차산업혁명시대 AI와 함께 가장 떠오르는 키워드입니다. 교육,회의,서비스 등 기존의 메타버스의 적용범위였던 생활,소통을 넘어 코로나 이후로 급부상한 비대면 업무를 위해 사용자에 업무환경에 최적화된 새로운 세상을 만들어드립니다.
+								</span>
+							</div>
+							<div class="english">
+								<span class="section_caption" style="color:white;">
+									Metaverse is the most prominent keyword in the era of the Fourth Industrial Revolution, coupled with AI. Beyond the traditional application scope of Metaverse, encompassing lifestyle and communication, we are creating a new world optimized for the rapidly rising demand for remote work post-COVID, covering education, meetings, services, and more.
+								</span>
+							</div>
+							
+						</div>
+						<div class="col-md-6">
+							<img src="/Docs/images/homepage_img/section_3/4.png" />
+						</div>
+
+					</div>
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.85">
+						<div class="col-md-6"></div>
+						<div class="col-md-6 cen_img_up">
+							<img src="/Docs/images/homepage_img/section_3/5.png" />
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section section_4">
+				<div class="container">
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.55">
+						<div class="col-md-6">
+							<span class="sub_title">
+								EducationXR Program
+							</span>
+							<div class="korean">
+								<h1 class="section_title">
+									VR AR<br />
+									더 나아가 XR
+								</h1>
+							</div>
+							<div class="english">
+								<h1 class="section_title">
+									Exploring Beyond VR<br/>
+									and AR to XR
+								</h1>
+							</div>
+							
+						</div>
+					</div>
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.75">
+						<div class="col-md-7">
+							<div class="korean">
+								<span class="section_caption">
+									점점 더 경량화 되고 정밀화 되는 XR 기기들 사이에서 더욱이 중요시 거두되고있는 것은 마땅한 SoftWare 입니다.영국의 시장 조사 기관 아이디텍이엑스가 발표한 ‘증강·혼합·가상현실 2020~2030’ 보고서에 따르면 XR 시장 규모는 2030년까지 약 35조원를 넘어설 것으로 전망되고 있습니다.아이케미스트는 다양한 메타버스 구축경험을 바탕으로 몰입도 높은 업무·교육 시스템을 사용자의 요건에 맞추어 커스텀하여 제공합니다.
+								</span>
+							</div>
+							<div class="english">
+								<span class="section_caption">
+									In the evolving landscape of lightweight and precise XR devices, the significance of suitable software is increasingly emphasized. According to a report by the UK market research firm IDTechEx, the XR market is expected to exceed approximately 35 trillion won by 2030. Aichemist, drawing from diverse Metaverse building experiences, customizes and provides immersive work and education systems tailored to user requirements.
+								</span>
+							</div>
+							
+						</div>
+					</div>
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.75">
+						<div class="col-md-5">
+
+						</div>
+						<div class="col-md-7">
+							<img class="round-lg" src="/Docs/images/homepage_img/section_6/6.png" />
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section section_5 section_grey">
+				<div class="container">
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.55">
+						<div class="col-md-12">
+							<div class="korean">
+								<span class="sub_title">
+									차원이 다른
+								</span>
+							</div>
+							<div class="english">
+								<span class="sub_title">
+									Taking Imagination
+								</span>
+							</div>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 animated" data-animate="fadeInDown" data-delay="0.60" id="pp_card">
+							<div class="row fadeInDown" data-animate="fadeInDown" data-delay="1.65" style="visibility: visible; animation-delay: 1.65s;">
+								<div class="korean">
+									<span class="section_title">
+										상상을 현실로<br />
+										Aichemist<br />
+										포트폴리오<br />
+									</span>
+								</div>
+								<div class="english">
+									<span class="section_title">
+										to Reality<br />
+										Aichemist<br />
+										Portfolio<br />
+									</span>
+								</div>
+
+							</div>
+							<div class="row">
+								<div class="col-md-12 pt-lg-5">
+									<div class="korean">
+										<button class="btn btn-primary btn-lg rounded-pill" onclick="location.href='/Pages/portfolio.html'" style="width:30%;">더보기</button>
+									</div>
+									<div class="english">
+										<button class="btn btn-primary btn-lg rounded-pill" onclick="location.href='/Pages/portfolio.html'" style="width:30%;">More</button>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 pp text-center animated" data-animate="fadeInDown" data-delay="0.75" style="height:329px;">
+							<img class="pp_black_img" src="/Docs/images/homepage_img/portfoilo/A.png" />
+							<img class="pp_color_img" src="/Docs/images/homepage_img/portfoilo/A-1.png" style="" />
+						</div>
+						<div class="col-md-4 pp text-center animated" data-animate="fadeInDown" data-delay="0.8" style="height:329px;">
+							<img class="pp_black_img" src="/Docs/images/homepage_img/portfoilo/B.png" />
+							<img class="pp_color_img" src="/Docs/images/homepage_img/portfoilo/B-1.png" style="" />
+
+						</div>
+						<div class="col-md-4 pp text-center animated" data-animate="fadeInDown" data-delay="0.85">
+							<img class="pp_black_img" src="/Docs/images/homepage_img/portfoilo/C.png" />
+							<img class="pp_color_img" src="/Docs/images/homepage_img/portfoilo/C-1.png" />
+
+						</div>
+						<div class="col-md-4 pp text-center animated" data-animate="fadeInDown" data-delay="0.9">
+							<img class="pp_black_img" src="/Docs/images/homepage_img/portfoilo/D.png" />
+							<img class="pp_color_img" src="/Docs/images/homepage_img/portfoilo/D-1.png" />
+						</div>
+						<div class="col-md-4 pp text-center animated" data-animate="fadeInDown" data-delay="0.95">
+							<img class="pp_black_img" src="/Docs/images/homepage_img/portfoilo/E.png" />
+							<img class="pp_color_img" src="/Docs/images/homepage_img/portfoilo/E-1.png" />
+						</div>
+						<div class="col-md-4 pp text-center animated" data-animate="fadeInDown" data-delay="1.0">
+							<img class="pp_black_img" src="/Docs/images/homepage_img/portfoilo/F.png" />
+							<img class="pp_color_img" src="/Docs/images/homepage_img/portfoilo/F-1.png" />
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="mail" class="section section_6" style="background-color:white;">
+				<div class="container">
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.55" style="padding-bottom:3rem;">
+						<div class="korean">
+							<span class="sub_title">
+								한 단계 앞서 나아가는 우리와 함께
+							</span>
+						</div>
+						<div class="english">
+							<span class="sub_title">
+								Advancing Together, One Step Ahead
+							</span>
+						</div>
+						
+						<h1 class="section_title">
+							Contact Us
+						</h1>
+					</div>
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.65">
+						<div class="korean">
+							<span class="contact_title" style="padding-top:12px; padding-bottom:12px;">
+								소속
+							</span>
+						</div>
+						<div class="english">
+							<span class="contact_title" style="padding-top:12px; padding-bottom:12px;">
+								Affiliation
+							</span>
+						</div>
+						
+						<input type="text" class="input-line pl-0 contact_input" id="from_company" />
+					</div>
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.65">
+						<div class="korean">
+							<span class="contact_title">
+								이름/직급
+							</span>
+						</div>
+						<div class="english">
+							<span class="contact_title">
+								Name/Position
+							</span>
+						</div>
+						
+						<input type="text" class="input-line pl-0 contact_input" id="from_name" />
+					</div>
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.65">
+						<div class="korean">
+							<span class="contact_title">
+								연락처
+							</span>
+						</div>
+						<div class="english">
+							<span class="contact_title">
+								Contact Information
+							</span>
+						</div>
+						
+						<input type="text" class="input-line pl-0 contact_input" id="from_number" />
+					</div>
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.65">
+						<div class="korean">
+							<span class="contact_title">
+								연락
+							</span>
+						</div>
+						<div class="english">
+							<span class="contact_title">
+								Contact Purpose
+							</span>
+						</div>
+						
+						<input type="text" class="input-line pl-0 contact_input" />
+					</div>
+					<div class="row animated" data-animate="fadeInDown" data-delay="0.65">
+						<div class="korean">
+							<span class="contact_title">
+								내용
+							</span>
+						</div>
+						<div class="english">
+							<span class="contact_title">
+								Content
+							</span>
+						</div>
+						
+						<input type="text" class="input-line pl-0 contact_input"  id="mail_content" />
+					</div>
+					<div class="row d-grid gap-2 animated" data-animate="fadeInDown" data-delay="0.65" style="padding-top:3rem;">
+						<div class="col-md-12">
+							<div class="korean">
+								<button class="btn btn-primary btn-lg rounded-pill align-content-center" style="width:100%; height:4rem; font-size:40px;" onclick="sendEmailToCompany()">보내기</button>
+							</div>
+							<div class="english">
+								<button class="btn btn-primary btn-lg rounded-pill align-content-center" style="width:100%; height:4rem; font-size:40px;" onclick="sendEmailToCompany()">Submit</button>
+							</div>
+							
+						</div>
+						<div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section footer section_7" style="background-color: #F8F8F8">
+				<div class="container">
+					<div class="row" style="display:flex;">
+						<div class="korean">
+							<div class="address" style="display:flex;position:relative;">
+								<div class="footer-content" style="margin-right:20px; font-size:16px">
+									(08506) 서울특별시 금천구 가산동 371-17 BYC HIGHCITY B동 1005호-가
+								</div>
+								<div class="footer-content" style="font-size: 16px">
+									(34182) 대전광역시 유성구 유성대로642번길 45, 101호 에프 8호 (구암동)
+								</div>
+							</div>
+						</div>
+						<div class="english">
+							<div class="address" style="display: flex; position: relative; left: 70px;">
+								<div class="footer-content" style="margin-right: 20px; font-size: 12px">
+									131, Gasan digital 1-ro, Geumcheon-gu, B 10F Room 1005-Ga , Seoul, Republic of Korea, (58506)
+								</div>
+
+								<div class="footer-content" style="font-size: 12px">
+									45, Yuseong-daero 642beon-gil, Yuseong-gu, Room 101 F8 , Daejeon, Republic of Korea, (34182)
+								</div>
+							</div>
+						</div>
+
+
+
+						<!--<div class="footer-col col-md-4">
+				<span class="footer-content korean">
+					08506 서울특별시 금천구 가산동 371-17 BYC HIGHCITY B동 1005호-가
+				</span>
+				<span class="footer-content english">
+					131, Gasan digital 1-ro, Geumcheon-gu, B 10F Room 1005-Ga , Seoul, Republic of Korea
+				</span>
+			</div>-->
+
+					</div>
+					<div class="row">
+						<div class="col-md-2" style="width:100%;display:flex;">
+							<div class="contactInfo" style="display:flex;margin:auto;align-content:center;">
+								<div style="display:flex;">
+									<img class="footer-logo" src="/Docs/images/footer-call-icon.png" style="width:16px;height:36px;margin-right:10px;"> <span class="info-txt" style="padding-top:5px;">+82 02 6959 9722 (Ext)</span>
+
+									<img class="footer-logo" src="/Docs/images/footer-call-icon.png" style="width: 16px; height: 36px; margin-left: 10px; margin-right: 10px;"> <span class="info-txt" style="padding-top:5px;">+82 10 9277 8647 (H.P)</span>
+								</div>
+								<div style="display:flex;">
+									<img class="footer-logo" src="/Docs/images/footer-fax-icon.png" style="width: 16px; height: 36px; margin-left: 10px; margin-right: 10px;"> <span class="info-txt" style="padding-top:5px;">070 8630 9722 (FAX)</span>
+
+									<img class="footer-logo" src="/Docs/images/footer-mail-icon.png" style="width: 16px; height: 36px; margin-left: 10px; margin-right: 10px;"> <span class="info-txt" style="padding-top:5px;">minwook.jeong@aichemist.kr</span>
+								</div>
+								
+							</div>
+						</div>
+						<!--<div class="footer-col col-md-2">
+				<span class="footer-content">
+					<i class="fa fa-envelope"></i> minwook.jeong@aichemist.kr
+				</span>
+			</div>-->
+					</div>
+					<div class="row" id="footer_div">
+						<div class="col-md-2" style="margin:auto;margin-right:0px;">
+							<img class="footer-logo" src="/Docs/images/graylogo.png" alt="logo">
+						</div>
+						<div class="footer-col col-md-2" style="margin:auto; margin-left:0px;">
+							<span class="footer-content">
+								© 2023. AIchemist. All rights reserved.
+							</span>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<img class="mob_img" id="mob_img" src="/Docs/images/homepage_img/mob_2.png" style=" height: 800px; transform: translateZ(0);" />
+
+		</main>
+
+		<div class="preloader"><span class="spinner spinner-round"></span></div>
+	</div>
+	<style>
+        @media (max-width: 500px){
+			.address{
+				display:block !important;
+				font-size:12px !important;
+			}
+			.contactInfo{
+				display:block !important;
+				font-size:12px !important;
+			}
+			.info-txt{
+				font-size:12px;
+			}
+			.footer-content{
+				font-size:12px !important;
+			}
+        }
+
+		#solutionMenu{
+			position:absolute;
+        }
+		.menu-mobile #solutionMenu{
+			position:relative;
+		}
+        .menu-mobile #solutionMenu ul {
+            padding-left: 0px;
+        }
+        #solutionMenu ul {
+            padding-left: 6px;
+        }
+        .menu-mobile #solutionMenu li a {
+            background-color: rgba(242, 242, 242, 1);
+            color: #212529;
+            padding-left: 6px;
+        }
+		#solutionMenu li a {
+			color:white;
+		}
+	</style>
+
+	<script type="text/javascript" src="/Docs/assets/js/ETCutility.js"></script>
+	<script>
+		function MoveVirtualOffice() {
+			let isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+			let isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+			
+			if (isIos) {
+				alert("준비중입니다.")
+			} else if (isAndroid) {
+                location.href = 'https://d383oem0m28gx6.cloudfront.net/'
+			} else {
+                location.href ='https://d1bn2a1xwzmis9.cloudfront.net/'
+			}
+		}
+
+		$(window).scroll(function (event) {
+			let height = $("#mail").outerHeight();
+			if (parseInt($(window).scrollTop()) > parseInt(height)+5000) {
+				hideBanner();
+			} else {
+				showBanner();
+			}
+		})
+		function hideBanner() {
+			$("#banner").hide();
+		}
+		function showBanner() {
+			$("#banner").show();
+		}
+		//language
+		$.ajax({ url: "https://api.ip.pe.kr/json" }).done(function (res) {
+			console.log(res.country_code);
+			if (res.country_code == "KR") {
+				$(".korean").css("visibility", "visible")
+				$(".english").css("visibility", "hidden")
+                $(".korean").css("display", "block")
+                $(".english").css("display", "none")
+			} else {
+                $(".korean").css("visibility", "hidden")
+				$(".english").css("visibility", "visible")
+                $(".korean").css("display", "none")
+                $(".english").css("display", "block")
+			}
+		});
+		function langChange(e) {
+			//let value = $("#lang option:selected").val();
+			console.log(value);
+			if (value == "Korean") {
+				$(".korean").css("visibility", "visible")
+				$(".english").css("visibility", "hidden")
+			} else if (value == "English") {
+                $(".korean").css("visibility", "hidden")
+                $(".english").css("visibility", "visible")
+			}
+		}
+		function changeKorean() {
+            $(".korean").css("visibility", "visible")
+			$(".english").css("visibility", "hidden")
+            $(".korean").css("display", "block")
+            $(".english").css("display", "none")
+			$("#liLangKor").hide();
+			$("#liLangEng").show();
+		}
+		function changeEnglish() {
+            $(".korean").css("visibility", "hidden")
+			$(".english").css("visibility", "visible")
+            $(".korean").css("display", "none")
+            $(".english").css("display", "block")
+            $("#liLangKor").show();
+            $("#liLangEng").hide();
+		}
+		let largeHeader;
+		let isMobile;
+
+		let MainUtil = {
+			init: function () {
+				MainUtil.resizingFun.initHeader();
+                MainUtil.resizingFun.addListeners();
+
+                MainUtil.poPolHoverControl();
+			},
+            resizingFun: {
+                initHeader: function (type) {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    target = { x: width / 2, y: height / 2 };
+
+                    largeHeader = document.querySelector('.section_1');
+                    largeHeader.style.height = height + 'px';
+                    height = window.innerHeight;
+
+                    isMobile = /Mobile|Android|iPhone/.test(navigator.userAgent);
+
+                    if ($(".multiple-items").hasClass('slick-initialized')) {
+                        $('.multiple-items').slick('unslick');
+                    }
+
+
+                    if (width > 1000) {
+                        $('.multiple-items').slick({
+                            infinite: true,
+							arrows: false,
+							autoplay: false,
+                            autoplaySpeed: 1000,
+                            slidesToShow: 4,
+							slidesToScroll: 1
+                            //cssEase: 'linear'//'easeInOut'
+                        });
+                        $("#pp_card").removeClass("pb-5");
+
+                        $("#footer_div").children().each(function () {
+                            $(this).attr("class", "footer-col align-content-center");
+
+                        })
+                        SecondSection(false);
+                        $(".banner_img").attr("src", "/Docs/images/twinoffice_banner.png");
+
+                    }
+
+                    if (isMobile || width < 1001) {
+                        $('.multiple-items').slick({
+                            infinite: true,
+                            arrows: false,
+                            autoplay: false,
+                            autoplaySpeed: 1000,
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        });
+
+                        $("#pp_card").addClass("pb-5");
+                        SecondSection(true);
+                        $(".banner_img").attr("src", "/Docs/images/twinoffice_banner_mob.png");
+
+                    }
+                    AvatarSlideControl();
+
+                }
+                ,
+                addListeners: function () {
+                    window.addEventListener('resize', MainUtil.resizingFun.initHeader);
+
+                },
+                resize: function () {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    largeHeader.style.height = height + 'px';
+                    canvas.width = width;
+                    canvas.height = height;
+                }
+
+			},
+			poPolHoverControl: function () {
+                $('.pp').hover(
+                    function () {
+                        $(this).find('.pp_color_img').show();
+                        $(this).find('.pp_black_img').animate({ opacity: 0 }, 500);
+                        $(this).find('.pp_color_img').animate({ opacity: 1 }, 500);
+                    },
+                    function () {
+                        $(this).find('.pp_color_img').animate({ opacity: 0 }, 500);
+                        $(this).find('.pp_black_img').animate({ opacity: 1 }, 500);
+                    }
+                );
+			},
+			moveChapter: function (tag) {
+                $(".animated").each(function () {
+                    $(this).removeClass("animated");
+                });
+				let moveTarget = tag;
+                $('html, body').animate({
+					scrollTop: $('.section_' + moveTarget).offset().top
+                }, 1000);
+			}
+		};
+
+		function AvatarSlideControl() {
+
+            let targetDiv = isMobile || window.innerWidth < 1001 ? "#sec_div" : "#forth_div";
+
+            let widTemp = $(targetDiv).width();
+            let heiTemp = $(targetDiv).height();
+
+            let leftTemp = $(targetDiv).offset().left - (widTemp * 0.25);
+            let topTemp = $(targetDiv).offset().top - (heiTemp*0.4);
+			
+            let deviceSize = heiTemp * 2.4;
+
+			$("#mob_img").css({
+
+				"height": deviceSize,
+                "position": "absolute",
+                "left": leftTemp  + "px",
+                "top": topTemp  + "px",
+				"z-index": "9"
+            });
+			$('.multiple-items').slick("slickPlay");
+			
+		}
+
+		function SecondSection(dev) {
+			if (dev) {
+				$("#arrow_div").removeClass("row");
+				$("#arrow_div").addClass("text-center");
+				$("#arrow_img").addClass("fa-rotate-90");
+			} else {
+
+                $("#arrow_div").removeClass("text-center");
+                $("#arrow_div").addClass("row");
+                $("#arrow_img").removeClass("fa-rotate-90");
+            }
+		}
+
+		var mobileToggle = false;
+		$('.header-nav-toggle').click(() => {
+			if (mobileToggle) {
+				$('.menu-mobile').css('left', '-310px');
+				mobileToggle = !mobileToggle;
+			} else {
+				$('.menu-mobile').css('left', '-10px');
+                mobileToggle = !mobileToggle;
+			}
+			
+		});
+			
+        $(document).ready(function () {
+			MainUtil.init();
+
+            var url = new URL(window.location.href);
+
+            var searchParams = new URLSearchParams(url.search);
+
+            var paramValue = searchParams.get('go');
+
+			if (paramValue == "1")
+				setTimeout(MainUtil.moveChapter("7"), 5000);
+				
+		});
+		
+	</script>
+	<div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="/Docs/images/logo-full-white.png" alt=""></span></div>
+	<div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="/Docs/images/logo-full-white.png" alt=""></span></div>
+</body>
+</html>

@@ -1,0 +1,1533 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta name="author" content="Ai-Chemist">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ai-Chemist">
+    <meta property="og:image" content="/Docs/images/MainThumnail.png">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="/Docs/images/favicon.png">
+    <!-- Site Title  -->
+    <title>AIChemist &amp; AI & Metaverse</title>
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="/Docs/assets/css/vendor.bundle.css?ver=192">
+    <link rel="stylesheet" href="/Docs/assets/css/style-lobelia.css?ver=192" id="changeTheme">
+    <!-- Extra CSS -->
+    <link rel="stylesheet" href="/Docs/assets/css/theme.css?ver=192">
+    <link rel="stylesheet" href="/Docs/assets/css/bootstrap.css?ver=1">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Pretendard-Regular" !important;
+        }
+
+        span {
+            font-size: 16px;
+        }
+
+        .btn {
+            --bs-btn-line-height: 1;
+        }
+
+        .contact_input {
+            color: black;
+            margin-left: 12px;
+            margin-right: 12px;
+            border-bottom-color: #DADADA;
+        }
+
+
+        .btn-primary {
+            --bs-btn-bg: #00A3FF !important;
+            --bs-btn-border-color: #00A3FF !important;
+        }
+
+
+        .section_1 > .container {
+            height: 80%;
+        }
+
+        #main_title_row {
+            height: 100% !important;
+        }
+
+
+        .multiple-items {
+            padding-bottom: 10%;
+        }
+
+        .mob_img_div {
+            position: absolute !important;
+        }
+
+        .pp {
+            margin-bottom: 24px;
+        }
+
+        .pp_color_img {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            z-index: 1;
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-top: 24px;
+        }
+
+        .pp_gradation {
+            z-index: 2 !important;
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-top: 24px;
+        }
+
+        .pp_text {
+            font-size: 26px;
+            font-weight: 700;
+            color: white;
+            transform: translate(-70%,-50%);
+            z-index: 3;
+        }
+
+        .cen_img_up {
+            margin-top: 5%;
+        }
+
+
+        .main-text-title {
+            font-size: 60px;
+        }
+
+        .sub_title {
+            font-size: 20px;
+            color: #00A3FF !important;
+            font-weight: bold;
+        }
+
+        .section_title {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .section_caption {
+            font-size: 24px;
+            display: block;
+        }
+
+        .section_caption_bold {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .contact_title {
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 3rem;
+            padding-bottom: 12px;
+        }
+
+        .main_sub_title {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .main_sub_content {
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+
+
+        .main_footer {
+            width: 100%;
+            height: 35%;
+            position: absolute;
+            bottom: 0;
+            background-color:transparent;
+        }
+
+        .section_black {
+            background-color: #242424;
+        }
+
+        .section_white {
+            background-color: white;
+        }
+
+        .section_grey {
+            background-color: #F8F8F8;
+        }
+
+        .section_1 {
+            padding: 0;
+        }
+
+        .section_2 {
+            padding-bottom: 0;
+        }
+        .footer {
+            background-color: #F8F8F8;
+            color: #B4B4B4;
+            font-weight: 300;
+            padding: 1%;
+        }
+
+        .footer-col {
+            width: fit-content;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap-reverse;
+        }
+
+        .footer-content {
+            font-size: 12px;
+        }
+
+        .footer-logo {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        @media screen and (min-width: 1001px) {
+            .nav_menu_center {
+                transform: translateX(-10%);
+            }
+
+            .container {
+                width: 1120px !important;
+            }
+
+            .cen_img_up {
+                margin-top: -15%;
+            }
+            .roadmap-step:before {
+                left: -90px;
+            }
+            .roadmap-left .roadmap-step:before {
+                right: -90px;
+            }
+        }
+        @media screen and (max-width: 1000px) {
+            .roadmap-step:before {
+                left: -45px;
+            }
+            .main_footer {
+                height: 40%;
+            }
+
+            .section_1 > .container {
+                height: 60%;
+            }
+
+            .section_caption {
+                font-size: 16px;
+            }
+
+            .main-text-title {
+                font-size: 30px;
+            }
+
+            .section_title {
+                font-size: 32px;
+            }
+
+            .sub_title {
+                font-size: 20px;
+            }
+
+            .section_caption {
+                font-weight: 400;
+                font-size: 16px;
+            }
+
+            .section_caption_bold {
+                font-weight: 700;
+                font-size: 24px;
+            }
+
+            .id_img {
+                width: 50%;
+            }
+        }
+    </style>
+    <style>
+        .bg-light .roadmap-step:before {
+            border-color: #00A3FF;
+        }
+        .roadmap-step:before {
+            height: 30px;
+            width: 30px;
+            background: white;
+        }
+        .roadmap-title{
+            color:black;
+        }
+        .roadmap-line {
+            background: #00A3FF;
+        }
+           /* .roadmap-line::before,
+            .roadmap-line::after {
+                position: absolute;
+                background: #FFFFFF;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                border: 10px solid #00A3FF;
+                content: '';
+                left: -20px;
+            }*/
+
+        .roadmap-head {
+            padding-right: 0;
+        }
+        .roadmap-time{
+            font-family:'Pretendard-Regular';
+            font-size:1.5rem;
+            color:black;
+            font-weight:700;
+        }
+
+        .roadmap-step:after {
+            display:none;
+        }
+        .list-check li {
+            padding: 0;
+        }
+        .list-check {
+            padding: 0;
+        }
+        .roadmap-left .roadmap-step {
+            text-align: right;
+        }
+        .roadmap-step {
+            background-color: transparent !important;
+            border: none;
+        }
+        .list-check li::before {
+            content: none !important;
+        }
+        .roadmap-head::after {
+            content: none !important;
+        }
+        @media screen and (min-width: 1001px) {
+            .multifle_img {
+                height: 20rem;
+            }
+        }
+        .year{
+            width:100px;
+            margin-right:100px;
+        }
+        .month{
+            width:100px;
+            margin-right:20px;
+        }
+    </style>
+    <script src="/Docs/assets/js/jquery.bundle.js?ver=192"></script>
+
+    <script src="/Docs/assets/js/scripts.js?ver=192"></script>
+    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d8e1973b4cb920fbf809dc7596c86cd0&libraries=services,clusterer,drawing"></script>-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript" src="/Docs/assets/js/bootstrap.js"></script>
+
+    
+</head>
+
+<body class="nk-body body-wider mode-onepage bg-light">
+
+    <div class="nk-wrap nk-body body-wider mode-onepage bg-light no-touch nk-nio-theme page-loaded chrome">
+
+        <header class="nk-header page-header has-fixed" id="header">
+            <!-- Header @s -->
+            <div class="header-main">
+                <div class="header-container container">
+                    <div class="header-wrap">
+                        <!-- Logo @s -->
+                        <div class="header-logo logo animated" data-animate="fadeInDown" data-delay=".6">
+                            <a href="#" onclick="location.href='/Pages/main.html'" data-chapNum="0" class="logo-link">
+                                <img class="logo-dark" src="/Docs/images/logo.png" srcset="/Docs/images/logo2x.png 2x" alt="logo">
+                                <img class="logo-light" src="/Docs/images/logo-full-white.png" srcset="/Docs/images/logo-full-white2x.png 2x" alt="logo">
+                            </a>
+                        </div>
+
+                        <!-- Menu Toogle @s -->
+                        <div class="header-nav-toggle">
+                            <a href="#" class="navbar-toggle" data-menu-toggle="header-menu">
+                                <div class="toggle-line">
+                                    <span></span>
+                                </div>
+                            </a>
+                        </div>
+                        <!--<select id="lang" onchange="langChange()" style="margin-right:50px">
+                            <option value="Korean">Korean</option>
+                            <option value="English">English</option>
+                        </select>-->
+                        <!-- Menu @s -->
+                        <div class="header-navbar animated " data-animate="fadeInDown" data-delay=".75">
+                            <nav class="header-menu" id="header-menu">
+                                <ul class="menu mb-0 nav_menu_center">
+                                    <!--<li class="menu-item">
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="$('#languageMenu').slideToggle()">LANGUAGES</a>
+                                        <div style="position: absolute; display: none; background-color: black;" id="languageMenu">
+                                            <ul style="padding-left:10px;padding-right:10px">
+                                                <li class="menu-item"><img onclick="changeKorean()" src="/Docs/images/51south-korea.png" /></li>
+                                                <li class="menu-item"><img onclick="changeEnglish()" src="/Docs/images/51united-states.png" /></li>
+                                            </ul>
+                                        </div>
+                                    </li>-->
+                                    <li class="menu-item">
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/portfolio.html'" data-chapNum="5">PORTFOLIO</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/company.html'" chapNum="2">COMPANY</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/main.html?go=1'" data-chapNum="6">CONTACT US</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="$('#solutionMenu').slideToggle()">SOLUTION</a>
+                                        <div style="position:absolute;display:none;background-color:black" id="solutionMenu" onmouseleave="$('#solutionMenu').hide();">
+                                            <div style="display: block; color:#415076;">
+                                                <ul style="padding-left:6px">
+                                                    <li class="menu-item"><a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/cen.html?go=1'" data-chapNum="6" style="color: #415076;">CEN</a></li>
+                                                    <li class="menu-item"><a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/mason3d.html?go=1'" data-chapNum="6" style="color: #415076">Mason3D</a></li>
+                                                    <li class="menu-item" style="color:darkgrey"><a class="menu-link nav-link menu-toggle" href="#" data-chapNum="6" style="color:grey">ADAM</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="menu mb-0">
+                                    <li class="menu-item" style="cursor:pointer">
+                                        <!--<a class="menu-link nav-link menu-toggle" href="http://115.93.12.41/" onclick="location.href ='http://115.93.12.41/'">Twin Office</a>-->
+                                        <a class="menu-link nav-link menu-toggle" onclick="MoveVirtualOffice()">Twin Office</a>
+                                    </li>
+                                    <li class="menu-item" style="cursor: pointer; display: flex; align-items: center;">
+                                        <img class="logo-light" src="/Docs/images/twinschoolicon.png" style="margin-right: 5px; width: 22px; height: 19px;" />
+                                        <img class="logo-dark" src="/Docs/images/twinschooldarkicon.png" style="margin-right: 5px; width: 22px; height: 19px;" />
+                                        <!--<a class="menu-link nav-link menu-toggle" onclick="let width = screen.width; window.open(this.href, 'TwinSchool', 'left=0,top=0,width=1920,height=1080,toolbar=1,resizable=yes'); return false;" href="/Pages/edu.html" data-chapNum="6">Twin School</a>-->
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/edu.html'" data-chapNum="6">Twin School</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <div style="display:flex;cursor:pointer" onclick="$('#languageMenu').slideToggle()">
+                                            <img class="korean" style="width:40px;height:40px;" src="/Docs/images/51south-korea.png" />
+                                            <img class="english" style="display:none;width:40px;height:40px;" src="/Docs/images/51united-states.png" />
+                                            <!--<img style="width:28px;height:28px;" src="/Docs/images/bottom-arrow.png" />-->
+                                        </div>
+                                        <!--<a class="menu-link nav-link menu-toggle" href="#" onclick="$('#languageMenu').slideToggle()">LANGUAGES</a>-->
+                                        <div style="position:absolute;display:none;left:-10px" id="languageMenu" onmouseleave="$('#languageMenu').hide()">
+                                            <ul style="padding-left:10px;padding-right:10px;background-color:black;">
+                                                <li id="liLangKor" style="display: none; cursor:pointer; width: 40px; height: 40px;" class="menu-item"><img onclick="changeKorean()" style="width:40px;height:40px;" src="/Docs/images/51south-korea.png" /></li>
+                                                <li id="liLangEng" class="menu-item" style="cursor:pointer;width:40px;height:40px;"><img onclick="changeEnglish()" src="/Docs/images/51united-states.png" style="width:40px;height:40px;" /></li>
+                                                <li id="liLangJpn" class="menu-item" style="width:40px;height:40px;"><img onclick="" src="/Docs/images/japan-off.png" style="width:40px;height:40px;" /></li>
+                                                <li id="liLangChi" class="menu-item" style="width:40px;height:40px;"><img onclick="" src="/Docs/images/china-off.png" style="width:40px;height:40px;" /></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div><!-- .header-navbar @e -->
+                    </div>
+                </div>
+            </div><!-- .header-main @e -->
+            <!-- Banner @s -->
+        </header>
+
+        <main class="nk-pages">
+            <section class="section section_1 section_white d-flex overflow-hidden">
+                <div class="container">
+                    <div class="row align-content-center" id="main_title_row">
+                        <div class="col">
+                            <div class="col-md-12 animated fadeInUp" data-animate="fadeInUp" data-delay="1.75">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="korean">
+                                            <h1 class="text-black fw-bold main-text-title text-center">
+                                                당신이 상상하는 세상을<br />
+                                                아이케미스트에서 현실로
+                                            </h1>
+                                        </div>
+                                        <div class="english">
+                                            <h1 class="text-black fw-bold main-text-title text-center">
+                                                Bringing the world you imagine<br />
+                                                to reality with Aichemist
+                                            </h1>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_footer d-flex align-items-center">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="multiple-items">
+                                <div class=" p-3">
+                                    <img class="multifle_img" src="/Docs/images/homepage_img/cc4/1.png">
+                                </div>
+                                <div class=" p-3" id="sec_div">
+                                    <img class="multifle_img" src="/Docs/images/homepage_img/cc4/2.png">
+                                </div>
+                                <div class=" p-3">
+                                    <img class="multifle_img" src="/Docs/images/homepage_img/cc4/3.png">
+                                </div>
+                                <div class=" p-3" id="forth_div">
+                                    <img class="multifle_img" src="/Docs/images/homepage_img/cc4/5.png">
+                                </div>
+                                <div class=" p-3">
+                                    <img class="multifle_img" src="/Docs/images/homepage_img/cc4/6.png">
+                                </div>
+                                <div class=" p-3">
+                                    <img class="multifle_img" src="/Docs/images/homepage_img/cc4/7.png">
+                                </div>
+                                <div class=" p-3">
+                                    <img class="multifle_img" src="/Docs/images/homepage_img/cc4/8.png">
+                                </div>
+                                <div class=" p-3">
+                                    <img class="multifle_img" src="/Docs/images/homepage_img/cc4/9.png">
+                                </div>
+                            </div>
+                            <div class="mob_img_div" id="mob_img_div">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section_white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="row">
+                                <img src="/Docs/images/id_logo/id_1.png" class="col-md-6 p-0 id_img" />
+                            </div>
+                            <div class="row">
+                                <div class="korean">
+                                    <span class="section_caption_bold">
+                                        글로벌 지향
+                                    </span>
+                                </div>
+                                <div class="english">
+                                    <span class="section_caption_bold">
+                                        Global Orientation
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="korean">
+                                    <span class="section_caption">
+                                        글로벌 기업으로서 존경받는 개인과 조직이 되고자, 가치와 문화를 창조하여 이목을 끌고자 합니다.
+                                    </span>
+                                </div>
+                                <div class="english">
+                                    <span class="section_caption">
+                                        As a global company, we aim to be esteemed individuals and organizations by creating value and culture that captivate attention.
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <img src="/Docs/images/id_logo/id_2.png" class="col-md-6 p-0 id_img" />
+                            </div>
+                            <div class="row">
+                                <div class="korean">
+                                    <span class="section_caption_bold">
+                                        도전적 실행
+                                    </span>
+                                </div>
+                                <div class="english">
+                                    <span class="section_caption_bold">
+                                        Bold Execution
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="korean">
+                                    <span class="section_caption">
+                                        현실에 안주하지 않고 새로운 가능성에 도전하며, 열정과 창의력을 토대로 목표를 달성합니다.
+                                    </span>
+                                </div>
+                                <div class="english">
+                                    <span class="section_caption">
+                                        We embrace challenges, daring to explore new possibilities. With passion and creativity, we achieve our goals without settling for the status quo.
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <img src="/Docs/images/id_logo/id_3.png" class="col-md-6 p-0 id_img" />
+                            </div>
+                            <div class="row">
+                                <div class="korean">
+                                    <span class="section_caption_bold">
+                                        인재 존중
+                                    </span>
+                                </div>
+                                <div class="english">
+                                    <span class="section_caption_bold">
+                                        Respect for Talent
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="korean">
+                                    <span class="section_caption">
+                                        조직의 미래가 구성원들의 마음가짐과 역량에 달려있음을 인지하며, 수평적인 의사결정과 존중을 토대로 기업 문화를 만들어 갑니다.
+                                    </span>
+                                </div>
+                                <div class="english">
+                                    <span class="section_caption">
+                                        Recognizing that the future of the organization depends on the mindset and capabilities of its members, we build a corporate culture based on horizontal decision-making and respect.
+                                    </span>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <img src="/Docs/images/id_logo/id_4.png" class="col-md-6 p-0 id_img" />
+                            </div>
+                            <div class="row">
+                                <div class="korean">
+                                    <span class="section_caption_bold">
+                                        고객 최우선
+                                    </span>
+                                </div>
+                                <div class="english">
+                                    <span class="section_caption_bold">
+                                        Customer-Centric Approach
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="korean">
+                                    <span class="section_caption">
+                                        일방적인 이윤에 가치로 두기 보다는 고객과의 신뢰를 바탕으로, 서로 만족하고, 상생할 수 있는 고객 감동의 기업 문화를 조성합니다.
+                                    </span>
+                                </div>
+                                <div class="english">
+                                    <span class="section_caption">
+                                        Rather than placing value solely on one-sided profit, we foster a customer-centric culture based on trust, mutual satisfaction, and collaboration.
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+            <section>
+            </section>
+            <section class="section section_history">
+                <div class="container">
+                    <div class="row justify-content-center" style="margin:auto; width:auto;">
+                        <div>
+                            <span class="sub_title">
+                                Aichemist
+                            </span>
+                            <div>
+                                <div class="korean">
+                                    <span class="section_title">
+                                        아이케미스트
+                                    </span>
+                                </div>
+                                <div class="english">
+                                    <span class="section_title">
+                                        Aichemist History
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div>
+                                <div class="korean">
+                                    <span class="section_title">
+                                        연혁
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="korean">
+                            <div style="display:flex;margin-top:150px;margin-bottom:66px;">
+                                <div class="year">
+                                    <div class="section_caption_bold">2023</div>
+                                </div>
+                                <div class="content_wrap" style="display:block">
+                                    <div style="display:flex; margin-bottom:27px;">
+                                        <div class="month main_sub_title">01월</div>
+                                        <div class="content section_caption">주식회사 아이케미스트 설립</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">02월</div>
+                                        <div class="content section_caption"><span style="color: #00A3FF;font-size:24px;">예비창업패키지 특화분야</span>(DNA) <span style="color: #00A3FF; font-size: 24px;">최우수</span> 판정</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">05월</div>
+                                        <div class="content section_caption"><span style="color: #00A3FF; font-size: 24px;">초기창업패키지 최우수 선정</span></div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption"><span style="color: #00A3FF; font-size: 24px;">KIST</span> 홍릉강소특구 창업학교 선정</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">07월</div>
+                                        <div class="content section_caption">Science-Biz Care 과학벨트 선정</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">경북대학교 글로벌 엑셀러레이팅 사업 선정</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">08월</div>
+                                        <div class="content section_caption">메타버스 에디터 Mason3D, 트윈오피스 출시</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">숙명여자대학교 산학협약 (MOU) 체결</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">09월</div>
+                                        <div class="content section_caption"><span style="color: #00A3FF; font-size: 24px;">K-WATER</span> 제16기 협력 스타트업 <span style="color: #00A3FF; font-size: 24px;">MOU</span> 체결</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">10월</div>
+                                        <div class="content section_caption">고려대학교 글로벌 스케일업 (<span style="color: #00A3FF; font-size: 24px;">싱가포르</span>) 선정</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">11월</div>
+                                        <div class="content section_caption">안양 스타트업 데모데이 <span style="color: #00A3FF; font-size: 24px;">우수상</span></div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">마켓 파이오니어 <span style="color: #00A3FF; font-size: 24px;">최우수</span> 실적-오픈놀<span style="color: #00A3FF; font-size: 24px;">MOU</span> 체결</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">12월</div>
+                                        <div class="content section_caption"><span style="color: #00A3FF; font-size: 24px;">누적매출 5억원 달성</span></div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">총 고용 14명 달성</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">자동화 디지털트윈 기반 합성데이터 생성 플랫폼 CEN데모 출시</div>
+                                    </div>
+                                </div>
+                                <div class="image" style="display:block;margin-left:63px;">
+                                    <img src="/Docs/images/history-img1.png" /><br />
+                                    <img src="/Docs/images/history-img2.png" style="margin-top:40px;" /><br />
+                                    <img src="/Docs/images/history-img3.png" style="margin-top:40px;" />
+                                </div>
+                            </div>
+                            <hr />
+                            <div style="display:flex;margin-top:60px;">
+                                <div class="year">
+                                    <div class="section_caption_bold">2024</div>
+                                </div>
+                                <div class="content_wrap" style="display:block">
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">01월</div>
+                                        <div class="content section_caption">창업진흥원 주관 <span style="color: #00A3FF; font-size: 24px;">CES</span> 전시 (<span style="color: #00A3FF; font-size: 24px;">전액지원</span>)</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">02월</div>
+                                        <div class="content section_caption">SEED 투자 유치 예정 (Post Value:30억원)</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">스타트-하우 창업포럼 밋업데이 대표 글로벌기업</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">주식회사 루트릭스 MOU체결</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">JB With Plus 최종선정</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">03월</div>
+                                        <div class="content section_caption">대구 리더스포럼 데모데이 대표기업</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">미국 국토안보부 합성데이터 생성기 인가</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">04월</div>
+                                        <div class="content section_caption">국내최대규모 자연사박물관 메타버스 플랫폼 출시</div>
+                                    </div>
+                                </div>
+                                <div class="image" style="display:block;margin-left:63px;">
+                                    <img src="/Docs/images/history-img4.png" style="margin-top:40px;" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="english">
+                            <div style="display:flex;margin-top:150px;margin-bottom:66px;">
+                                <div class="year">
+                                    <div class="section_caption_bold">2023</div>
+                                </div>
+                                <div class="content_wrap" style="display:block">
+                                    <div style="display:flex; margin-bottom:27px;">
+                                        <div class="month main_sub_title">Jan</div>
+                                        <div class="content section_caption">Aichemist Establishment</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">Feb</div>
+                                        <div class="content section_caption"><span style="color: #00A3FF;font-size:24px;">Excellent Evaluation in Pre-Startup Package Specialization Area (DNA)</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">May</div>
+                                        <div class="content section_caption"><span style="color: #00A3FF; font-size: 24px;">Excellent Evaluation in Initial Startup Package</span></div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">Selected as <span style="color: #00A3FF; font-size: 24px;">KIST</span> Hongneungang Special Zone Startup School</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">Jul</div>
+                                        <div class="content section_caption">Selected for Science-Biz Care Science Belt</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">Selected for Global Accelerating Business at Kyungpook National University</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">Aug</div>
+                                        <div class="content section_caption">MetaVerse Editor Mason3D, TwinOffice Released</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">Sep</div>
+                                        <div class="content section_caption">  <span style="color: #00A3FF; font-size: 24px;">MOU</span> Sigining for Collaboration with <span style="color: #00A3FF; font-size: 24px;">K-WATER</span> 16th Cooperation Startup</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">Oct</div>
+                                        <div class="content section_caption">Selected for Global Scale-Up at Korea University (<span style="color: #00A3FF; font-size: 24px;">Singapore</span>)</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">Nov</div>
+                                        <div class="content section_caption"><span style="color: #00A3FF; font-size: 24px;">Excellent Award</span> at Anyang Startup Demo Day</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption"><span style="color: #00A3FF; font-size: 24px;">Best Performance</span> in Market Pioneer - <span style="color: #00A3FF; font-size: 24px;">MOU</span> Signing with OpenNol</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">Dec</div>
+                                        <div class="content section_caption"><span style="color: #00A3FF; font-size: 24px;">Achieved Cumulative Sales of $379.94K</span></div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">Employed a Total of 14 People</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title"></div>
+                                        <div class="content section_caption">Automated Digital Twin-Based Synthetic Data Generation Platform CEN Deom Release</div>
+                                    </div>
+                                </div>
+                                <div class="image" style="display:block;margin-left:63px;">
+                                    <img src="/Docs/images/history-img1.png" /><br />
+                                    <img src="/Docs/images/history-img2.png" style="margin-top:40px;" /><br />
+                                    <img src="/Docs/images/history-img3.png" style="margin-top:40px;" />
+                                </div>
+                            </div>
+                            <hr />
+                            <div style="display:flex;margin-top:60px;">
+                                <div class="year">
+                                    <div class="section_caption_bold">2024</div>
+                                </div>
+                                <div class="content_wrap" style="display:block">
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">Jan</div>
+                                        <div class="content section_caption"><span style="color: #00A3FF; font-size: 24px;">CES Exhibition</span> Hosted by the Korea Enterpreneurship Foundation(<span style="color: #00A3FF; font-size: 24px;">Fully Supported</span>)</div>
+                                    </div>
+                                    <div style="display: flex; margin-bottom: 27px;">
+                                        <div class="month main_sub_title">Feb</div>
+                                        <div class="content section_caption">Expected SEED Investment(Post Value:$2.28M)</div>
+                                    </div>
+                                </div>
+                                <div class="image" style="display:block;margin-left:63px;">
+                                    <img src="/Docs/images/history-img4.png" style="margin-top:40px;" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<div class="col-xl-10">
+                        <div class="roadmap-wrap mb-0">
+                            <div class="roadmap-line animated " data-animate="fadeInUp" data-delay=".9"></div>
+                            <div class="roadmap animated fadeInUp" data-animate="fadeInUp" data-delay=".9">-->
+                        <!--<div class="roadmap-year">2022</div>-->
+                        <!--</div>
+                                <div class="roadmap roadmap-left animated " data-animate="fadeInUp" data-delay=".9">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 07</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">연구소 설립</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">Establishment of Research Lab</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-right animated " data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 06</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">홍릉강소특구 KIST 창업학교 수료</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">Completion of KIST Entrepreneurship School in Hongneung Gangso Special Zone</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-left animated " data-animate="fadeInUp" data-delay=".9">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 03</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">초기창업패키지 최우수 선정</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">Selection as Best in Initial Startup Package</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-right animated " data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2022. 12</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">고용 6명 달성</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">Achievement of Employment Goal: 6 Team Members</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-left animated " data-animate="fadeInUp" data-delay=".9">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2022. 06</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">예비창업패키지 서울 특화분야 선정</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">Selection in Seoul Specialized Area for Preliminary Startup Package</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-right animated fadeInUp" data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 01</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">아이케미스트 설립</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">Foundation of Aichemist</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-left animated " data-animate="fadeInUp" data-delay=".9">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 02</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">예비창업패키지 특화분야(DNA) 최우수 판정</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">예비창업패키지 특화분야(DNA) 최우수 판정</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-right animated fadeInUp" data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 05</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">초기창업패키지 최우수 선정</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">초기창업패키지 최우수 선정</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-left animated " data-animate="fadeInUp" data-delay=".9">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 05</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">KIST 홍릉강소특구 창업학교 선정</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">KIST 홍릉강소특구 창업학교 선정</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-right animated fadeInUp" data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 07</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">Sience-Biz Care 과학벨트 선정</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">Sience-Biz Care 과학벨트 선정</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-left animated " data-animate="fadeInUp" data-delay=".9">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 07</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">경북대학교 글벌 엑셀러레이팅 사업 선정</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">경북대학교 글벌 엑셀러레이팅 사업 선정</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-right animated fadeInUp" data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 08</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">메타버스 에디터 Mason3D, 트윈오피스 출시</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">메타버스 에디터 Mason3D, 트윈오피스 출시</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-left animated " data-animate="fadeInUp" data-delay=".9">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 09</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">K-WATER 제 16기 협력 스타트업 MOU 체결</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">K-WATER 제 16기 협력 스타트업 MOU 체결</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-right animated fadeInUp" data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 10</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">고려대학교 글로벌 스케일업 (싱가포르) 선정</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">고려대학교 글로벌 스케일업 (싱가포르) 선정</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-left animated " data-animate="fadeInUp" data-delay=".9">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 11</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">안양 스타트업 데모데이 우수상</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">안양 스타트업 데모데이 우수상</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-right animated fadeInUp" data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 11</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">마켓 파이오니어 최우수 실적 - 오픈놀 MOU 체결</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">마켓 파이오니어 최우수 실적 - 오픈놀 MOU 체결</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-left animated " data-animate="fadeInUp" data-delay=".9">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 12</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">누적매출 5억원 달성</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">누적매출 5억원 달성</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-right animated fadeInUp" data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 12</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">총 고용 14명 달성</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">총 고용 14명 달성</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-left animated fadeInUp" data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 12</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">자동화 디지털트윈 기반 합성데이터 생성 플랫폼 CEN 데모 출시</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">자동화 디지털트윈 기반 합성데이터 생성 플랫폼 CEN 데모 출시</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="roadmap roadmap-right animated fadeInUp" data-animate="fadeInUp" data-delay="1" style="margin-top: 10px;">
+                                    <div class="roadmap-step">
+                                        <div class="roadmap-head">
+                                            <span class="roadmap-time">2023. 01</span>
+                                        </div>
+                                        <ul class="list list-check">
+                                            <li>
+                                                <div class="korean">
+                                                    <span class="roadmap-title">총 고용 14명 달성</span>
+                                                </div>
+                                                <div class="english">
+                                                    <span class="roadmap-title">총 고용 14명 달성</span>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </section>
+            <section class="section footer section_7" style="background-color: #F8F8F8">
+                <div class="container">
+                    <div class="row" style="display:flex;">
+                        <div class="korean">
+                            <div class="address" style="display:flex;position:relative;">
+                                <div class="footer-content" style="margin-right:20px; font-size:16px">
+                                    (08506) 서울특별시 금천구 가산동 371-17 BYC HIGHCITY B동 1005호-가
+                                </div>
+                                <div class="footer-content" style="font-size: 16px">
+                                    (34182) 대전광역시 유성구 유성대로642번길 45, 101호 에프 8호 (구암동)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="english">
+                            <div class="address" style="display: flex; position: relative; left: 70px;">
+                                <div class="footer-content" style="margin-right: 20px; font-size: 12px">
+                                    131, Gasan digital 1-ro, Geumcheon-gu, B 10F Room 1005-Ga , Seoul, Republic of Korea, (58506)
+                                </div>
+
+                                <div class="footer-content" style="font-size: 12px">
+                                    45, Yuseong-daero 642beon-gil, Yuseong-gu, Room 101 F8 , Daejeon, Republic of Korea, (34182)
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--<div class="footer-col col-md-4">
+                            <span class="footer-content korean">
+                                08506 서울특별시 금천구 가산동 371-17 BYC HIGHCITY B동 1005호-가
+                            </span>
+                            <span class="footer-content english">
+                                131, Gasan digital 1-ro, Geumcheon-gu, B 10F Room 1005-Ga , Seoul, Republic of Korea
+                            </span>
+                        </div>-->
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2" style="width:100%;display:flex;">
+                            <div class="contactInfo" style="display:flex;margin:auto;align-content:center;">
+                                <div style="display:flex;">
+                                    <img class="footer-logo" src="/Docs/images/footer-call-icon.png" style="width:16px;height:36px;margin-right:10px;"> <span class="info-txt" style="padding-top:5px;">+82 02 6959 9722 (Ext)</span>
+
+                                    <img class="footer-logo" src="/Docs/images/footer-call-icon.png" style="width: 16px; height: 36px; margin-left: 10px; margin-right: 10px;"> <span class="info-txt" style="padding-top:5px;">+82 10 9277 8647 (H.P)</span>
+                                </div>
+                                <div style="display:flex;">
+                                    <img class="footer-logo" src="/Docs/images/footer-fax-icon.png" style="width: 16px; height: 36px; margin-left: 10px; margin-right: 10px;"> <span class="info-txt" style="padding-top:5px;">070 8630 9722 (FAX)</span>
+
+                                    <img class="footer-logo" src="/Docs/images/footer-mail-icon.png" style="width: 16px; height: 36px; margin-left: 10px; margin-right: 10px;"> <span class="info-txt" style="padding-top:5px;">minwook.jeong@aichemist.kr</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--<div class="footer-col col-md-2">
+                            <span class="footer-content">
+                                <i class="fa fa-envelope"></i> minwook.jeong@aichemist.kr
+                            </span>
+                        </div>-->
+                    </div>
+                    <div class="row" id="footer_div">
+                        <div class="col-md-2" style="margin:auto;margin-right:0px;">
+                            <img class="footer-logo" src="/Docs/images/graylogo.png" alt="logo">
+                        </div>
+                        <div class="footer-col col-md-2" style="margin:auto; margin-left:0px;">
+                            <span class="footer-content">
+                                © 2023. AIchemist. All rights reserved.
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <div class="preloader"><span class="spinner spinner-round"></span></div>
+        <!-- Modal -->
+    </div>
+    <style>
+        @media (max-width: 500px) {
+            .address {
+                display: block !important;
+                font-size: 12px !important;
+            }
+
+            .contactInfo {
+                display: block !important;
+                font-size: 12px !important;
+            }
+
+            .info-txt {
+                font-size: 12px;
+            }
+
+            .footer-content {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+    <script>
+        function MoveVirtualOffice() {
+            let isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            let isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+
+            if (isIos) {
+                alert("준비중입니다.")
+            } else if (isAndroid) {
+                location.href = 'https://d383oem0m28gx6.cloudfront.net/'
+            } else {
+                location.href = 'https://d1bn2a1xwzmis9.cloudfront.net/'
+            }
+        }
+
+        $.ajax({ url: "https://api.ip.pe.kr/json" }).done(function (res) {
+            console.log(res.country_code);
+            if (res.country_code == "KR") {
+                $(".korean").css("visibility", "visible")
+                $(".english").css("visibility", "hidden")
+                $(".korean").css("display", "block")
+                $(".english").css("display", "none")
+            } else {
+                $(".korean").css("visibility", "hidden")
+                $(".english").css("visibility", "visible")
+                $(".korean").css("display", "none")
+                $(".english").css("display", "block")
+            }
+        });
+        function langChange(e) {
+            let value = $("#lang option:selected").val();
+            console.log(value);
+            if (value == "Korean") {
+                $(".korean").css("visibility", "visible")
+                $(".english").css("visibility", "hidden")
+                $(".korean").css("display", "block")
+                $(".english").css("display", "none")
+            } else if (value == "English") {
+                $(".korean").css("visibility", "hidden")
+                $(".english").css("visibility", "visible")
+                $(".korean").css("display", "none")
+                $(".english").css("display", "block")
+            }
+        }
+        function changeKorean() {
+            $(".korean").css("visibility", "visible")
+            $(".english").css("visibility", "hidden")
+            $(".korean").css("display", "block")
+            $(".english").css("display", "none")
+            $("#liLangKor").hide();
+            $("#liLangEng").show();
+        }
+        function changeEnglish() {
+            $(".korean").css("visibility", "hidden")
+            $(".english").css("visibility", "visible")
+            $(".korean").css("display", "none")
+            $(".english").css("display", "block")
+            $("#liLangKor").show();
+            $("#liLangEng").hide();
+        }
+        let largeHeader;
+        let isMobile;
+        let modalObj;
+        //리사이징
+        let MainUtil = {
+            init: function () {
+                MainUtil.resizingFun.initHeader();
+                MainUtil.resizingFun.addListeners();
+            },
+            resizingFun: {
+                initHeader: function (type) {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    target = { x: width / 2, y: height / 2 };
+
+                    largeHeader = document.querySelector('.section_1');
+                    largeHeader.style.height = height + 'px';
+                    height = window.innerHeight;
+
+                    isMobile = /Mobile|Android|iPhone/.test(navigator.userAgent);
+
+                    if ($(".multiple-items").hasClass('slick-initialized')) {
+                        $('.multiple-items').slick('unslick');
+                    }
+
+
+                    if (width > 1000) {
+
+                        $("#footer_div").children().each(function () {
+                            $(this).attr("class", "footer-col align-content-center");
+
+                        })
+                    }
+
+                    $('.multiple-items').slick({
+                        infinite: true,
+                        arrows: false,
+                        autoplay: false,
+                        autoplaySpeed: 0,
+                        slidesToShow: 6,
+                        slidesToScroll: 1,
+                        pauseOnHover: false,
+                        pauseOnFocus: false,
+                        speed: 1000,
+                        cssEase: 'linear',
+                        responsive: [
+                            {
+                                breakpoint: 1000,
+                                settings: {
+                                    slidesToShow: 2
+                                }
+                            }
+                        ]
+                    });
+                    $("#pp_card").removeClass("pb-5");
+
+                    AvatarSlideControl();
+
+                }
+                ,
+                addListeners: function () {
+                    window.addEventListener('resize', MainUtil.resizingFun.initHeader);
+
+                },
+                resize: function () {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    largeHeader.style.height = height + 'px';
+                    canvas.width = width;
+                    canvas.height = height;
+                }
+
+            },
+            moveChapter: function (tag) {
+                let moveTarget = $(tag).data("chapnum");
+                $('html, body').animate({
+                    scrollTop: $('.section_' + moveTarget).offset().top
+                }, 1000);
+            }
+        };
+        function AvatarSlideControl() {
+
+            let targetDiv = isMobile || window.innerWidth < 1001 ? "#sec_div" : "#forth_div";
+
+            let widTemp = $(targetDiv).width();
+            let heiTemp = $(targetDiv).height();
+
+            let leftTemp = $(targetDiv).offset().left - (widTemp * 0.25);
+            let topTemp = $(targetDiv).offset().top - (heiTemp * 0.4);
+
+            let deviceSize = heiTemp * 2.4;
+
+            $("#mob_img").css({
+
+                "height": deviceSize,
+                "position": "absolute",
+                "left": leftTemp + "px",
+                "top": topTemp + "px",
+                "z-index": "9"
+            });
+            $('.multiple-items').slick("slickPlay");
+
+        }
+
+        var mobileToggle = false;
+        $('.header-nav-toggle').click(() => {
+            if (mobileToggle) {
+                $('.menu-mobile').css('left', '-310px');
+                mobileToggle = !mobileToggle;
+            } else {
+                $('.menu-mobile').css('left', '-10px');
+                mobileToggle = !mobileToggle;
+            }
+
+        });
+
+        $(document).ready(function () {
+            MainUtil.init();
+        });
+    </script>
+    <div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="/Docs/images/logo-full-white.png" alt=""></span></div>
+    <div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="/Docs/images/logo-full-white.png" alt=""></span></div>
+</body>
+</html>

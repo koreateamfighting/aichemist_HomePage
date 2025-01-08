@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="./assets/index-pGU5izBp.js"></script>
+  </head>
+  <body>
+    <style>
+      @font-face {
+          font-family: 'TTHakgyoansimJiugaeR';
+          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimJiugaeR.woff2') format('woff2');
+          font-weight: normal;
+          font-style: normal;
+      }
+  
+      @font-face {
+          font-family: 'KimjungchulGothic';
+          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulGothic-Bold.woff2') format('woff2');
+          font-weight: 300;
+          font-style: normal;
+      }
+    </style>
+    <div style="width:1100px;margin:auto;">
+      <div style="display:flex;justify-content: center;">
+        <div id="app"></div>
+        <!-- <div style="position: absolute; margin-top:50px; margin-left:50px;"> -->
+          <div style="position:absolute;">
+            <span style="font-size: 30px;color:rgba(252, 151, 0, 1);font-family: KimjungchulGothic;">직육면체 전개도</span><span style="font-size: 30px;font-family: KimjungchulGothic;"> 살펴보기</span>
+          </div>
+          <div class="popup" style="position:absolute;display:none;margin-left:1180px;margin-top:30px;align-items:center;justify-content:center;width:400px;height:60px;border-radius: 99px;background-color:rgba(255, 250, 202, 1);font-family: KimjungchulGothic;box-shadow: 3px 3px 5px 0px rgba(17, 102, 68, 0.502);">입체도형을 드래그하여 둘러볼 수 있어요.</div>
+          <img class="icon360" src="data:image/png;base64,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" style="position:absolute;margin-left:1500px;margin-top:100px;"/>
+          <div class="foldbutton" onclick="StartFold();" style="cursor:pointer;position:absolute;display:flex;margin-left:1350px;margin-top:200px;margin-bottom:10px;align-items:center;justify-content:center;width:220px; height:70px;border-radius:10px;background-color:rgba(255, 199, 115, 1);color:white;font-size:25px;font-family: KimjungchulGothic;">한번에 접기</div>
+          <div class="spreadbutton" onClick="StartSpread();" style="cursor:pointer;position:absolute;display:flex;margin-left:1350px;margin-top:300px;align-items:center;justify-content:center;width:220px; height:70px;border-radius:10px;background-color:rgba(252, 151, 0, 1);color:white;font-size:25px;font-family: KimjungchulGothic;">한번에 펼치기</div>
+          <!-- <div style="cursor:pointer;position:absolute;display:flex;margin-left:1350px;margin-top:400px;align-items:center;justify-content:center;width:220px; height:70px;border-radius:10px;background-color:transparent;color:rgba(135, 206, 0, 1);font-size:25px;"><input onClick="SetBoxOpacity();" type='checkbox' style="width:33px;height:33px;margin-right:10px;"/>투명하게 보기</div> -->
+          <!-- <button onclick="StartSpread();" style="margin-bottom: 10px;">펼침</button><br/>
+          <button onclick="StartFold();" style="margin-bottom: 10px;">접기</button><br/> -->
+          <div style="position:absolute;margin-top:200px;font-size: 25px;">
+            - <input type="range" min="0" max="30" id="slideX" style="width:400px;margin-top:300px;margin-bottom: 10px;"/> +<br/>
+          </div>
+          <!-- <button onclick="ObjectTop();" style="position:absolute;margin-top:600px;margin-bottom: 10px;">Top</button><br/>
+          <button onclick="ObjectSide();" style="position:absolute;margin-top:630px;margin-bottom: 10px;">Side</button><br/> -->
+        <!-- </div> -->
+      </div>
+    </div>
+    <style>
+      input[type='range'] {
+        overflow: hidden;
+        width: 80px;
+        -webkit-appearance: none;
+        background-color: #F0F5E7;
+        border-radius:5px;
+      }
+      /* input[type='range']::-webkit-slider-runnable-track {
+        width:40px;
+        height: 40px;
+        -webkit-appearance: none;
+        color: #75B102;
+        margin-top: -1px;
+      } */
+      /* input[type='range']::-webkit-slider-thumb {
+        width: 40px;
+        -webkit-appearance: none;
+        height: 40px;
+        cursor: ew-resize;
+        background: #87CE00;
+        box-shadow: -80px 0 0 80px #43e5f7;
+      } */
+    </style>
+  </body>
+</html>

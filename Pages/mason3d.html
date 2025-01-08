@@ -1,0 +1,1411 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta name="author" content="Ai-Chemist">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ai-Chemist">
+    <meta property="og:image" content="/Docs/images/MainThumnail.png">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="/Docs/images/favicon.png">
+    <!-- Site Title  -->
+    <title>AIChemist &amp; AI & Metaverse</title>
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="/Docs/assets/css/vendor.bundle.css?ver=192">
+    <link rel="stylesheet" href="/Docs/assets/css/style-lobelia.css?ver=192" id="changeTheme">
+    <!-- Extra CSS -->
+    <link rel="stylesheet" href="/Docs/assets/css/theme.css?ver=192">
+    <link rel="stylesheet" href="/Docs/assets/css/bootstrap.css?ver=1">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Pretendard-Regular" !important;
+        }
+
+        span {
+            font-size: 16px;
+        }
+
+        .btn {
+            --bs-btn-line-height: 1;
+        }
+
+        .contact_input {
+            color: black;
+            margin-left: 12px;
+            margin-right: 12px;
+            border-bottom-color: #DADADA;
+        }
+
+
+        .btn-primary {
+            --bs-btn-bg: #00A3FF !important;
+            --bs-btn-border-color: #00A3FF !important;
+        }
+
+
+        .section_1 > .container {
+            height: 80%;
+        }
+
+        #main_title_row {
+            height: 100% !important;
+        }
+
+
+        .multiple-items {
+            padding-bottom: 10%;
+        }
+
+        .mob_img_div {
+            position: absolute !important;
+        }
+
+        .pp {
+            margin-bottom: 24px;
+        }
+
+        .pp_color_img {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            z-index: 1;
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-top: 24px;
+        }
+
+        .pp_gradation {
+            z-index: 2 !important;
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-top: 24px;
+        }
+
+        .pp_text {
+            font-size: 26px;
+            font-weight: 700;
+            color: white;
+            transform: translate(-70%,-50%);
+            z-index: 3;
+        }
+
+        .cen_img_up {
+            margin-top: 5%;
+        }
+
+
+        .main-text-title {
+            font-size: 60px;
+        }
+
+        .sub_title {
+            font-size: 20px;
+            color: #00A3FF !important;
+            font-weight: bold;
+        }
+
+        .section_title {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .section_caption {
+            font-size: 24px;
+            display: block;
+        }
+
+        .section_caption_bold {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .contact_title {
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 3rem;
+            padding-bottom: 12px;
+        }
+
+        .main_sub_title {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .main_sub_content {
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+
+
+        .main_footer {
+            width: 100%;
+            height: 35%;
+            position: absolute;
+            bottom: 0;
+            background-color: transparent;
+        }
+
+        .section_black {
+            background-color: #242424;
+        }
+
+        .section_white {
+            background-color: white;
+        }
+
+        .section_grey {
+            background-color: #F8F8F8;
+        }
+
+        .section_1 {
+            padding: 0;
+        }
+
+        .section_2 {
+            padding-bottom: 0;
+        }
+
+        .footer {
+            background-color: #F8F8F8;
+            color: #B4B4B4;
+            font-weight: 300;
+            padding: 1%;
+        }
+
+        .footer-col {
+            width: fit-content;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap-reverse;
+        }
+
+        .footer-content {
+            font-size: 12px;
+        }
+
+        .footer-logo {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        @media screen and (min-width: 1001px) {
+            .nav_menu_center {
+                transform: translateX(-10%);
+            }
+
+            .container {
+                width: 1120px !important;
+            }
+
+            .cen_img_up {
+                margin-top: -15%;
+            }
+
+            .roadmap-step:before {
+                left: -90px;
+            }
+
+            .roadmap-left .roadmap-step:before {
+                right: -90px;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .roadmap-step:before {
+                left: -45px;
+            }
+
+            .main_footer {
+                height: 40%;
+            }
+
+            .section_1 > .container {
+                height: 60%;
+            }
+
+            .section_caption {
+                font-size: 16px;
+            }
+
+            .main-text-title {
+                font-size: 30px;
+            }
+
+            .section_title {
+                font-size: 32px;
+            }
+
+            .sub_title {
+                font-size: 20px;
+            }
+
+            .section_caption {
+                font-weight: 400;
+                font-size: 16px;
+            }
+
+            .section_caption_bold {
+                font-weight: 700;
+                font-size: 24px;
+            }
+
+            .id_img {
+                width: 50%;
+            }
+        }
+    </style>
+    <style>
+        .bg-light .roadmap-step:before {
+            border-color: #00A3FF;
+        }
+
+        .roadmap-step:before {
+            height: 30px;
+            width: 30px;
+            background: white;
+        }
+
+        .roadmap-title {
+            color: black;
+        }
+
+        .roadmap-line {
+            background: #00A3FF;
+        }
+        /* .roadmap-line::before,
+            .roadmap-line::after {
+                position: absolute;
+                background: #FFFFFF;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                border: 10px solid #00A3FF;
+                content: '';
+                left: -20px;
+            }*/
+
+        .roadmap-head {
+            padding-right: 0;
+        }
+
+        .roadmap-time {
+            font-family: 'Pretendard-Regular';
+            font-size: 1.5rem;
+            color: black;
+            font-weight: 700;
+        }
+
+        .roadmap-step:after {
+            display: none;
+        }
+
+        .list-check li {
+            padding: 0;
+        }
+
+        .list-check {
+            padding: 0;
+        }
+
+        .roadmap-left .roadmap-step {
+            text-align: right;
+        }
+
+        .roadmap-step {
+            background-color: transparent !important;
+            border: none;
+        }
+
+        .list-check li::before {
+            content: none !important;
+        }
+
+        .roadmap-head::after {
+            content: none !important;
+        }
+
+        .nonscroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media screen and (min-width: 1001px) {
+            .multifle_img {
+                height: 20rem;
+            }
+        }
+
+        @font-face {
+            font-family: digit;
+            src: url('/Docs/assets/fonts/DS-DIGIB.TTF');
+        }
+    </style>
+    <script src="/Docs/assets/js/jquery.bundle.js?ver=192"></script>
+
+    <script src="/Docs/assets/js/scripts.js?ver=192"></script>
+    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d8e1973b4cb920fbf809dc7596c86cd0&libraries=services,clusterer,drawing"></script>-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript" src="/Docs/assets/js/bootstrap.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!--<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>-->
+</head>
+
+<body class="nk-body body-wider mode-onepage bg-light">
+
+    <div class="nk-wrap nk-body body-wider mode-onepage bg-light no-touch nk-nio-theme page-loaded chrome">
+
+        <header class="nk-header page-header has-fixed" id="header">
+            <!-- Header @s -->
+            <div class="header-main">
+                <div class="header-container container">
+                    <div class="header-wrap">
+                        <!-- Logo @s -->
+                        <div class="header-logo logo animated" data-animate="fadeInDown" data-delay=".6">
+                            <a href="#" onclick="location.href='/Pages/main.html'" data-chapNum="0" class="logo-link">
+                                <img class="logo-dark" src="/Docs/images/logo.png" srcset="/Docs/images/logo2x.png 2x" alt="logo">
+                                <img class="logo-light" src="/Docs/images/logo-full-white.png" srcset="/Docs/images/logo-full-white2x.png 2x" alt="logo">
+                            </a>
+                        </div>
+
+                        <!-- Menu Toogle @s -->
+                        <div class="header-nav-toggle">
+                            <a href="#" class="navbar-toggle" data-menu-toggle="header-menu">
+                                <div class="toggle-line">
+                                    <span></span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--<select id="lang" onchange="langChange()" style="margin-right:50px">
+                            <option value="Korean">Korean</option>
+                            <option value="English">English</option>
+                        </select>-->
+                        <!-- Menu @s -->
+                        <div class="header-navbar animated " data-animate="fadeInDown" data-delay=".75">
+                            <nav class="header-menu" id="header-menu">
+                                <ul class="menu mb-0 nav_menu_center">
+                                    <!--<li class="menu-item">
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="$('#languageMenu').slideToggle()">LANGUAGES</a>
+                                        <div style="position: absolute; display: none; background-color: black;" id="languageMenu">
+                                            <ul style="padding-left:10px;padding-right:10px">
+                                                <li class="menu-item"><img onclick="changeKorean()" src="/Docs/images/51south-korea.png" /></li>
+                                                <li class="menu-item"><img onclick="changeEnglish()" src="/Docs/images/51united-states.png" /></li>
+                                            </ul>
+                                        </div>
+                                    </li>-->
+                                    <li class="menu-item">
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/portfolio.html'" data-chapNum="5">PORTFOLIO</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/company.html'" chapNum="2">COMPANY</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/main.html?go=1'" data-chapNum="6">CONTACT US</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link nav-link menu-toggle" href="#" onclick="$('#solutionMenu').slideToggle()">SOLUTION</a>
+                                        <div style="position:absolute;display:none;background-color:black" id="solutionMenu" onmouseleave="$('#solutionMenu').hide();">
+                                            <div style="display: block; color:#415076;">
+                                                <ul style="padding-left:6px">
+                                                    <li class="menu-item"><a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/cen.html?go=1'" data-chapNum="6" style="color:white;">CEN</a></li>
+                                                    <li class="menu-item"><a class="menu-link nav-link menu-toggle" href="#" onclick="location.href='/Pages/mason3d.html?go=1'" data-chapNum="6" style="color:white">Mason3D</a></li>
+                                                    <li class="menu-item" style="color:darkgrey"><a class="menu-link nav-link menu-toggle" href="#" data-chapNum="6" style="color:grey">ADAM</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="menu mb-0">
+                                    <li class="menu-item" style="cursor:pointer">
+                                        <!--<a class="menu-link nav-link menu-toggle" href="http://115.93.12.41/" onclick="location.href ='http://115.93.12.41/'">Twin Office</a>-->
+                                        <a class="menu-link nav-link menu-toggle" onclick="MoveVirtualOffice()">Twin Office</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <div style="display:flex;cursor:pointer" onclick="$('#languageMenu').slideToggle()">
+                                            <img class="korean" style="width:40px;height:40px;" src="/Docs/images/51south-korea.png" />
+                                            <img class="english" style="display:none;width:40px;height:40px;" src="/Docs/images/51united-states.png" />
+                                            <!--<img style="width:28px;height:28px;" src="/Docs/images/bottom-arrow.png" />-->
+                                        </div>
+                                        <!--<a class="menu-link nav-link menu-toggle" href="#" onclick="$('#languageMenu').slideToggle()">LANGUAGES</a>-->
+                                        <div style="position:absolute;display:none;left:-10px" id="languageMenu" onmouseleave="$('#languageMenu').hide()">
+                                            <ul style="padding-left:10px;padding-right:10px;background-color:black;">
+                                                <li id="liLangKor" style="display: none;cursor:pointer; width: 40px; height: 40px;" class="menu-item"><img onclick="changeKorean()" style="width:40px;height:40px;" src="/Docs/images/51south-korea.png" /></li>
+                                                <li id="liLangEng" class="menu-item" style="cursor:pointer;width:40px;height:40px;"><img onclick="changeEnglish()" src="/Docs/images/51united-states.png" style="width:40px;height:40px;" /></li>
+                                                <li id="liLangJpn" class="menu-item" style="width:40px;height:40px;"><img onclick="" src="/Docs/images/japan-off.png" style="width:40px;height:40px;" /></li>
+                                                <li id="liLangChi" class="menu-item" style="width:40px;height:40px;"><img onclick="" src="/Docs/images/china-off.png" style="width:40px;height:40px;" /></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div><!-- .header-navbar @e -->
+                    </div>
+                </div>
+            </div><!-- .header-main @e -->
+            <!-- Banner @s -->
+        </header>
+
+        <main class="nk-pages">
+            <div class="office_banner">
+                <img src="/Docs/images/mason/mason-main-img.png" class="nk-block-img banner_img" style="display:block;margin:auto;" />
+                <!--<div style="position:absolute;width:1102px; height:387px;background-color:dimgray;border-radius:20px;opacity:0.5;left:50%;top:7%;transform:translate(-50%,-50%)">-->
+                <!--<div style="color:white;background-image: url('/Docs/images/all-small-day.png'); position:absolute;width:1065px; height:210px;background-color:black;border-radius:20px;left:50%;top:70%;transform:translate(-50%,-50%)">
+                </div>-->
+                <!--</div>-->
+                <div style="position: absolute; width: 1102px; height: 540px; background-image: url('/Docs/images/all-new-background-cen-mason.png'); left: 50%; top: 7%; transform: translate(-50%,-50%) ">
+                    <div style="display: flex; color: white; font-size: 60px; font-weight: 700; line-height: 150%; text-align: center; justify-content: center; transform: translateY(30px);">
+                        <img src="/Docs/images/mason/mason-logo.svg" width="245" height="108" style="margin-right:20px;" />
+                        <div class="korean">
+                            출시까지
+                        </div>
+                        <div class="english">
+                            Launch day
+                        </div>
+
+                    </div>
+                    <div id="dday" style="line-height:70px;color: white; position: absolute; width: 980px; height: 430px; left: 52%; top: 68%; transform: translate(-50%,-50%); text-align: left; font-size: 125px; font-weight: 700; ">
+                        <span id="launchDay" style="font-family: digit;font-size:52px;"></span></br>
+                        <span style="font-family: digit; text-align: center; font-size: 105px; font-weight: 700; ">D - </span><span id="digitCount" style="font-family: digit; text-align: center; font-size: 105px; font-weight: 700; ">000</span>
+                    </div>
+                    <span id="digitTimer" style="position:relative;top:60px;margin-left:520px;font-family: digit; text-align: center; font-size: 120px; font-weight: 700; color:white; "></span>
+                    <div class="korean">
+                        <div style="color: white; position: absolute; width: 970px; height: 400px; left: 50%; top: 112%; transform: translate(-50%,-50%); font-size: 70px; font-weight: 700; text-align:center">
+                            <img src="/Docs/images/all-reservation-people-icon.png" style="margin-right:20px;margin-bottom:10px;" />사전 예약자 : <span class="userCounter" style="font-size: 70px; font-weight: 700;"></span>
+                        </div>
+                    </div>
+                    <div class="english">
+                        <div style="color: white; position: absolute; width: 970px; height: 400px; left: 50%; top: 114%; transform: translate(-50%,-50%); font-size: 50px; font-weight: 700; text-align:center">
+                            <img src="/Docs/images/all-reservation-people-icon.png" style="margin-right: 20px; margin-bottom: 10px;" />People with pre-reservation : <span class="userCounter" style="font-size: 50px; font-weight: 700;"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div style="position: absolute; width: 400px; height: 120px; left: 50%; top: 12%; transform: translate(-50%,-50%) ">
+                    <div class="korean">
+                        <div onclick="alert('현재 개발 중입니다');" style="display:flex;color:white;padding-top:20px;background-image: url('/Docs/images/all-mobile-buy-box.png'); background-size: cover; width: 400px; height: 120px; display: flex; justify-content: center; font-size: 50px; font-weight: 600; line-height: 150% ">
+                            <div style="background-image:url('/Docs/images/all-buy-icon.png'); width:55px; height:55px;transform:translateY(5px)"></div>
+                            BUY NOW
+                        </div>
+                    </div>
+                    <div class="english">
+                        <div onclick="alert('It is currently under development.');" style="display:flex;color:white;padding-top:20px;background-image: url('/Docs/images/all-mobile-buy-box.png'); background-size: cover; width: 400px; height: 120px; display: flex; justify-content: center; font-size: 50px; font-weight: 600; line-height: 150% ">
+                            <div style="background-image:url('/Docs/images/all-buy-icon.png'); width:55px; height:55px;transform:translateY(5px)"></div>
+                            BUY NOW
+                        </div>
+                    </div>
+
+                </div>-->
+            </div>
+            <section class="section section_grey nonscroll" style="height:240px;padding:0px;">
+                <div class="main_footer d-flex align-items-center section_grey">
+                    <div class="container">
+                        <div class="text-center animated fadeInUp" data-animate="fadeInUp" data-delay="1.95" style="padding-bottom:70px;">
+                            <div class="korean">
+                                <h3 class="main_sub_title">
+                                    AI,METAVERSE,XR 그리고 Synthetic Data
+                                </h3>
+                            </div>
+                            <div class="english">
+                                <h3 class="main_sub_title">
+                                    AI,METAVERSE,XR and Synthetic Data
+                                </h3>
+                            </div>
+                            <div class="korean">
+                                <span class="main_sub_content ">
+                                    AI 기술력을 이용해 상상을 현실로 만들고 현실 그너머. 새로운 세상의 Metarverse<br />
+                                    새로운 현실감과 몰입도를 더해주는 XR 그사이에서 Chemistry를 만들어내는 연금술사
+                                </span>
+                            </div>
+                            <div class="english">
+                                <span class="main_sub_content ">
+                                    Utilizing AI technology to turn imagination into reality and beyond.<br />
+                                    The alchemists at Aichemist create a new Metaverse, a world with enhanced realism and immersion through XR, adding a touch of chemistry in the process.
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section_white">
+                <div class="container-md">
+                    <div class="row">
+                        <div class="korean">
+                            <!--<img src="/Docs/images/mason/plan-korean.png" onclick="location.href='/Pages/main.html?go=1'" data-chapNum="6" />-->
+                            <img src="/Docs/images/mason/plan-korean.png" typeof="button" class="btn" data-bs-toggle="modal" data-bs-target="#contactus-modal" />
+                        </div>
+                        <div class="english">
+                            <!--<img src="/Docs/images/mason/plan-english.png" onclick="location.href='/Pages/main.html?go=1'" data-chapNum="6" />-->
+                            <img src="/Docs/images/mason/plan-english.png" typeof="button" class="btn" data-bs-toggle="modal" data-bs-target="#contactus-modal" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section_2 section_white" style="overflow:hidden; height:auto!important;">
+                <div class="container" style="overflow:hidden; height:auto!important;">
+                    <div class="row p-2 animated" data-animate="fadeInDown" data-delay="0.45">
+                        <div class="col-md-12">
+                            <h5 class="sub_title">About MASON 3D</h5>
+                        </div>
+                    </div>
+                    <div class="feature row p-2 animated" data-animate="fadeInDown" data-delay="0.45">
+                        <div class="col-md-12">
+                            <div class="korean" style="margin-bottom:30px">
+                                <h1 class="section_title">
+                                    한 번 만들어지고 버려지는 메타버스 플랫폼,<br />
+                                    두 번 만들기 싫어요.
+                                </h1>
+                            </div>
+                            <div class="english" style="margin-bottom:30px">
+                                <h1 class="section_title">
+                                    I won't create and abandon<br />
+                                    the same metaverse platform twice
+                                </h1>
+                            </div>
+
+                            <div class="korean">
+                                <h1 class="section_caption">
+                                    실시간 동기화, 인공지능 비서, 3D 경량화, 제한된 운용 자금...<br />
+                                    높아지는 메타버스 제작 문턱을 부셔버리는 Mason 3D!
+                                </h1>
+                            </div>
+                            <div class="english">
+                                <h1 class="section_caption">
+                                    With features like real-time synchronization, AI assistant, 3D lightweight design,<br />
+                                    and limited operating funds, Mason 3D breaks through the increasing barriers of<br />
+                                    metaverse production!
+                                </h1>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="feature row p-2 animated" data-animate="fadeInDown" data-delay="0.45" style="margin-top:55px;">
+                        <div style="display:flex;">
+                            <img src="/Docs/images/mason/mason-img1.png" style="margin-right:86px;" />
+                            <img src="/Docs/images/mason/mason-img2.png" />
+                        </div>
+                    </div>
+                    <div class="feature row p-2 animated" data-animate="fadeInDown" data-delay="0.65">
+                        <div class="col-md-8">
+                            <div class="korean">
+                                <span class="section_caption">
+                                    MASON 3D는 현대의 디지털 환경에서 업무와 상호작용의<br />
+                                    새로운 패러다임을 제시하는 가상 오피스 솔루션입니다.
+                                </span>
+                            </div>
+                            <div class="english">
+                                <span class="section_caption">
+                                    Mason3D is a virtual office solution that presents a new<br />
+                                    paradigm for business interaction in today's digital environmnet.
+                                </span>
+                            </div>
+                            <div style="display:flex;margin-top:55px;margin-bottom:45px;">
+                                <img src="/Docs/images/mason/mason-img3.png" style="margin-right:76px;" />
+                                <img src="/Docs/images/mason/mason-img4.png" style="width:500px;" />
+                            </div>
+
+                            <div class="korean">
+                                <span class="section_caption">
+                                    MASON 3D의 혁신적인 AI 챗봇은 실시간 고객 대응 관리를<br />
+                                    가능하게 함으로써, 고객 서비스의 효율성을 극대화합니다.<br />
+                                    또한, 사용자의 요구사항에 맞추어 내부 디자인을 3D로<br />
+                                    입체화할 수 있는 맞춤형 서비스를 제공하여, 가상환경에서<br />
+                                    의 개인화된 업무 공간을 실현할 수 있습니다.
+                                </span>
+                            </div>
+                            <div class="english">
+                                <span class="section_caption">
+                                    Mason3D's innovative AI chatbot maximizes the<br />
+                                    efficiency of customer service by enabling real-time<br />
+                                    customer support management. It also offers<br />
+                                    customizedservices to transform internal designs<br />
+                                    into 3D, allowing users to create personalized<br />
+                                    workspaces in a virtual environment.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section_3" style="margin-top:200px;">
+                <div class="container">
+                    <div class="row animated" data-animate="fadeInDown" data-delay="0.55">
+                        <div class="col-md-6">
+                        </div>
+                        <div class="pb-3 col-md-6 ">
+                            <span class="sub_title">
+                                About MASON 3D
+                            </span>
+                            <div class="korean">
+                                <h1 class="section_title" style="color:black;font-size:45px;">
+                                    내가 만드는 단 하나의 공간,<br />
+                                    그리고 메타버스의 모든 것<br />
+                                </h1>
+                            </div>
+                            <div class="english">
+                                <h1 class="section_title" style="color:black;">
+                                    The one space I create,<br />
+                                    and everything in the metaverse
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row animated" data-animate="fadeInDown" data-delay="0.75" style="display:flex; flex-direction:row-reverse;">
+                        <div class="col-md-12">
+                            <div style="display:flex">
+
+                                <img src="/Docs/images/mason/mason-img6.png" style="margin-right:19px;" />
+                                <div class="korean">
+                                    <h1 class="section_caption" style="color:black;">
+                                        사무실, 방 등의 커스터마이징 가능한 나만의 공간을<br />
+                                        웹/앱 온라인에서 100명과 함께 화상채팅을!
+                                    </h1>
+                                </div>
+                                <div class="english">
+                                    <h1 class="section_caption" style="color:black;">
+                                        Customizable spaces like offices and rooms,<br />
+                                        exclusively mine, where I can have video chats with<br />
+                                        up to 100 people online through web/app!
+                                    </h1>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+                            <img src="/Docs/images/mason/mason-img7.png" style=" transform: translateY(-200px);" />
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="section section_3 section_black">
+                <div class="container">
+                    <div class="row animated" data-animate="fadeInDown" data-delay="0.55">
+                        <div class="col-md-6">
+                        </div>
+                        <div class="pb-3 col-md-12">
+                            <span class="sub_title">
+                                Special MASON 3D
+                            </span>
+                            <div class="korean">
+                                <h1 class="section_title" style="color:white;">
+                                    MASON 3D에서<br />
+                                    모든 곳으로 갈 수 있는 범용성, 확장성
+                                </h1>
+                            </div>
+                            <div class="english">
+                                <h1 class="section_title" style="color:white;">
+                                    Versatility and scalability to go<br />
+                                    everywhere with Mason 3D
+                                </h1>
+                            </div>
+                            <div class="korean">
+                                <h1 class="section_caption" style="color:white;">
+                                    고민 없이 도면 하나로 3D공간을 제작하고,<br />
+                                    타 플랫폼으로의 손쉬운 입출력을 모두 One-Click으로!<br />
+                                    실시간 데이터 관리와 AI챗봇을 통한 고객 지원 서비스를 제공하며, 사실적인 3D 모델링<br />
+                                    을 통해 제품 정보를 보다 명확하게 전달합니다. 메이슨3D는 물리적 공간의 제약없이 <br />
+                                    어디서든 업무를 수행할 수 있는 미래형 가상 업무 환경을 선도합니다.
+                                </h1>
+                            </div>
+                            <div class="english">
+                                <h1 class="section_caption" style="color:white;">
+                                    Create 3D spaces effortlessly with just one blueprint, and easily import/export<br />
+                                    to other platforms with a simple One-Click!<br />
+                                    It provides real-time data management and customer support services<br />
+                                    through AI chatbots, and delivers product information more clearly through<br />
+                                    realistic 3D modeling. Mason3D leads the way in creating a future-oriented<br />
+                                    virtual work environment where work can be performed from any where<br />
+                                    without the constraints of physical space.
+                                </h1>
+                            </div>
+
+
+                        </div>
+                        <div class="pb-3 col-md-12" style="width:1000px;">
+                            <img src="/Docs/images/mason/mason-img8.png" style="margin-top:80px;float:right;" />
+                        </div>
+                    </div>
+            </section>
+            <section class="section section_2 section_white" style="overflow:hidden; height:auto!important;margin-bottom:200px;">
+                <div class="container" style="overflow:hidden; height:auto!important;">
+                    <div class="row p-2">
+                        <div class="col-md-12">
+                            <h5 class="sub_title">COLLABORATION</h5>
+                        </div>
+                    </div>
+                    <div class="feature row p-2">
+                        <div class="col-md-12">
+                            <div class="korean">
+                                <h1 class="section_title">
+                                    AICHEMIST와<br />
+                                    함께하는 기업들
+                                </h1>
+                            </div>
+                            <div class="english">
+                                <h1 class="section_title">
+                                    People collaborating<br />
+                                    with AICHEMIST
+                                </h1>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <div id="autoSlide">
+                            <img src="/Docs/images/all-corp-logo1.png" />
+                            <img src="/Docs/images/all-corp-logo1.png" />
+                            <img src="/Docs/images/all-corp-logo1.png" />
+                        </div>
+                        <!--<img src="/Docs/images/all-corp-logo1.png" />-->
+                        <div id="autoSlide2" dir="rtl">
+                            <img src="/Docs/images/all-corp-logo2.png" />
+                            <img src="/Docs/images/all-corp-logo2.png" />
+                            <img src="/Docs/images/all-corp-logo2.png" />
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!--<section class="section section_1 section_white d-flex overflow-hidden">
+            <div class="main_footer d-flex align-items-center section_grey">
+                <div class="container">
+                    <div class="text-center animated fadeInUp" data-animate="fadeInUp" data-delay="1.95">
+                        <div class="korean">
+                            <h3 class="main_sub_title">
+                                AI,METAVERSE,XR 그리고 Chemistry
+                            </h3>
+                        </div>
+                        <div class="english">
+                            AI,METAVERSE,XR and Chemistry
+                        </div>
+                        <div class="korean">
+                            <span class="main_sub_content ">
+                                AI 기술력을 이용해 상상을 현실로 만들고 현실 그너머. 새로운 세상의 Metarverse<br />
+                                새로운 현실감과 몰입도를 더해주는 XR 그사이에서 Chemistry를 만들어내는 연금술사
+                            </span>
+                        </div>
+                        <div class="english">
+                            <span class="main_sub_content ">
+                                Utilizing AI technology to turn imagination into reality and beyond.<br />
+                                The alchemists at Aichemist create a new Metaverse, a world with enhanced realism and immersion through XR, adding a touch of chemistry in the process.
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>-->
+            <!--<div class="container" style="margin:auto;margin-top:0px;">
+
+            <div class="row align-content-center" id="main_title_row">
+                <div class="col">
+                    <div class="col-md-12 animated fadeInUp" data-animate="fadeInUp" data-delay="1.75">
+                        <div class="row">-->
+            <!--<div class="col-md-12">
+                <div class="korean">
+                    <h1 class="text-black fw-bold main-text-title text-center">
+                        당신이 상상하는 세상을<br />
+                        아이케미스트에서 현실로
+                    </h1>
+                </div>
+                <div class="english">
+                    <h1 class="text-black fw-bold main-text-title text-center">
+                        Bringing the world you imagine<br />
+                        to reality with Aichemist
+                    </h1>
+                </div>
+
+            </div>-->
+            <!--</div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <!--<div class="main_footer d-flex align-items-center">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="multiple-items">
+                            <div class=" p-3">
+                                <img class="multifle_img" src="/Docs/images/homepage_img/cc4/1.png">
+                            </div>
+                            <div class=" p-3" id="sec_div">
+                                <img class="multifle_img" src="/Docs/images/homepage_img/cc4/2.png">
+                            </div>
+                            <div class=" p-3">
+                                <img class="multifle_img" src="/Docs/images/homepage_img/cc4/3.png">
+                            </div>
+                            <div class=" p-3" id="forth_div">
+                                <img class="multifle_img" src="/Docs/images/homepage_img/cc4/5.png">
+                            </div>
+                            <div class=" p-3">
+                                <img class="multifle_img" src="/Docs/images/homepage_img/cc4/6.png">
+                            </div>
+                            <div class=" p-3">
+                                <img class="multifle_img" src="/Docs/images/homepage_img/cc4/7.png">
+                            </div>
+                            <div class=" p-3">
+                                <img class="multifle_img" src="/Docs/images/homepage_img/cc4/8.png">
+                            </div>
+                            <div class=" p-3">
+                                <img class="multifle_img" src="/Docs/images/homepage_img/cc4/9.png">
+                            </div>
+                        </div>
+                        <div class="mob_img_div" id="mob_img_div">
+                        </div>
+
+                    </div>
+                </div>
+            </div>-->
+
+            <section class="section footer section_7" style="background-color: #F8F8F8">
+                <div class="container">
+                    <div class="row" style="display:flex;">
+                        <div class="korean">
+                            <div style="display:flex;position:relative;left:70px;">
+                                <span class="footer-content" style="margin-right:20px; font-size:16px">
+                                    (08506) 서울특별시 금천구 가산동 371-17 BYC HIGHCITY B동 1005호-가
+                                </span>
+                                <span class="footer-content" style="font-size: 16px">
+                                    (34182) 대전광역시 유성구 유성대로642번길 45, 101호 에프 8호 (구암동)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="english">
+                            <div style="display: flex; position: relative; left: 70px;">
+                                <span class="footer-content" style="margin-right: 20px; font-size: 12px">
+                                    131, Gasan digital 1-ro, Geumcheon-gu, B 10F Room 1005-Ga , Seoul, Republic of Korea, (58506)
+                                </span>
+
+                                <span class="footer-content" style="font-size: 12px">
+                                    45, Yuseong-daero 642beon-gil, Yuseong-gu, Room 101 F8 , Daejeon, Republic of Korea, (34182)
+                                </span>
+                            </div>
+                        </div>
+
+
+
+                        <!--<div class="footer-col col-md-4">
+                <span class="footer-content korean">
+                    08506 서울특별시 금천구 가산동 371-17 BYC HIGHCITY B동 1005호-가
+                </span>
+                <span class="footer-content english">
+                    131, Gasan digital 1-ro, Geumcheon-gu, B 10F Room 1005-Ga , Seoul, Republic of Korea
+                </span>
+            </div>-->
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2" style="width:100%;display:flex;">
+                            <div style="display:flex;margin:auto;align-content:center;">
+                                <img class="footer-logo" src="/Docs/images/footer-call-icon.png" style="margin-right:10px;"> <span style="padding-top:5px;">+82 02 6959 9722 (Ext)</span>
+
+                                <img class="footer-logo" src="/Docs/images/footer-call-icon.png" style="margin-left:10px; margin-right:10px;"> <span style="padding-top:5px;">+82 10 9277 8647 (H.P)</span>
+
+                                <img class="footer-logo" src="/Docs/images/footer-fax-icon.png" style="margin-left: 10px; margin-right: 10px;"> <span style="padding-top:5px;">070 8630 9722 (FAX)</span>
+
+                                <img class="footer-logo" src="/Docs/images/footer-mail-icon.png" style="margin-left: 10px; margin-right:10px;"> <span style="padding-top:5px;">minwook.jeong@aichemist.kr</span>
+
+                            </div>
+                        </div>
+                        <!--<div class="footer-col col-md-2">
+                <span class="footer-content">
+                    <i class="fa fa-envelope"></i> minwook.jeong@aichemist.kr
+                </span>
+            </div>-->
+                    </div>
+                    <div class="row" id="footer_div">
+                        <div class="col-md-2" style="margin:auto;margin-right:0px;">
+                            <img class="footer-logo" src="/Docs/images/graylogo.png" alt="logo">
+                        </div>
+                        <div class="footer-col col-md-2" style="margin:auto; margin-left:0px;">
+                            <span class="footer-content">
+                                © 2023. AIchemist. All rights reserved.
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <div class="preloader"><span class="spinner spinner-round"></span></div>
+        <!-- Modal -->
+        <div class="modal fade" id="contactus-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">CONTACT US</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <section id="mail" style="padding-top:20px; padding-bottom:0px;" class="section section_6">
+                            <div class="container">
+                                <div class="row animated" data-animate="fadeInDown" data-delay="0.55" style="padding-bottom:3rem;">
+                                    <div class="korean">
+                                        <img src="/Docs/images/mason/kor-plan.png" />
+                                    </div>
+
+                                    <div style="margin-bottom:100px;">
+
+                                    </div>
+
+                                    <div class="english">
+                                        <img src="/Docs/images/mason/eng-plan.png" />
+                                    </div>
+                                    <div class="korean">
+                                        <span class="sub_title">
+                                            한 단계 앞서 나아가는 우리와 함께
+                                        </span>
+                                    </div>
+                                    <div class="english">
+                                        <span class="sub_title">
+                                            Advancing Together, One Step Ahead
+                                        </span>
+                                    </div>
+
+                                    <h1 class="section_title">
+                                        Contact Us
+                                    </h1>
+                                </div>
+                                <div class="row animated" data-animate="fadeInDown" data-delay="0.65">
+                                    <div class="korean">
+                                        <span class="contact_title" style="padding-top:12px; padding-bottom:12px;">
+                                            소속
+                                        </span>
+                                    </div>
+                                    <div class="english">
+                                        <span class="contact_title" style="padding-top:12px; padding-bottom:12px;">
+                                            Affiliation
+                                        </span>
+                                    </div>
+
+                                    <input type="text" class="input-line pl-0 contact_input" id="from_company" />
+                                </div>
+                                <div class="row animated" data-animate="fadeInDown" data-delay="0.65">
+                                    <div class="korean">
+                                        <span class="contact_title">
+                                            이름/직급
+                                        </span>
+                                    </div>
+                                    <div class="english">
+                                        <span class="contact_title">
+                                            Name/Position
+                                        </span>
+                                    </div>
+
+                                    <input type="text" class="input-line pl-0 contact_input" id="from_name" />
+                                </div>
+                                <div class="row animated" data-animate="fadeInDown" data-delay="0.65">
+                                    <div class="korean">
+                                        <span class="contact_title">
+                                            연락처
+                                        </span>
+                                    </div>
+                                    <div class="english">
+                                        <span class="contact_title">
+                                            Contact Information
+                                        </span>
+                                    </div>
+
+                                    <input type="text" class="input-line pl-0 contact_input" id="from_number" />
+                                </div>
+                                <div class="row animated" data-animate="fadeInDown" data-delay="0.65">
+                                    <div class="korean">
+                                        <span class="contact_title">
+                                            연락
+                                        </span>
+                                    </div>
+                                    <div class="english">
+                                        <span class="contact_title">
+                                            Contact Purpose
+                                        </span>
+                                    </div>
+
+                                    <input type="text" class="input-line pl-0 contact_input" />
+                                </div>
+                                <div class="row animated" data-animate="fadeInDown" data-delay="0.65">
+                                    <div class="korean">
+                                        <span class="contact_title">
+                                            내용
+                                        </span>
+                                    </div>
+                                    <div class="english">
+                                        <span class="contact_title">
+                                            Content
+                                        </span>
+                                    </div>
+
+                                    <input type="text" class="input-line pl-0 contact_input" id="mail_content" />
+                                </div>
+                                <div class="row d-grid gap-2 animated" data-animate="fadeInDown" data-delay="0.65" style="padding-top:3rem;">
+                                    <div class="col-md-12">
+                                        <div class="korean">
+                                            <button class="btn btn-primary btn-lg rounded-pill align-content-center" style="width:100%; height:4rem; font-size:40px;" onclick="sendEmailToCompany()">보내기</button>
+                                        </div>
+                                        <div class="english">
+                                            <button class="btn btn-primary btn-lg rounded-pill align-content-center" style="width:100%; height:4rem; font-size:40px;" onclick="sendEmailToCompany()">Send</button>
+                                        </div>
+
+                                    </div>
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/Docs/assets/js/ETCutility.js"></script>
+    <script>
+        var isThisKorean = true;
+        function MoveVirtualOffice() {
+            let isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            let isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+
+            if (isIos) {
+                if (isThisKorean)
+                    alert("준비중입니다.")
+                else
+                    alert("it's under development.")
+            } else if (isAndroid) {
+                location.href = 'https://d383oem0m28gx6.cloudfront.net/'
+            } else {
+                location.href = 'https://d1bn2a1xwzmis9.cloudfront.net/'
+            }
+        }
+
+        $.ajax({ url: "https://api.ip.pe.kr/json" }).done(function (res) {
+            console.log(res.country_code);
+            if (res.country_code == "KR") {
+                $(".korean").css("visibility", "visible")
+                $(".english").css("visibility", "hidden")
+                $(".korean").css("display", "block")
+                $(".english").css("display", "none")
+                isThisKorean = true;
+            } else {
+                $(".korean").css("visibility", "hidden")
+                $(".english").css("visibility", "visible")
+                $(".korean").css("display", "none")
+                $(".english").css("display", "block")
+                isThisKorean = false;
+            }
+        });
+        function langChange(e) {
+            let value = $("#lang option:selected").val();
+            console.log(value);
+            if (value == "Korean") {
+                $(".korean").css("visibility", "visible")
+                $(".english").css("visibility", "hidden")
+                $(".korean").css("display", "block")
+                $(".english").css("display", "none")
+            } else if (value == "English") {
+                $(".korean").css("visibility", "hidden")
+                $(".english").css("visibility", "visible")
+                $(".korean").css("display", "none")
+                $(".english").css("display", "block")
+            }
+        }
+        function changeKorean() {
+            $(".korean").css("visibility", "visible")
+            $(".english").css("visibility", "hidden")
+            $(".korean").css("display", "block")
+            $(".english").css("display", "none")
+            $("#liLangKor").hide();
+            $("#liLangEng").show();
+            isThisKorean = true;
+        }
+        function changeEnglish() {
+            $(".korean").css("visibility", "hidden")
+            $(".english").css("visibility", "visible")
+            $(".korean").css("display", "none")
+            $(".english").css("display", "block")
+            $("#liLangKor").show();
+            $("#liLangEng").hide();
+            isThisKorean = false;
+        }
+
+        //d-day
+        const remainTime = document.querySelector("#digitCount");
+        const launchDay = document.querySelector("#launchDay");
+        const remainTimer = document.querySelector("#digitTimer");
+
+        launchDay.innerHTML = "2024 - 06 - 27"
+        function diffDay() {
+            const masTime = new Date("2024-06-27");
+            const todayTime = new Date();
+
+            const diff = masTime - todayTime;
+
+            const diffDay = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(3, "0");;
+            const diffHour = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, "0");
+            const diffMin = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, "0");
+            const diffSec = String(Math.floor(diff / 1000 % 60)).padStart(2, "0");
+
+            remainTime.innerText = `${diffDay}`;
+            remainTimer.innerText = `${diffHour} : ${diffMin} : ${diffSec}`;
+        }
+
+        diffDay();
+        setInterval(() => {
+            diffDay()
+        }, 1000)
+
+        let largeHeader;
+        let isMobile;
+        let modalObj;
+        //리사이징
+        let MainUtil = {
+            init: function () {
+                MainUtil.resizingFun.initHeader();
+                MainUtil.resizingFun.addListeners();
+            },
+            resizingFun: {
+                initHeader: function (type) {
+                    /*width = window.innerWidth;
+                    height = window.innerHeight;
+                    target = { x: width / 2, y: height / 2 };
+
+                    largeHeader = document.querySelector('.section_1');
+                    largeHeader.style.height = height + 'px';
+                    height = window.innerHeight;
+
+                    isMobile = /Mobile|Android|iPhone/.test(navigator.userAgent);
+
+                    if ($(".multiple-items").hasClass('slick-initialized')) {
+                        $('.multiple-items').slick('unslick');
+                    }
+
+
+                    if (width > 1000) {
+
+                        $("#footer_div").children().each(function () {
+                            $(this).attr("class", "footer-col align-content-center");
+
+                        })
+                    }
+
+                    $('.multiple-items').slick({
+                        infinite: true,
+                        arrows: false,
+                        autoplay: false,
+                        autoplaySpeed: 0,
+                        slidesToShow: 6,
+                        slidesToScroll: 1,
+                        pauseOnHover: false,
+                        pauseOnFocus: false,
+                        speed: 1000,
+                        cssEase: 'linear',
+                        responsive: [
+                            {
+                                breakpoint: 1000,
+                                settings: {
+                                    slidesToShow: 2
+                                }
+                            }
+                        ]
+                    });
+                    $("#pp_card").removeClass("pb-5");*/
+
+                    //AvatarSlideControl();
+
+                }
+                ,
+                addListeners: function () {
+                    window.addEventListener('resize', MainUtil.resizingFun.initHeader);
+
+                },
+                resize: function () {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    largeHeader.style.height = height + 'px';
+                    canvas.width = width;
+                    canvas.height = height;
+                }
+
+            },
+            moveChapter: function (tag) {
+                let moveTarget = $(tag).data("chapnum");
+                $('html, body').animate({
+                    scrollTop: $('.section_' + moveTarget).offset().top
+                }, 1000);
+            }
+        };
+        function AvatarSlideControl() {
+
+            let targetDiv = isMobile || window.innerWidth < 1001 ? "#sec_div" : "#forth_div";
+
+            let widTemp = $(targetDiv).width();
+            let heiTemp = $(targetDiv).height();
+
+            let leftTemp = $(targetDiv).offset().left - (widTemp * 0.25);
+            let topTemp = $(targetDiv).offset().top - (heiTemp * 0.4);
+
+            let deviceSize = heiTemp * 2.4;
+
+            $("#mob_img").css({
+
+                "height": deviceSize,
+                "position": "absolute",
+                "left": leftTemp + "px",
+                "top": topTemp + "px",
+                "z-index": "9"
+            });
+            $('.multiple-items').slick("slickPlay");
+
+        }
+
+        $(document).ready(function () {
+            MainUtil.init();
+            $('#autoSlide').slick({
+                infinite: true,
+                arrows: false,
+                autoplay: false,
+                autoplaySpeed: 0,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                pauseOnHover: false,
+                pauseOnFocus: false,
+                speed: 6000,
+                cssEase: 'linear',
+                responsive: [
+                    {
+                        breakpoint: 1000,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            })
+            $('#autoSlide').slick("slickPlay");
+            $('#autoSlide2').slick({
+                infinite: true,
+                arrows: false,
+                autoplay: false,
+                autoplaySpeed: 0,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                pauseOnHover: false,
+                pauseOnFocus: false,
+                speed: 6000,
+                cssEase: 'linear',
+                responsive: [
+                    {
+                        breakpoint: 1000,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            })
+
+            $("#autoSlide2").slick('slickSetOption', 'rtl', true);
+            $("#autoSlide2").slick('slickPlay');
+        });
+
+        var mobileToggle = false;
+        $('.header-nav-toggle').click(() => {
+            if (mobileToggle) {
+                $('.menu-mobile').css('left', '-310px');
+                mobileToggle = !mobileToggle;
+            } else {
+                $('.menu-mobile').css('left', '-10px');
+                mobileToggle = !mobileToggle;
+            }
+
+        });
+    </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyArBorBd54xgxZGWp2KfoZ37JXzdXbNSqc",
+            authDomain: "aichemisthome-8f0fd.firebaseapp.com",
+            projectId: "aichemisthome-8f0fd",
+            storageBucket: "aichemisthome-8f0fd.appspot.com",
+            messagingSenderId: "93889986661",
+            appId: "1:93889986661:web:61d3dd4f7bb59f613bc68c",
+            measurementId: "G-7G2Q5Y2BNJ"
+        };
+
+        // Initialize Firebase
+        //const app = initializeApp(firebaseConfig);
+        //const analytics = getAnalytics(app);
+        firebase.initializeApp(firebaseConfig);
+
+        /*const db = firebase.firestore();
+        firebase.analytics();
+        db.collection('CounterFirebase').get().then((result) => {
+            result.forEach((doc) => {
+                $(".userCounter").text(doc.data().masonCounter);
+            })
+        })*/
+
+        var reservUsers = 0;
+        var count = 0;
+        var countBox = document.querySelector(".userCounter");
+
+
+        const dbRef = firebase.database().ref();
+        dbRef.child("CounterFirebase").child("doc").get().then((snapshot) => {
+            if (snapshot.exists()) {
+                //console.log(snapshot.val());
+                $(".userCounter").text(snapshot.val().masonCounter);
+
+                reservUsers = snapshot.val().masonCounter;
+                //count 시작
+                let counting = setInterval(function () {
+                    if (count >= reservUsers) {
+                        count = reservUsers
+                        clearInterval(counting);
+                    } else {
+                        count += 12;
+                    }
+                    countBox.innerHTML = new Intl.NumberFormat().format(count);
+                })
+            } else {
+                console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        })
+    </script>
+    <div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="/Docs/images/logo-full-white.png" alt=""></span></div>
+    <div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="/Docs/images/logo-full-white.png" alt=""></span></div>
+</body>
+</html>

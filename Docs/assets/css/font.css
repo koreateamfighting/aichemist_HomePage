@@ -1,0 +1,7 @@
+﻿@charset "UTF-8";
+
+.smalltitle > p {
+    font-family: TTHakgyoansimJiugaeR;
+    font-size: 35px;
+    color: rgba(135, 206, 0, 1);
+}

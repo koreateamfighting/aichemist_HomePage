@@ -1,0 +1,637 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{769C916C-69A3-4B84-9FF0-65A69DD54DFB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NOVASOFT_HOME_V3</RootNamespace>
+    <AssemblyName>NOVASOFT_HOME_V3</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\assets\css\font.css" />
+    <Content Include="Docs\assets\css\rtl.css" />
+    <Content Include="Docs\assets\css\style2.css" />
+    <Content Include="Docs\assets\css\style-azalea.css" />
+    <Content Include="Docs\assets\css\style-azure.css" />
+    <Content Include="Docs\assets\css\style-dark.css" />
+    <Content Include="Docs\assets\css\style-jasmine.css" />
+    <Content Include="Docs\assets\css\style-lavender.css" />
+    <Content Include="Docs\assets\css\style-lobelia.css" />
+    <Content Include="Docs\assets\css\style-lungwort.css" />
+    <Content Include="Docs\assets\css\style-muscari.css" />
+    <Content Include="Docs\assets\css\style-salvia.css" />
+    <Content Include="Docs\assets\css\style-zinnia.css" />
+    <Content Include="Docs\assets\css\style.css" />
+    <Content Include="Docs\assets\css\theme.css" />
+    <Content Include="Docs\assets\css\vendor.bundle.css" />
+    <Content Include="Docs\assets\fonts\fa-brands-400.svg" />
+    <Content Include="Docs\assets\fonts\fa-regular-400.svg" />
+    <Content Include="Docs\assets\fonts\fa-solid-900.svg" />
+    <Content Include="Docs\assets\fonts\Ikon-Crypto.svg" />
+    <Content Include="Docs\assets\fonts\index.html" />
+    <Content Include="Docs\assets\fonts\themify.svg" />
+    <Content Include="Docs\assets\images\cen01.png" />
+    <Content Include="Docs\assets\images\dot-a.png" />
+    <Content Include="Docs\assets\images\dot-b.png" />
+    <Content Include="Docs\assets\images\dot-c-azalea.png" />
+    <Content Include="Docs\assets\images\dot-c.png" />
+    <Content Include="Docs\assets\images\hexagon.png" />
+    <Content Include="Docs\assets\images\index.html" />
+    <Content Include="Docs\assets\images\light-ix.png" />
+    <Content Include="Docs\assets\images\line.png" />
+    <Content Include="Docs\assets\images\mask-a-dark.svg" />
+    <Content Include="Docs\assets\images\mask-a-md.png" />
+    <Content Include="Docs\assets\images\mask-a-md.svg" />
+    <Content Include="Docs\assets\images\mask-a.png" />
+    <Content Include="Docs\assets\images\mask-a.svg" />
+    <Content Include="Docs\assets\images\mask-b.png" />
+    <Content Include="Docs\assets\images\mask-b.svg" />
+    <Content Include="Docs\assets\images\mask-c-dark.svg" />
+    <Content Include="Docs\assets\images\mask-c-light.png" />
+    <Content Include="Docs\assets\images\mask-c-light.svg" />
+    <Content Include="Docs\assets\images\mask-c.png" />
+    <Content Include="Docs\assets\images\mask-c.svg" />
+    <Content Include="Docs\assets\images\mask-d.png" />
+    <Content Include="Docs\assets\images\mask-d.svg" />
+    <Content Include="Docs\assets\images\mask-d2.svg" />
+    <Content Include="Docs\assets\images\mask-e.png" />
+    <Content Include="Docs\assets\images\mask-e.svg" />
+    <Content Include="Docs\assets\images\mask-f-footer.png" />
+    <Content Include="Docs\assets\images\mask-f-footer.svg" />
+    <Content Include="Docs\assets\images\mask-f.png" />
+    <Content Include="Docs\assets\images\mask-f.svg" />
+    <Content Include="Docs\assets\images\mask-line-a.png" />
+    <Content Include="Docs\assets\images\mask-line-b.png" />
+    <Content Include="Docs\assets\images\mask-line-c.png" />
+    <Content Include="Docs\assets\images\mask-line-d.png" />
+    <Content Include="Docs\assets\images\polygon-a-dark.png" />
+    <Content Include="Docs\assets\images\polygon-a-light.png" />
+    <Content Include="Docs\assets\images\polygon-a.png" />
+    <Content Include="Docs\assets\images\polygon-fill.png" />
+    <Content Include="Docs\assets\images\polygon-line-a-fill.png" />
+    <Content Include="Docs\assets\images\polygon-line-a.png" />
+    <Content Include="Docs\assets\images\polygon-line-b.png" />
+    <Content Include="Docs\assets\images\polygon-line-c.png" />
+    <Content Include="Docs\assets\images\shape-a-sm.png" />
+    <Content Include="Docs\assets\images\shape-a.png" />
+    <Content Include="Docs\assets\images\shape-a2.png" />
+    <Content Include="Docs\assets\images\shape-b-sm.png" />
+    <Content Include="Docs\assets\images\shape-b.png" />
+    <Content Include="Docs\assets\images\shape-c-sm.png" />
+    <Content Include="Docs\assets\images\shape-c.png" />
+    <Content Include="Docs\assets\images\shape-d-sm.png" />
+    <Content Include="Docs\assets\images\shape-d.png" />
+    <Content Include="Docs\assets\images\shape-e-sm.png" />
+    <Content Include="Docs\assets\images\shape-e.png" />
+    <Content Include="Docs\assets\images\shape-f-sm.png" />
+    <Content Include="Docs\assets\images\shape-f.png" />
+    <Content Include="Docs\assets\images\shape-g-sm.png" />
+    <Content Include="Docs\assets\images\shape-g.png" />
+    <Content Include="Docs\assets\images\shape-h-sm.png" />
+    <Content Include="Docs\assets\images\shape-h.png" />
+    <Content Include="Docs\assets\images\shape-i-sm.png" />
+    <Content Include="Docs\assets\images\shape-i.png" />
+    <Content Include="Docs\assets\images\shape-m.png" />
+    <Content Include="Docs\assets\images\shape-n.png" />
+    <Content Include="Docs\assets\images\shape-o.png" />
+    <Content Include="Docs\assets\images\shape-p.png" />
+    <Content Include="Docs\assets\images\shape-q.png" />
+    <Content Include="Docs\assets\images\shape-r.png" />
+    <Content Include="Docs\assets\images\shape-s-sm.png" />
+    <Content Include="Docs\assets\images\shape-s.png" />
+    <Content Include="Docs\assets\images\shape-t.png" />
+    <Content Include="Docs\assets\images\shape-u.png" />
+    <Content Include="Docs\assets\images\shape-v.png" />
+    <Content Include="Docs\assets\images\shape-w.png" />
+    <Content Include="Docs\assets\images\shape-x-2.png" />
+    <Content Include="Docs\assets\images\shape-x-3.png" />
+    <Content Include="Docs\assets\images\shape-x.png" />
+    <Content Include="Docs\assets\images\shape-y.png" />
+    <Content Include="Docs\assets\images\shape-z.png" />
+    <Content Include="Docs\assets\images\shape-z2.png" />
+    <Content Include="Docs\assets\images\shape-z3.png" />
+    <Content Include="Docs\assets\images\shape-z4.png" />
+    <Content Include="Docs\assets\images\shape-z6-sm.png" />
+    <Content Include="Docs\assets\images\shape-z6.png" />
+    <Content Include="Docs\assets\images\shape-z7.png" />
+    <Content Include="Docs\assets\images\ui-shape-a.svg" />
+    <Content Include="Docs\assets\images\ui-shape-b.svg" />
+    <Content Include="Docs\assets\images\ui-shape-light-a.svg" />
+    <Content Include="Docs\assets\images\ui-shape-light-b.svg" />
+    <Content Include="Docs\assets\images\ui-shape-zinnia-a.svg" />
+    <Content Include="Docs\assets\images\ui-shape-zinnia-b.svg" />
+    <Content Include="Docs\assets\images\vr-line.png" />
+    <Content Include="Docs\assets\js\bootstrap.bundle.js" />
+    <Content Include="Docs\assets\js\bootstrap.js" />
+    <Content Include="Docs\assets\js\ETCutility.js" />
+    <Content Include="Docs\assets\js\jquery-3.7.1.min.js" />
+    <Content Include="Docs\assets\js\jquery.bundle.js" />
+    <Content Include="Docs\assets\js\PrismSlide.js" />
+    <Content Include="Docs\assets\js\scripts2.js" />
+    <Content Include="Docs\assets\js\scripts.js" />
+    <Content Include="Docs\assets\js\SlideScript.js" />
+    <Content Include="Docs\assets\js\toastr.examples.js" />
+    <Content Include="Docs\form\contact.php" />
+    <Content Include="Docs\form\index.html" />
+    <Content Include="Docs\form\php-mailer\class.phpmailer.php" />
+    <Content Include="Docs\form\php-mailer\class.phpmaileroauth.php" />
+    <Content Include="Docs\form\php-mailer\class.phpmaileroauthgoogle.php" />
+    <Content Include="Docs\form\php-mailer\class.pop3.php" />
+    <Content Include="Docs\form\php-mailer\class.smtp.php" />
+    <Content Include="Docs\form\php-mailer\extras\EasyPeasyICS.php" />
+    <Content Include="Docs\form\php-mailer\extras\htmlfilter.php" />
+    <Content Include="Docs\form\php-mailer\extras\ntlm_sasl_client.php" />
+    <Content Include="Docs\form\php-mailer\get_oauth_token.php" />
+    <Content Include="Docs\form\php-mailer\PHPMailerAutoload.php" />
+    <Content Include="Docs\form\subscribe.php" />
+    <Content Include="Docs\images\51south-korea.png" />
+    <Content Include="Docs\images\51united-states.png" />
+    <Content Include="Docs\images\all-buy-icon.png" />
+    <Content Include="Docs\images\all-corp-logo1.png" />
+    <Content Include="Docs\images\all-corp-logo2.png" />
+    <Content Include="Docs\images\all-icon1.png" />
+    <Content Include="Docs\images\all-icon2.png" />
+    <Content Include="Docs\images\all-icon3.png" />
+    <Content Include="Docs\images\all-icon4.png" />
+    <Content Include="Docs\images\all-icon5.png" />
+    <Content Include="Docs\images\all-mobile-buy-box.png" />
+    <Content Include="Docs\images\all-new-background-cen-mason.png" />
+    <Content Include="Docs\images\all-reservation-people-icon.png" />
+    <Content Include="Docs\images\all-small-day.png" />
+    <Content Include="Docs\images\all-backgroud-cen-mason.png" />
+    <Content Include="Docs\images\backbutton01.png" />
+    <Content Include="Docs\images\bottom-arrow.png" />
+    <Content Include="Docs\images\boximage01.png" />
+    <Content Include="Docs\images\btn-back-push.png" />
+    <Content Include="Docs\images\btn-back.png" />
+    <Content Include="Docs\images\btn-re-push.png" />
+    <Content Include="Docs\images\btn-re.png" />
+    <Content Include="Docs\images\cen\cen-img1.png" />
+    <Content Include="Docs\images\cen\cen-img2.png" />
+    <Content Include="Docs\images\cen\cen-img3.png" />
+    <Content Include="Docs\images\cen\cen-img4.png" />
+    <Content Include="Docs\images\cen\cen-img5.png" />
+    <Content Include="Docs\images\cen\cen-img6.png" />
+    <Content Include="Docs\images\cen\cen-img7.png" />
+    <Content Include="Docs\images\cen\cen02.png" />
+    <Content Include="Docs\images\cen\cen03.png" />
+    <Content Include="Docs\images\cen\eng-cen01.png" />
+    <Content Include="Docs\images\cen\eng-cen02.png" />
+    <Content Include="Docs\images\cen\eng-cen03.png" />
+    <Content Include="Docs\images\cen\eng-plan.png" />
+    <Content Include="Docs\images\cen\eng-plan01.png" />
+    <Content Include="Docs\images\cen\eng-plan02.png" />
+    <Content Include="Docs\images\cen\eng-plan03.png" />
+    <Content Include="Docs\images\cen\ko-cen01.png" />
+    <Content Include="Docs\images\cen\ko-cen02.png" />
+    <Content Include="Docs\images\cen\ko-cen03.png" />
+    <Content Include="Docs\images\cen\ko-plan01.png" />
+    <Content Include="Docs\images\cen\ko-plan02.png" />
+    <Content Include="Docs\images\cen\ko-plan03.png" />
+    <Content Include="Docs\images\cen\kor-plan.png" />
+    <Content Include="Docs\images\cen\plan-english.png" />
+    <Content Include="Docs\images\cen\plan-korean.png" />
+    <Content Include="Docs\images\cen\cen01.png" />
+    <Content Include="Docs\images\cen\CEN_LOGO.png" />
+    <Content Include="Docs\images\china-off.png" />
+    <Content Include="Docs\images\dataanalyticsimage01.png" />
+    <Content Include="Docs\images\edumenu1.png" />
+    <Content Include="Docs\images\edumenu1hover.png" />
+    <Content Include="Docs\images\edumenu2.png" />
+    <Content Include="Docs\images\edumenu3.png" />
+    <Content Include="Docs\images\edumenu4.png" />
+    <Content Include="Docs\images\edumenu5.png" />
+    <Content Include="Docs\images\edumenu5hover.png" />
+    <Content Include="Docs\images\edumenu6.png" />
+    <Content Include="Docs\images\edumenu6hover.png" />
+    <Content Include="Docs\images\edumenu7.png" />
+    <Content Include="Docs\images\edumenu7hover.png" />
+    <Content Include="Docs\images\edumenu8.png" />
+    <Content Include="Docs\images\edumenu9.png" />
+    <Content Include="Docs\images\edumenu9hover.png" />
+    <Content Include="Docs\images\edumenubar01.png" />
+    <Content Include="Docs\images\executebutton01.png" />
+    <Content Include="Docs\images\executebutton02.png" />
+    <Content Include="Docs\images\footer-call-icon.png" />
+    <Content Include="Docs\images\footer-fax-icon.png" />
+    <Content Include="Docs\images\footer-mail-icon.png" />
+    <Content Include="Docs\images\img-sprite.png" />
+    <Content Include="Docs\images\japan-off.png" />
+    <Content Include="Docs\images\loadingIcon.png" />
+    <Content Include="Docs\images\logo2.png" />
+    <Content Include="Docs\images\mason\eng-plan.png" />
+    <Content Include="Docs\images\mason\kor-plan.png" />
+    <Content Include="Docs\images\mason\plan-english.png" />
+    <Content Include="Docs\images\mason\plan-korean.png" />
+    <Content Include="Docs\images\favicon.png" />
+    <Content Include="Docs\images\gfx\bg-b.jpg" />
+    <Content Include="Docs\images\gfx\circle-a.png" />
+    <Content Include="Docs\images\gfx\gfx-a.png" />
+    <Content Include="Docs\images\gfx\gfx-a2.png" />
+    <Content Include="Docs\images\gfx\gfx-b-small.png" />
+    <Content Include="Docs\images\gfx\gfx-b.png" />
+    <Content Include="Docs\images\gfx\gfx-c.png" />
+    <Content Include="Docs\images\gfx\gfx-cdd.jpg" />
+    <Content Include="Docs\images\gfx\gfx-d.png" />
+    <Content Include="Docs\images\gfx\gfx-e--.png" />
+    <Content Include="Docs\images\gfx\gfx-e.png" />
+    <Content Include="Docs\images\gfx\gfx-f-light.png" />
+    <Content Include="Docs\images\gfx\gfx-f.png" />
+    <Content Include="Docs\images\gfx\gfx-f2.png" />
+    <Content Include="Docs\images\gfx\gfx-h.png" />
+    <Content Include="Docs\images\gfx\gfx-i.png" />
+    <Content Include="Docs\images\gfx\gfx-i2.png" />
+    <Content Include="Docs\images\gfx\gfx-j-light.png" />
+    <Content Include="Docs\images\gfx\gfx-j.png" />
+    <Content Include="Docs\images\gfx\gfx-k.png" />
+    <Content Include="Docs\images\gfx\gfx-l.png" />
+    <Content Include="Docs\images\gfx\gfx-m.png" />
+    <Content Include="Docs\images\gfx\gfx-n.png" />
+    <Content Include="Docs\images\gfx\gfx-p-light.png" />
+    <Content Include="Docs\images\gfx\gfx-p.png" />
+    <Content Include="Docs\images\gfx\gfx-q-light.png" />
+    <Content Include="Docs\images\gfx\gfx-q.png" />
+    <Content Include="Docs\images\gfx\gfx-r.png" />
+    <Content Include="Docs\images\gfx\gfx-s-dark.png" />
+    <Content Include="Docs\images\gfx\gfx-s-light.png" />
+    <Content Include="Docs\images\gfx\gfx-sm-a.png" />
+    <Content Include="Docs\images\gfx\gfx-sm-b.png" />
+    <Content Include="Docs\images\gfx\gfx-sm-c.png" />
+    <Content Include="Docs\images\gfx\gfx-sm-d.png" />
+    <Content Include="Docs\images\gfx\gfx-sm-e-light.png" />
+    <Content Include="Docs\images\gfx\gfx-sm-e.png" />
+    <Content Include="Docs\images\gfx\gfx-sm-f-light.png" />
+    <Content Include="Docs\images\gfx\gfx-sm-f.png" />
+    <Content Include="Docs\images\gfx\gfx-sm-g-light.png" />
+    <Content Include="Docs\images\gfx\gfx-sm-g.png" />
+    <Content Include="Docs\images\gfx\gfx-t-dark.png" />
+    <Content Include="Docs\images\gfx\gfx-t-light.png" />
+    <Content Include="Docs\images\gfx\gfx-u-dark.png" />
+    <Content Include="Docs\images\gfx\gfx-u-light.png" />
+    <Content Include="Docs\images\gfx\gfx-v.png" />
+    <Content Include="Docs\images\gfx\gfx-w-dark.png" />
+    <Content Include="Docs\images\gfx\gfx-w-light.png" />
+    <Content Include="Docs\images\gfx\gfx-x-dark.png" />
+    <Content Include="Docs\images\gfx\gfx-x-light.png" />
+    <Content Include="Docs\images\gfx\gfx-y.png" />
+    <Content Include="Docs\images\gfx\gfx-z-a-dark.png" />
+    <Content Include="Docs\images\gfx\gfx-z-a.png" />
+    <Content Include="Docs\images\gfx\gfx-z-b-dark.png" />
+    <Content Include="Docs\images\gfx\gfx-z-b.png" />
+    <Content Include="Docs\images\gfx\gfx-z-c-dark.png" />
+    <Content Include="Docs\images\gfx\gfx-z-c.png" />
+    <Content Include="Docs\images\gfx\gfx-z-d.png" />
+    <Content Include="Docs\images\gfx\gfx-z-e.png" />
+    <Content Include="Docs\images\gfx\gfx-z-f.png" />
+    <Content Include="Docs\images\gfx\gfx-z-g.png" />
+    <Content Include="Docs\images\gfx\gfx-z-h.png" />
+    <Content Include="Docs\images\gfx\gfx-z-i.png" />
+    <Content Include="Docs\images\gfx\gfx-z-j.png" />
+    <Content Include="Docs\images\gfx\gfx-z-k.png" />
+    <Content Include="Docs\images\gfx\gfx-z-l.png" />
+    <Content Include="Docs\images\gfx\gfx-z-m.png" />
+    <Content Include="Docs\images\gfx\index.html" />
+    <Content Include="Docs\images\gfx\polygon-a.png" />
+    <Content Include="Docs\images\gfx\triangle-a.png" />
+    <Content Include="Docs\images\globe-particle.png" />
+    <Content Include="Docs\images\google-play.png" />
+    <Content Include="Docs\images\header\gfx-a.png" />
+    <Content Include="Docs\images\header\gfx-b.png" />
+    <Content Include="Docs\images\header\gfx-c.png" />
+    <Content Include="Docs\images\header\gfx-d-dark.png" />
+    <Content Include="Docs\images\header\gfx-d-light.png" />
+    <Content Include="Docs\images\header\gfx-e.png" />
+    <Content Include="Docs\images\header\gfx-f.png" />
+    <Content Include="Docs\images\header\gfx-g.png" />
+    <Content Include="Docs\images\header\gfx-h.png" />
+    <Content Include="Docs\images\header\gfx-i.png" />
+    <Content Include="Docs\images\header\gfx-i2.png" />
+    <Content Include="Docs\images\header\gfx-j.png" />
+    <Content Include="Docs\images\header\index.html" />
+    <Content Include="Docs\images\history-img1.png" />
+    <Content Include="Docs\images\history-img2.png" />
+    <Content Include="Docs\images\history-img3.png" />
+    <Content Include="Docs\images\history-img4.png" />
+    <Content Include="Docs\images\icon-wallet.png" />
+    <Content Include="Docs\images\icon.png" />
+    <Content Include="Docs\images\logo-full-white.png" />
+    <Content Include="Docs\images\logo-full-white2x.png" />
+    <Content Include="Docs\images\logo-light.png" />
+    <Content Include="Docs\images\logo.png" />
+    <Content Include="Docs\images\logo2x.png" />
+    <Content Include="Docs\images\mason\mason-img1.png" />
+    <Content Include="Docs\images\mason\mason-img2.png" />
+    <Content Include="Docs\images\mason\mason-img3.png" />
+    <Content Include="Docs\images\mason\mason-img4.png" />
+    <Content Include="Docs\images\mason\mason-img6.png" />
+    <Content Include="Docs\images\mason\mason-img7.png" />
+    <Content Include="Docs\images\mason\mason-img8.png" />
+    <Content Include="Docs\images\mason\mason-logo.svg" />
+    <Content Include="Docs\images\mason\mason-main-img.png" />
+    <Content Include="Docs\images\reactangleimage01.png" />
+    <Content Include="Docs\images\twinofficedarkicon.png" />
+    <Content Include="Docs\images\twinofficeicon.png" />
+    <Content Include="Docs\images\twinschooldarkicon.png" />
+    <Content Include="Docs\images\twinschoolicon.png" />
+    <Content Include="index.html" />
+    <Content Include="Pages\eduLogin.html" />
+    <Content Include="Pages\edu\addsubtract.html" />
+    <Content Include="Pages\cen.html" />
+    <Content Include="Pages\company.html" />
+    <Content Include="Pages\edu.html" />
+    <Content Include="Pages\edu\addsubtract\assets\index-C1cExO9w.js" />
+    <Content Include="Pages\edu\addsubtract\assets\index-Cz4zGhbH.css" />
+    <Content Include="Pages\edu\addsubtract\index.html" />
+    <Content Include="Pages\edu\addsubtract\vite.svg" />
+    <Content Include="Pages\edu\box.html" />
+    <Content Include="Pages\edu\box\assets\index-YlbMPUiG.js" />
+    <Content Include="Pages\edu\box\index.html" />
+    <Content Include="Pages\edu\box\vite.svg" />
+    <Content Include="Pages\edu\data.html" />
+    <Content Include="Pages\edu\dataAnalytics\assets\index-Cz4zGhbH.css" />
+    <Content Include="Pages\edu\dataAnalytics\assets\index-KzJPArPi.js" />
+    <Content Include="Pages\edu\dataAnalytics\index.html" />
+    <Content Include="Pages\edu\dataAnalytics\vite.svg" />
+    <Content Include="Pages\edu\dataContent.html" />
+    <Content Include="Pages\edu\dino.html" />
+    <Content Include="Pages\edu\solarsystem.html" />
+    <Content Include="Pages\edu\square.html" />
+    <Content Include="Pages\main.html" />
+    <Content Include="Pages\mason3d.html" />
+    <Content Include="Pages\portfolio.html" />
+    <Content Include="Pages\PortfolioDetail\googleAR.html" />
+    <Content Include="Pages\PortfolioDetail\letindiner.html" />
+    <Content Include="Pages\PortfolioDetail\CEN.html" />
+    <Content Include="Pages\PortfolioDetail\VREDU.html" />
+    <Content Include="Pages\PortfolioDetail\VREDU2.html" />
+    <Content Include="Pages\PortfolioDetail\digitaltwin.html" />
+    <Content Include="Pages\PortfolioDetail\smartfactory.html" />
+    <Content Include="Pages\PortfolioDetail\3dcompany.html" />
+    <Content Include="Pages\PortfolioDetail\ADAM.html" />
+    <Content Include="Pages\PortfolioDetail\InSula.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\assets\fonts\fa-brands-400.eot" />
+    <Content Include="Docs\assets\fonts\fa-brands-400.ttf" />
+    <Content Include="Docs\assets\fonts\fa-brands-400.woff" />
+    <Content Include="Docs\assets\fonts\fa-brands-400.woff2" />
+    <Content Include="Docs\assets\fonts\fa-regular-400.eot" />
+    <Content Include="Docs\assets\fonts\fa-regular-400.ttf" />
+    <Content Include="Docs\assets\fonts\fa-regular-400.woff" />
+    <Content Include="Docs\assets\fonts\fa-regular-400.woff2" />
+    <Content Include="Docs\assets\fonts\fa-solid-900.eot" />
+    <Content Include="Docs\assets\fonts\fa-solid-900.ttf" />
+    <Content Include="Docs\assets\fonts\fa-solid-900.woff" />
+    <Content Include="Docs\assets\fonts\fa-solid-900.woff2" />
+    <Content Include="Docs\assets\fonts\Ikon-Crypto.ttf" />
+    <Content Include="Docs\assets\fonts\Ikon-Crypto.woff" />
+    <Content Include="Docs\assets\fonts\Poppins-Bold.eot" />
+    <Content Include="Docs\assets\fonts\Poppins-Bold.ttf" />
+    <Content Include="Docs\assets\fonts\Poppins-Bold.woff" />
+    <Content Include="Docs\assets\fonts\Poppins-Bold.woff2" />
+    <Content Include="Docs\assets\fonts\Poppins-Light.eot" />
+    <Content Include="Docs\assets\fonts\Poppins-Light.ttf" />
+    <Content Include="Docs\assets\fonts\Poppins-Light.woff" />
+    <Content Include="Docs\assets\fonts\Poppins-Light.woff2" />
+    <Content Include="Docs\assets\fonts\Poppins-Medium.eot" />
+    <Content Include="Docs\assets\fonts\Poppins-Medium.ttf" />
+    <Content Include="Docs\assets\fonts\Poppins-Medium.woff" />
+    <Content Include="Docs\assets\fonts\Poppins-Medium.woff2" />
+    <Content Include="Docs\assets\fonts\Poppins-Regular.eot" />
+    <Content Include="Docs\assets\fonts\Poppins-Regular.ttf" />
+    <Content Include="Docs\assets\fonts\Poppins-Regular.woff" />
+    <Content Include="Docs\assets\fonts\Poppins-Regular.woff2" />
+    <Content Include="Docs\assets\fonts\Poppins-SemiBold.eot" />
+    <Content Include="Docs\assets\fonts\Poppins-SemiBold.ttf" />
+    <Content Include="Docs\assets\fonts\Poppins-SemiBold.woff" />
+    <Content Include="Docs\assets\fonts\Poppins-SemiBold.woff2" />
+    <Content Include="Docs\assets\fonts\Quicksand-Bold.eot" />
+    <Content Include="Docs\assets\fonts\Quicksand-Bold.ttf" />
+    <Content Include="Docs\assets\fonts\Quicksand-Bold.woff" />
+    <Content Include="Docs\assets\fonts\Quicksand-Bold.woff2" />
+    <Content Include="Docs\assets\fonts\Quicksand-Light.eot" />
+    <Content Include="Docs\assets\fonts\Quicksand-Light.ttf" />
+    <Content Include="Docs\assets\fonts\Quicksand-Light.woff" />
+    <Content Include="Docs\assets\fonts\Quicksand-Light.woff2" />
+    <Content Include="Docs\assets\fonts\Quicksand-Medium.eot" />
+    <Content Include="Docs\assets\fonts\Quicksand-Medium.ttf" />
+    <Content Include="Docs\assets\fonts\Quicksand-Medium.woff" />
+    <Content Include="Docs\assets\fonts\Quicksand-Medium.woff2" />
+    <Content Include="Docs\assets\fonts\Roboto-Bold.eot" />
+    <Content Include="Docs\assets\fonts\Roboto-Bold.ttf" />
+    <Content Include="Docs\assets\fonts\Roboto-Bold.woff" />
+    <Content Include="Docs\assets\fonts\Roboto-Bold.woff2" />
+    <Content Include="Docs\assets\fonts\Roboto-Light.eot" />
+    <Content Include="Docs\assets\fonts\Roboto-Light.ttf" />
+    <Content Include="Docs\assets\fonts\Roboto-Light.woff" />
+    <Content Include="Docs\assets\fonts\Roboto-Light.woff2" />
+    <Content Include="Docs\assets\fonts\Roboto-Medium.eot" />
+    <Content Include="Docs\assets\fonts\Roboto-Medium.ttf" />
+    <Content Include="Docs\assets\fonts\Roboto-Medium.woff" />
+    <Content Include="Docs\assets\fonts\Roboto-Medium.woff2" />
+    <Content Include="Docs\assets\fonts\Roboto-Regular.eot" />
+    <Content Include="Docs\assets\fonts\Roboto-Regular.ttf" />
+    <Content Include="Docs\assets\fonts\Roboto-Regular.woff" />
+    <Content Include="Docs\assets\fonts\Roboto-Regular.woff2" />
+    <Content Include="Docs\assets\fonts\themify.eot" />
+    <Content Include="Docs\assets\fonts\themify.ttf" />
+    <Content Include="Docs\assets\fonts\themify.woff" />
+    <Content Include="Docs\form\php-mailer\composer.json" />
+    <Content Include="Docs\form\php-mailer\composer.lock" />
+    <Content Include="Docs\form\php-mailer\extras\README.md" />
+    <Content Include="Docs\form\php-mailer\LICENSE" />
+    <Content Include="Docs\form\php-mailer\VERSION" />
+    <Content Include="Docs\assets\fonts\DS-DIGI.TTF" />
+    <Content Include="Docs\assets\fonts\DS-DIGIB.TTF" />
+    <Content Include="Docs\assets\fonts\KimjungchulGothic-Bold.ttf" />
+    <Content Include="Docs\assets\fonts\KimjungchulGothic-Light.ttf" />
+    <Content Include="Docs\assets\fonts\KimjungchulGothic-Regular.ttf" />
+    <Content Include="Docs\assets\fonts\KimjungchulMyungjo-Bold.ttf" />
+    <Content Include="Docs\assets\fonts\KimjungchulMyungjo-Light.ttf" />
+    <Content Include="Docs\assets\fonts\KimjungchulMyungjo-Regular.ttf" />
+    <Content Include="Docs\assets\fonts\KimjungchulScript-Bold.ttf" />
+    <Content Include="Docs\assets\fonts\KimjungchulScript-Light.ttf" />
+    <Content Include="Docs\assets\fonts\KimjungchulScript-Regular.ttf" />
+    <Content Include="Docs\assets\fonts\GmarketSansTTFBold.ttf" />
+    <Content Include="Docs\assets\fonts\GmarketSansTTFLight.ttf" />
+    <Content Include="Docs\assets\fonts\GmarketSansTTFMedium.ttf" />
+    <Content Include="Docs\assets\fonts\NotoSansKR-Black.ttf" />
+    <Content Include="Docs\assets\fonts\NotoSansKR-Bold.ttf" />
+    <Content Include="Docs\assets\fonts\NotoSansKR-ExtraBold.ttf" />
+    <Content Include="Docs\assets\fonts\NotoSansKR-ExtraLight.ttf" />
+    <Content Include="Docs\assets\fonts\NotoSansKR-Light.ttf" />
+    <Content Include="Docs\assets\fonts\NotoSansKR-Medium.ttf" />
+    <Content Include="Docs\assets\fonts\NotoSansKR-Regular.ttf" />
+    <Content Include="Docs\assets\fonts\NotoSansKR-SemiBold.ttf" />
+    <Content Include="Docs\assets\fonts\NotoSansKR-Thin.ttf" />
+    <Content Include="Docs\assets\fonts\Pretendard-Black.otf" />
+    <Content Include="Docs\assets\fonts\Pretendard-Bold.otf" />
+    <Content Include="Docs\assets\fonts\Pretendard-ExtraBold.otf" />
+    <Content Include="Docs\assets\fonts\Pretendard-ExtraLight.otf" />
+    <Content Include="Docs\assets\fonts\Pretendard-Light.otf" />
+    <Content Include="Docs\assets\fonts\Pretendard-Medium.otf" />
+    <Content Include="Docs\assets\fonts\Pretendard-Regular.otf" />
+    <Content Include="Docs\assets\fonts\Pretendard-SemiBold.otf" />
+    <Content Include="Docs\assets\fonts\Pretendard-Thin.otf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimBareonbatangB.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimBareonbatangR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimBareondotumB.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimBareondotumR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimBombanghakR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimBunpilR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimButpenB.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimButpenL.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimButpenM.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimDoldamB.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimDoldamL.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimDoldamM.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimDotbogiR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimEunhasuR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimGaeulsopungB.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimGaeulsopungL.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimGgooreogiR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimGodeunjemokB.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimGodeunjemokM.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimGureumR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimJeomsimsiganB.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimJiugaeR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimKkokkomaR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimKkwabaegiR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimKossuyeomR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimMabeopsaR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimMalgeunnalB.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimMalgeunnalM.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimMoheomgaB.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimMoheomgaR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimMonggeulmonggeulR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimMulgyeolB.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimMulgyeolR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimNamuL.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimNamuR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimRikodeoR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimSamulhamR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimSantteutbatangL.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimSantteutbatangM.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimSantteutdotumL.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimSantteutdotumM.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimSonagiR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimTtwimteulR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimTuhoR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimUndongjangL.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimUsanR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimWoojuR.ttf" />
+    <Content Include="Docs\assets\fonts\HakgyoansimYeohaengR.ttf" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Docs\assets\js\vendors\" />
+    <Folder Include="Docs\``\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5932</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5932/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

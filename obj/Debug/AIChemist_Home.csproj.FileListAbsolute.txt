@@ -1,0 +1,707 @@
+D:\회사 홈페이지 소스\bin\NOVASOFT_HOME_V3.dll.config
+D:\회사 홈페이지 소스\bin\NOVASOFT_HOME_V3.dll
+D:\회사 홈페이지 소스\bin\NOVASOFT_HOME_V3.pdb
+D:\회사 홈페이지 소스\bin\roslyn\csc.exe
+D:\회사 홈페이지 소스\bin\roslyn\csc.exe.config
+D:\회사 홈페이지 소스\bin\roslyn\csc.rsp
+D:\회사 홈페이지 소스\bin\roslyn\csi.exe
+D:\회사 홈페이지 소스\bin\roslyn\csi.exe.config
+D:\회사 홈페이지 소스\bin\roslyn\csi.rsp
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.Managed.Core.targets
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\회사 홈페이지 소스\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.AppContext.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Collections.Immutable.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Console.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Globalization.Calendars.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.IO.Compression.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.IO.FileSystem.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Net.Http.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Net.Sockets.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Reflection.Metadata.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.ValueTuple.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Xml.XmlDocument.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Xml.XPath.dll
+D:\회사 홈페이지 소스\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\회사 홈페이지 소스\bin\roslyn\vbc.exe
+D:\회사 홈페이지 소스\bin\roslyn\vbc.exe.config
+D:\회사 홈페이지 소스\bin\roslyn\vbc.rsp
+D:\회사 홈페이지 소스\bin\roslyn\VBCSCompiler.exe
+D:\회사 홈페이지 소스\bin\roslyn\VBCSCompiler.exe.config
+D:\회사 홈페이지 소스\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\회사 홈페이지 소스\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\회사 홈페이지 소스\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+D:\회사 홈페이지 소스\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+D:\회사 홈페이지 소스\obj\Debug\AIChemist_Home.csproj.CopyComplete
+D:\회사 홈페이지 소스\obj\Debug\NOVASOFT_HOME_V3.dll
+D:\회사 홈페이지 소스\obj\Debug\NOVASOFT_HOME_V3.pdb
+D:\AiChemist\bin\NOVASOFT_HOME_V3.dll.config
+D:\AiChemist\bin\NOVASOFT_HOME_V3.dll
+D:\AiChemist\bin\NOVASOFT_HOME_V3.pdb
+D:\AiChemist\bin\roslyn\csc.exe
+D:\AiChemist\bin\roslyn\csc.exe.config
+D:\AiChemist\bin\roslyn\csc.rsp
+D:\AiChemist\bin\roslyn\csi.exe
+D:\AiChemist\bin\roslyn\csi.exe.config
+D:\AiChemist\bin\roslyn\csi.rsp
+D:\AiChemist\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\AiChemist\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\AiChemist\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\AiChemist\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\AiChemist\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\AiChemist\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\AiChemist\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\AiChemist\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\AiChemist\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\AiChemist\bin\roslyn\Microsoft.Managed.Core.targets
+D:\AiChemist\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\AiChemist\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\AiChemist\bin\roslyn\System.AppContext.dll
+D:\AiChemist\bin\roslyn\System.Collections.Immutable.dll
+D:\AiChemist\bin\roslyn\System.Console.dll
+D:\AiChemist\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\AiChemist\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\AiChemist\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\AiChemist\bin\roslyn\System.Globalization.Calendars.dll
+D:\AiChemist\bin\roslyn\System.IO.Compression.dll
+D:\AiChemist\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\AiChemist\bin\roslyn\System.IO.FileSystem.dll
+D:\AiChemist\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\AiChemist\bin\roslyn\System.Net.Http.dll
+D:\AiChemist\bin\roslyn\System.Net.Sockets.dll
+D:\AiChemist\bin\roslyn\System.Reflection.Metadata.dll
+D:\AiChemist\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\AiChemist\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\AiChemist\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\AiChemist\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\AiChemist\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\AiChemist\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\AiChemist\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\AiChemist\bin\roslyn\System.ValueTuple.dll
+D:\AiChemist\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\AiChemist\bin\roslyn\System.Xml.XmlDocument.dll
+D:\AiChemist\bin\roslyn\System.Xml.XPath.dll
+D:\AiChemist\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\AiChemist\bin\roslyn\vbc.exe
+D:\AiChemist\bin\roslyn\vbc.exe.config
+D:\AiChemist\bin\roslyn\vbc.rsp
+D:\AiChemist\bin\roslyn\VBCSCompiler.exe
+D:\AiChemist\bin\roslyn\VBCSCompiler.exe.config
+D:\AiChemist\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\AiChemist\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\AiChemist\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+D:\AiChemist\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+D:\AiChemist\obj\Debug\AIChemist_Home.csproj.CopyComplete
+D:\AiChemist\obj\Debug\NOVASOFT_HOME_V3.dll
+D:\AiChemist\obj\Debug\NOVASOFT_HOME_V3.pdb
+D:\자사홈페이지\AiChemist_v2\bin\NOVASOFT_HOME_V3.dll.config
+D:\자사홈페이지\AiChemist_v2\bin\NOVASOFT_HOME_V3.dll
+D:\자사홈페이지\AiChemist_v2\bin\NOVASOFT_HOME_V3.pdb
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\csc.exe
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\csc.exe.config
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\csc.rsp
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\csi.exe
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\csi.exe.config
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\csi.rsp
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.Managed.Core.targets
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.AppContext.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Collections.Immutable.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Console.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Globalization.Calendars.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.IO.Compression.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.IO.FileSystem.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Net.Http.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Net.Sockets.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Reflection.Metadata.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.ValueTuple.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Xml.XmlDocument.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Xml.XPath.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\vbc.exe
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\vbc.exe.config
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\vbc.rsp
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\VBCSCompiler.exe
+D:\자사홈페이지\AiChemist_v2\bin\roslyn\VBCSCompiler.exe.config
+D:\자사홈페이지\AiChemist_v2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\자사홈페이지\AiChemist_v2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\자사홈페이지\AiChemist_v2\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+D:\자사홈페이지\AiChemist_v2\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+D:\자사홈페이지\AiChemist_v2\obj\Debug\AIChemist_Home.csproj.CopyComplete
+D:\자사홈페이지\AiChemist_v2\obj\Debug\NOVASOFT_HOME_V3.dll
+D:\자사홈페이지\AiChemist_v2\obj\Debug\NOVASOFT_HOME_V3.pdb
+C:\AiChemist_Home\public\bin\NOVASOFT_HOME_V3.dll.config
+C:\AiChemist_Home\public\bin\NOVASOFT_HOME_V3.dll
+C:\AiChemist_Home\public\bin\NOVASOFT_HOME_V3.pdb
+C:\AiChemist_Home\public\bin\roslyn\csc.exe
+C:\AiChemist_Home\public\bin\roslyn\csc.exe.config
+C:\AiChemist_Home\public\bin\roslyn\csc.rsp
+C:\AiChemist_Home\public\bin\roslyn\csi.exe
+C:\AiChemist_Home\public\bin\roslyn\csi.exe.config
+C:\AiChemist_Home\public\bin\roslyn\csi.rsp
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.Managed.Core.targets
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\AiChemist_Home\public\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\AiChemist_Home\public\bin\roslyn\System.AppContext.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Collections.Immutable.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Console.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Globalization.Calendars.dll
+C:\AiChemist_Home\public\bin\roslyn\System.IO.Compression.dll
+C:\AiChemist_Home\public\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\AiChemist_Home\public\bin\roslyn\System.IO.FileSystem.dll
+C:\AiChemist_Home\public\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Net.Http.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Net.Sockets.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Reflection.Metadata.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\AiChemist_Home\public\bin\roslyn\System.ValueTuple.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Xml.XmlDocument.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Xml.XPath.dll
+C:\AiChemist_Home\public\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\AiChemist_Home\public\bin\roslyn\vbc.exe
+C:\AiChemist_Home\public\bin\roslyn\vbc.exe.config
+C:\AiChemist_Home\public\bin\roslyn\vbc.rsp
+C:\AiChemist_Home\public\bin\roslyn\VBCSCompiler.exe
+C:\AiChemist_Home\public\bin\roslyn\VBCSCompiler.exe.config
+C:\AiChemist_Home\public\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\AiChemist_Home\public\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\AiChemist_Home\public\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+C:\AiChemist_Home\public\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+C:\AiChemist_Home\public\obj\Debug\AIChemist_Home.csproj.CopyComplete
+C:\AiChemist_Home\public\obj\Debug\NOVASOFT_HOME_V3.dll
+C:\AiChemist_Home\public\obj\Debug\NOVASOFT_HOME_V3.pdb
+D:\BackUp\AiChemist_Home\public\bin\NOVASOFT_HOME_V3.dll.config
+D:\BackUp\AiChemist_Home\public\bin\NOVASOFT_HOME_V3.dll
+D:\BackUp\AiChemist_Home\public\bin\NOVASOFT_HOME_V3.pdb
+D:\BackUp\AiChemist_Home\public\bin\roslyn\csc.exe
+D:\BackUp\AiChemist_Home\public\bin\roslyn\csc.exe.config
+D:\BackUp\AiChemist_Home\public\bin\roslyn\csc.rsp
+D:\BackUp\AiChemist_Home\public\bin\roslyn\csi.exe
+D:\BackUp\AiChemist_Home\public\bin\roslyn\csi.exe.config
+D:\BackUp\AiChemist_Home\public\bin\roslyn\csi.rsp
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.Managed.Core.targets
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\BackUp\AiChemist_Home\public\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.AppContext.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Collections.Immutable.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Console.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Globalization.Calendars.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.IO.Compression.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.IO.FileSystem.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Net.Http.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Net.Sockets.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Reflection.Metadata.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.ValueTuple.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Xml.XmlDocument.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Xml.XPath.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\BackUp\AiChemist_Home\public\bin\roslyn\vbc.exe
+D:\BackUp\AiChemist_Home\public\bin\roslyn\vbc.exe.config
+D:\BackUp\AiChemist_Home\public\bin\roslyn\vbc.rsp
+D:\BackUp\AiChemist_Home\public\bin\roslyn\VBCSCompiler.exe
+D:\BackUp\AiChemist_Home\public\bin\roslyn\VBCSCompiler.exe.config
+D:\BackUp\AiChemist_Home\public\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\BackUp\AiChemist_Home\public\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\BackUp\AiChemist_Home\public\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+D:\BackUp\AiChemist_Home\public\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+D:\BackUp\AiChemist_Home\public\obj\Debug\AIChemist_Home.csproj.CopyComplete
+D:\BackUp\AiChemist_Home\public\obj\Debug\NOVASOFT_HOME_V3.dll
+D:\BackUp\AiChemist_Home\public\obj\Debug\NOVASOFT_HOME_V3.pdb
+D:\자사홈페이지\AiChemist_v2.4\bin\NOVASOFT_HOME_V3.dll.config
+D:\자사홈페이지\AiChemist_v2.4\bin\NOVASOFT_HOME_V3.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\NOVASOFT_HOME_V3.pdb
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\csc.exe
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\csc.exe.config
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\csc.rsp
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\csi.exe
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\csi.exe.config
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\csi.rsp
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.Managed.Core.targets
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.AppContext.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Collections.Immutable.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Console.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Globalization.Calendars.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.IO.Compression.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.IO.FileSystem.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Net.Http.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Net.Sockets.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Reflection.Metadata.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.ValueTuple.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Xml.XmlDocument.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Xml.XPath.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\vbc.exe
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\vbc.exe.config
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\vbc.rsp
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\VBCSCompiler.exe
+D:\자사홈페이지\AiChemist_v2.4\bin\roslyn\VBCSCompiler.exe.config
+D:\자사홈페이지\AiChemist_v2.4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\자사홈페이지\AiChemist_v2.4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\자사홈페이지\AiChemist_v2.4\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+D:\자사홈페이지\AiChemist_v2.4\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+D:\자사홈페이지\AiChemist_v2.4\obj\Debug\AIChemist_Home.csproj.CopyComplete
+D:\자사홈페이지\AiChemist_v2.4\obj\Debug\NOVASOFT_HOME_V3.dll
+D:\자사홈페이지\AiChemist_v2.4\obj\Debug\NOVASOFT_HOME_V3.pdb
+D:\자사홈페이지\AiChemist_v3\bin\NOVASOFT_HOME_V3.dll.config
+D:\자사홈페이지\AiChemist_v3\bin\NOVASOFT_HOME_V3.dll
+D:\자사홈페이지\AiChemist_v3\bin\NOVASOFT_HOME_V3.pdb
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\csc.exe
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\csc.exe.config
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\csc.rsp
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\csi.exe
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\csi.exe.config
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\csi.rsp
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.Managed.Core.targets
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.AppContext.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Collections.Immutable.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Console.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Globalization.Calendars.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.IO.Compression.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.IO.FileSystem.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Net.Http.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Net.Sockets.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Reflection.Metadata.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.ValueTuple.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Xml.XmlDocument.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Xml.XPath.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\vbc.exe
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\vbc.exe.config
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\vbc.rsp
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\VBCSCompiler.exe
+D:\자사홈페이지\AiChemist_v3\bin\roslyn\VBCSCompiler.exe.config
+D:\자사홈페이지\AiChemist_v3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\자사홈페이지\AiChemist_v3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\자사홈페이지\AiChemist_v3\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+D:\자사홈페이지\AiChemist_v3\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+D:\자사홈페이지\AiChemist_v3\obj\Debug\AIChemist_Home.csproj.CopyComplete
+D:\자사홈페이지\AiChemist_v3\obj\Debug\NOVASOFT_HOME_V3.dll
+D:\자사홈페이지\AiChemist_v3\obj\Debug\NOVASOFT_HOME_V3.pdb
+E:\AiChemist_v3\bin\NOVASOFT_HOME_V3.dll.config
+E:\AiChemist_v3\bin\NOVASOFT_HOME_V3.dll
+E:\AiChemist_v3\bin\NOVASOFT_HOME_V3.pdb
+E:\AiChemist_v3\bin\roslyn\csc.exe
+E:\AiChemist_v3\bin\roslyn\csc.exe.config
+E:\AiChemist_v3\bin\roslyn\csc.rsp
+E:\AiChemist_v3\bin\roslyn\csi.exe
+E:\AiChemist_v3\bin\roslyn\csi.exe.config
+E:\AiChemist_v3\bin\roslyn\csi.rsp
+E:\AiChemist_v3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\AiChemist_v3\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\AiChemist_v3\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\AiChemist_v3\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\AiChemist_v3\bin\roslyn\Microsoft.Managed.Core.targets
+E:\AiChemist_v3\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\AiChemist_v3\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\AiChemist_v3\bin\roslyn\System.AppContext.dll
+E:\AiChemist_v3\bin\roslyn\System.Collections.Immutable.dll
+E:\AiChemist_v3\bin\roslyn\System.Console.dll
+E:\AiChemist_v3\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\AiChemist_v3\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\AiChemist_v3\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\AiChemist_v3\bin\roslyn\System.Globalization.Calendars.dll
+E:\AiChemist_v3\bin\roslyn\System.IO.Compression.dll
+E:\AiChemist_v3\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\AiChemist_v3\bin\roslyn\System.IO.FileSystem.dll
+E:\AiChemist_v3\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\AiChemist_v3\bin\roslyn\System.Net.Http.dll
+E:\AiChemist_v3\bin\roslyn\System.Net.Sockets.dll
+E:\AiChemist_v3\bin\roslyn\System.Reflection.Metadata.dll
+E:\AiChemist_v3\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\AiChemist_v3\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\AiChemist_v3\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\AiChemist_v3\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\AiChemist_v3\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\AiChemist_v3\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\AiChemist_v3\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\AiChemist_v3\bin\roslyn\System.ValueTuple.dll
+E:\AiChemist_v3\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\AiChemist_v3\bin\roslyn\System.Xml.XmlDocument.dll
+E:\AiChemist_v3\bin\roslyn\System.Xml.XPath.dll
+E:\AiChemist_v3\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\AiChemist_v3\bin\roslyn\vbc.exe
+E:\AiChemist_v3\bin\roslyn\vbc.exe.config
+E:\AiChemist_v3\bin\roslyn\vbc.rsp
+E:\AiChemist_v3\bin\roslyn\VBCSCompiler.exe
+E:\AiChemist_v3\bin\roslyn\VBCSCompiler.exe.config
+E:\AiChemist_v3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\AiChemist_v3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\AiChemist_v3\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+E:\AiChemist_v3\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+E:\AiChemist_v3\obj\Debug\AIChemist_Home.csproj.CopyComplete
+E:\AiChemist_v3\obj\Debug\NOVASOFT_HOME_V3.dll
+E:\AiChemist_v3\obj\Debug\NOVASOFT_HOME_V3.pdb
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\NOVASOFT_HOME_V3.dll.config
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\NOVASOFT_HOME_V3.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\NOVASOFT_HOME_V3.pdb
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\csc.exe
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\csc.exe.config
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\csc.rsp
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\csi.exe
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\csi.exe.config
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\csi.rsp
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.AppContext.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Console.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.IO.Compression.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Net.Http.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Net.Sockets.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.ValueTuple.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\vbc.exe
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\vbc.exe.config
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\vbc.rsp
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\VBCSCompiler.exe
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\obj\Debug\AIChemist_Home.csproj.CopyComplete
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\obj\Debug\NOVASOFT_HOME_V3.dll
+C:\Users\ryals\Desktop\새 폴더 (2)\AiChemist_v3\obj\Debug\NOVASOFT_HOME_V3.pdb
+C:\webhost\public\bin\NOVASOFT_HOME_V3.dll.config
+C:\webhost\public\bin\NOVASOFT_HOME_V3.dll
+C:\webhost\public\bin\NOVASOFT_HOME_V3.pdb
+C:\webhost\public\bin\roslyn\csc.exe
+C:\webhost\public\bin\roslyn\csc.exe.config
+C:\webhost\public\bin\roslyn\csc.rsp
+C:\webhost\public\bin\roslyn\csi.exe
+C:\webhost\public\bin\roslyn\csi.exe.config
+C:\webhost\public\bin\roslyn\csi.rsp
+C:\webhost\public\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\webhost\public\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\webhost\public\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\webhost\public\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\webhost\public\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\webhost\public\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\webhost\public\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\webhost\public\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\webhost\public\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\webhost\public\bin\roslyn\Microsoft.Managed.Core.targets
+C:\webhost\public\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\webhost\public\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\webhost\public\bin\roslyn\System.AppContext.dll
+C:\webhost\public\bin\roslyn\System.Collections.Immutable.dll
+C:\webhost\public\bin\roslyn\System.Console.dll
+C:\webhost\public\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\webhost\public\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\webhost\public\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\webhost\public\bin\roslyn\System.Globalization.Calendars.dll
+C:\webhost\public\bin\roslyn\System.IO.Compression.dll
+C:\webhost\public\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\webhost\public\bin\roslyn\System.IO.FileSystem.dll
+C:\webhost\public\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\webhost\public\bin\roslyn\System.Net.Http.dll
+C:\webhost\public\bin\roslyn\System.Net.Sockets.dll
+C:\webhost\public\bin\roslyn\System.Reflection.Metadata.dll
+C:\webhost\public\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\webhost\public\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\webhost\public\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\webhost\public\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\webhost\public\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\webhost\public\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\webhost\public\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\webhost\public\bin\roslyn\System.ValueTuple.dll
+C:\webhost\public\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\webhost\public\bin\roslyn\System.Xml.XmlDocument.dll
+C:\webhost\public\bin\roslyn\System.Xml.XPath.dll
+C:\webhost\public\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\webhost\public\bin\roslyn\vbc.exe
+C:\webhost\public\bin\roslyn\vbc.exe.config
+C:\webhost\public\bin\roslyn\vbc.rsp
+C:\webhost\public\bin\roslyn\VBCSCompiler.exe
+C:\webhost\public\bin\roslyn\VBCSCompiler.exe.config
+C:\webhost\public\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\webhost\public\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\webhost\public\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+C:\webhost\public\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+C:\webhost\public\obj\Debug\AIChemist_Home.csproj.CopyComplete
+C:\webhost\public\obj\Debug\NOVASOFT_HOME_V3.dll
+C:\webhost\public\obj\Debug\NOVASOFT_HOME_V3.pdb
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\NOVASOFT_HOME_V3.dll.config
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\NOVASOFT_HOME_V3.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\NOVASOFT_HOME_V3.pdb
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\csc.exe
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\csc.exe.config
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\csc.rsp
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\csi.exe
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\csi.exe.config
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\csi.rsp
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.Managed.Core.targets
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.AppContext.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Collections.Immutable.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Console.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Globalization.Calendars.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.IO.Compression.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.IO.FileSystem.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Net.Http.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Net.Sockets.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Reflection.Metadata.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.ValueTuple.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Xml.XmlDocument.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Xml.XPath.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\vbc.exe
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\vbc.exe.config
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\vbc.rsp
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\VBCSCompiler.exe
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\roslyn\VBCSCompiler.exe.config
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\자사홈페이지\AiChemist_Home_RealFinal\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+D:\자사홈페이지\AiChemist_Home_RealFinal\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+D:\자사홈페이지\AiChemist_Home_RealFinal\obj\Debug\AIChemist_Home.csproj.CopyComplete
+D:\자사홈페이지\AiChemist_Home_RealFinal\obj\Debug\NOVASOFT_HOME_V3.dll
+D:\자사홈페이지\AiChemist_Home_RealFinal\obj\Debug\NOVASOFT_HOME_V3.pdb
+D:\Aichemist_Home\public\bin\NOVASOFT_HOME_V3.dll
+D:\Aichemist_Home\public\bin\NOVASOFT_HOME_V3.pdb
+D:\Aichemist_Home\public\bin\roslyn\csc.exe
+D:\Aichemist_Home\public\bin\roslyn\csc.exe.config
+D:\Aichemist_Home\public\bin\roslyn\csc.rsp
+D:\Aichemist_Home\public\bin\roslyn\csi.exe
+D:\Aichemist_Home\public\bin\roslyn\csi.exe.config
+D:\Aichemist_Home\public\bin\roslyn\csi.rsp
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Aichemist_Home\public\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Aichemist_Home\public\bin\roslyn\System.AppContext.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Collections.Immutable.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Console.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Globalization.Calendars.dll
+D:\Aichemist_Home\public\bin\roslyn\System.IO.Compression.dll
+D:\Aichemist_Home\public\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Aichemist_Home\public\bin\roslyn\System.IO.FileSystem.dll
+D:\Aichemist_Home\public\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Net.Http.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Net.Sockets.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Reflection.Metadata.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Aichemist_Home\public\bin\roslyn\System.ValueTuple.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Xml.XPath.dll
+D:\Aichemist_Home\public\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Aichemist_Home\public\bin\roslyn\vbc.exe
+D:\Aichemist_Home\public\bin\roslyn\vbc.exe.config
+D:\Aichemist_Home\public\bin\roslyn\vbc.rsp
+D:\Aichemist_Home\public\bin\roslyn\VBCSCompiler.exe
+D:\Aichemist_Home\public\bin\roslyn\VBCSCompiler.exe.config
+D:\Aichemist_Home\public\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Aichemist_Home\public\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Aichemist_Home\public\obj\Debug\AIChemist_Home.csproj.AssemblyReference.cache
+D:\Aichemist_Home\public\obj\Debug\AIChemist_Home.csproj.CoreCompileInputs.cache
+D:\Aichemist_Home\public\obj\Debug\AIChemist_Home.csproj.CopyComplete
+D:\Aichemist_Home\public\obj\Debug\NOVASOFT_HOME_V3.dll
+D:\Aichemist_Home\public\obj\Debug\NOVASOFT_HOME_V3.pdb

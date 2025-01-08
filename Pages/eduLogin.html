@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Ai-Chemist">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ai-Chemist">
+    <meta property="og:image" content="/Docs/images/MainThumnail.png">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="/Docs/images/favicon.png">
+    <!-- Site Title  -->
+    <title>AIChemist &amp; AI & Metaverse</title>
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="/Docs/assets/css/vendor.bundle.css?ver=192">
+    <!--<link rel="stylesheet" href="/Docs/assets/css/style-lobelia.css?ver=192" id="changeTheme">-->
+    <!-- Extra CSS -->
+    <link rel="stylesheet" href="/Docs/assets/css/theme.css?ver=192">
+    <link rel="stylesheet" href="/Docs/assets/css/bootstrap.css?ver=1">
+    <link rel="stylesheet" href="/Docs/assets/css/font.css">
+    <link rel="stylesheet" href="/Docs/assets/css/style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Pretendard-Regular";
+        }
+
+        span {
+            font-size: 16px;
+        }
+
+        .btn {
+            --bs-btn-line-height: 1;
+        }
+
+        .contact_input {
+            color: black;
+            margin-left: 12px;
+            margin-right: 12px;
+            border-bottom-color: #DADADA;
+        }
+
+
+        .btn-primary {
+            --bs-btn-bg: #00A3FF !important;
+            --bs-btn-border-color: #00A3FF !important;
+        }
+
+
+        .section_1 > .container {
+            height: 80%;
+        }
+
+        #main_title_row {
+            height: 100% !important;
+        }
+
+
+        .multiple-items {
+            padding-bottom: 10%;
+        }
+
+        .mob_img_div {
+            position: absolute !important;
+        }
+
+        .pp {
+            margin-bottom: 24px;
+        }
+
+        .pp_color_img {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            z-index: 1;
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-top: 24px;
+        }
+
+        .pp_gradation {
+            z-index: 2 !important;
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-top: 24px;
+        }
+
+        .pp_text {
+            font-size: 26px;
+            font-weight: 700;
+            color: white;
+            transform: translate(-70%,-50%);
+            z-index: 3;
+        }
+
+        .cen_img_up {
+            margin-top: 5%;
+        }
+
+        .pp_color_img {
+            cursor: pointer;
+        }
+
+        .main-text-title {
+            font-size: 60px;
+        }
+
+        .sub_title {
+            font-size: 20px;
+            color: #00A3FF !important;
+            font-weight: bold;
+        }
+
+        .section_title {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .section_caption {
+            font-size: 24px;
+            display: block;
+        }
+
+        .section_caption_bold {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .contact_title {
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 3rem;
+            padding-bottom: 12px;
+        }
+
+        .main_sub_title {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .main_sub_content {
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+
+
+        .main_footer {
+            width: 100%;
+            height: 20%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .section_black {
+            background-color: #242424;
+        }
+
+        .section_white {
+            background-color: transparent;
+        }
+
+        .section_grey {
+            background-color: #F8F8F8;
+        }
+
+        .section_1 {
+            padding: 0;
+        }
+
+        .section_2 {
+            padding-bottom: 0;
+        }
+        /*.section_3 {
+            margin-top: -4%;
+            z-index: 0;
+        }*/
+        .footer {
+            background-color: #F8F8F8;
+            color: #B4B4B4;
+            font-weight: 300;
+            padding: 1%;
+        }
+
+        .footer-col {
+            width: fit-content;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap-reverse;
+        }
+
+        .footer-content {
+            font-size: 12px;
+        }
+
+        .footer-logo {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .banner_img {
+            width: 100%;
+        }
+
+        .office_banner {
+            z-index: 999;
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 1001px) {
+            .nav_menu_center {
+                transform: translateX(-10%);
+            }
+
+            .container {
+                width: 1120px !important;
+            }
+
+            .cen_img_up {
+                margin-top: -15%;
+            }
+
+            .section_1 {
+                background-image: url(/Docs/images/main_banner.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center bottom;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .main_footer {
+                height: 40%;
+            }
+
+            .section_1 {
+                background-image: url(/Docs/images/main_banner_mob.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center bottom;
+            }
+
+                .section_1 > .container {
+                    height: 60%;
+                }
+
+            .section_caption {
+                font-size: 16px;
+            }
+
+            .main-text-title {
+                font-size: 30px;
+            }
+
+            .section_title {
+                font-size: 32px;
+            }
+
+            .sub_title {
+                font-size: 20px;
+            }
+
+            .section_caption {
+                font-weight: 400;
+                font-size: 16px;
+            }
+
+            .section_caption_bold {
+                font-weight: 700;
+                font-size: 24px;
+            }
+
+            .slick-slider {
+                right: 20%;
+            }
+        }
+    </style>
+    <!--<script src="/Docs/assets/js/jquery.bundle.js?ver=192"></script>-->
+    <script src="/Docs/assets/js/jquery-3.7.1.min.js"></script>
+
+    <script src="/Docs/assets/js/scripts2.js?ver=192"></script>
+    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d8e1973b4cb920fbf809dc7596c86cd0&libraries=services,clusterer,drawing"></script>-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript" src="/Docs/assets/js/bootstrap.js"></script>
+
+
+</head>
+
+<body class="nk-body body-wider mode-onepage bg-light">
+    <style>
+        @font-face {
+            font-family: 'TTHakgyoansimJiugaeR';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimJiugaeR.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'KimjungchulGothic';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulGothic-Bold.woff2') format('woff2');
+            font-weight: 300;
+            font-style: normal;
+        }
+    </style>
+    <div style="width:1600px;margin:auto;">
+        <div style="width: 100%; font-family: TTHakgyoansimJiugaeR !important;">
+            <div class="title" style="display:flex;align-items:center;width:100%;height:100px;">
+                <span style="font-size: 40px;color: rgba(135, 206, 0, 1);">초등&nbsp;</span><span style="font-size: 40px; color: rgba(252, 151, 0, 1);"> 디지털 수학&과학 교구관</span><span style="margin-left:auto;font-size:40px;"><img src="/Docs/images/logo2.png" /></span>
+            </div>
+            <div style="display: flex; width: 1600px; height: 100px; padding-top: 10px; background-image: url('/Docs/images/edumenubar01.png'); color: white; margin: auto; margin-top: 0px; align-items: center; justify-content: center; font-size: 35px; font-family: TTHakgyoansimJiugaeR !important; ">
+                디지털 과목
+            </div>
+        </div>
+
+        <div style="display:flex;">
+            <div style="margin-right:80px;padding-right:30px;border-right: 1px solid rgba(217, 217, 217, 1);">
+                <div class="smalltitle" style="display: flex; margin-top:65px; margin-bottom:20px; align-items: center; justify-content: center; ">
+                    <p>디지털 과목</p>
+                </div>
+                <div class="divide" style="display: flex; margin-bottom: 40px;">
+                    <div style="display: flex; margin: auto; align-items: center; justify-content: center; font-size: 26px; margin-right: 10px; color: rgba(217, 217, 217, 1); font-family: 'KimjungchulGothic';">학년별</div>
+                    <div style="display: flex; margin: auto; align-items: center; justify-content: center; border-bottom: 2px solid rgba(135, 206, 0, 1); font-size: 26px; color: rgba(135, 206, 0, 1); font-family: 'KimjungchulGothic'; ">영역별</div>
+                </div>
+                <div class="mathbutton selected" style="cursor:pointer;display: flex; width: 250px; height: 50px; align-items: center; justify-content: center; margin-bottom: 10px; border-radius: 10px; background-color: rgba(135, 206, 0, 1); color: white; font-size:25px; font-family: 'KimjungchulGothic';">수학</div>
+                <div class="scibutton" style="cursor: pointer; display: flex; width: 250px; height: 50px; align-items: center; justify-content: center; border: 1px solid rgba(217, 217, 217, 1); border-radius: 10px; font-size: 25px; font-family: 'KimjungchulGothic'; color: rgba(51, 51, 51, 1); ">과학</div>
+            </div>
+            <div class="content">
+                <div class="math">
+                    <div style="display: flex; margin-top: 65px;">
+                        <a href="./edu/addsubtract.html"><img class="menu animate menu1" style="width: 390px; height: 390px;margin-right: 40px;" src="../Docs/images/edumenu1.png" /></a>
+                        <img class="menu" style="width: 390px; height: 390px;margin-right: 40px;" src="../Docs/images/edumenu2.png" />
+                        <img class="menu" src="../Docs/images/edumenu3.png" style="width:390px;height:390px" />
+                    </div>
+                    <div style="display:flex">
+                        <img class="menu" style="width: 390px; height: 390px;margin-right: 40px;" src="../Docs/images/edumenu4.png" />
+                        <a href="./edu/box.html"><img class="menu animate menu5" src="../Docs/images/edumenu5.png" style="width: 390px; height: 390px; margin-right: 40px;" /></a>
+                        <a href="./edu/data.html"><img class="menu animate menu6" src="../Docs/images/edumenu6.png" style="width:390px;height:390px" /></a>
+                    </div>
+                </div>
+                <div class="sci" style="display:none;">
+                    <div style="display: flex; margin-top: 65px;">
+                        <a href="./edu/solarsystem.html"><img class="menu animate menu7" style="width: 390px; height: 390px; margin-right: 40px;" src="../Docs/images/edumenu7.png" /></a>
+                        <img class="menu" style="width: 390px; height: 390px; margin-right: 40px;" src="../Docs/images/edumenu8.png" />
+                        <a href="./edu/dino.html"><img class="menu animate menu9" style="width: 390px; height: 390px; margin-right: 40px;" src="../Docs/images/edumenu9.png" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .menu.animate {
+            transition: all 0.5s;
+        }
+
+            .menu.animate:hover {
+                transform: scale(1.1);
+            }
+
+        .menu1:hover {
+            content: url('/Docs/images/edumenu1hover.png');
+        }
+
+        .menu5:hover {
+            content: url('/Docs/images/edumenu5hover.png');
+        }
+
+        .menu6:hover {
+            content: url('/Docs/images/edumenu6hover.png');
+        }
+
+        .menu7:hover {
+            content: url('/Docs/images/edumenu7hover.png');
+        }
+
+        .menu9:hover {
+            content: url('/Docs/images/edumenu9hover.png');
+        }
+
+        .mathbutton:hover:not(.selected) {
+            background-color: rgba(135, 206, 0, 1) !important;
+            color: white !important;
+        }
+
+        .scibutton:hover:not(.selected) {
+            background-color: rgba(135, 206, 0, 1) !important;
+            color: white !important;
+        }
+    </style>
+
+
+    <!--<div>
+        <a href="edu/box/index.html" target="content">box</a>
+        <a href="edu/dataAnalytics/index.html" target="content">data analytics</a>
+    </div>
+    <iframe name="content" src="../Pages/edu/box/index.html" width="1100px" height="1000px"></iframe>-->
+
+    <script type="text/javascript" src="/Docs/assets/js/ETCutility.js"></script>
+    <script>
+        $('.mathbutton').click(() => {
+            $('.math').show();
+            $('.mathbutton').addClass('selected');
+            $('.sci').hide();
+            $('.scibutton').removeClass('selected');
+            $('.mathbutton').css('background-color', 'rgba(135, 206, 0, 1)')
+            $('.mathbutton').css('color', 'white')
+            $('.mathbutton').css('border', '0px solid rgba(217, 217, 217, 1)')
+            $('.scibutton').css('background-color', 'white');
+            $('.scibutton').css('color', 'rgba(51, 51, 51, 1)');
+            $('.scibutton').css('border', '1px solid rgba(217, 217, 217, 1)');
+        });
+        $('.scibutton').click(() => {
+            $('.math').hide();
+            $('.mathbutton').removeClass('selected');
+            $('.sci').show();
+            $('.scibutton').addClass('selected');
+            $('.scibutton').css('background-color', 'rgba(135, 206, 0, 1)')
+            $('.scibutton').css('color', 'white')
+            $('.scibutton').css('border', '0px solid rgba(217, 217, 217, 1)')
+            $('.mathbutton').css('background-color', 'white');
+            $('.mathbutton').css('color', 'rgba(51, 51, 51, 1)');
+            $('.mathbutton').css('border', '1px solid rgba(217, 217, 217, 1)');
+        });
+
+		function MoveVirtualOffice() {
+			let isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+			let isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+
+			if (isIos) {
+				alert(" غ    Դϴ .")
+			} else if (isAndroid) {
+                location.href = 'https://d383oem0m28gx6.cloudfront.net/'
+			} else {
+                location.href ='https://d1bn2a1xwzmis9.cloudfront.net/'
+			}
+		}
+
+		$(window).scroll(function (event) {
+			let height = $("#mail").outerHeight();
+			if (parseInt($(window).scrollTop()) > parseInt(height)+5000) {
+				hideBanner();
+			} else {
+				showBanner();
+			}
+		})
+		function hideBanner() {
+			$("#banner").hide();
+		}
+		function showBanner() {
+			$("#banner").show();
+		}
+		//language
+		$.ajax({ url: "https://api.ip.pe.kr/json" }).done(function (res) {
+			console.log(res.country_code);
+			if (res.country_code == "KR") {
+				$(".korean").css("visibility", "visible")
+				$(".english").css("visibility", "hidden")
+                $(".korean").css("display", "block")
+                $(".english").css("display", "none")
+			} else {
+                $(".korean").css("visibility", "hidden")
+				$(".english").css("visibility", "visible")
+                $(".korean").css("display", "none")
+                $(".english").css("display", "block")
+			}
+		});
+		function langChange(e) {
+			//let value = $("#lang option:selected").val();
+			console.log(value);
+			if (value == "Korean") {
+				$(".korean").css("visibility", "visible")
+				$(".english").css("visibility", "hidden")
+			} else if (value == "English") {
+                $(".korean").css("visibility", "hidden")
+                $(".english").css("visibility", "visible")
+			}
+		}
+		function changeKorean() {
+            $(".korean").css("visibility", "visible")
+			$(".english").css("visibility", "hidden")
+            $(".korean").css("display", "block")
+            $(".english").css("display", "none")
+			$("#liLangKor").hide();
+			$("#liLangEng").show();
+		}
+		function changeEnglish() {
+            $(".korean").css("visibility", "hidden")
+			$(".english").css("visibility", "visible")
+            $(".korean").css("display", "none")
+            $(".english").css("display", "block")
+            $("#liLangKor").show();
+            $("#liLangEng").hide();
+		}
+		let largeHeader;
+		let isMobile;
+
+		let MainUtil = {
+			init: function () {
+				MainUtil.resizingFun.initHeader();
+                MainUtil.resizingFun.addListeners();
+
+                MainUtil.poPolHoverControl();
+			},
+            resizingFun: {
+                initHeader: function (type) {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    target = { x: width / 2, y: height / 2 };
+
+                    largeHeader = document.querySelector('.section_1');
+                    largeHeader.style.height = height + 'px';
+                    height = window.innerHeight;
+
+                    isMobile = /Mobile|Android|iPhone/.test(navigator.userAgent);
+
+                    if ($(".multiple-items").hasClass('slick-initialized')) {
+                        $('.multiple-items').slick('unslick');
+                    }
+
+
+                    if (width > 1000) {
+                        $('.multiple-items').slick({
+                            infinite: true,
+							arrows: false,
+							autoplay: false,
+                            autoplaySpeed: 1000,
+                            slidesToShow: 4,
+							slidesToScroll: 1
+                            //cssEase: 'linear'//'easeInOut'
+                        });
+                        $("#pp_card").removeClass("pb-5");
+
+                        $("#footer_div").children().each(function () {
+                            $(this).attr("class", "footer-col align-content-center");
+
+                        })
+                        SecondSection(false);
+                        $(".banner_img").attr("src", "/Docs/images/twinoffice_banner.png");
+
+                    }
+
+                    if (isMobile || width < 1001) {
+                        $('.multiple-items').slick({
+                            infinite: true,
+                            arrows: false,
+                            autoplay: false,
+                            autoplaySpeed: 1000,
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        });
+
+                        $("#pp_card").addClass("pb-5");
+                        SecondSection(true);
+                        $(".banner_img").attr("src", "/Docs/images/twinoffice_banner_mob.png");
+
+                    }
+                    AvatarSlideControl();
+
+                }
+                ,
+                addListeners: function () {
+                    window.addEventListener('resize', MainUtil.resizingFun.initHeader);
+
+                },
+                resize: function () {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    largeHeader.style.height = height + 'px';
+                    canvas.width = width;
+                    canvas.height = height;
+                }
+
+			},
+			poPolHoverControl: function () {
+                $('.pp').hover(
+                    function () {
+                        $(this).find('.pp_color_img').show();
+                        $(this).find('.pp_black_img').animate({ opacity: 0 }, 500);
+                        $(this).find('.pp_color_img').animate({ opacity: 1 }, 500);
+                    },
+                    function () {
+                        $(this).find('.pp_color_img').animate({ opacity: 0 }, 500);
+                        $(this).find('.pp_black_img').animate({ opacity: 1 }, 500);
+                    }
+                );
+			},
+			moveChapter: function (tag) {
+                $(".animated").each(function () {
+                    $(this).removeClass("animated");
+                });
+				let moveTarget = tag;
+                $('html, body').animate({
+					scrollTop: $('.section_' + moveTarget).offset().top
+                }, 1000);
+			}
+		};
+
+		function AvatarSlideControl() {
+
+            let targetDiv = isMobile || window.innerWidth < 1001 ? "#sec_div" : "#forth_div";
+
+            let widTemp = $(targetDiv).width();
+            let heiTemp = $(targetDiv).height();
+
+            let leftTemp = $(targetDiv).offset().left - (widTemp * 0.25);
+            let topTemp = $(targetDiv).offset().top - (heiTemp*0.4);
+
+            let deviceSize = heiTemp * 2.4;
+
+			$("#mob_img").css({
+
+				"height": deviceSize,
+                "position": "absolute",
+                "left": leftTemp  + "px",
+                "top": topTemp  + "px",
+				"z-index": "9"
+            });
+			$('.multiple-items').slick("slickPlay");
+
+		}
+
+		function SecondSection(dev) {
+			if (dev) {
+				$("#arrow_div").removeClass("row");
+				$("#arrow_div").addClass("text-center");
+				$("#arrow_img").addClass("fa-rotate-90");
+			} else {
+
+                $("#arrow_div").removeClass("text-center");
+                $("#arrow_div").addClass("row");
+                $("#arrow_img").removeClass("fa-rotate-90");
+            }
+		}
+
+        $(document).ready(function () {
+			MainUtil.init();
+
+            var url = new URL(window.location.href);
+
+            var searchParams = new URLSearchParams(url.search);
+
+            var paramValue = searchParams.get('go');
+
+			if (paramValue == "1")
+				setTimeout(MainUtil.moveChapter("7"), 5000);
+
+        });
+
+        window.addEventListener("load", function () {
+            // Hide the loading page when the DOM content is fully loaded
+            $('.customloader').hide();
+        });
+    </script>
+    <!--<div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="/Docs/images/logo-full-white.png" alt=""></span></div>
+    <div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="/Docs/images/logo-full-white.png" alt=""></span></div>-->
+    <div class="customloader" style="position:absolute; width:100%; height:100%; top:0px; background-color:white">
+        <span class="spinner spinner-alt" style="position:relative;top:50%;left:50%;transform:translate(-25%,-25%);width:349px;height:349px;"><img class="spinner-brand" src="/Docs/images/loadingIcon.png" alt="" style="width: 292px; height: 40px;"></span>
+    </div>
+</body>
+</html>

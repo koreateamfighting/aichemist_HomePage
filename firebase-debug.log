@@ -1,0 +1,26 @@
+[debug] [2023-11-16T04:45:34.020Z] ----------------------------------------------------------------------
+[debug] [2023-11-16T04:45:34.022Z] Command:       C:\firebase-tools-instant-win.exe C:\Users\아이케미스트\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\bin\firebase deploy
+[debug] [2023-11-16T04:45:34.022Z] CLI Version:   12.9.1
+[debug] [2023-11-16T04:45:34.022Z] Platform:      win32
+[debug] [2023-11-16T04:45:34.022Z] Node Version:  v16.16.0
+[debug] [2023-11-16T04:45:34.023Z] Time:          Thu Nov 16 2023 13:45:34 GMT+0900 (GMT+09:00)
+[debug] [2023-11-16T04:45:34.024Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-16T04:45:34.072Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-16T04:45:34.072Z] > authorizing via signed-in user (minwook.jeong@aichemist.kr)
+[debug] [2023-11-16T04:45:34.072Z] [iam] checking project webgl-10580 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-11-16T04:45:34.074Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/webgl-10580:testIamPermissions [none]
+[debug] [2023-11-16T04:45:34.074Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/webgl-10580:testIamPermissions x-goog-quota-user=projects/webgl-10580
+[debug] [2023-11-16T04:45:34.074Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/webgl-10580:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-11-16T04:45:35.373Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/webgl-10580:testIamPermissions 200
+[debug] [2023-11-16T04:45:35.373Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/webgl-10580:testIamPermissions {}
+[debug] [2023-11-16T04:45:35.373Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project webgl-10580:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2023-11-16T04:45:35.374Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/webgl-10580 [none]
+[debug] [2023-11-16T04:45:35.798Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/webgl-10580 403
+[debug] [2023-11-16T04:45:35.799Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/webgl-10580 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-11-16T04:45:35.799Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
