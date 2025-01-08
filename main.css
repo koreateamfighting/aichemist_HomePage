@@ -443,22 +443,12 @@ select {
   );
   z-index: 4;
 }
-#pdContainer .header-content {
-  width: 1920px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-}
 
 #pdContainer .textLogo {
   position: absolute;
   transform: translateX(-50%);
   left: 25%;
   top: 40px;
-}
-
-#pdContainer .prev-page {
-  transform: translateX(800%);
 }
 
 #logoMoveSection1 {
@@ -619,6 +609,7 @@ select {
 }
 .main-contents-button-box {
   margin-top: 38px;
+  display: flex;
 }
 .main-contents-button-box button {
   width: 181px;
@@ -626,6 +617,31 @@ select {
   border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
+  margin-right: 10px;
+}
+
+#toPrevMain {
+  border-width: 1px;
+  border-color: #ffffff;
+  color: #ffffff;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#toPrevMain:hover {
+  background: linear-gradient(
+    91deg,
+    rgba(141, 191, 255, 0.2) 0.55%,
+    rgba(255, 255, 255, 0.2) 101.58%
+  );
+}
+
+#toPrevMain > img {
+  width: 24px; /* 이미지 가로 크기 */
+  height: 24px; /* 이미지 세로 크기 */
+  margin-right: 10px;
+  object-fit: contain;
 }
 #toMainPJ {
   background-color: #8dbfff;
@@ -635,6 +651,7 @@ select {
   background: #fff;
   color: #054afc;
 }
+
 #toYoutube {
   border-width: 1px;
   border-color: #ffffff;

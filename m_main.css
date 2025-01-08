@@ -448,18 +448,8 @@ select {
     no-repeat;
 }
 
-#pdContainer .header-content {
-  margin-left: 16px;
-  display: flex;
-  justify-content: space-between;
-}
-
 #pdContainer .logo-svg {
   margin-left: 16px;
-}
-
-#pdContainer .prev-page {
-  margin-right: 20px;
 }
 
 #pdContainer .logo-svg {
@@ -608,10 +598,32 @@ select {
   font-family: Pretendard;
   font-size: 0.875rem;
 }
+#toPrevMain {
+  border-width: 1px;
+  border-color: #ffffff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#toPrevMain:hover {
+  background: linear-gradient(
+    91deg,
+    rgba(141, 191, 255, 0.2) 0.55%,
+    rgba(255, 255, 255, 0.2) 101.58%
+  );
+}
+#toPrevMain > img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  object-fit: contain;
+}
 #toMainPJ {
   background-color: #fff;
   color: #054afc;
 }
+
 #toYoutube {
   border-width: 1px;
   border-color: #ffffff;
